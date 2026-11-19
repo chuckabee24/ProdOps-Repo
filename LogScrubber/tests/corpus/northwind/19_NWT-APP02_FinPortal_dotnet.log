@@ -1,0 +1,71 @@
+2026-11-18 08:14:25.488 -08:00 [INF] [FinPortal.Api.Startup] Loading user overrides from C:\Users\jsmith\AppData\Roaming\FinPortal\user.config (impersonated NWTRADERS\jsmith)
+2026-11-18 08:14:25.512 -08:00 [ERR] [FinPortal.Api.Reports.ReportController] Unhandled exception processing request 0HN8K2Q1T5M7L:00000004 for user NWTRADERS\jsmith (jsmith@northwindtraders.com) TraceId=00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - The wait operation timed out.) ---> System.ComponentModel.Win32Exception (0x80004005): The wait operation timed out
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at FinPortal.Data.ReportRepository.GetAgingAsync(String entity, Int32 fiscalYear) in D:\a\1\s\src\FinPortal.Data\ReportRepository.cs:line 88
+   at FinPortal.Api.Reports.ReportController.Aging(String rpt, Int32 fy) in D:\a\1\s\src\FinPortal.Api\Reports\ReportController.cs:line 41
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:258,State:0,Class:20
+2026-11-18 08:14:25.515 -08:00 [DBG] [FinPortal.Data.ConnectionFactory] Connection string (sanitized=false): Server=tcp:nwt-sql-p02.nwtraders.local,1433;Initial Catalog=FinDW;Persist Security Info=False;User ID=finapp_ro;Password=Fin@nce2026!Q3;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;
+2026-11-18 08:14:26.002 -08:00 [WRN] [FinPortal.Data.ConnectionFactory] Failing over to secondary: Data Source=NWT-SQL-P01\FINPROD;Initial Catalog=FinDW;Integrated Security=SSPI;Application Name=FinPortal
+2026-11-18 08:14:26.340 -08:00 [ERR] [FinPortal.Data.ConnectionFactory] Secondary failed: Login failed for user 'NWTRADERS\jsmith'.
+System.Data.SqlClient.SqlException (0x80131904): Login failed for user 'NWTRADERS\jsmith'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+ClientConnectionId:7c4e1a2b-9d3f-4e6a-8b10-2f5c7d9e1a3b
+Error Number:18456,State:1,Class:14
+2026-11-18 08:14:31.004 -08:00 [ERR] [FinPortal.Notifications.MailSender] SMTP send failed
+System.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it. [::ffff:10.20.7.30]:25
+   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   at System.Net.Mail.SmtpConnection.GetConnection(String host, Int32 port)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+2026-11-18 08:14:40.771 -08:00 [ERR] [FinPortal.Integrations.LedgerClient] POST https://nwt-app02.nwtraders.local:8443/api/v1/ledger/close failed
+System.Net.Http.HttpRequestException: No such host is known. (nwt-app03.nwtraders.local:8443)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Http.ConnectHelper.ConnectAsync(String host, Int32 port, CancellationToken cancellationToken)
+2026-11-18 08:15:02.100 -08:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: https://nwt-app02.nwtraders.local:8443
+2026-11-18 08:15:02.101 -08:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: http://[::]:8080
+2026-11-18 08:15:02.102 -08:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: Production
+2026-11-18 08:15:02.103 -08:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: D:\Apps\FinPortal\
+
+----- D:\Apps\FinPortal\web.config (relevant sections) -----
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="FinDW" connectionString="Data Source=NWT-SQL-P01\FINPROD;Initial Catalog=FinDW;User Id=finapp_ro;Password=Fin@nce2026!Q3;" providerName="System.Data.SqlClient" />
+    <add name="FinDW_Secondary" connectionString="Server=tcp:nwt-sql-p02.nwtraders.local,1433;Database=FinDW;Integrated Security=True" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <appSettings>
+    <add key="SmtpHost" value="mail-relay01.nwtraders.local" />
+    <add key="SmtpFrom" value="finportal-noreply@northwindtraders.com" />
+    <add key="LedgerApi" value="https://nwt-app02.nwtraders.local:8443/api/v1/" />
+    <add key="ida:Tenant" value="7c1f9e2a-5b3d-4e8f-a6c2-91d04b7e3f58" />
+    <add key="ida:ClientSecret" value="Qx8~bN3.vR7_kL2-mP9sT4wY6zA1cE5gH0jK" />
+    <add key="ida:Authority" value="https://login.microsoftonline.com/7c1f9e2a-5b3d-4e8f-a6c2-91d04b7e3f58/v2.0" />
+    <add key="ExportShare" value="\\NWT-FS01\Finance$\Exports\" />
+  </appSettings>
+  <system.web>
+    <compilation debug="false" targetFramework="4.8" />
+    <identity impersonate="true" />
+  </system.web>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-13.0.0.0" newVersion="13.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Runtime.CompilerServices.Unsafe" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
+
+Loaded assemblies: System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089; FinPortal.Data, Version=3.2.1.0, Culture=neutral, PublicKeyToken=null

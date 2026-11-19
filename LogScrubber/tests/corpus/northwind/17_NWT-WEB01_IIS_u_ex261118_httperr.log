@@ -1,0 +1,28 @@
+==> C:\inetpub\logs\LogFiles\W3SVC1\u_ex261118.log <==
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2026-11-18 16:00:01
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2026-11-18 16:14:21 10.20.10.31 GET /finportal/default.aspx - 443 - 10.20.64.115 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/119.0.6045.105+Safari/537.36 - 401 2 5 3
+2026-11-18 16:14:21 10.20.10.31 GET /finportal/default.aspx - 443 NWTRADERS\jsmith 10.20.64.115 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/119.0.6045.105+Safari/537.36 - 200 0 0 187
+2026-11-18 16:14:25 10.20.10.31 GET /finportal/api/report.ashx user=NWTRADERS%5Cjsmith&email=jsmith%40northwindtraders.com&rpt=AP-Aging&fy=2026&name=Jane+Smith 443 NWTRADERS\jsmith 10.20.64.115 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/119.0.6045.105+Safari/537.36 https://nwt-web01.nwtraders.local/finportal/default.aspx 500 0 0 1203
+2026-11-18 16:15:02 10.20.10.31 POST /finportal/api/login.ashx - 443 - 64.187.212.34 python-requests/2.31.0 - 401 1 1326 15
+2026-11-18 16:15:40 10.20.10.31 GET /finportal/api/people.ashx q=Jos%C3%A9+M%C3%BCller&dept=Logistics 443 NWTRADERS\mwilson 10.20.64.142 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/119.0.0.0+Safari/537.36+Edg/119.0.2151.72 https://finportal.northwindtraders.com/finportal/people 200 0 0 46
+2026-11-18 16:16:03 10.20.10.31 GET /finportal/api/export.ashx apikey=4f9b2c7e81d3a6f05e2d&format=csv&mailto=Gonzalez%2C%20Ana%20%3Ca.gonzalez%40northwindtraders.com%3E 443 NWTEMEA\a.gonzalez 10.40.64.23 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/119.0.0.0+Safari/537.36+Edg/119.0.2151.72 - 200 0 0 88
+2026-11-18 16:17:44 10.20.10.31 GET /finportal/api/approve.ashx id=88213&approver=Ryan+O%27Connor&cb=https%3A%2F%2Fnwt-app02.nwtraders.local%3A8443%2Fcallback 443 NWTRADERS\r.oconnor 10.20.64.150 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/119.0.6045.105+Safari/537.36 - 302 0 0 31
+2026-11-18 16:20:11 10.20.10.31 GET /healthcheck - 80 - 10.20.10.5 - - 200 0 0 0
+2026-11-18 16:21:00 ::1 GET / - 80 - ::1 Mozilla/5.0+(Windows+NT;+Windows+NT+10.0;+en-US)+WindowsPowerShell/5.1.17763.6414 - 200 0 0 2
+2026-11-18 16:22:31 2620:1ec:4e57:20::31 GET /finportal/ - 443 NWTRADERS\pkumar 2620:1ec:4e57:40:9d3c:1a7e:22b4:5f61 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/119.0.6045.105+Safari/537.36 - 200 0 0 15
+2026-11-18 16:23:10 10.20.10.31 GET /aspnet_client/system_web/4_0_30319/ - 443 - 185.220.101.47 Mozilla/5.0+zgrab/0.x - 404 0 2 0
+2026-11-18 16:24:58 10.20.10.31 POST /EWS/Exchange.asmx - 443 gmsa-iis$ 10.20.10.31 ExchangeServicesClient/15.20.7409.024 - 200 0 0 233
+
+==> C:\Windows\System32\LogFiles\HTTPERR\httperr1.log <==
+#Software: Microsoft HTTP API 2.0
+#Version: 1.0
+#Date: 2026-11-18 16:05:33
+#Fields: date time c-ip c-port s-ip s-port cs-version cs-method cs-uri streamid sc-status s-siteid s-reason s-queuename
+2026-11-18 16:05:33 45.155.205.233 51432 10.20.10.31 443 HTTP/1.1 GET /owa/auth/x.js - 404 - NotFound -
+2026-11-18 16:07:12 10.20.10.5 40112 10.20.10.31 80 - - - - - - Timer_ConnectionIdle -
+2026-11-18 16:09:44 10.20.64.115 52290 10.20.10.31 443 HTTP/2.0 GET /finportal/api/report.ashx 1 503 3 AppOffline FinPortalPool
+2026-11-18 16:11:02 2620:1ec:4e57:40:9d3c:1a7e:22b4:5f61 52311 2620:1ec:4e57:20::31 443 - - - - - - Timer_MinBytesPerSecond -
+2026-11-18 16:12:40 127.0.0.1 52330 127.0.0.1 47001 HTTP/1.1 GET /wsman - 400 - Hostname -

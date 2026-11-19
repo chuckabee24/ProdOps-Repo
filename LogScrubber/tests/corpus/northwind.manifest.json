@@ -1,0 +1,3530 @@
+{
+ "secrets": [
+  {
+   "value": "NWT-DC01",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-DC02",
+   "type": "hostname"
+  },
+  {
+   "value": "EMEA-DC01",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-SQL-P01",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-SQL-P02",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-FS01",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-WEB01",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-APP02",
+   "type": "hostname"
+  },
+  {
+   "value": "nwt-app03",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-EXCH01",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-SCCM01",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-CA01",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-HV03",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-AV01",
+   "type": "hostname"
+  },
+  {
+   "value": "NWT-PA-DC01",
+   "type": "hostname"
+  },
+  {
+   "value": "LT-JSMITH-01",
+   "type": "hostname"
+  },
+  {
+   "value": "LT-AGONZALEZ-02",
+   "type": "hostname"
+  },
+  {
+   "value": "LT-AGONZALEZ-01",
+   "type": "hostname"
+  },
+  {
+   "value": "LT-KFISCHER-01",
+   "type": "hostname"
+  },
+  {
+   "value": "WS-PKUMAR-07",
+   "type": "hostname"
+  },
+  {
+   "value": "CORE-SW01",
+   "type": "hostname"
+  },
+  {
+   "value": "ACC-SW-3F-02",
+   "type": "hostname"
+  },
+  {
+   "value": "fw-edge-01",
+   "type": "hostname"
+  },
+  {
+   "value": "FGT-LON-01",
+   "type": "hostname"
+  },
+  {
+   "value": "f5-lb01",
+   "type": "hostname"
+  },
+  {
+   "value": "k8s-master-01",
+   "type": "hostname"
+  },
+  {
+   "value": "k8s-node-01",
+   "type": "hostname"
+  },
+  {
+   "value": "k8s-node-03",
+   "type": "hostname"
+  },
+  {
+   "value": "nas01",
+   "type": "hostname"
+  },
+  {
+   "value": "jupiter",
+   "type": "hostname"
+  },
+  {
+   "value": "saturn",
+   "type": "hostname"
+  },
+  {
+   "value": "fileserver",
+   "type": "hostname"
+  },
+  {
+   "value": "mail-relay01",
+   "type": "hostname"
+  },
+  {
+   "value": "ns-int01",
+   "type": "hostname"
+  },
+  {
+   "value": "LON-FS01",
+   "type": "hostname"
+  },
+  {
+   "value": "PRN-3F-01",
+   "type": "hostname"
+  },
+  {
+   "value": "Janes-iPhone",
+   "type": "hostname"
+  },
+  {
+   "value": "siem-coll01",
+   "type": "hostname"
+  },
+  {
+   "value": "pgsql01",
+   "type": "hostname"
+  },
+  {
+   "value": "nwt-az-app01",
+   "type": "hostname"
+  },
+  {
+   "value": "nwt-aws-sftp01",
+   "type": "hostname"
+  },
+  {
+   "value": "nwt-packetbeat01",
+   "type": "hostname"
+  },
+  {
+   "value": "nwtfinancestor01",
+   "type": "hostname"
+  },
+  {
+   "value": "ISE-SEA",
+   "type": "hostname"
+  },
+  {
+   "value": "SEP2C3124A1B0C7",
+   "type": "hostname",
+   "note": "Cisco IP phone name embeds its MAC 2C3124A1B0C7"
+  },
+  {
+   "value": "NWT_SQL_P02",
+   "type": "hostname",
+   "note": "linked-server name: hostname with underscores"
+  },
+  {
+   "value": "NWTEXCH01nwtraderslocal",
+   "type": "hostname",
+   "note": "MIME boundary: hostname+domain with punctuation stripped"
+  },
+  {
+   "value": "NWT-DC01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "NWT-DC02.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "EMEA-DC01.emea.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "NWT-SQL-P01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "nwt-sql-p02.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "NWT-FS01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "NWT-WEB01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "NWT-APP02.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "nwt-app03.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "NWT-EXCH01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "NWT-SCCM01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "NWT-CA01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "NWT-HV03.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "LT-JSMITH-01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "LT-AGONZALEZ-02.emea.nwtrade",
+   "type": "fqdn"
+  },
+  {
+   "value": "WS-PKUMAR-07.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "ACC-SW-3F-02.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "LON-FS01.emea.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "SEP2C3124A1B0C7.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "nas01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "jupiter.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "fileserver.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "mail-relay01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "saturn.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "k8s-node-03.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "registry.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "nexus.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "proxy.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "pgsql01.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "wpad.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "gmsa-iis.nwtraders.local",
+   "type": "fqdn"
+  },
+  {
+   "value": "wiki.northwindtraders.com",
+   "type": "fqdn"
+  },
+  {
+   "value": "finportal.northwindtraders.com",
+   "type": "fqdn"
+  },
+  {
+   "value": "www.northwindtraders.com",
+   "type": "fqdn"
+  },
+  {
+   "value": "mail.northwindtraders.com",
+   "type": "fqdn"
+  },
+  {
+   "value": "pki.northwindtraders.com",
+   "type": "fqdn"
+  },
+  {
+   "value": "nwtfinancestor01.blob.core.windows.net",
+   "type": "fqdn"
+  },
+  {
+   "value": "nwtraders.atp.azure.com",
+   "type": "fqdn"
+  },
+  {
+   "value": "ip-10-0-1-23.ec2.internal",
+   "type": "fqdn"
+  },
+  {
+   "value": "ip-10-0-2-117.ec2.internal",
+   "type": "fqdn"
+  },
+  {
+   "value": "ip-10-0-2-117.us-west-2.compute.internal",
+   "type": "fqdn"
+  },
+  {
+   "value": "ec2-54-213-77-140.us-west-2.compute.amazonaws.com",
+   "type": "fqdn"
+  },
+  {
+   "value": "nwt-fin-exports-prod.s3.us-west-2.amazonaws.com",
+   "type": "fqdn"
+  },
+  {
+   "value": "mx01.fabrikam-logistics.de",
+   "type": "fqdn"
+  },
+  {
+   "value": "exch.fabrikam-logistics.de",
+   "type": "fqdn"
+  },
+  {
+   "value": "contoso-supplies-com.mail.protection.outlook.com",
+   "type": "fqdn"
+  },
+  {
+   "value": "(11)nwt-sql-p01(9)nwtraders(5)local(0)",
+   "type": "fqdn",
+   "note": "Windows DNS debug-log wire format"
+  },
+  {
+   "value": "(12)LT-JSMITH-01(9)nwtraders(5)local(0)",
+   "type": "fqdn",
+   "note": "Windows DNS debug-log wire format"
+  },
+  {
+   "value": "(7)JUPITER(9)nwtraders(5)local(0)",
+   "type": "fqdn",
+   "note": "Windows DNS debug-log wire format"
+  },
+  {
+   "value": "(16)nwtfinancestor01(4)blob(4)core(7)windows(3)net(0)",
+   "type": "fqdn",
+   "note": "Windows DNS debug-log wire format"
+  },
+  {
+   "value": "nwtraders.local",
+   "type": "domain"
+  },
+  {
+   "value": "emea.nwtraders.local",
+   "type": "domain"
+  },
+  {
+   "value": "northwindtraders.com",
+   "type": "domain"
+  },
+  {
+   "value": "nwtraders.onmicrosoft.com",
+   "type": "domain"
+  },
+  {
+   "value": "nwtraders.mail.onmicrosoft.com",
+   "type": "domain"
+  },
+  {
+   "value": "fabrikam-logistics.de",
+   "type": "domain",
+   "note": "external business partner domain"
+  },
+  {
+   "value": "contoso-supplies.com",
+   "type": "domain",
+   "note": "external business partner domain"
+  },
+  {
+   "value": "NWTRADERS",
+   "type": "netbios_domain"
+  },
+  {
+   "value": "NWTEMEA",
+   "type": "netbios_domain"
+  },
+  {
+   "value": "jsmith",
+   "type": "username"
+  },
+  {
+   "value": "a.gonzalez",
+   "type": "username"
+  },
+  {
+   "value": "pkumar",
+   "type": "username"
+  },
+  {
+   "value": "adm-pkumar",
+   "type": "username"
+  },
+  {
+   "value": "mwilson",
+   "type": "username"
+  },
+  {
+   "value": "tnguyen",
+   "type": "username"
+  },
+  {
+   "value": "jmuller",
+   "type": "username"
+  },
+  {
+   "value": "dpatel",
+   "type": "username"
+  },
+  {
+   "value": "lchen",
+   "type": "username"
+  },
+  {
+   "value": "r.oconnor",
+   "type": "username"
+  },
+  {
+   "value": "kfischer",
+   "type": "username"
+  },
+  {
+   "value": "egarcia",
+   "type": "username"
+  },
+  {
+   "value": "svc_backup",
+   "type": "username"
+  },
+  {
+   "value": "svc_sqlfin",
+   "type": "username"
+  },
+  {
+   "value": "svc_sccm_na",
+   "type": "username"
+  },
+  {
+   "value": "gmsa-iis$",
+   "type": "username"
+  },
+  {
+   "value": "gmsa-iis",
+   "type": "username"
+  },
+  {
+   "value": "finapp_ro",
+   "type": "username"
+  },
+  {
+   "value": "finapp",
+   "type": "username"
+  },
+  {
+   "value": "nwtdeploy",
+   "type": "username"
+  },
+  {
+   "value": "netadmin",
+   "type": "username"
+  },
+  {
+   "value": "backup-ro",
+   "type": "username"
+  },
+  {
+   "value": "svc-fin-export",
+   "type": "username"
+  },
+  {
+   "value": "nwtazadmin",
+   "type": "username"
+  },
+  {
+   "value": "svc_proxy",
+   "type": "username"
+  },
+  {
+   "value": "jsmith@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "jane.smith@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "jsmith@nwtraders.mail.onmicrosoft.com",
+   "type": "email"
+  },
+  {
+   "value": "a.gonzalez@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "priya.kumar@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "mwilson@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "jose.mueller@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "egarcia@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "ryan.oconnor@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "lchen@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "tnguyen@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "dpatel@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "pkumar@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "k.fischer@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "ceo@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "spoof@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "netops@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "finance-ops@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "fin-sync@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "finportal-noreply@northwindtraders.com",
+   "type": "email"
+  },
+  {
+   "value": "adm-pkumar@nwtraders.onmicrosoft.com",
+   "type": "email"
+  },
+  {
+   "value": "jsmith@jupiter.nwtraders.local",
+   "type": "email"
+  },
+  {
+   "value": "root@mail-relay01.nwtraders.local",
+   "type": "email"
+  },
+  {
+   "value": "pkumar@nwtraders.local",
+   "type": "email"
+  },
+  {
+   "value": "a.gonzalez@emea.nwtraders.local",
+   "type": "email"
+  },
+  {
+   "value": "svc_backup@nas01.nwtraders.local",
+   "type": "email"
+  },
+  {
+   "value": "m.becker@fabrikam-logistics.de",
+   "type": "email",
+   "note": "external partner address"
+  },
+  {
+   "value": "orders@contoso-supplies.com",
+   "type": "email",
+   "note": "external partner address"
+  },
+  {
+   "value": "jsmith%40northwindtraders.com",
+   "type": "email",
+   "note": "URL-encoded"
+  },
+  {
+   "value": "a.gonzalez%40northwindtraders.com",
+   "type": "email",
+   "note": "URL-encoded"
+  },
+  {
+   "value": "jsmith@NWTRADERS.LOCAL",
+   "type": "email",
+   "note": "Kerberos principal (user@REALM)"
+  },
+  {
+   "value": "adm-pkumar@NWTRADERS.LOCAL",
+   "type": "email",
+   "note": "Kerberos principal (user@REALM)"
+  },
+  {
+   "value": "svc_backup@NWTRADERS.LOCAL",
+   "type": "email",
+   "note": "Kerberos principal (user@REALM)"
+  },
+  {
+   "value": "pkumar@NWTRADERS.LOCAL",
+   "type": "email",
+   "note": "Kerberos principal (user@REALM)"
+  },
+  {
+   "value": "Jane Smith",
+   "type": "display_name"
+  },
+  {
+   "value": "Smith, Jane",
+   "type": "display_name"
+  },
+  {
+   "value": "Smith\\, Jane",
+   "type": "display_name"
+  },
+  {
+   "value": "Jane+Smith",
+   "type": "display_name"
+  },
+  {
+   "value": "Gonzalez, Ana",
+   "type": "display_name"
+  },
+  {
+   "value": "Gonzalez%2C%20Ana",
+   "type": "display_name"
+  },
+  {
+   "value": "Priya Kumar",
+   "type": "display_name"
+  },
+  {
+   "value": "Kumar\\, Priya",
+   "type": "display_name"
+  },
+  {
+   "value": "Kumar, Priya (Admin)",
+   "type": "display_name"
+  },
+  {
+   "value": "Michael Wilson",
+   "type": "display_name"
+  },
+  {
+   "value": "Wilson\\, Michael",
+   "type": "display_name"
+  },
+  {
+   "value": "Michael+Wilson",
+   "type": "display_name"
+  },
+  {
+   "value": "José Müller",
+   "type": "display_name"
+  },
+  {
+   "value": "Müller, José",
+   "type": "display_name"
+  },
+  {
+   "value": "Müller\\, José",
+   "type": "display_name"
+  },
+  {
+   "value": "Elena García",
+   "type": "display_name"
+  },
+  {
+   "value": "García\\, Elena",
+   "type": "display_name"
+  },
+  {
+   "value": "Ryan O'Connor",
+   "type": "display_name"
+  },
+  {
+   "value": "O'Connor, Ryan",
+   "type": "display_name"
+  },
+  {
+   "value": "O'Connor\\, Ryan",
+   "type": "display_name"
+  },
+  {
+   "value": "Ryan+O%27Connor",
+   "type": "display_name"
+  },
+  {
+   "value": "Chen, Li",
+   "type": "display_name"
+  },
+  {
+   "value": "Chen\\, Li",
+   "type": "display_name"
+  },
+  {
+   "value": "Thanh Nguyen",
+   "type": "display_name"
+  },
+  {
+   "value": "Nguyen\\, Thanh",
+   "type": "display_name"
+  },
+  {
+   "value": "Deepak Patel",
+   "type": "display_name"
+  },
+  {
+   "value": "Patel\\, Deepak",
+   "type": "display_name"
+  },
+  {
+   "value": "Becker, Markus",
+   "type": "display_name"
+  },
+  {
+   "value": "Jos\\u00e9 M\\u00fcller",
+   "type": "display_name",
+   "note": "JSON \\u-escaped form (literal backslash-u text in file)"
+  },
+  {
+   "value": "Jos%C3%A9+M%C3%BCller",
+   "type": "display_name",
+   "note": "URL-encoded UTF-8"
+  },
+  {
+   "value": "=?utf-8?Q?Jos=C3=A9_M=C3=BCller?=",
+   "type": "display_name",
+   "note": "RFC 2047 encoded-word"
+  },
+  {
+   "value": "Sm9zw6kgTcO8bGxlcg==",
+   "type": "display_name",
+   "note": "LDIF base64 (::) attribute value"
+  },
+  {
+   "value": "TcO8bGxlciwgSm9zw6k=",
+   "type": "display_name",
+   "note": "LDIF base64 (::) attribute value"
+  },
+  {
+   "value": "TcO8bGxlcg==",
+   "type": "display_name",
+   "note": "LDIF base64 (::) attribute value"
+  },
+  {
+   "value": "Sm9zw6k=",
+   "type": "display_name",
+   "note": "LDIF base64 (::) attribute value"
+  },
+  {
+   "value": "Smith",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Gonzalez",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Kumar",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Wilson",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Müller",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "García",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "O'Connor",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Nguyen",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Patel",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Chen",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Priya",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Thanh",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Deepak",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Elena",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Michael",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "José",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Jane",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Ryan",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Markus",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Becker",
+   "type": "display_name",
+   "note": "standalone given/surname (GivenName/Surname/sn fields, salutations)"
+  },
+  {
+   "value": "Q049TcO8bGxlclwsIEpvc8OpLE9VPUxvZ2lzdGljcyxPVT1Vc2VycyxPVT1TZWF0dGxlLERDPW53dHJhZGVycyxEQz1sb2NhbA==",
+   "type": "other",
+   "note": "LDIF base64 DN of José Müller (contains DC=nwtraders)"
+  },
+  {
+   "value": "S-1-5-21-1844237615-3567125980-2410998437",
+   "type": "sid_domain"
+  },
+  {
+   "value": "S-1-5-21-2971458230-1037194263-3905611184",
+   "type": "sid_domain"
+  },
+  {
+   "value": "S-1-5-21-2971458230-1037194263-39",
+   "type": "sid_domain",
+   "note": "domain SID truncated by Format-Table '...'"
+  },
+  {
+   "value": "AQUAAAAAAAUVAAAAL9XsbdwFntSl6rSPUwQAAA==",
+   "type": "other",
+   "note": "base64 binary objectSid (embeds domain SID)"
+  },
+  {
+   "value": "AQUAAAAAAAUVAAAAL9XsbdwFntSl6rSPswQAAA==",
+   "type": "other",
+   "note": "base64 binary objectSid (embeds domain SID)"
+  },
+  {
+   "value": "Bkp!2026-Nwt#",
+   "type": "secret"
+  },
+  {
+   "value": "Fin@nce2026!Q3",
+   "type": "secret"
+  },
+  {
+   "value": "S9l!FinBatch#77",
+   "type": "secret"
+  },
+  {
+   "value": "S3rv1ce#Db",
+   "type": "secret"
+  },
+  {
+   "value": "Pg_Fin_2026x",
+   "type": "secret"
+  },
+  {
+   "value": "Az!Fin-Vm#2026",
+   "type": "secret"
+  },
+  {
+   "value": "c3ZjX2JhY2t1cDpCa3AhMjAyNi1Od3Qj",
+   "type": "secret",
+   "note": "HTTP Basic credentials (base64 user:pass)"
+  },
+  {
+   "value": "bnd0ZGVwbG95OkdoNyFwUXo5eEw=",
+   "type": "secret",
+   "note": "HTTP Basic credentials (base64 user:pass)"
+  },
+  {
+   "value": "Gh7%21pQz9xL",
+   "type": "secret",
+   "note": "URL-embedded password (percent-encoded)"
+  },
+  {
+   "value": "Pr0xy%40Nwt2026",
+   "type": "secret",
+   "note": "URL-embedded password (percent-encoded)"
+  },
+  {
+   "value": "AKIA4NWT7XQ2PEXAMPLE",
+   "type": "secret",
+   "note": "AWS access key id"
+  },
+  {
+   "value": "q8Vt3nYw/Zr5K+2bLp9mXc7dEfGhJ1EXAMPLEKEY",
+   "type": "secret",
+   "note": "AWS secret access key"
+  },
+  {
+   "value": "ghfake_7Rk2Nq9Xz4Lm8Vb3Tw6Yp1Hc5Jd0Fs2Ga9Qe",
+   "type": "secret",
+   "note": "GitHub PAT"
+  },
+  {
+   "value": "8f3c2a9e1b7d4f6a0c5e9b2d7a4f1c8e",
+   "type": "secret",
+   "note": "Datadog/X-Api-Key (32 hex, looks like a GUID without dashes)"
+  },
+  {
+   "value": "4f9b2c7e81d3a6f05e2d",
+   "type": "secret",
+   "note": "API key in IIS query string"
+  },
+  {
+   "value": "nwt_pat_7Hq2Lx9Vb4Nc8Zr1Tk6Wm3Ys",
+   "type": "secret",
+   "note": "token in nginx query string"
+  },
+  {
+   "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6Im53dC1zdHMtMjAyNi0wMSIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGk6Ly9maW4tYXBpIiwiaXNzIjoiaHR0cHM6Ly9zdHMubm9ydGh3aW5kdHJhZGVycy5jb20vYWRmcyIsImlhdCI6MTc5NTAxNzMxMCwiZXhwIjoxNzk1MDIwOTEwLCJ1cG4iOiJqc21pdGhAbm9ydGh3aW5kdHJhZGVycy5jb20iLCJ1bmlxdWVfbmFtZSI6Ik5XVFJBREVSU1xcanNtaXRoIiwibmFtZSI6IkphbmUgU21pdGgiLCJhcHBpZCI6ImZpbi1iYXRjaCIsImdyb3VwcyI6WyJOV1QtRmluYW5jZS1SVyIsIkdHLUZpblBvcnRhbC1Vc2VycyJdLCJ2ZXIiOiIxLjAifQ.Qm9ndXNTaWduYXR1cmVGb3JUZXN0aW5nT25seV9Od3RGaW5CYXRjaDIwMjZfeDdLcDlMbTJRclN0VXZXeFl6",
+   "type": "secret",
+   "note": "Bearer JWT (payload base64-encodes UPN/name)"
+  },
+  {
+   "value": "Qx8~bN3.vR7_kL2-mP9sT4wY6zA1cE5gH0jK",
+   "type": "secret",
+   "note": "Azure AD client secret"
+  },
+  {
+   "value": "6XXWBeuTwgN7j5qqJsUt-FAKE-n4Auj+QNR+lBl+M5UAqcGgRThq1AuOuPRxIVwLuxi/sdwUm3Wdd0uGJhhsbA==",
+   "type": "secret",
+   "note": "Azure storage AccountKey"
+  },
+  {
+   "value": "Xk3%2Bq9Lzp7Rv2NcW8tYb5Hj1Mf4Dg6Sa0Ue3Io7Pk2Q%3D",
+   "type": "secret",
+   "note": "Azure SAS sig="
+  },
+  {
+   "value": "Hz7Lq2Wv9Xb4Nc1Mk8Rt3Yp6Jd0Fs5Ga2Ue7Io",
+   "type": "secret",
+   "note": "Synology session id / cookie"
+  },
+  {
+   "value": "MIIEowIBAAKCAQEA5qfUNFcTC8AEOWFQfrRssyo3rd8AOv2LDV4BNUZbvhiR8euE",
+   "type": "secret",
+   "note": "RSA private key PEM body line"
+  },
+  {
+   "value": "5aMSLRKTpsJWtBQhC3dPRuEG29U9y/NHwR4QdoQrZAoWL3d55txpiCVr8RNwHwE3",
+   "type": "secret",
+   "note": "RSA private key PEM body line"
+  },
+  {
+   "value": "uLA=",
+   "type": "secret",
+   "note": "RSA private key PEM body line"
+  },
+  {
+   "value": "$9$2Mq7nVx1Lp0eKs$Hc8Rr3UjWd5aTf9Zy1Bn6Gk2Lx7Pq4Ms0Ve3Yi8Wo1",
+   "type": "secret",
+   "note": "Cisco type-9 secret hash"
+  },
+  {
+   "value": "$9$hT3kLq8zV2mNpX$Qe7uR1sY0aWcD4fG6jH8kL2zX5vB9nM3pQ1rT7yU0iO",
+   "type": "secret",
+   "note": "Cisco type-9 secret hash"
+  },
+  {
+   "value": "0822455D0A165445415F59",
+   "type": "secret",
+   "note": "Cisco type-7 (reversible) password"
+  },
+  {
+   "value": "1511021F07257A767B",
+   "type": "secret",
+   "note": "Cisco type-7 (reversible) password"
+  },
+  {
+   "value": "045802150C2E1D1C5A",
+   "type": "secret",
+   "note": "Cisco type-7 (reversible) password"
+  },
+  {
+   "value": "Nwt-R0-mon1tor",
+   "type": "secret",
+   "note": "SNMP community"
+  },
+  {
+   "value": "nwtRWpriv!",
+   "type": "secret",
+   "note": "SNMP community"
+  },
+  {
+   "value": "Northwind Traders",
+   "type": "org_name"
+  },
+  {
+   "value": "Northwind",
+   "type": "org_name"
+  },
+  {
+   "value": "northwind-traders",
+   "type": "org_name"
+  },
+  {
+   "value": "com.northwind",
+   "type": "org_name",
+   "note": "in-house Java package prefix reveals org name"
+  },
+  {
+   "value": "Fabrikam%20Logistics%20GmbH",
+   "type": "org_name",
+   "note": "partner company name (URL-encoded path)"
+  },
+  {
+   "value": "Seattle",
+   "type": "location"
+  },
+  {
+   "value": "London",
+   "type": "location"
+  },
+  {
+   "value": "1200 Westlake Ave N, Suite 300",
+   "type": "location"
+  },
+  {
+   "value": "98109",
+   "type": "location"
+  },
+  {
+   "value": "Seattle DC1 / Row 4 / Rack 12",
+   "type": "location"
+  },
+  {
+   "value": "SEA-HQ",
+   "type": "location"
+  },
+  {
+   "value": "LON-OFFICE",
+   "type": "location"
+  },
+  {
+   "value": "SEA-3F-214",
+   "type": "location"
+  },
+  {
+   "value": "SEA-3F-201",
+   "type": "location"
+  },
+  {
+   "value": "SEA-2F-118",
+   "type": "location"
+  },
+  {
+   "value": "SEA-4F-402",
+   "type": "location"
+  },
+  {
+   "value": "SEA-3F-220",
+   "type": "location"
+  },
+  {
+   "value": "SEA-1F-010",
+   "type": "location"
+  },
+  {
+   "value": "SEA-1F-014",
+   "type": "location"
+  },
+  {
+   "value": "SEA-1F-012",
+   "type": "location"
+  },
+  {
+   "value": "SEA-1F-002",
+   "type": "location"
+  },
+  {
+   "value": "+1 (206) 555-0147",
+   "type": "other",
+   "note": "phone number / extension"
+  },
+  {
+   "value": "+1 (206) 555-0112",
+   "type": "other",
+   "note": "phone number / extension"
+  },
+  {
+   "value": "+1 (206) 555-0188",
+   "type": "other",
+   "note": "phone number / extension"
+  },
+  {
+   "value": "x0147",
+   "type": "other",
+   "note": "phone number / extension"
+  },
+  {
+   "value": "x0199",
+   "type": "other",
+   "note": "phone number / extension"
+  },
+  {
+   "value": "7c1f9e2a-5b3d-4e8f-a6c2-91d04b7e3f58",
+   "type": "other",
+   "note": "Azure AD tenantId (org-identifying GUID)"
+  },
+  {
+   "value": "3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93",
+   "type": "other",
+   "note": "Azure subscriptionId"
+  },
+  {
+   "value": "8d3f6a2e-1b4c-4e9a-9f07-5c2e8b1d3a64",
+   "type": "other",
+   "note": "AD domain GUID (nltest)"
+  },
+  {
+   "value": "2b7e9c41-6d0a-4f3e-8c25-a19d7e3b5f06",
+   "type": "other",
+   "note": "AD domain GUID (nltest)"
+  },
+  {
+   "value": "482915736021",
+   "type": "other",
+   "note": "AWS account id"
+  },
+  {
+   "value": "AIDAXNWT4Q7B2LPZ9KR3M",
+   "type": "other",
+   "note": "AWS IAM unique principal id"
+  },
+  {
+   "value": "AROAXNWT8K2M4P6R1T3V5",
+   "type": "other",
+   "note": "AWS IAM unique principal id"
+  },
+  {
+   "value": "AROAXNWT2B9D7F5H3J1L0",
+   "type": "other",
+   "note": "AWS IAM unique principal id"
+  },
+  {
+   "value": "10032002A9F1C7E4",
+   "type": "other",
+   "note": "Azure AD puid of a user"
+  },
+  {
+   "value": "P2xqC1kFvRb8Nn0eYp3Ms7Lt",
+   "type": "other",
+   "note": "NAS device id"
+  },
+  {
+   "value": "016401002345",
+   "type": "other",
+   "note": "firewall serial number"
+  },
+  {
+   "value": "FG100FTK21004567",
+   "type": "other",
+   "note": "firewall serial number"
+  },
+  {
+   "value": "1.3.6.1.4.1.311.21.8.4417726.11532611.1201447.7891213.16677218",
+   "type": "other",
+   "note": "ADCS forest-specific template OID prefix (debatable)"
+  },
+  {
+   "value": "100482",
+   "type": "other",
+   "note": "EmployeeID"
+  },
+  {
+   "value": "NWT-A04417",
+   "type": "other",
+   "note": "asset tag"
+  },
+  {
+   "value": "rg-nwt-finance-prod",
+   "type": "other",
+   "note": "cloud resource / role / tag name with org prefix"
+  },
+  {
+   "value": "mg-nwt-root",
+   "type": "other",
+   "note": "cloud resource / role / tag name with org prefix"
+  },
+  {
+   "value": "nwt-fin-exports-prod",
+   "type": "other",
+   "note": "cloud resource / role / tag name with org prefix"
+  },
+  {
+   "value": "NWT-Admins",
+   "type": "other",
+   "note": "cloud resource / role / tag name with org prefix"
+  },
+  {
+   "value": "nwt-sftp-ec2-role",
+   "type": "other",
+   "note": "cloud resource / role / tag name with org prefix"
+  },
+  {
+   "value": "NWT-ADFS",
+   "type": "other",
+   "note": "cloud resource / role / tag name with org prefix"
+  },
+  {
+   "value": "nwt-prod-ops",
+   "type": "other",
+   "note": "cloud resource / role / tag name with org prefix"
+  },
+  {
+   "value": "nwt-prod",
+   "type": "other",
+   "note": "cloud resource / role / tag name with org prefix"
+  },
+  {
+   "value": "NWT-Finance-RW",
+   "type": "other",
+   "note": "custom AD group"
+  },
+  {
+   "value": "GG-FinPortal-Users",
+   "type": "other",
+   "note": "custom AD group"
+  },
+  {
+   "value": "GG-SQL-FinProd-Admins",
+   "type": "other",
+   "note": "custom AD group"
+  },
+  {
+   "value": "Tier0-Server-Admins",
+   "type": "other",
+   "note": "custom AD group"
+  },
+  {
+   "value": "EMEA-Helpdesk",
+   "type": "other",
+   "note": "custom AD group"
+  },
+  {
+   "value": "GG-Laptops-AlwaysOnVPN",
+   "type": "other",
+   "note": "custom AD group"
+  },
+  {
+   "value": "NWT-Workstation-Baseline",
+   "type": "other",
+   "note": "GPO / WSUS group name"
+  },
+  {
+   "value": "NWT-BitLocker-Laptops",
+   "type": "other",
+   "note": "GPO / WSUS group name"
+  },
+  {
+   "value": "NWT-Server-Hardening",
+   "type": "other",
+   "note": "GPO / WSUS group name"
+  },
+  {
+   "value": "NWT-Drive-Mappings-Finance",
+   "type": "other",
+   "note": "GPO / WSUS group name"
+  },
+  {
+   "value": "NWT-User-Baseline",
+   "type": "other",
+   "note": "GPO / WSUS group name"
+  },
+  {
+   "value": "NWT-Pilot-Ring1",
+   "type": "other",
+   "note": "GPO / WSUS group name"
+  },
+  {
+   "value": "GP-NWT-VPN",
+   "type": "other",
+   "note": "VPN tunnel-group / VTP domain name"
+  },
+  {
+   "value": "NWT-VPN",
+   "type": "other",
+   "note": "VPN tunnel-group / VTP domain name"
+  },
+  {
+   "value": "NWT-SEA-VPN",
+   "type": "other",
+   "note": "VPN tunnel-group / VTP domain name"
+  },
+  {
+   "value": "NWT-SEA",
+   "type": "other",
+   "note": "VPN tunnel-group / VTP domain name"
+  },
+  {
+   "value": "FINPROD",
+   "type": "other",
+   "note": "SQL instance name"
+  },
+  {
+   "value": "2620:1ec:4e57",
+   "type": "ipv6",
+   "note": "org /48 prefix (substring of all global v6 addrs)"
+  },
+  {
+   "value": "2620:1ec:4e57:20::10",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:40:3ea9:f4ff:fe1b:7e22",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:40:9d3c:1a7e:22b4:5f61",
+   "type": "ipv6"
+  },
+  {
+   "value": "fe80::3ea9:f4ff:fe1b:7e22",
+   "type": "ipv6"
+  },
+  {
+   "value": "fe80::72db:98ff:fea2:1c40",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:20::42",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:20::60",
+   "type": "ipv6"
+  },
+  {
+   "value": "fe80::d0f1:2a3b:9c4e:71a5",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:20::31",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:20::2",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:40::1",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:20::53",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:50::20",
+   "type": "ipv6"
+  },
+  {
+   "value": "2620:1ec:4e57:20::/64",
+   "type": "ipv6"
+  },
+  {
+   "value": "fe80::250:56ff:fe12:3456",
+   "type": "ipv6"
+  },
+  {
+   "value": "fe80::215:5dff:fe0a:1337",
+   "type": "ipv6"
+  },
+  {
+   "value": "2a02:c7c:5a1e:900:8d1:2b3:4c5:6d7",
+   "type": "ipv6",
+   "note": "external client"
+  },
+  {
+   "value": "2a01:4f8:c010:8a3::25",
+   "type": "ipv6",
+   "note": "partner MX"
+  },
+  {
+   "value": "3C-A9-F4-1B-7E-22",
+   "type": "mac"
+  },
+  {
+   "value": "3CA9F41B7E22",
+   "type": "mac"
+  },
+  {
+   "value": "3ca9.f41b.7e22",
+   "type": "mac"
+  },
+  {
+   "value": "3c:a9:f4:1b:7e:22",
+   "type": "mac"
+  },
+  {
+   "value": "8C-04-BA-6D-21-F3",
+   "type": "mac"
+  },
+  {
+   "value": "3C-A9-F4-1B-7E-26",
+   "type": "mac"
+  },
+  {
+   "value": "00 50 56 a1 2b 77",
+   "type": "mac"
+  },
+  {
+   "value": "0050.56a1.2b77",
+   "type": "mac"
+  },
+  {
+   "value": "70-db-98-a2-1c-40",
+   "type": "mac"
+  },
+  {
+   "value": "70db.98a2.1c40",
+   "type": "mac"
+  },
+  {
+   "value": "70db98a21c40",
+   "type": "mac"
+  },
+  {
+   "value": "00-23-e9-4f-1a-90",
+   "type": "mac"
+  },
+  {
+   "value": "00-50-56-a1-3c-19",
+   "type": "mac"
+  },
+  {
+   "value": "0050.56a1.3c19",
+   "type": "mac"
+  },
+  {
+   "value": "00-15-5d-0a-14-02",
+   "type": "mac"
+  },
+  {
+   "value": "0015.5d0a.1402",
+   "type": "mac"
+  },
+  {
+   "value": "D481D73E9011",
+   "type": "mac"
+  },
+  {
+   "value": "d481.d73e.9011",
+   "type": "mac"
+  },
+  {
+   "value": "D4:81:D7:3E:90:11",
+   "type": "mac"
+  },
+  {
+   "value": "001BA9447210",
+   "type": "mac"
+  },
+  {
+   "value": "001b.a944.7210",
+   "type": "mac"
+  },
+  {
+   "value": "6C4B90D25E01",
+   "type": "mac"
+  },
+  {
+   "value": "6c:4b:90:d2:5e:01",
+   "type": "mac"
+  },
+  {
+   "value": "6c4b.90d2.5e01",
+   "type": "mac"
+  },
+  {
+   "value": "2C3124A1B0C7",
+   "type": "mac"
+  },
+  {
+   "value": "2c31.24a1.b0c7",
+   "type": "mac"
+  },
+  {
+   "value": "5c83.8f11.2a07",
+   "type": "mac"
+  },
+  {
+   "value": "0050.5612.3456",
+   "type": "mac"
+  },
+  {
+   "value": "00-50-56-12-34-56",
+   "type": "mac"
+  },
+  {
+   "value": "0050.569b.4e02",
+   "type": "mac"
+  },
+  {
+   "value": "0050.56a1.0b7c",
+   "type": "mac"
+  },
+  {
+   "value": "52:54:00:8e:21:4f",
+   "type": "mac"
+  },
+  {
+   "value": "52 54 00 8e 21 4f",
+   "type": "mac"
+  },
+  {
+   "value": "52:54:00:1c:7a:3e",
+   "type": "mac"
+  },
+  {
+   "value": "52 54 00 1c 7a 3e",
+   "type": "mac"
+  },
+  {
+   "value": "00:15:5d:0a:13:37",
+   "type": "mac"
+  },
+  {
+   "value": "00-15-5D-0A-13-37",
+   "type": "mac"
+  },
+  {
+   "value": "f8:e4:3b:55:0a:9c",
+   "type": "mac"
+  },
+  {
+   "value": "a4:83:e7:2b:6c:10",
+   "type": "mac"
+  },
+  {
+   "value": "06:3b:9f:1c:7a:e5",
+   "type": "mac"
+  },
+  {
+   "value": "00:15:5d:0a:13:40",
+   "type": "mac"
+  },
+  {
+   "value": "fe1b:7e22",
+   "type": "mac",
+   "note": "EUI-64 tail of MAC 3C-A9-F4-1B-7E-22 inside IPv6 addresses"
+  },
+  {
+   "value": "10.20.64.115",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.10.31",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.6.15",
+   "type": "ipv4"
+  },
+  {
+   "value": "45.155.205.233",
+   "type": "ipv4",
+   "note": "external scanner/attacker"
+  },
+  {
+   "value": "193.32.162.71",
+   "type": "ipv4",
+   "note": "external scanner/attacker"
+  },
+  {
+   "value": "10.20.64.88",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.40.64.23",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.64.131",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.10.42",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.1.30",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.1.10",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.1.11",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.7.25",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.8.40",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.5.21",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.64.1",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.10.1",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.10.0",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.10.255",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.40.0.0",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.30.2.0",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.10.2",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.10.5",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.10.60",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.5.22",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.7.30",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.40.1.10",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.40.1.25",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.9.53",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.9.5",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.64.20",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.64.140",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.64.97",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.30.2.77",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.64.255",
+   "type": "ipv4"
+  },
+  {
+   "value": "172.16.50.20",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.40.64.31",
+   "type": "ipv4"
+  },
+  {
+   "value": "64.187.212.34",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.64.142",
+   "type": "ipv4"
+  },
+  {
+   "value": "119.0.0.0",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.64.150",
+   "type": "ipv4"
+  },
+  {
+   "value": "185.220.101.47",
+   "type": "ipv4",
+   "note": "external scanner/attacker"
+  },
+  {
+   "value": "10.20.9.40",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.6.50",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.0.1",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.30.2.13",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.0.12",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.30.2.10",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.30.2.11",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.244.3.17",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.0.0",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.30.0.0",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.9.60",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.30.2.40",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.30.2.1",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.30.2.44",
+   "type": "ipv4"
+  },
+  {
+   "value": "172.16.50.53",
+   "type": "ipv4"
+  },
+  {
+   "value": "86.151.22.9",
+   "type": "ipv4"
+  },
+  {
+   "value": "64.187.212.35",
+   "type": "ipv4"
+  },
+  {
+   "value": "91.198.42.17",
+   "type": "ipv4",
+   "note": "partner MX"
+  },
+  {
+   "value": "10.20.0.2",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.1.2",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.5.1",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.9.0",
+   "type": "ipv4"
+  },
+  {
+   "value": "0.0.0.255",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.1.50",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.1.43",
+   "type": "ipv4"
+  },
+  {
+   "value": "172.16.50.10",
+   "type": "ipv4"
+  },
+  {
+   "value": "64.187.212.36",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.255.8.21",
+   "type": "ipv4"
+  },
+  {
+   "value": "73.221.48.190",
+   "type": "ipv4"
+  },
+  {
+   "value": "81.133.40.18",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.10.100",
+   "type": "ipv4"
+  },
+  {
+   "value": "98.42.117.203",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.0.1.23",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.0.2.117",
+   "type": "ipv4"
+  },
+  {
+   "value": "54.213.77.140",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.9.70",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.20.9.8",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.88.0.12",
+   "type": "ipv4"
+  },
+  {
+   "value": "10.88.0.20",
+   "type": "ipv4"
+  },
+  {
+   "value": "115.64.20.10.in-addr.arpa",
+   "type": "ipv4",
+   "note": "reverse-DNS form of internal IP"
+  },
+  {
+   "value": "13.2.30.10.in-addr.arpa",
+   "type": "ipv4",
+   "note": "reverse-DNS form of internal IP"
+  },
+  {
+   "value": "(3)115(2)64(2)20(2)10(7)in-addr(4)arpa(0)",
+   "type": "ipv4",
+   "note": "reverse PTR in DNS debug wire format (10.20.64.115)"
+  },
+  {
+   "value": "10.20.0.0/16",
+   "type": "ipv4",
+   "note": "internal CIDR"
+  },
+  {
+   "value": "10.30.0.0/16",
+   "type": "ipv4",
+   "note": "internal CIDR"
+  },
+  {
+   "value": "10.30.2.0/24",
+   "type": "ipv4",
+   "note": "internal CIDR"
+  },
+  {
+   "value": "ec2-54-213-77-140",
+   "type": "ipv4",
+   "note": "public IP embedded in AWS hostname"
+  },
+  {
+   "value": "nwt-dc01",
+   "type": "hostname",
+   "note": "case variant of NWT-DC01"
+  },
+  {
+   "value": "nwt-dc02",
+   "type": "hostname",
+   "note": "case variant of NWT-DC02"
+  },
+  {
+   "value": "nwt-sql-p01",
+   "type": "hostname",
+   "note": "case variant of NWT-SQL-P01"
+  },
+  {
+   "value": "nwt-sql-p02",
+   "type": "hostname",
+   "note": "case variant of NWT-SQL-P02"
+  },
+  {
+   "value": "nwt-web01",
+   "type": "hostname",
+   "note": "case variant of NWT-WEB01"
+  },
+  {
+   "value": "nwt-app02",
+   "type": "hostname",
+   "note": "case variant of NWT-APP02"
+  },
+  {
+   "value": "nwt-sccm01",
+   "type": "hostname",
+   "note": "case variant of NWT-SCCM01"
+  },
+  {
+   "value": "JUPITER",
+   "type": "hostname",
+   "note": "case variant of jupiter"
+  },
+  {
+   "value": "nwt-dc01.nwtraders.local",
+   "type": "fqdn",
+   "note": "case variant of NWT-DC01.nwtraders.local"
+  },
+  {
+   "value": "nwt-dc02.nwtraders.local",
+   "type": "fqdn",
+   "note": "case variant of NWT-DC02.nwtraders.local"
+  },
+  {
+   "value": "nwt-sql-p01.nwtraders.local",
+   "type": "fqdn",
+   "note": "case variant of NWT-SQL-P01.nwtraders.local"
+  },
+  {
+   "value": "NWT-SQL-P02.nwtraders.local",
+   "type": "fqdn",
+   "note": "case variant of nwt-sql-p02.nwtraders.local"
+  },
+  {
+   "value": "nwt-web01.nwtraders.local",
+   "type": "fqdn",
+   "note": "case variant of NWT-WEB01.nwtraders.local"
+  },
+  {
+   "value": "nwt-app02.nwtraders.local",
+   "type": "fqdn",
+   "note": "case variant of NWT-APP02.nwtraders.local"
+  },
+  {
+   "value": "nwt-sccm01.nwtraders.local",
+   "type": "fqdn",
+   "note": "case variant of NWT-SCCM01.nwtraders.local"
+  },
+  {
+   "value": "JUPITER.nwtraders.local",
+   "type": "fqdn",
+   "note": "case variant of jupiter.nwtraders.local"
+  },
+  {
+   "value": "NWTRADERS.LOCAL",
+   "type": "domain",
+   "note": "case variant of nwtraders.local"
+  },
+  {
+   "value": "EMEA.NWTRADERS.LOCAL",
+   "type": "domain",
+   "note": "case variant of emea.nwtraders.local"
+  },
+  {
+   "value": "nwtraders",
+   "type": "netbios_domain",
+   "note": "case variant of NWTRADERS"
+  },
+  {
+   "value": "nwtemea",
+   "type": "netbios_domain",
+   "note": "case variant of NWTEMEA"
+  },
+  {
+   "value": "JSMITH",
+   "type": "username",
+   "note": "case variant of jsmith"
+  },
+  {
+   "value": "PKUMAR",
+   "type": "username",
+   "note": "case variant of pkumar"
+  },
+  {
+   "value": "KFISCHER",
+   "type": "username",
+   "note": "case variant of kfischer"
+  },
+  {
+   "value": "northwind",
+   "type": "org_name",
+   "note": "case variant of Northwind"
+  },
+  {
+   "value": "FinProd",
+   "type": "other",
+   "note": "case variant of FINPROD"
+  }
+ ],
+ "must_preserve": [
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "Microsoft-Windows-Security-Auditing"
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "0xC000006D"
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "0xC000006A"
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "0xC0000064"
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "C:\\Windows\\System32\\services.exe"
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "This event is generated when a logon session is created. It is generated on the computer that was accessed."
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "{00000000-0000-0000-0000-000000000000}"
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "User Account Management"
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "S-1-5-18"
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "NT AUTHORITY"
+  },
+  {
+   "file": "01_NWT-DC01_wevtutil_security.txt",
+   "text": "Event ID: 4740"
+  },
+  {
+   "file": "02_DCs_GetWinEvent_FormatList_utf16.txt",
+   "text": "System.Diagnostics.Eventing.Reader.EventBookmark"
+  },
+  {
+   "file": "02_DCs_GetWinEvent_FormatList_utf16.txt",
+   "text": "54849625-5478-4994-a5ba-3e3b0328c30d"
+  },
+  {
+   "file": "02_DCs_GetWinEvent_FormatList_utf16.txt",
+   "text": "-9214364837600034816"
+  },
+  {
+   "file": "02_DCs_GetWinEvent_FormatList_utf16.txt",
+   "text": "Kerberos Service Ticket Operations"
+  },
+  {
+   "file": "02_DCs_GetWinEvent_FormatList_utf16.txt",
+   "text": "Ticket options, encryption types, and failure codes are defined in RFC 4120."
+  },
+  {
+   "file": "02_DCs_GetWinEvent_FormatList_utf16.txt",
+   "text": "{6f1e2d3c-4b5a-6978-8a9b-0c1d2e3f4a5b}"
+  },
+  {
+   "file": "02_DCs_GetWinEvent_FormatList_utf16.txt",
+   "text": "2.5.5.12"
+  },
+  {
+   "file": "02_DCs_GetWinEvent_FormatList_utf16.txt",
+   "text": "Active Directory Domain Services"
+  },
+  {
+   "file": "02_DCs_GetWinEvent_FormatList_utf16.txt",
+   "text": "-9218868437227405312"
+  },
+  {
+   "file": "03_NWT-WEB01_Security_EventViewer_SaveAs.csv",
+   "text": "Keywords,Date and Time,Source,Event ID,Task Category"
+  },
+  {
+   "file": "03_NWT-WEB01_Security_EventViewer_SaveAs.csv",
+   "text": "SeDelegateSessionUserImpersonatePrivilege"
+  },
+  {
+   "file": "03_NWT-WEB01_Security_EventViewer_SaveAs.csv",
+   "text": "Special privileges assigned to new logon."
+  },
+  {
+   "file": "03_NWT-WEB01_Security_EventViewer_SaveAs.csv",
+   "text": "0xC0000072"
+  },
+  {
+   "file": "03_NWT-WEB01_Security_EventViewer_SaveAs.csv",
+   "text": "Account currently disabled."
+  },
+  {
+   "file": "03_NWT-WEB01_Security_EventViewer_SaveAs.csv",
+   "text": "Audit Failure,11/18/2026 7:41:12 AM,Microsoft-Windows-Security-Auditing,4625,Logon"
+  },
+  {
+   "file": "04_DCs_Security_export.xml",
+   "text": "http://schemas.microsoft.com/win/2004/08/events/event"
+  },
+  {
+   "file": "04_DCs_Security_export.xml",
+   "text": "<Keywords>0x8020000000000000</Keywords>"
+  },
+  {
+   "file": "04_DCs_Security_export.xml",
+   "text": "<Data Name='DSType'>%%14676</Data>"
+  },
+  {
+   "file": "04_DCs_Security_export.xml",
+   "text": "2026-11-18T16:14:55.1934207Z"
+  },
+  {
+   "file": "04_DCs_Security_export.xml",
+   "text": "<Data Name='TicketEncryptionType'>0x12</Data>"
+  },
+  {
+   "file": "04_DCs_Security_export.xml",
+   "text": "<Data Name='ImpersonationLevel'>%%1833</Data>"
+  },
+  {
+   "file": "04_DCs_Security_export.xml",
+   "text": "{a7c3e1f9-2b4d-4f68-9e0a-1c3b5d7f9e2a}"
+  },
+  {
+   "file": "05_Get-ADUser_Get-ADComputer.txt",
+   "text": "9223372036854775807"
+  },
+  {
+   "file": "05_Get-ADUser_Get-ADComputer.txt",
+   "text": "134079673042218841"
+  },
+  {
+   "file": "05_Get-ADUser_Get-ADComputer.txt",
+   "text": "Search-ADAccount -LockedOut"
+  },
+  {
+   "file": "05_Get-ADUser_Get-ADComputer.txt",
+   "text": "Windows Server 2019 Datacen..."
+  },
+  {
+   "file": "05_Get-ADUser_Get-ADComputer.txt",
+   "text": "PrincipalsAllowedToRetrieveManagedPassword"
+  },
+  {
+   "file": "05_Get-ADUser_Get-ADComputer.txt",
+   "text": "Finance - Accounts Payable"
+  },
+  {
+   "file": "06_ADUsers_Export-Csv_ANSI.csv",
+   "text": "\"SamAccountName\",\"DisplayName\",\"GivenName\",\"Surname\",\"EmailAddress\""
+  },
+  {
+   "file": "06_ADUsers_Export-Csv_ANSI.csv",
+   "text": "\"Human Resources\",\"HR Business Partner\""
+  },
+  {
+   "file": "06_ADUsers_Export-Csv_ANSI.csv",
+   "text": "\"Service account - Veeam/NAS\""
+  },
+  {
+   "file": "06_ADUsers_Export-Csv_ANSI.csv",
+   "text": "\"Logistics Coordinator\""
+  },
+  {
+   "file": "07_dsquery_dsget_ldifde.txt",
+   "text": "CN=Person,CN=Schema,CN=Configuration"
+  },
+  {
+   "file": "07_dsquery_dsget_ldifde.txt",
+   "text": "Logging in as current user using SSPI"
+  },
+  {
+   "file": "07_dsquery_dsget_ldifde.txt",
+   "text": "The command has completed successfully"
+  },
+  {
+   "file": "07_dsquery_dsget_ldifde.txt",
+   "text": "changetype: add"
+  },
+  {
+   "file": "07_dsquery_dsget_ldifde.txt",
+   "text": "CN=NTDS Settings"
+  },
+  {
+   "file": "07_dsquery_dsget_ldifde.txt",
+   "text": "dsget succeeded"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "Intel(R) Wi-Fi 6E AX211 160MHz"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "255.255.252.0"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "Node Type . . . . . . . . . . . . : Hybrid"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "10.0.22631 N/A Build 22631"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "(UTC-08:00) Pacific Time (US & Canada)"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "Group Policy Result tool v2.0"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "Authentication authority asserted identity"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "KB5046633"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "NT AUTHORITY\\Authenticated Users"
+  },
+  {
+   "file": "08_LT-JSMITH-01_ipconfig_systeminfo_gpresult.txt",
+   "text": "Default Domain Policy"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "Software Loopback Interface 1"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "255.255.255.255  255.255.255.255         On-link         127.0.0.1    331"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "0.0.0.0:445            0.0.0.0:0              LISTENING       4"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "224.0.0.22            01-00-5e-00-00-16     static"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "239.255.255.250       01-00-5e-7f-ff-fa     static"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "ff00::/8"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "[::]:135               [::]:0                 LISTENING       952"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "SRV service location:"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "Non-existent domain"
+  },
+  {
+   "file": "09_NWT-APP02_route_arp_netstat_nslookup.txt",
+   "text": "127.0.0.1:52101"
+  },
+  {
+   "file": "10_WS-PKUMAR-07_nltest_klist_setspn.txt",
+   "text": "AES-256-CTS-HMAC-SHA1-96"
+  },
+  {
+   "file": "10_WS-PKUMAR-07_nltest_klist_setspn.txt",
+   "text": "RSADSI RC4-HMAC(NT)"
+  },
+  {
+   "file": "10_WS-PKUMAR-07_nltest_klist_setspn.txt",
+   "text": "Ticket Flags 0x40e10000 -> forwardable renewable initial pre_authent name_canonicalize"
+  },
+  {
+   "file": "10_WS-PKUMAR-07_nltest_klist_setspn.txt",
+   "text": "Trusted DC Connection Status Status = 0 0x0 NERR_Success"
+  },
+  {
+   "file": "10_WS-PKUMAR-07_nltest_klist_setspn.txt",
+   "text": "PDC GC DS LDAP KDC TIMESERV GTIMESERV WRITABLE"
+  },
+  {
+   "file": "10_WS-PKUMAR-07_nltest_klist_setspn.txt",
+   "text": "found 1 group of duplicate SPNs."
+  },
+  {
+   "file": "10_WS-PKUMAR-07_nltest_klist_setspn.txt",
+   "text": "Current LogonId is 0:0x3c8a1f2"
+  },
+  {
+   "file": "10_WS-PKUMAR-07_nltest_klist_setspn.txt",
+   "text": "No such SPN found."
+  },
+  {
+   "file": "11_WS-PKUMAR-07_whoami_all_netuse_utf16.txt",
+   "text": "S-1-5-32-544"
+  },
+  {
+   "file": "11_WS-PKUMAR-07_whoami_all_netuse_utf16.txt",
+   "text": "S-1-16-12288"
+  },
+  {
+   "file": "11_WS-PKUMAR-07_whoami_all_netuse_utf16.txt",
+   "text": "Mandatory Label\\High Mandatory Level"
+  },
+  {
+   "file": "11_WS-PKUMAR-07_whoami_all_netuse_utf16.txt",
+   "text": "Kerberos support for Dynamic Access Control on this device has been disabled."
+  },
+  {
+   "file": "11_WS-PKUMAR-07_whoami_all_netuse_utf16.txt",
+   "text": "SeImpersonatePrivilege"
+  },
+  {
+   "file": "11_WS-PKUMAR-07_whoami_all_netuse_utf16.txt",
+   "text": "Microsoft Windows Network"
+  },
+  {
+   "file": "11_WS-PKUMAR-07_whoami_all_netuse_utf16.txt",
+   "text": "000 (System Default)"
+  },
+  {
+   "file": "11_WS-PKUMAR-07_whoami_all_netuse_utf16.txt",
+   "text": "S-1-18-1"
+  },
+  {
+   "file": "11_WS-PKUMAR-07_whoami_all_netuse_utf16.txt",
+   "text": "New connections will be remembered."
+  },
+  {
+   "file": "12_NWT-DC01_dns_debug.log",
+   "text": "Message logging key (for packets - other items use a subset of these fields):"
+  },
+  {
+   "file": "12_NWT-DC01_dns_debug.log",
+   "text": "(3)www(9)microsoft(3)com(0)"
+  },
+  {
+   "file": "12_NWT-DC01_dns_debug.log",
+   "text": "(5)ctldl(13)windowsupdate(3)com(0)"
+  },
+  {
+   "file": "12_NWT-DC01_dns_debug.log",
+   "text": "Recursion Available"
+  },
+  {
+   "file": "12_NWT-DC01_dns_debug.log",
+   "text": "NXDOMAIN"
+  },
+  {
+   "file": "12_NWT-DC01_dns_debug.log",
+   "text": "000001D2E5F4A0B0"
+  },
+  {
+   "file": "12_NWT-DC01_dns_debug.log",
+   "text": "(4)blob(4)core(7)windows(3)net(0)"
+  },
+  {
+   "file": "12_NWT-DC01_dns_debug.log",
+   "text": "The DNS server has finished the background loading of zones."
+  },
+  {
+   "file": "13_NWT-DC01_DhcpSrvLog-Wed.log",
+   "text": "Microsoft DHCP Service Activity Log"
+  },
+  {
+   "file": "13_NWT-DC01_DhcpSrvLog-Wed.log",
+   "text": "0x4D53465420352E30,MSFT 5.0"
+  },
+  {
+   "file": "13_NWT-DC01_DhcpSrvLog-Wed.log",
+   "text": "QResult: 0: NoQuarantine, 1:Quarantine, 2:Drop Packet"
+  },
+  {
+   "file": "13_NWT-DC01_DhcpSrvLog-Wed.log",
+   "text": "Codes above 50 are used for Rogue Server Detection information."
+  },
+  {
+   "file": "13_NWT-DC01_DhcpSrvLog-Wed.log",
+   "text": "BAD_ADDRESS"
+  },
+  {
+   "file": "13_NWT-DC01_DhcpSrvLog-Wed.log",
+   "text": "00,11/18/26,00:00:03,Started,,,,,0,6,,,,,,,,,0"
+  },
+  {
+   "file": "14_NWT-DC01_pfirewall_netlogon.log",
+   "text": "#Fields: date time action protocol src-ip dst-ip src-port dst-port size tcpflags tcpsyn tcpack tcpwin icmptype icmpcode info path pid"
+  },
+  {
+   "file": "14_NWT-DC01_pfirewall_netlogon.log",
+   "text": "#Software: Microsoft Windows Firewall"
+  },
+  {
+   "file": "14_NWT-DC01_pfirewall_netlogon.log",
+   "text": "ff02::1:2 546 547"
+  },
+  {
+   "file": "14_NWT-DC01_pfirewall_netlogon.log",
+   "text": "127.0.0.1 127.0.0.1 52290 389"
+  },
+  {
+   "file": "14_NWT-DC01_pfirewall_netlogon.log",
+   "text": "Returns 0xC0000234"
+  },
+  {
+   "file": "14_NWT-DC01_pfirewall_netlogon.log",
+   "text": "(0x612fffff)"
+  },
+  {
+   "file": "14_NWT-DC01_pfirewall_netlogon.log",
+   "text": "C:\\Windows\\debug\\netlogon.log"
+  },
+  {
+   "file": "14_NWT-DC01_pfirewall_netlogon.log",
+   "text": "Package:Kerberos Returns 0x0"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "Loaded Servicing Stack v10.0.22621.4455"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "0x800f0954 - CBS_E_INVALID_WINDOWS_UPDATE_COUNT"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "{3DA21691-E39D-4DA6-8A4B-B43877BCB1B7}"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "http://download.windowsupdate.com/c/msdownload/update/software/secu/2026/11/"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "HKLM\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "component=\"LocationServices\""
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "file=\"lsad.cpp:1137\""
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "HRESULT = \"0x80072ee2\";"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "hr=0x8024401F"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "WUA=1306.2410.18012.0"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "instance of CCM_CcmHttp_Status"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "Error 0x80070035 (The network path was not found.)"
+  },
+  {
+   "file": "15_LT-JSMITH-01_CBS_WindowsUpdate_CCM.log",
+   "text": "855E8A7C-ECB4-4CA3-B045-1DFA50104289"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "Windows PowerShell transcript start"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "PSVersion: 5.1.17763.6414"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "CLRVersion: 4.0.30319.42000"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "SerializationVersion: 1.1.0.1"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "WinRMOperationTimeout,PSSessionStateBroken"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "System.Management.Automation.PSCredential"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "PathNotFound,Microsoft.PowerShell.Commands.GetItemCommand"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "HKLM:\\SOFTWARE\\Microsoft\\Microsoft SQL Server\\Instance Names\\SQL"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "PingReplyDetails (RTT) : 0 ms"
+  },
+  {
+   "file": "16_NWT-APP02_PowerShell_transcript.txt",
+   "text": "Microsoft Windows NT 10.0.17763.0"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "#Software: Microsoft Internet Information Services 10.0"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "Chrome/119.0.6045.105+Safari/537.36"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "Edg/119.0.2151.72"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "/aspnet_client/system_web/4_0_30319/"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "Timer_ConnectionIdle"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "AppOffline"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "#Software: Microsoft HTTP API 2.0"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "WindowsPowerShell/5.1.17763.6414"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "ExchangeServicesClient/15.20.7409.024"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": " 401 2 5 3"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "rpt=AP-Aging&fy=2026"
+  },
+  {
+   "file": "17_NWT-WEB01_IIS_u_ex261118_httperr.log",
+   "text": "127.0.0.1 52330 127.0.0.1 47001"
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "Microsoft SQL Server 2019 (RTM-CU28) (KB5039747) - 15.0.4385.2 (X64)"
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "Error: 18456, Severity: 14, State: 11."
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "Dedicated admin connection support was established for listening locally on port 49712."
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "Server is listening on [ 'any' <ipv4> 1433]."
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "Windows return code: 0x2098, state: 15."
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "SSPI handshake failed with error code 0x8009030c, state 14"
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "Server is listening on [ 127.0.0.1 <ipv4> 49712]."
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "first LSN: 912044:1882:37"
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "Using 'dbghelp.dll' version '4.0.5'"
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "Login failed for user 'sa'."
+  },
+  {
+   "file": "18_NWT-SQL-P01_FINPROD_ERRORLOG_utf16.txt",
+   "text": "System Model: 'VMware7,1'"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "System.Data.SqlClient.SqlException (0x80131904)"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "System.ComponentModel.Win32Exception (0x80004005)"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "Error Number:258,State:0,Class:20"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "publicKeyToken=\"30ad4fe6b2a6aeed\""
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "oldVersion=\"0.0.0.0-13.0.0.0\""
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "ClientConnectionId:00000000-0000-0000-0000-000000000000"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "TraceId=00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "System.Net.Sockets.SocketException (10061)"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "https://login.microsoftonline.com/"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "urn:schemas-microsoft-com:asm.v1"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "at System.Data.SqlClient.SqlConnection.Open()"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "Microsoft.Hosting.Lifetime"
+  },
+  {
+   "file": "19_NWT-APP02_FinPortal_dotnet.log",
+   "text": "targetFramework=\"4.8\""
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": ":: Spring Boot ::                (v3.1.5)"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "java.net.UnknownHostException"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "com.microsoft.sqlserver.jdbc.SQLServerException"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "mssql-jdbc-12.4.2.jre11.jar"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801)"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "org.springframework.web.client.ResourceAccessException"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "spring-web-6.0.13.jar!/:6.0.13"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "io.netty.channel.AbstractChannel$AnnotatedConnectException"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "javax.naming.CommunicationException"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "java.net.SocketTimeoutException: connect timed out"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "X-Correlation-ID: 0b8f6a2e-4c1d-4e9f-a7b3-5d2c8e1f0a94"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "using Java 17.0.9 with PID 1"
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "HikariPool-1 - Exception during pool initialization."
+  },
+  {
+   "file": "20_k8s_fin-batch_java.log",
+   "text": "... 42 common frames omitted"
+  },
+  {
+   "file": "21_jupiter_auth.log",
+   "text": "pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)"
+  },
+  {
+   "file": "21_jupiter_auth.log",
+   "text": "Bye Bye [preauth]"
+  },
+  {
+   "file": "21_jupiter_auth.log",
+   "text": "error: kex_exchange_identification: Connection closed by remote host"
+  },
+  {
+   "file": "21_jupiter_auth.log",
+   "text": "COMMAND=/bin/cat /etc/shadow"
+  },
+  {
+   "file": "21_jupiter_auth.log",
+   "text": "pam_unix(passwd:chauthtok)"
+  },
+  {
+   "file": "21_jupiter_auth.log",
+   "text": "shell=/bin/bash"
+  },
+  {
+   "file": "21_jupiter_auth.log",
+   "text": "Invalid user oracle from"
+  },
+  {
+   "file": "22_syslog_collector_mixed.log",
+   "text": "%LINK-3-UPDOWN: Interface GigabitEthernet1/0/24, changed state to down"
+  },
+  {
+   "file": "22_syslog_collector_mixed.log",
+   "text": "swVersion=\"8.2112.0\""
+  },
+  {
+   "file": "22_syslog_collector_mixed.log",
+   "text": "https://www.rsyslog.com"
+  },
+  {
+   "file": "22_syslog_collector_mixed.log",
+   "text": "[meta sequenceId=\"88213\"]"
+  },
+  {
+   "file": "22_syslog_collector_mixed.log",
+   "text": "SSL: error:0A00010B:SSL routines::wrong version number"
+  },
+  {
+   "file": "22_syslog_collector_mixed.log",
+   "text": "\"caller\":\"etcdserver/util.go:170\""
+  },
+  {
+   "file": "22_syslog_collector_mixed.log",
+   "text": "%PM-4-ERR_DISABLE: psecure-violation error detected on Gi1/0/17"
+  },
+  {
+   "file": "22_syslog_collector_mixed.log",
+   "text": "sub=Vimsvc.TaskManager"
+  },
+  {
+   "file": "22_syslog_collector_mixed.log",
+   "text": "rsyslogd was HUPed"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "v1.28.4"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "containerd://1.6.24"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "5.15.0-89-generic"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "node.kubernetes.io/not-ready:NoExecute op=Exists for 300s"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "/var/run/secrets/kubernetes.io/serviceaccount"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "QoS Class:                   Burstable"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "Error: ImagePullBackOff"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "127.0.0.11:53"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "podUID=\"6b1e7c3a-8f2d-4a9b-b5c0-3d7e1f9a2c48\""
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "remote_image.go:180"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "server_version=15.5"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "kube-root-ca.crt"
+  },
+  {
+   "file": "23_k8s_kubectl_journalctl_docker.txt",
+   "text": "TOS=0x00 PREC=0x00 TTL=62"
+  },
+  {
+   "file": "24_ns-int01_dhcpd_named_query.log",
+   "text": "balancing pool 55d3e0a2f0b0"
+  },
+  {
+   "file": "24_ns-int01_dhcpd_named_query.log",
+   "text": "max-own (+/-)20"
+  },
+  {
+   "file": "24_ns-int01_dhcpd_named_query.log",
+   "text": "query: time.windows.com IN A +"
+  },
+  {
+   "file": "24_ns-int01_dhcpd_named_query.log",
+   "text": "login.microsoftonline.com IN A +E(0)"
+  },
+  {
+   "file": "24_ns-int01_dhcpd_named_query.log",
+   "text": "query: localhost IN A + (127.0.0.1)"
+  },
+  {
+   "file": "24_ns-int01_dhcpd_named_query.log",
+   "text": "client @0x7f3a1c0b2d68"
+  },
+  {
+   "file": "24_ns-int01_dhcpd_named_query.log",
+   "text": "DHCPDISCOVER from"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "Chrome/119.0.6045.105 Safari/537.36"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "python-requests/2.31.0"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "(111: Connection refused) while connecting to upstream"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "AH01617"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "Apache/2.4.52 (Ubuntu) OpenSSL/3.0.2 configured -- resuming normal operations"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "SVN/1.14.2 (x86_64-pc-linux-gnu) serf/1.3.9"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "/var/cache/nginx/proxy_temp/3/12/0000004123"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "\"GET /nginx_status HTTP/1.1\" 200 97"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "Version/17.1 Safari/605.1.15"
+  },
+  {
+   "file": "25_saturn_nginx_apache.log",
+   "text": "server: _,"
+  },
+  {
+   "file": "26_mail-relay01_maillog",
+   "text": "SASL LOGIN authentication failed: UGFzc3dvcmQ6"
+  },
+  {
+   "file": "26_mail-relay01_maillog",
+   "text": "TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)"
+  },
+  {
+   "file": "26_mail-relay01_maillog",
+   "text": "dsn=2.0.0, status=sent"
+  },
+  {
+   "file": "26_mail-relay01_maillog",
+   "text": "554 5.7.1"
+  },
+  {
+   "file": "26_mail-relay01_maillog",
+   "text": "Relay access denied"
+  },
+  {
+   "file": "26_mail-relay01_maillog",
+   "text": "ehlo=2 starttls=1 mail=1 rcpt=2 data=1 quit=1 commands=8"
+  },
+  {
+   "file": "26_mail-relay01_maillog",
+   "text": "status=sent (delivered to mailbox)"
+  },
+  {
+   "file": "26_mail-relay01_maillog",
+   "text": "Network is unreachable"
+  },
+  {
+   "file": "26_mail-relay01_maillog",
+   "text": "451 4.7.500 Server busy. Please try again later"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "Building configuration..."
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "service timestamps log datetime msec localtime show-timezone"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "spanning-tree mode rapid-pvst"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "Cisco IOS Software [Cupertino], Catalyst L3 Switch Software (CAT9K_LITE_IOSXE), Version 17.9.4a, RELEASE SOFTWARE (fc3)"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "http://www.cisco.com/techsupport"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "Total Mac Addresses for this criterion: 12"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "Protocol  Address          Age (min)  Hardware Addr   Type   Interface"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "Cisco Adaptive Security Appliance Software Version 9.16(4)19"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "Total cdp entries displayed : 4"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "255.255.255.248"
+  },
+  {
+   "file": "27_CORE-SW01_show_run_cdp_mac_arp.txt",
+   "text": "platform punt-keepalive"
+  },
+  {
+   "file": "28_fw-edge-01_ASA_syslog.log",
+   "text": "%ASA-6-302013: Built inbound TCP connection"
+  },
+  {
+   "file": "28_fw-edge-01_ASA_syslog.log",
+   "text": "%ASA-4-733100: [ Scanning] drop rate-1 exceeded."
+  },
+  {
+   "file": "28_fw-edge-01_ASA_syslog.log",
+   "text": "[0x8a3c21f0, 0x0]"
+  },
+  {
+   "file": "28_fw-edge-01_ASA_syslog.log",
+   "text": "Session Type: AnyConnect-Parent, Duration: 0h:13m:30s"
+  },
+  {
+   "file": "28_fw-edge-01_ASA_syslog.log",
+   "text": "IPv6 address <::> assigned to session"
+  },
+  {
+   "file": "28_fw-edge-01_ASA_syslog.log",
+   "text": "%ASA-2-106001: Inbound TCP connection denied from"
+  },
+  {
+   "file": "28_fw-edge-01_ASA_syslog.log",
+   "text": "Reason: User Requested"
+  },
+  {
+   "file": "28_fw-edge-01_ASA_syslog.log",
+   "text": "Crypto map (outside_map)"
+  },
+  {
+   "file": "29_NWT-PA-DC01_traffic_export.csv",
+   "text": "\"Receive Time\",\"Serial #\",\"Type\",\"Threat/Content Type\""
+  },
+  {
+   "file": "29_NWT-PA-DC01_traffic_export.csv",
+   "text": "\"10.0.0.0-10.255.255.255\""
+  },
+  {
+   "file": "29_NWT-PA-DC01_traffic_export.csv",
+   "text": "\"ms-office365-base\""
+  },
+  {
+   "file": "29_NWT-PA-DC01_traffic_export.csv",
+   "text": "\"tcp-rst-from-client\""
+  },
+  {
+   "file": "29_NWT-PA-DC01_traffic_export.csv",
+   "text": "\"Log-Forwarding-SIEM\""
+  },
+  {
+   "file": "29_NWT-PA-DC01_traffic_export.csv",
+   "text": "\"computer-and-internet-info\""
+  },
+  {
+   "file": "29_NWT-PA-DC01_traffic_export.csv",
+   "text": "\"0x400019\""
+  },
+  {
+   "file": "29_NWT-PA-DC01_traffic_export.csv",
+   "text": "\"United States\""
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "logid=\"0000000013\" type=\"traffic\" subtype=\"forward\""
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "logdesc=\"FSSO logon authentication status\""
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "CEF:0|Microsoft|Azure ATP|2.0|"
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "CEF:0|Trend Micro|Apex One|14.0|700211|"
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "fileHash=3f786850e387550fdab836ed7e6dc881de23001b"
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "01070638:5:"
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "01010028:3: No members available for pool"
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "01260009:4: Connection error: ssl_passthru:5297: not SSL (40)"
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "app=\"HTTPS.BROWSER\""
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "cs3=0xC000006D"
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "142.250.180.14"
+  },
+  {
+   "file": "30_siem_fortigate_cef_f5.log",
+   "text": "TROJ_FRS.VSNTKP23"
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "04b07795-8ddb-461a-bbee-02f9e1bf7b46"
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "Microsoft.Storage/storageAccounts/listKeys/action"
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "https://management.core.windows.net/"
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "\"correlationId\": \"9d4e2f1a-6b3c-4a7d-8e0f-1c2b3a4d5e6f\""
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "\"eventTimestamp\": \"2026-11-18T16:58:12.4471234Z\""
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "\"localizedValue\": \"List Storage Account Keys\""
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "OK (HTTP Status Code: 200)"
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "Microsoft.Compute/virtualMachines/write"
+  },
+  {
+   "file": "31_azure_activity_log.json",
+   "text": "sv=2022-11-02&ss=b&srt=sco"
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "\"eventVersion\": \"1.08\""
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "\"eventSource\": \"s3.amazonaws.com\""
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "TLS_AES_128_GCM_SHA256"
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "\"type\": \"AWS::S3::Object\""
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "aws-cli/2.13.25 Python/3.11.5 Windows/10 exe/AMD64 prompt/off command/s3.cp"
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "https://console.aws.amazon.com/console/home?region=us-west-2"
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "\"eventID\": \"c3e5a7f9-1b2d-4e6f-8a0b-2c4d6e8f0a1b\""
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "\"awsRegion\": \"us-west-2\""
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "ami-0c55b159cbfafe1f0"
+  },
+  {
+   "file": "32_aws_cloudtrail.json",
+   "text": "\"i-0a7f3c9e2b18d4f65\""
+  },
+  {
+   "file": "33_elastic_ecs_events.ndjson",
+   "text": "\"provider_guid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\""
+  },
+  {
+   "file": "33_elastic_ecs_events.ndjson",
+   "text": "\"ecs\":{\"version\":\"8.0.0\"}"
+  },
+  {
+   "file": "33_elastic_ecs_events.ndjson",
+   "text": "\"type\":\"winlogbeat\",\"version\":\"8.11.1\""
+  },
+  {
+   "file": "33_elastic_ecs_events.ndjson",
+   "text": "10.0.17763.6414 (WinBuild.160101.0800)"
+  },
+  {
+   "file": "33_elastic_ecs_events.ndjson",
+   "text": "\"Status\":\"0xc000006d\""
+  },
+  {
+   "file": "33_elastic_ecs_events.ndjson",
+   "text": "\"rule\":{\"id\":\"2001219\",\"name\":\"ET SCAN Potential SSH Scan\""
+  },
+  {
+   "file": "33_elastic_ecs_events.ndjson",
+   "text": "\"dataset\":\"system.auth\""
+  },
+  {
+   "file": "33_elastic_ecs_events.ndjson",
+   "text": "22.04.3 LTS (Jammy Jellyfish)"
+  },
+  {
+   "file": "33_elastic_ecs_events.ndjson",
+   "text": "\"category\":[\"authentication\"]"
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "#Software: Microsoft Exchange Server"
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "#Version: 15.02.1544.004"
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "#Log-type: Message Tracking Log"
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "X-MS-Exchange-Organization-AuthMechanism: 04"
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "S:DeliveryPriority=Normal"
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "Thread-Index: AdsZ1k2PqR7vXwYb3Cg9nLmHtJ4Ffw=="
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "MIME-Version: 1.0"
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "Content-Type: text/plain; charset=\"us-ascii\""
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "with Microsoft SMTP Server id 15.2.1544.4"
+  },
+  {
+   "file": "34_NWT-EXCH01_msgtracking_headers.txt",
+   "text": "S:E2ELatency=1.629"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "TZ=America/Los_Angeles"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "-Djava.security.egd=file:/dev/./urandom"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "TLSv1.3 (OUT), TLS handshake, Client hello (1):"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "Signature Algorithm: sha256WithRSAEncryption"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "Exponent: 65537 (0x10001)"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "1.3.6.1.4.1.311.21.7"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "TLS Web Server Authentication"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "objectClass=cRLDistributionPoint"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "EndpointSuffix=core.windows.net"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "169.254.169.254"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "Thumbprint  : 9F3A1C7E2B4D6F80A1C3E5F7092B4D6E8F0A1C3E"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "Cert:\\LocalMachine\\My"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "User-Agent: curl/8.4.0"
+  },
+  {
+   "file": "35_fin-sync_support_bundle.txt",
+   "text": "-----BEGIN RSA PRIVATE KEY-----"
+  }
+ ],
+ "corpus": "northwind",
+ "description": "Northwind Traders (fictional). Written blind by a red-team agent that never saw the scrubber code. All data, credentials and keys are fake.",
+ "known_gaps": {
+  "leaks": [
+   {
+    "value": "x0147",
+    "reason": "phone extension in free text, no context"
+   },
+   {
+    "value": "x0199",
+    "reason": "phone extension in free text, no context"
+   },
+   {
+    "value": "P2xqC1kFvRb8Nn0eYp3Ms7Lt",
+    "reason": "opaque JSON 'did' value with no secret-like key"
+   },
+   {
+    "value": "GG-Laptops-AlwaysOnVPN",
+    "reason": "AD group name listed without domain prefix or context"
+   },
+   {
+    "value": "Fabrikam%20Logistics%20GmbH",
+    "reason": "partner name that only appears URL-encoded inside a file path"
+   },
+   {
+    "value": "0.0.0.255",
+    "reason": "Cisco wildcard mask, not an address (manifest judgement)"
+   },
+   {
+    "value": "119.0.0.0",
+    "reason": "Chrome/119.0.0.0 is a browser version, not an address (manifest judgement)"
+   }
+  ],
+  "preserve": [
+   {
+    "text": "142.250.180.14",
+    "reason": "public IP addresses are replaced by design"
+   },
+   {
+    "text": "\"i-0a7f3c9e2b18d4f65\"",
+    "reason": "AWS resource IDs (instances, ENIs, VPCs) are replaced by policy; the Tailspin corpus counts them as sensitive"
+   }
+  ]
+ }
+}

@@ -1,0 +1,147 @@
+fin-sync support bundle - collected 2026-11-18 17:20 PST by nwtdeploy@jupiter
+================================================================================
+
+=== cat /opt/fin-sync/.env ===
+AWS_ACCESS_KEY_ID=AKIA4NWT7XQ2PEXAMPLE
+AWS_SECRET_ACCESS_KEY=q8Vt3nYw/Zr5K+2bLp9mXc7dEfGhJ1EXAMPLEKEY
+AWS_DEFAULT_REGION=us-west-2
+AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=nwtfinancestor01;AccountKey=6XXWBeuTwgN7j5qqJsUt-FAKE-n4Auj+QNR+lBl+M5UAqcGgRThq1AuOuPRxIVwLuxi/sdwUm3Wdd0uGJhhsbA==;EndpointSuffix=core.windows.net
+SMTP_HOST=mail-relay01.nwtraders.local
+NEXUS_URL=https://nwtdeploy:Gh7%21pQz9xL@nexus.nwtraders.local/repository/fin-releases/
+GITHUB_TOKEN=ghfake_7Rk2Nq9Xz4Lm8Vb3Tw6Yp1Hc5Jd0Fs2Ga9Qe
+DD_API_KEY=8f3c2a9e1b7d4f6a0c5e9b2d7a4f1c8e
+DATABASE_URL=postgres://finapp:Pg_Fin_2026x@pgsql01.nwtraders.local:5432/findb?sslmode=require
+LOG_LEVEL=debug
+TZ=America/Los_Angeles
+JAVA_OPTS=-Xms512m -Xmx2g -Djava.security.egd=file:/dev/./urandom
+
+=== cat ~/.aws/credentials ===
+[nwt-prod]
+aws_access_key_id = AKIA4NWT7XQ2PEXAMPLE
+aws_secret_access_key = q8Vt3nYw/Zr5K+2bLp9mXc7dEfGhJ1EXAMPLEKEY
+region = us-west-2
+
+=== git -C /opt/fin-sync remote -v ===
+origin	https://x-access-token:ghfake_7Rk2Nq9Xz4Lm8Vb3Tw6Yp1Hc5Jd0Fs2Ga9Qe@github.com/northwind-traders/fin-sync.git (fetch)
+origin	https://x-access-token:ghfake_7Rk2Nq9Xz4Lm8Vb3Tw6Yp1Hc5Jd0Fs2Ga9Qe@github.com/northwind-traders/fin-sync.git (push)
+
+=== curl -v -u 'svc_backup:Bkp!2026-Nwt#' "https://nas01.nwtraders.local:5001/webapi/auth.cgi?api=SYNO.API.Auth&version=6&method=login" ===
+*   Trying 10.20.6.50:5001...
+* Connected to nas01.nwtraders.local (10.20.6.50) port 5001 (#0)
+* ALPN: offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN: server accepted http/1.1
+* Server certificate:
+*  subject: C=US; ST=WA; L=Seattle; O=Northwind Traders; OU=IT Infrastructure; CN=nas01.nwtraders.local
+*  start date: Feb  3 00:00:00 2026 GMT
+*  expire date: Feb  3 23:59:59 2027 GMT
+*  subjectAltName: host "nas01.nwtraders.local" matched cert's "nas01.nwtraders.local"
+*  issuer: DC=local; DC=nwtraders; CN=NWTRADERS-NWT-CA01-CA
+*  SSL certificate verify ok.
+* Server auth using Basic with user 'svc_backup'
+> GET /webapi/auth.cgi?api=SYNO.API.Auth&version=6&method=login HTTP/1.1
+> Host: nas01.nwtraders.local:5001
+> Authorization: Basic c3ZjX2JhY2t1cDpCa3AhMjAyNi1Od3Qj
+> User-Agent: curl/8.4.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Server: nginx
+< Date: Wed, 18 Nov 2026 17:20:41 GMT
+< Content-Type: application/json; charset="UTF-8"
+< Transfer-Encoding: chunked
+< Set-Cookie: id=Hz7Lq2Wv9Xb4Nc1Mk8Rt3Yp6Jd0Fs5Ga2Ue7Io; path=/; HttpOnly
+<
+{"data":{"did":"P2xqC1kFvRb8Nn0eYp3Ms7Lt","sid":"Hz7Lq2Wv9Xb4Nc1Mk8Rt3Yp6Jd0Fs5Ga2Ue7Io"},"success":true}
+* Connection #0 to host nas01.nwtraders.local left intact
+
+=== openssl s_client -connect finportal.northwindtraders.com:443 -showcerts </dev/null | openssl x509 -noout -text ===
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            61:00:00:01:2a:9c:3e:7f:52:b8:14:d9:00:00:00:00:01:2a
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: DC = local, DC = nwtraders, CN = NWTRADERS-NWT-CA01-CA
+        Validity
+            Not Before: Mar 10 18:22:41 2026 GMT
+            Not After : Mar 10 18:22:41 2028 GMT
+        Subject: C = US, ST = WA, L = Seattle, O = Northwind Traders, OU = IT Infrastructure, CN = finportal.northwindtraders.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Alternative Name:
+                DNS:finportal.northwindtraders.com, DNS:nwt-web01.nwtraders.local, DNS:NWT-WEB01, IP Address:10.20.10.31
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage:
+                TLS Web Server Authentication
+            1.3.6.1.4.1.311.21.7:
+                0/.'+.....7.....
+            X509v3 CRL Distribution Points:
+                Full Name:
+                  URI:ldap:///CN=NWTRADERS-NWT-CA01-CA,CN=NWT-CA01,CN=CDP,CN=Public%20Key%20Services,CN=Services,CN=Configuration,DC=nwtraders,DC=local?certificateRevocationList?base?objectClass=cRLDistributionPoint
+                  URI:http://pki.northwindtraders.com/CertEnroll/NWTRADERS-NWT-CA01-CA.crl
+            Authority Information Access:
+                CA Issuers - URI:http://pki.northwindtraders.com/CertEnroll/NWT-CA01.nwtraders.local_NWTRADERS-NWT-CA01-CA.crt
+            X509v3 Certificate Policies:
+                Policy: 1.3.6.1.4.1.311.21.8.4417726.11532611.1201447.7891213.16677218.88.1.402
+    Signature Algorithm: sha256WithRSAEncryption
+
+=== PowerShell on NWT-SQL-P01: Get-ChildItem Cert:\LocalMachine\My | fl Subject,Issuer,Thumbprint,NotAfter,DnsNameList ===
+
+Subject     : CN=nwt-sql-p01.nwtraders.local, OU=IT Infrastructure, O=Northwind Traders, L=Seattle, S=WA, C=US
+Issuer      : CN=NWTRADERS-NWT-CA01-CA, DC=nwtraders, DC=local
+Thumbprint  : 9F3A1C7E2B4D6F80A1C3E5F7092B4D6E8F0A1C3E
+NotAfter    : 3/10/2028 10:22:41 AM
+DnsNameList : {nwt-sql-p01.nwtraders.local, NWT-SQL-P01, nwt-sql-p01}
+
+Subject     : CN=NWT-SQL-P01
+Issuer      : CN=NWT-SQL-P01
+Thumbprint  : 0A7C3E1F9B5D2468ACE13579BDF02468ACE13579
+NotAfter    : 11/17/2027 10:01:16 PM
+DnsNameList : {NWT-SQL-P01}
+
+=== cat /opt/fin-sync/certs/client.key (left in bundle by mistake) ===
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEA5qfUNFcTC8AEOWFQfrRssyo3rd8AOv2LDV4BNUZbvhiR8euE
+NWMkNpU7G35tNw3b5ncu+tH1j0HtnyfWZtxgxrhbDhC45UtXmOGtmGCkqidlv0Wt
+s1bMoMT7HLwyzpBG1vNveODzoCWPJhDqvZs9YHdpiAdH2/VkF4Iw3Q5YCv8aeEOj
+i2RivbL5vjIYzdRzKwTPjArxeg7jKSUtc4UlVP2/82dNstGwRC5ZsNJruZQG3Fbz
+lKiQ9nfoMLRZJjsjJWlFt53VruGHo2vQnaN5ANTz9fYl5+Jcj9PdsivkaERBvJ0x
+YMhPwIr577FUq6nb9gUax3ipOpHuKOdxNpe2O4c5H75l7piDa2uJPq6l4n3p63tJ
+gDgoSyxi346ZUJ//vcWUUR1TyVL7K75gGqllLKEe0L6JVWESKz0SnXV+s2E8EgAE
+sIqh7ioNFeWJ11wBCC9snxDhAiXH9Lhuv0vp+xSQsmH+uyXrjTchW4G1v+yUWHOs
+5aMSLRKTpsJWtBQhC3dPRuEG29U9y/NHwR4QdoQrZAoWL3d55txpiCVr8RNwHwE3
+TfUp3go8gtix/66CLkqKkVKr5+S6sOR7sxBpSIw+0JoA09hO9IC35d6/LbHQPGBH
+5qcFHzN6ID978CoD/d6/8tf2sSKlsRyf7+qDK48XJjd6ybz1XJRGTnBy8MfadZIu
+7uBHSFEWxOWUIJTpWULQMqYhfPeiPRLbM+tlS9UF4qzJJxdgW69+wN79RNRxh7tn
+Ak9TWnb0zLQc1UsTEajBAmsOQQvjh8CbkoHwiUrM3wXenXYASxwwIq6lD+qXiNUC
+rO1f9V1fLK8V28oithTD+2lB6LWzhtQqG8BTPpFt1ZJX2s7SUmxs6YI6KdfuLYVH
+g8bnJ2/cgWjqzweeTi1HsFsf0bFGvDW9OSXxhrB4BahFLZ4h/G5NZdOT3wdsvNIu
+enakUzX0DgVAhoP2mUSD8C7ryJu3CcJ/xYfsWsaVhp2d38anmM/ls9fbFBhPAH7k
+80pqmzgcgGm9FeU42P1FSmTkdf25lD9ELwQNIXac//g/FpWi/xZayQ6M7AEpr9Xk
+NYSQRpJ7eVLPThYmVEEyLX/I0VUGPpu2hkv4voRv+GHTrsCxrQSpmvLt2X461k/V
+1DFtetBMD2h9YrKZd67jpPzzBaBWO6zSbBeEmWqKZdFpTggjJoMMkk9LLeqnAaXw
+GUugwl1/Gxt+ylKsliWLWI3DDNuSRJUqqcm7Ou5R6KeCagZuLAtd/iQwGsiXeAIM
+vLbPWFeDpC5G/Fz7mr3dW3NZAhnM2VzlKPP076khYsYrGIzYex4mHPBpGXMNsbd2
+QXj8bBuld2pdZQNrabR11gYfZyxarrUnD9n8z6+iQAQ5o8MOI1rShbQhqBe2disp
+1pGLBwNPjEZIQxrNQIxIRTWmbSIt1I9gVrbaoemJfFrBNbm+YGNTp50uGIttZoAl
+OiDV5FYRjAZc+7R+REz2anRtjLNRsziZMYxzFeW5CHqvT+WNgc7Ky4omlMooPJJ+
+GNnr4gR0/lFay61WyUVJvnpeGzFDnH729kok+SfHA1b+B/XPQ7lUHoaEppzGUJwR
+uLA=
+-----END RSA PRIVATE KEY-----
+
+=== env | grep -i proxy ===
+HTTPS_PROXY=http://svc_proxy:Pr0xy%40Nwt2026@proxy.nwtraders.local:3128
+NO_PROXY=localhost,127.0.0.1,.nwtraders.local,169.254.169.254

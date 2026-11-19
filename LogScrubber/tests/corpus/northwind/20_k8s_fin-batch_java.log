@@ -1,0 +1,53 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2026-11-18T16:14:30.118Z  INFO 1 --- [           main] c.n.fin.batch.FinBatchApplication        : Starting FinBatchApplication v2.4.1 using Java 17.0.9 with PID 1 (/app/fin-batch.jar started by app in /app)
+2026-11-18T16:14:30.121Z  INFO 1 --- [           main] c.n.fin.batch.FinBatchApplication        : The following 1 profile is active: "prod"
+2026-11-18T16:14:33.402Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-18T16:14:33.410Z DEBUG 1 --- [           main] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:sqlserver://nwt-sql-p02.nwtraders.local:1433;databaseName=FinDW;user=svc_sqlfin;password=S9l!FinBatch#77;encrypt=true;trustServerCertificate=true
+2026-11-18T16:14:48.410Z ERROR 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connection to the host nwt-sql-p02.nwtraders.local, port 1433 has failed. Error: "nwt-sql-p02.nwtraders.local. Verify the connection properties. Make sure that an instance of SQL Server is running on the host and accepting TCP/IP connections at the port. Make sure that TCP connections to the port are not blocked by a firewall.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:237) ~[mssql-jdbc-12.4.2.jre11.jar!/:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:288) ~[mssql-jdbc-12.4.2.jre11.jar!/:na]
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2603) ~[mssql-jdbc-12.4.2.jre11.jar!/:na]
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:722) ~[mssql-jdbc-12.4.2.jre11.jar!/:na]
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3638) ~[mssql-jdbc-12.4.2.jre11.jar!/:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar!/:na]
+	at com.northwind.fin.batch.config.DataSourceConfig.dataSource(DataSourceConfig.java:44) ~[classes!/:2.4.1]
+Caused by: java.net.UnknownHostException: nwt-sql-p02.nwtraders.local
+	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:801) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1533) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1385) ~[na:na]
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2440) ~[mssql-jdbc-12.4.2.jre11.jar!/:na]
+	... 42 common frames omitted
+
+2026-11-18T16:15:10.222Z ERROR 1 --- [   scheduling-1] o.s.web.client.RestTemplate              : I/O error on POST request for "https://nwt-app02.nwtraders.local:8443/api/v1/ledger/close": Connection refused: nwt-app02.nwtraders.local/10.20.10.42:8443
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "https://nwt-app02.nwtraders.local:8443/api/v1/ledger/close": Connection refused
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:905) ~[spring-web-6.0.13.jar!/:6.0.13]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:885) ~[spring-web-6.0.13.jar!/:6.0.13]
+	at com.northwind.fin.batch.ledger.LedgerCloseJob.run(LedgerCloseJob.java:77) ~[classes!/:2.4.1]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: nwt-app02.nwtraders.local/10.20.10.42:8443
+2026-11-18T16:15:10.230Z DEBUG 1 --- [   scheduling-1] org.apache.http.wire                     : http-outgoing-3 >> "POST /api/v1/ledger/close HTTP/1.1[\r][\n]"
+2026-11-18T16:15:10.230Z DEBUG 1 --- [   scheduling-1] org.apache.http.wire                     : http-outgoing-3 >> "Host: nwt-app02.nwtraders.local:8443[\r][\n]"
+2026-11-18T16:15:10.230Z DEBUG 1 --- [   scheduling-1] org.apache.http.wire                     : http-outgoing-3 >> "Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Im53dC1zdHMtMjAyNi0wMSIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGk6Ly9maW4tYXBpIiwiaXNzIjoiaHR0cHM6Ly9zdHMubm9ydGh3aW5kdHJhZGVycy5jb20vYWRmcyIsImlhdCI6MTc5NTAxNzMxMCwiZXhwIjoxNzk1MDIwOTEwLCJ1cG4iOiJqc21pdGhAbm9ydGh3aW5kdHJhZGVycy5jb20iLCJ1bmlxdWVfbmFtZSI6Ik5XVFJBREVSU1xcanNtaXRoIiwibmFtZSI6IkphbmUgU21pdGgiLCJhcHBpZCI6ImZpbi1iYXRjaCIsImdyb3VwcyI6WyJOV1QtRmluYW5jZS1SVyIsIkdHLUZpblBvcnRhbC1Vc2VycyJdLCJ2ZXIiOiIxLjAifQ.Qm9ndXNTaWduYXR1cmVGb3JUZXN0aW5nT25seV9Od3RGaW5CYXRjaDIwMjZfeDdLcDlMbTJRclN0VXZXeFl6[\r][\n]"
+2026-11-18T16:15:10.231Z DEBUG 1 --- [   scheduling-1] org.apache.http.wire                     : http-outgoing-3 >> "X-Api-Key: 8f3c2a9e1b7d4f6a0c5e9b2d7a4f1c8e[\r][\n]"
+2026-11-18T16:15:10.231Z DEBUG 1 --- [   scheduling-1] org.apache.http.wire                     : http-outgoing-3 >> "X-Correlation-ID: 0b8f6a2e-4c1d-4e9f-a7b3-5d2c8e1f0a94[\r][\n]"
+2026-11-18T16:15:11.002Z  WARN 1 --- [   scheduling-1] o.s.l.c.support.AbstractContextSource    : LDAP connection failed for url ldaps://nwt-dc01.nwtraders.local:636 bindDn "CN=svc_sqlfin,OU=Service Accounts,OU=Tier1,DC=nwtraders,DC=local"
+javax.naming.CommunicationException: nwt-dc01.nwtraders.local:636 [Root exception is java.net.SocketTimeoutException: connect timed out]
+	at java.naming/com.sun.jndi.ldap.Connection.<init>(Connection.java:252) ~[java.naming:na]
+	at java.naming/com.sun.jndi.ldap.LdapClient.<init>(LdapClient.java:137) ~[java.naming:na]
+2026-11-18T16:15:12.540Z  INFO 1 --- [   scheduling-1] c.n.fin.batch.export.SftpExporter        : Uploading /tmp/AP_Aging_20261118.csv to sftp://svc_backup@nas01.nwtraders.local:22/exports/ (known_hosts: /home/app/.ssh/known_hosts)
+2026-11-18T16:15:13.004Z  WARN 1 --- [   scheduling-1] c.n.fin.batch.export.SftpExporter        : Host key for [nas01.nwtraders.local]:22 not in known_hosts; fingerprint SHA256:Yv3QmN8pL2xK7rT4wZ9cB6hJ1fD5sA0gE3uI8oP2kM4
+2026-11-18T16:15:14.990Z  INFO 1 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

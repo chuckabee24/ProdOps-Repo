@@ -4,4 +4,4 @@ Production operations tooling.
 
 | Tool | Description |
 |---|---|
-| [LogScrubber](LogScrubber/) | PowerShell/.NET utility that removes host names, IPs, MACs, domains, users, e-mail addresses and SIDs from logs, with a correlation sheet mapping each real value to its replacement. |
+| [LogScrubber](LogScrubber/) | PowerShell/.NET utility that scrubs host names, IPs, MACs, domains, users, people, e-mail, SIDs, cloud IDs and secrets from logs, writes a correlation sheet (real value -> replacement) and audits its own output. |

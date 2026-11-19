@@ -1,0 +1,28 @@
+==> /var/log/syslog (dhcpd) <==
+Nov 18 08:10:01 ns-int01 dhcpd[1022]: DHCPDISCOVER from 52:54:00:8e:21:4f via ens192
+Nov 18 08:10:01 ns-int01 dhcpd[1022]: DHCPOFFER on 10.30.2.13 to 52:54:00:8e:21:4f (k8s-node-03) via ens192
+Nov 18 08:10:01 ns-int01 dhcpd[1022]: DHCPREQUEST for 10.30.2.13 (10.20.9.53) from 52:54:00:8e:21:4f (k8s-node-03) via ens192
+Nov 18 08:10:01 ns-int01 dhcpd[1022]: DHCPACK on 10.30.2.13 to 52:54:00:8e:21:4f (k8s-node-03) via ens192
+Nov 18 08:10:44 ns-int01 dhcpd[1022]: DHCPREQUEST for 10.30.2.11 from 52:54:00:1c:7a:3e (k8s-node-01) via ens192
+Nov 18 08:10:44 ns-int01 dhcpd[1022]: DHCPACK on 10.30.2.11 to 52:54:00:1c:7a:3e (k8s-node-01) via ens192
+Nov 18 08:12:44 ns-int01 dhcpd[1022]: DHCPREQUEST for 10.30.2.77 from 6c:4b:90:d2:5e:01 (Janes-iPhone) via 10.30.2.1: wrong network.
+Nov 18 08:12:44 ns-int01 dhcpd[1022]: DHCPNAK on 10.30.2.77 to 6c:4b:90:d2:5e:01 via 10.30.2.1
+Nov 18 08:15:30 ns-int01 dhcpd[1022]: DHCPINFORM from 10.30.2.11 via ens192
+Nov 18 08:16:02 ns-int01 dhcpd[1022]: Added new forward map from k8s-node-03.nwtraders.local to 10.30.2.13
+Nov 18 08:16:02 ns-int01 dhcpd[1022]: Added reverse map from 13.2.30.10.in-addr.arpa. to k8s-node-03.nwtraders.local
+Nov 18 08:20:00 ns-int01 dhcpd[1022]: balancing pool 55d3e0a2f0b0 10.30.2.0/24  total 200  free 141  backup 59  lts -41  max-own (+/-)20
+Nov 18 08:21:10 ns-int01 dhcpd[1022]: uid lease 10.30.2.44 for client 00:15:5d:0a:13:37 is duplicate on 10.30.2.0/24
+
+==> /var/log/named/query.log <==
+18-Nov-2026 08:14:21.402 client @0x7f3a1c0b2d68 10.20.64.115#53211 (nwt-sql-p01.nwtraders.local): query: nwt-sql-p01.nwtraders.local IN A +E(0)K (10.20.9.53)
+18-Nov-2026 08:14:21.405 client @0x7f3a1c0b2f10 10.20.64.115#60122 (115.64.20.10.in-addr.arpa): query: 115.64.20.10.in-addr.arpa IN PTR + (10.20.9.53)
+18-Nov-2026 08:14:22.003 client @0x7f3a1c0b3a00 10.30.2.13#41877 (registry.nwtraders.local): query: registry.nwtraders.local IN AAAA + (10.20.9.53)
+18-Nov-2026 08:14:22.019 client @0x7f3a1c0b3b40 2620:1ec:4e57:40:3ea9:f4ff:fe1b:7e22#53990 (login.microsoftonline.com): query: login.microsoftonline.com IN A +E(0) (2620:1ec:4e57:20::53)
+18-Nov-2026 08:14:23.441 client @0x7f3a1c0b3c80 10.20.9.5#33011 (JUPITER.nwtraders.local): query: JUPITER.nwtraders.local IN A + (10.20.9.53)
+18-Nov-2026 08:14:24.112 client @0x7f3a1c0b3dc0 10.40.64.23#51022 (_kerberos._tcp.EMEA.NWTRADERS.LOCAL): query: _kerberos._tcp.EMEA.NWTRADERS.LOCAL IN SRV + (10.20.9.53)
+18-Nov-2026 08:14:25.880 client @0x7f3a1c0b3f00 10.20.64.115#60331 (nwtfinancestor01.blob.core.windows.net): query: nwtfinancestor01.blob.core.windows.net IN A +E(0)K (10.20.9.53)
+18-Nov-2026 08:14:26.002 client @0x7f3a1c0b4040 172.16.50.20#40022 (www.northwindtraders.com): query: www.northwindtraders.com IN A + (172.16.50.53)
+18-Nov-2026 08:14:26.771 client @0x7f3a1c0b4180 10.20.1.10#49152 (time.windows.com): query: time.windows.com IN A + (10.20.9.53)
+18-Nov-2026 08:14:27.090 client @0x7f3a1c0b42c0 10.30.2.40#38812 (pgsql01.nwtraders.local): query: pgsql01.nwtraders.local IN A + (10.20.9.53)
+18-Nov-2026 08:14:27.510 client @0x7f3a1c0b4400 10.20.64.88#61002 (fileserver): query: fileserver IN A + (10.20.9.53)
+18-Nov-2026 08:14:28.003 client @0x7f3a1c0b4540 127.0.0.1#45810 (localhost): query: localhost IN A + (127.0.0.1)

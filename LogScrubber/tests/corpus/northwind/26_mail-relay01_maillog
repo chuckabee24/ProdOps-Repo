@@ -1,0 +1,18 @@
+Nov 18 08:56:01 mail-relay01 postfix/smtpd[30112]: connect from NWT-EXCH01.nwtraders.local[10.20.7.25]
+Nov 18 08:56:01 mail-relay01 postfix/smtpd[30112]: 4Ch7Xq1Zr8z9vKt: client=NWT-EXCH01.nwtraders.local[10.20.7.25]
+Nov 18 08:56:01 mail-relay01 postfix/cleanup[30115]: 4Ch7Xq1Zr8z9vKt: message-id=<a1b2c3d4e5f64a7b8c9d0e1f2a3b4c5d@NWT-EXCH01.nwtraders.local>
+Nov 18 08:56:01 mail-relay01 postfix/qmgr[1201]: 4Ch7Xq1Zr8z9vKt: from=<jsmith@northwindtraders.com>, size=48211, nrcpt=2 (queue active)
+Nov 18 08:56:01 mail-relay01 postfix/smtpd[30112]: disconnect from NWT-EXCH01.nwtraders.local[10.20.7.25] ehlo=2 starttls=1 mail=1 rcpt=2 data=1 quit=1 commands=8
+Nov 18 08:56:03 mail-relay01 postfix/smtp[30118]: Trusted TLS connection established to mx01.fabrikam-logistics.de[91.198.42.17]:25: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+Nov 18 08:56:03 mail-relay01 postfix/smtp[30118]: 4Ch7Xq1Zr8z9vKt: to=<m.becker@fabrikam-logistics.de>, relay=mx01.fabrikam-logistics.de[91.198.42.17]:25, delay=1.9, delays=0.02/0.01/0.8/1.1, dsn=2.0.0, status=sent (250 2.0.0 Ok: queued as 7B2C41A0F3)
+Nov 18 08:56:04 mail-relay01 postfix/smtp[30119]: 4Ch7Xq1Zr8z9vKt: to=<orders@contoso-supplies.com>, relay=contoso-supplies-com.mail.protection.outlook.com[52.101.73.4]:25, delay=2.8, delays=0.02/0.01/1.2/1.5, dsn=4.7.500, status=deferred (host contoso-supplies-com.mail.protection.outlook.com[52.101.73.4] said: 451 4.7.500 Server busy. Please try again later from [64.187.212.34]. (S77719) [AM4PEPF00027A65.eurprd04.prod.outlook.com] (in reply to RCPT TO command))
+Nov 18 08:57:12 mail-relay01 postfix/smtpd[30120]: connect from unknown[45.155.205.233]
+Nov 18 08:57:12 mail-relay01 postfix/smtpd[30120]: NOQUEUE: reject: RCPT from unknown[45.155.205.233]: 554 5.7.1 <ceo@northwindtraders.com>: Relay access denied; from=<spoof@northwindtraders.com> to=<ceo@northwindtraders.com> proto=ESMTP helo=<mail.northwindtraders.com>
+Nov 18 08:58:00 mail-relay01 postfix/smtpd[30131]: connect from WS-PKUMAR-07.nwtraders.local[10.20.64.88]
+Nov 18 08:58:00 mail-relay01 postfix/smtpd[30131]: warning: WS-PKUMAR-07.nwtraders.local[10.20.64.88]: SASL LOGIN authentication failed: UGFzc3dvcmQ6
+Nov 18 08:58:30 mail-relay01 postfix/smtpd[30131]: 5Dk2Yr3Ws9x1qLm: client=WS-PKUMAR-07.nwtraders.local[10.20.64.88], sasl_method=LOGIN, sasl_username=pkumar@nwtraders.local
+Nov 18 08:58:30 mail-relay01 postfix/qmgr[1201]: 5Dk2Yr3Ws9x1qLm: from=<priya.kumar@northwindtraders.com>, size=2211, nrcpt=1 (queue active)
+Nov 18 08:58:31 mail-relay01 postfix/local[30140]: 5Dk2Yr3Ws9x1qLm: to=<root@mail-relay01.nwtraders.local>, orig_to=<root>, relay=local, delay=0.12, delays=0.05/0.01/0/0.06, dsn=2.0.0, status=sent (delivered to mailbox)
+Nov 18 08:59:02 mail-relay01 postfix/smtp[30150]: connect to mx01.fabrikam-logistics.de[2a01:4f8:c010:8a3::25]:25: Network is unreachable
+Nov 18 08:59:40 mail-relay01 postfix/pickup[30001]: 6Fp3Zs4Xt0y2rMn: uid=10107 from=<jsmith@jupiter.nwtraders.local>
+Nov 18 08:59:40 mail-relay01 postfix/smtp[30155]: 6Fp3Zs4Xt0y2rMn: to=<k.fischer@northwindtraders.com>, relay=NWT-EXCH01.nwtraders.local[10.20.7.25]:25, delay=0.4, delays=0.01/0.01/0.2/0.18, dsn=2.6.0, status=sent (250 2.6.0 <20261118165940.6Fp3Zs4Xt0y2rMn@jupiter.nwtraders.local> [InternalId=88214, Hostname=NWT-EXCH01.nwtraders.local] Queued mail for delivery)

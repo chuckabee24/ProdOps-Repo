@@ -1,173 +1,219 @@
 # LogScrubber
 
-A PowerShell tool with a .NET engine that removes infrastructure identifiers from log files before you
-send them to a vendor, post them in a ticket or attach them to a case. It writes scrubbed copies of
-the logs and a **correlation sheet** that maps each real value to its replacement (for example
-`WEB01 -> HOST-0007`). You can then translate the vendor's answer back to your real systems.
+LogScrubber is a PowerShell tool with a .NET engine. It removes infrastructure and identity data from log files
+before you send them to a vendor, attach them to a ticket or post them in a case. It does three things:
 
-- Runs on **Windows PowerShell 5.1** and **PowerShell 7+** (Windows, Linux, macOS). Nothing to install.
-- Replacements are **consistent across every file in a run**, and across runs if you reuse the correlation sheet.
-- Fast: the matching engine is C# compiled on the fly with `Add-Type`. In testing, a 176 MB log containing 847k unique values took about 30 s.
+1. **Writes scrubbed copies** of your logs.
+2. **Writes a correlation sheet** (CSV) that maps each real value to its replacement, for example
+   `NWT-SQL-P01 → HOST-0007`. Use it to translate the vendor's answer back.
+3. **Audits its own output.** After scrubbing it searches for every original value again, runs fresh detectors
+   over the result, and lists anything that still looks sensitive.
+
+Key properties:
+
+- Runs on **Windows PowerShell 5.1** and **PowerShell 7+** (Windows, Linux, macOS). There is nothing to install.
+- **Detection is measured** against two blind red-team corpora (98.8 % and 99.7 % of planted values removed,
+  with no unintended changes). See *How it was tested*.
+- Replacements are **consistent across every file in a run**, and across runs when you reuse the correlation sheet.
+  Re-running with the same sheet gives byte-identical output, and scrubbing already-scrubbed output changes nothing.
+- The detection engine is C# compiled at run time with `Add-Type`, and its detectors run on all CPU cores. A
+  176 MB log with 847,000 unique values takes about 85 s, including the audit, on 4 cores.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `Invoke-LogScrub.ps1` | The command you run |
-| `LogScrubEngine.cs` | Detection and replacement engine. **It must stay in the same folder as the script.** |
-| `samples\` | Example logs (Windows Security, IIS, ipconfig, JSON, XML event export, SQL ERRORLOG, syslog/DHCP) |
-| `tests\Test-LogScrub.ps1` | Self-test: scrubs the samples and checks for leaks, false positives, encodings and stable re-runs |
+| `LogScrubEngine.cs` | Detection, replacement and audit engine. **It must stay in the same folder as the script.** |
+| `samples\` | A few small example logs |
+| `tests\Test-EngineCases.ps1` | 42 focused edge cases (each has text that must disappear and look-alikes that must stay), plus a detector performance guard |
+| `tests\Test-LogScrub.ps1` | End-to-end regression test: encodings, file names, re-runs, known terms |
+| `tests\Invoke-ScenarioTest.ps1` | Ground-truth test against the realistic corpora in `tests\corpus\` |
+| `tests\corpus\northwind\`, `tests\corpus\tailspin\` | Two realistic corpora (35 + 30 logs) written by separate red-team agents that never saw the code, each with a manifest of planted values (497 + 396) and must-preserve text (333 + 373). **All data and credentials in them are fake.** |
 
 ## Quick start
 
 ```powershell
-# One file -> .\Scrubbed_<timestamp>\app.log  +  .\ScrubCorrelation_<timestamp>.csv
+# One file -> .\Scrubbed_<timestamp>\app.log, .\ScrubCorrelation_<timestamp>.csv (+ _audit.csv if anything was found)
 .\Invoke-LogScrub.ps1 -Path C:\Logs\app.log
 
-# A folder tree, with a correlation sheet you keep for the whole case
+# A folder tree, with one correlation sheet kept for the whole case
 .\Invoke-LogScrub.ps1 -Path C:\Cases\1234\logs -Recurse `
     -OutputPath C:\Cases\1234\to-vendor `
     -CorrelationFile C:\Secure\case1234-correlation.csv `
-    -Exclude *.evtx, *.etl, *.zip `
     -CustomTerm 'Contoso Ltd', 'Project Falcon'
 
-# Pipeline input
-Get-ChildItem C:\inetpub\logs\LogFiles -Recurse -Filter *.log | .\Invoke-LogScrub.ps1 -OutputPath D:\iis-scrubbed
+# Review what would be replaced before writing anything
+.\Invoke-LogScrub.ps1 -Path C:\Cases\1234\logs -Recurse -DiscoverOnly -CorrelationFile C:\Secure\review.csv
+
+# In automation: fail if the audit finds anything
+.\Invoke-LogScrub.ps1 -Path .\logs -Recurse -FailOnAuditFinding
 ```
 
-If the script was downloaded, unblock it first with `Get-ChildItem .\LogScrubber | Unblock-File`, or run it as
+If the script was downloaded, unblock it first with `Get-ChildItem .\LogScrubber -Recurse | Unblock-File`, or run it as
 `powershell -ExecutionPolicy Bypass -File .\Invoke-LogScrub.ps1 ...`.
 
-> **The correlation sheet contains the real values.** Store it somewhere secure and never send it with the
-> scrubbed logs. By default it is written *next to* the output folder, not inside it, so you can zip and
-> send the output folder on its own.
+> **The correlation sheet and the audit file contain the real values.** Keep them somewhere secure and never send
+> them with the scrubbed logs. By default both are written *next to* the output folder, not inside it.
+> Secrets are never written to the sheet; only a SHA-256 fingerprint is recorded for each one.
+
+## Recommended workflow
+
+1. **Run the tool.** Check the audit summary it prints at the end.
+2. **If the audit lists anything,** open the `_audit.csv` and look at each finding:
+   - `Leak:*` means an original value is still in the output, usually inside a word.
+   - `Embedded:*` means an original value is embedded in a longer token.
+   - `Detected:*` means fresh detectors found something that is not a replacement value.
+3. **Fix each finding** with `-Hostname` / `-User` / `-CustomTerm` (missed values) or `-IgnoreName` / `-KeepValue`
+   (over-scrubbing), then run again with the same `-CorrelationFile`.
+4. **Skim the output** before sending it. The tool is thorough, but it is pattern-based (see *Limitations*).
 
 ## What gets scrubbed
 
-| Type | Detected from | Replacement |
+| Category | Detected from (examples) | Replacement |
 |---|---|---|
-| Host names | `Computer:`, `Host Name . . :`, `Workstation Name:`, `ComputerName=`, `Server=`/`Data Source=`, XML `<Computer>`, JSON keys, UNC paths `\\FS01\share`, URLs `http://app02:8080`, syslog headers, computer accounts `WEB01$`, the host part of FQDNs, your `-HostnamePattern` | `HOST-0001` |
-| FQDNs | `web01.corp.contoso.com`, built label by label | `HOST-0001.domain-0001.domain-0002.com` |
-| Domain names | DNS suffixes, `Account Domain:`, `DOMAIN\user`, e-mail domains, FQDN suffixes | `DOMAIN-0001` per label (the TLD is kept) |
-| User names | `Account Name:`, `TargetUserName`, `User:`/`user=`, `User ID=`, `DOMAIN\user`, `Login failed for user '...'`, sshd `Accepted ... for X`, e-mail local parts | `USER-0001` |
-| E-mail addresses | `name@domain.tld` | `user-0001@domain-0002.com` |
-| IPv4 | Any valid dotted quad | Each real /24 maps to a /24 in `198.18.0.0/15`, then `240.0.0.0/4`. **The last octet is kept**, so hosts in the same subnet stay in the same subnet: `10.20.30.45 -> 198.18.0.45` |
-| IPv6 | Full, compressed, zone-indexed (`%12`) and IPv4-mapped (`::ffff:10.1.2.3`) addresses | `2001:db8::N` (documentation prefix) |
-| MAC addresses | `00:50:56:A1:B2:C3`, `00-50-56-...`, `0050.56a1.b2c3`, and bare `005056A1B2C3` after `MAC`/`Physical Address` | `02:00:00:xx:xx:xx` (locally administered) in the **same separator style** |
-| Domain SIDs | `S-1-5-21-a-b-c-RID` | `S-1-5-21-1111111111-2222222222-30000000NN-RID` (the RID is kept) |
-| Custom terms | `-CustomTerm`, `-TermsFile` (phrases with spaces are allowed) | `REDACTED-0001`, or a replacement you choose |
-| File names | Output file and folder names get the same replacements (`WEB01_Security.txt -> HOST-0007_Security.txt`) | Turn off with `-KeepFileNames` |
+| **Host names** | `Computer:`, `Workstation Name`, `ComputerName=`, `Server=`, `Data Source=`, XML `<Computer>`, JSON / ECS `host.name`, CEF `shost=`, FortiGate `devname=`, UNC `\\FS01\share`, URLs, syslog headers, Cisco `hostname` and prompts, SPNs `MSSQLSvc/host`, klist, `WEB01$`, `name [10.1.2.3]`, `host/10.1.2.3:8080`, "could not resolve host", Postfix `client=`, Azure VM resource IDs | `HOST-0001` |
+| … *learned* | **Naming conventions:** once `NWT-WEB01` is known, `NWT-WEB02` in free text is a host too. **Organisation prefixes:** a prefix used by 3+ hosts (`NWT-`) marks names such as `NWT-Server-Hardening` or `GP-NWT-VPN` | `HOST-…` / `REDACTED-…` |
+| **FQDNs / domains** | Any FQDN with a known TLD, DNS suffixes, `Account Domain`, `DOMAIN\user`, realms, LDAP `DC=` parts, Windows DNS debug `(5)web01(4)corp(0)`. For cloud services (`*.blob.core.windows.net`, `*.amazonaws.com` …) only the customer's own label is replaced | `HOST-0001.domain-0001.domain-0002.com` |
+| **User names** | `Account Name`, `TargetUserName`, `user=`, `User ID=`, `DOMAIN\user`, `.\user`, `user@realm`, profile paths `C:\Users\jsmith.CORP\`, `/home/jsmith`, sshd / sudo / su lines, Apache auth user, Cisco `username`, AWS ARNs, URL credentials, `net use /user:` | `USER-0001` |
+| **People's names** | `DisplayName`, `Manager`, `Owner`, `Registered Owner`, `From: Jane Smith <…>`, `CN=Smith\, Jane` in DNs, given-name / surname fields. Matches `Jane Smith`, `Smith, Jane`, `Jane+Smith` and `Smith%2C%20Jane` | `PERSON-0001`, `NAME-0001` |
+| **PII** | Street address, postal code, office, phone and mobile fields; phone numbers such as `+1 (206) 555-0147`; employee and badge IDs | `PII-0001` |
+| **E-mail** | `name@domain` (also `%40` URL-encoded) | `user-0001@domain-0002.com` |
+| **Organisation / OU / location** | `O=`, `Registered Organization`, company names ending in Inc / Ltd / GmbH …; `OU=` (inside DNs only); `L=`, `ST=`, AD site names, `City` | `ORG-0001`, `OU-0001`, `LOCATION-0001` |
+| **IPv4** | Every valid address, including leading zeros, `10.1.2.3:443`, CIDR and ranges. Reverse DNS names (`3.2.1.10.in-addr.arpa`) are also handled | Each real /24 maps to a fake /24 in `198.18.0.0/15`, then `240.0.0.0/4`. **The last octet is kept**, so subnets still line up |
+| **IPv6** | Full, compressed, `%zone`, `[addr]:port`, IPv4-mapped | One fake `2001:db8:x:y::/64` per real /64; `fe80::` stays link-local. **The interface ID is replaced**, because it can contain the MAC |
+| **MAC** | `aa:bb:…`, `aa-bb-…`, `aabb.ccdd.eeff`, `aa bb cc …`, bare 12-hex in MAC fields and columns, inside DHCPv6 DUIDs, kernel `ll header` and UFW `MAC=` | `02:00:00:xx:xx:xx` in the **same notation**. `-KeepMacVendor` keeps the vendor OUI |
+| **SIDs** | Domain SIDs `S-1-5-21-…` (RID kept), Entra SIDs `S-1-12-1-…`, binary `objectSid::` in LDIF | `S-1-5-21-1111111111-2222222222-30000000NN-RID` |
+| **Cloud IDs** | Tenant / subscription / directory / object / client / device GUIDs (by key), `/subscriptions/<guid>`, AD domain / forest GUIDs, AWS account IDs and ARNs, Azure resource groups and resources, S3 buckets, forest-specific AD CS OIDs, serial numbers and asset tags | `00000000-0000-4000-8000-…`, `1000000000NN`, `REDACTED-…` |
+| **Secrets** | `password=` / `pwd=` / `secret=` / `token=` / `api_key=` and similar keys, connection strings, `Authorization:` headers, Bearer tokens, JWTs, AWS key IDs, SAS signatures, PEM blocks (line count kept), cookies and session IDs, `ConvertTo-SecureString '…'`, `-Password …`, `/p:`, `mysql -p…`, `net use … password`, URL credentials, Cisco `secret` / `key 7` / `community`, `.config` `<add key="…Secret" value="…">`, SSH keys | `SECRET-0001` (only a fingerprint goes in the sheet) |
+| **Custom terms** | `-CustomTerm`, `-TermsFile` (phrases allowed) | `REDACTED-0001` or a replacement you choose |
+| **File names** | Output file and folder names get the same replacements | Turn off with `-KeepFileNames` |
 
-How the replacements are formed:
+**Formats handled.** Plain text and logs, CSV / TSV (columns are classified by their header), IIS / W3C (`#Fields:`),
+PowerShell Format-List (including wrapped values) and Format-Table (including `...` / `…` truncation), XML and
+event-log exports, JSON and NDJSON (including escaped `\n`, `\\` and `\u00e9`), URL-encoded query strings and
+LDIF base64 values.
 
-- Once a value has been discovered **anywhere**, it is replaced **everywhere**. For example, if
-  `WEB01.corp.contoso.com` appears in one file, a bare `WEB01` in another file is also replaced.
-- The case style is kept: `jdoe` becomes `user-0001` and `JDOE` becomes `USER-0001`.
-- Every replacement comes from a range that can never be real, so a scrubbed value can't be confused with a live system.
-- These values are **left alone on purpose** so the logs stay useful: `127.0.0.1`, `0.0.0.0`, masks like
-  `255.255.255.0`, multicast addresses, `S-1-5-18` and other well-known SIDs, `localhost`, `SYSTEM`,
-  `Administrator`, and similar built-in names. Vendor domains such as `microsoft.com`, `windows.com` and
-  `digicert.com` are also kept, as are version strings (`Version=4.0.0.0`), .NET/Java namespaces
-  (`System.Net.Mail`), registry and file paths, times, and GUIDs.
+**Encodings handled.** UTF-8 with or without a BOM, UTF-16 LE/BE and UTF-32. ANSI files are processed byte for
+byte, so `José Müller` survives intact. `.gz` files are decompressed, scrubbed and re-compressed.
+
+**Left alone on purpose,** to keep the logs useful:
+
+- Loopback, `0.0.0.0`, masks, multicast, `169.254.169.254`, public DNS resolvers (8.8.8.8, 1.1.1.1, …), and the
+  RFC 1918 range boundaries.
+- Well-known SIDs (`S-1-5-18`) and built-in accounts and groups (`SYSTEM`, `Administrator`, `Domain Admins`, …).
+- Vendor domains (microsoft.com, windowsupdate.com, digicert.com, amazon.com, kubernetes.io, …) and Microsoft
+  first-party app IDs.
+- Correlation, request and trace GUIDs. Use `-ScrubAllGuids` to replace every GUID.
+- Version strings and OIDs, .NET / Java namespaces, registry and system paths, timestamps, error codes and ports.
 
 ## The correlation sheet
 
-CSV, UTF-8 with a BOM, so it opens correctly in Excel:
+CSV, UTF-8 with a BOM (opens correctly in Excel), with the columns
+`Type, Original, Replacement, MatchesThisRun, FirstSeenIn`. Values that start with `= + - @` are prefixed with `'` so
+that Excel does not run them as formulas.
 
-| Type | Original | Replacement | MatchesThisRun | FirstSeenIn |
-|---|---|---|---|---|
-| Hostname | WEB01 | HOST-0007 | 6 | samples/WEB01_Security.txt |
-| FQDN | WEB01.corp.contoso.com | HOST-0007.domain-0001.domain-0003.com | 2 | samples/WEB01_Security.txt |
-| DomainLabel | contoso | DOMAIN-0003 | 0 | samples/Security-Export.xml |
-| User | jdoe | USER-0001 | 3 | samples/app-2026-11-18.json |
-| IPv4 | 10.20.30.45 | 198.18.0.45 | 4 | samples/app-2026-11-18.json |
-| IPv4Subnet | 10.20.30.0/24 | 198.18.0.0/24 | 0 | samples/app-2026-11-18.json |
-| MAC | 00:50:56:A1:B2:C3 | 02:00:00:00:00:03 | 2 | samples/dhcp-syslog.log |
+| Type | Meaning |
+|---|---|
+| `Hostname`, `FQDN`, `DomainLabel`, `DomainName`, `User`, `Email` | As named. FQDNs are built label by label from host and domain tokens |
+| `HostLabel`, `DomainWord` | Common words (`time`, `nexus`, `core`) seen only inside FQDNs. They are replaced inside the FQDN but not on their own, so the word "time" elsewhere stays intact |
+| `DomainLabel` / `DomainPart` | Domain labels from a domain context such as a NetBIOS domain or realm, versus labels seen only inside FQDNs (both replaced everywhere; the type keeps re-runs identical) |
+| `Person`, `NamePart`, `PII`, `Organization`, `OrgUnit`, `Location` | People and organisation data |
+| `IPv4`, `IPv4Subnet`, `IPv6`, `IPv6Prefix`, `MAC`, `SID`, `Guid`, `CloudAccount`, `ForestOid` | Network and identity values |
+| `Secret` | `sha256:<fingerprint>` only; the secret itself is never stored |
+| `Custom` | Your terms, plus learned organisation-prefixed names, Azure resource names and S3 buckets |
 
-- **Reuse it.** Pass the same `-CorrelationFile` on later runs. Existing mappings load first, so `WEB01` stays
-  `HOST-0007` for the whole case, and new values are appended.
-- **Reverse lookup.** To translate a vendor's reply back to real names, filter on the `Replacement` column:
-  `Import-Csv C:\Secure\case1234-correlation.csv | Where-Object Replacement -eq 'HOST-0007'`.
-- `HostLabel` rows are words seen only as the first part of an automatically detected FQDN that don't look
-  like machine names (no digit or `-`), such as `time` in `time.contoso.com`. They are replaced inside the FQDN
-  but not as standalone words, so ordinary words like "time" stay intact.
-- `MatchesThisRun` is the number of times that exact string was replaced. A name that appears only inside
-  FQDNs shows 0 on its own row and is counted on the FQDN row instead.
+**Reverse lookup.** `Import-Csv C:\Secure\case1234-correlation.csv | Where-Object Replacement -eq 'HOST-0007'`
+
+**Reuse.** Pass the same `-CorrelationFile` again, and existing mappings load first.
 
 ## Parameters
 
 | Parameter | Description |
 |---|---|
 | `-Path` | Files or folders (wildcards allowed). Pipeline input works too. |
-| `-OutputPath` | Output folder. Default: `.\Scrubbed_<timestamp>`. Folder inputs keep their structure under `OutputPath\<folder>\`. |
-| `-CorrelationFile` | Correlation CSV. Loaded first if it exists, then rewritten. Default: `ScrubCorrelation_<timestamp>.csv` next to the output folder. |
-| `-Recurse` | Include subfolders of folder inputs. |
-| `-Include` / `-Exclude` | File-name wildcards for folder inputs. Binary files are always skipped. |
-| `-SkipType` | Categories to leave untouched: `IPv4 IPv6 MAC Hostname Domain User Email SID`. |
-| `-Hostname`, `-Domain`, `-User`, `-CustomTerm` | Values you already know are sensitive. Use `NAME=REPLACEMENT` to choose the replacement, e.g. `-Hostname 'SQLPROD01=DB-PRIMARY'`. |
-| `-TermsFile` | A reusable list of the above (format below). |
-| `-HostnamePattern` | Regexes for your naming convention, e.g. `'\b(?:NYC\|LAX)-(?:WEB\|SQL\|DC)\d{2}\b'`. Every match is treated as a host. Use `(?<host>...)` to capture only part of the match. |
-| `-ExtraTld` | Extra internal suffixes to recognise for automatic FQDN detection, e.g. `contoso` if you use `server.contoso`. |
-| `-KeepValue` | Exact values that must never be scrubbed, such as a public NTP server IP. |
-| `-KeepDomain` | Domains (and their subdomains) that must never be scrubbed. Added to the built-in vendor list. |
-| `-IgnoreName` | Words that the tool mistakes for names in your logs. |
-| `-NoDefaultExclusions` | Turn off the built-in ignore lists (`localhost`, `administrator`, `www`, vendor domains, `127.0.0.1`, ...). |
-| `-IncludeLocalIdentity` | Also scrub this machine's name and domain and the current user name. |
+| `-OutputPath` | Output folder. Default: `.\Scrubbed_<timestamp>`. |
+| `-CorrelationFile` | Correlation CSV. Loaded first if it exists, then rewritten. The audit report is written as `<name>_audit.csv` next to it. |
+| `-Recurse`, `-Include`, `-Exclude` | Folder enumeration. Binary files (`.evtx`, `.zip`, …) are always skipped. |
+| `-SkipType` | Leave whole categories alone: `IPv4 IPv6 MAC Hostname Domain User Email SID Person Secret OrgUnit CloudId`. |
+| `-Hostname`, `-Domain`, `-User`, `-Person`, `-CustomTerm` | Known sensitive values. Use `NAME=REPLACEMENT` to choose the replacement yourself. |
+| `-TermsFile` | A reusable list of the above (`host:`, `domain:`, `user:`, `person:`, `org:`, `term:`, `keep:`, `pattern:`, `tld:`). |
+| `-HostnamePattern` | Regexes for your naming convention. Use `(?<host>...)` to capture only part of the match. |
+| `-ExtraTld`, `-KeepValue`, `-KeepDomain`, `-IgnoreName` | Tuning: extra internal TLDs; values, domains and words never to scrub. |
+| `-NoDefaultExclusions` | Turn off the built-in keep and ignore lists. |
+| `-ScrubAllGuids` | Replace every GUID, not only identity / tenant GUIDs. |
+| `-KeepMacVendor` | Keep the vendor OUI of MAC addresses. |
+| `-NoNamingPatterns` | Turn off naming-convention and organisation-prefix learning. |
+| `-IncludeLocalIdentity` | Also scrub this machine's name and domain and the current user. |
 | `-KeepFileNames` | Don't scrub output file and folder names. |
-| `-MinNameLength` | Host, user and domain names shorter than this (default 3) are only replaced inside FQDNs and e-mail addresses, not on their own. |
+| `-MinNameLength` | Names shorter than this (default 3) are replaced only inside FQDNs and e-mail addresses. |
+| `-DiscoverOnly` | Write only the correlation sheet, so you can review it before scrubbing. |
+| `-SkipAudit`, `-FailOnAuditFinding` | Turn the audit off, or throw when it finds anything. |
 | `-Force` | Overwrite existing output files. |
 
-The script returns a summary object (`OutputPath`, `CorrelationFile`, `FilesScrubbed`, `FilesSkipped`,
-`Mappings`, `MappingsByType`, `Files`), so you can use it from other scripts.
+The script returns a summary object: `OutputPath`, `CorrelationFile`, `AuditFile`, `FilesScrubbed`, `FilesSkipped`,
+`Mappings`, `MappingsByType`, `AuditFindings`, `Findings` and `Files`. The `Files` entries include line counts in
+and out; a warning is printed if they ever differ.
 
-### Terms file
+## How it was tested
 
-```text
-# One entry per line; lines with no prefix are custom terms
-host: SQLPROD01
-host: LEGACY-BOX = OLD-SERVER
-domain: contoso
-user: jdoe
-term: Project Falcon
-Contoso Ltd
-keep: 203.0.113.10
-pattern: \b(?:NYC|LAX)-[A-Z]{2,4}\d{2,4}\b
-tld: contoso
+The tool was measured against realistic logs that were written **by agents that never saw the code**, so the
+scenarios are not shaped around how the detectors work:
+
+| Test | What it covers | Result |
+|---|---|---|
+| `Test-EngineCases.ps1` | 42 targeted cases plus a guard that fails if any detector becomes pathologically slow. The cases cover:<br>• Event text, AD DNs and certificates, Kerberos, profile paths, PowerShell table/list formatting, the DNS debug wire format<br>• URL-encoded, JSON-escaped, base64, hex and LDIF content<br>• Secrets: command-line, Cisco, PEM, XML config, cookies<br>• MAC address forms, IPv4/IPv6 forms, cloud IDs, ECS JSON, CEF<br>• People, PII and organisations, naming conventions and organisation prefixes<br>• Look-alikes that must stay: versions, OIDs, namespaces, ordinary English words | 43 / 43 |
+| `Test-LogScrub.ps1` | End-to-end on `samples\`: encodings, file names, re-runs, known terms, later batches | 75 / 75 |
+| `Invoke-ScenarioTest.ps1` on **Northwind Traders** | 35 logs across Windows events (four formats), AD tooling, DNS / DHCP / firewall, IIS, SQL, .NET / Java, Linux, k8s, Cisco / ASA / Palo Alto / FortiGate / CEF, Azure / AWS / ECS, Exchange and a support bundle. Encodings: UTF-16, ANSI and BOM | 491 / 497 removed (98.8 %); 0 must-preserve text changed; re-run and re-scrub identical |
+| `Invoke-ScenarioTest.ps1` on **Tailspin Toys** (hold-out) | 30 logs: Sysmon, Defender, auditd, journald, Ansible, Terraform, Okta / Entra / M365 / GitHub / Google, k8s audit, VPC flow, Zeek, Juniper / Aruba / WLC / RADIUS / Check Point / Squid, Jenkins, ServiceNow, e-mail. Also gzip, UTF-16, Windows-1252 and 57 KB single-line JSON | 395 / 396 removed (99.7 %); 0 must-preserve text changed; re-run and re-scrub identical |
+
+**First-contact versus tuned scores.** The Tailspin corpus was generated *after* the tool had been tuned on
+Northwind, as a hold-out. Its first-contact score was **86.1 %** removed, with 49 must-preserve strings altered and
+unstable re-runs. The failures were fixed with general rules rather than special cases:
+
+- English and product stop words
+- A guard so public TLDs are never domain labels
+- base64 and hex decoding, new log formats and new naming shapes
+- Stable typing of domain labels
+
+So 99.7 % is the score *after* learning from that corpus. Expect first contact with a new environment to land
+between these two numbers, which is why the audit and the review step exist.
+
+**Known gaps.** The remaining known gaps are listed in each manifest. All are values with no detectable context:
+
+- A name that appears only in a free-text JSON value
+- Phone extensions
+- An opaque JSON ID
+- A bare group name
+- A partner name that appears only URL-encoded inside a file path
+
+Public vendor IP addresses are replaced by design.
+
+**Speed.** A 176 MB log with 847,000 unique values takes about 85 s end to end on 4 cores, including the audit.
+
+To run every test:
+
+```powershell
+pwsh -File .\tests\Test-EngineCases.ps1
+pwsh -File .\tests\Test-LogScrub.ps1
+pwsh -File .\tests\Invoke-ScenarioTest.ps1
 ```
 
-## Tuning tips
+On Windows PowerShell 5.1, run the same files with `powershell -ExecutionPolicy Bypass -File …`.
 
-- **Run it once on real data and review the correlation sheet.** Each row of the sheet is something the
-  tool decided was sensitive.
-  - Something scrubbed that shouldn't be: add it to `-IgnoreName`, `-KeepValue` or `-KeepDomain`.
-  - Something missed: add it to `-Hostname`, `-User` or `-CustomTerm`, or add a `-HostnamePattern` that
-    matches your naming convention.
-- Host names that appear **only in free text**, with no key, FQDN, UNC path or URL around them (for example
-  `connecting to SQLPROD01 now`), are found only once the name has been seen somewhere else or is supplied.
-  A `-HostnamePattern` for your naming standard is the most reliable fix.
-- **Binary logs** (`.evtx`, `.etl`) are skipped. Export them to text first:
-  `wevtutil qe Security /f:text > Security.txt` or
-  `Get-WinEvent -Path .\Security.evtx | Format-List * | Out-File Security.txt`.
-- **Encodings** are kept: UTF-8 with or without a BOM, UTF-16 LE/BE and UTF-32. Files that aren't valid UTF-8
-  (ANSI) are processed byte for byte, so accented characters survive unchanged.
+> The test corpora contain **fake** credentials on purpose: AWS key IDs, GitHub / GitLab tokens, Stripe- and
+> Slack-format keys, an Azure account key and RSA keys. GitHub push protection may block a push until they are
+> marked as test data.
 
 ## Limitations
 
-- It is pattern-based. It greatly reduces what you expose, but it is not a guarantee. **Always skim the output
-  before sending it.**
-- It does not look for passwords, API keys or connection-string secrets. Remove those separately.
-- People's display names (`John Doe`) are not detected unless you supply them as custom terms.
-
-## Testing
-
-```powershell
-pwsh -File .\tests\Test-LogScrub.ps1                               # PowerShell 7
-powershell -ExecutionPolicy Bypass -File .\tests\Test-LogScrub.ps1 # Windows PowerShell 5.1
-```
-
-The test scrubs the samples plus generated UTF-16, ANSI and binary files, then checks four things:
-
-- No value listed in the correlation sheet survives in the output.
-- Known false-positive traps are left untouched.
-- The replacement formats are correct.
-- A re-run with the same correlation sheet gives identical results.
+- **It is pattern-based.** It removes the vast majority of identifiers, but it cannot promise to remove all of
+  them. Use the audit and skim the output.
+- **Free-text names need something to anchor on.** A word that is a name only in free text (`please call Will`),
+  with no field, path, FQDN, naming pattern or earlier sighting to identify it, cannot be told apart from ordinary
+  words. Supply such names with `-Person` / `-Hostname` / `-CustomTerm`.
+- **Encoded identities stay encoded.** Identities inside JWT payloads, Basic-auth base64 or other opaque encodings
+  are only caught when the whole token is detected as a secret (which is the common case).
+- **Binary formats are skipped.** Export `.evtx` / `.etl` to text first
+  (`wevtutil qe Security /f:text > Security.txt`) and extract `.zip` archives.
+- **Public IP addresses are replaced too,** including vendor ones. Use `-KeepValue` for any you want to keep.

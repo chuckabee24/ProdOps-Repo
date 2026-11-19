@@ -1,0 +1,23 @@
+Nov 18 2026 08:40:02 fw-edge-01 : %ASA-6-302013: Built inbound TCP connection 884211932 for outside:193.32.162.71/40122 (193.32.162.71/40122) to dmz:172.16.50.10/22 (64.187.212.36/22)
+Nov 18 2026 08:44:09 fw-edge-01 : %ASA-6-302013: Built inbound TCP connection 884212001 for outside:64.187.212.34/51544 (64.187.212.34/51544) to dmz:172.16.50.20/443 (64.187.212.35/443)
+Nov 18 2026 08:44:09 fw-edge-01 : %ASA-4-106023: Deny tcp src outside:185.220.101.47/38812 dst dmz:172.16.50.20/8443 by access-group "OUTSIDE_IN" [0x8a3c21f0, 0x0]
+Nov 18 2026 08:45:00 fw-edge-01 : %ASA-6-113004: AAA user authentication Successful : server =  10.20.1.50 : user = a.gonzalez
+Nov 18 2026 08:45:00 fw-edge-01 : %ASA-6-113008: AAA transaction status ACCEPT : user = a.gonzalez
+Nov 18 2026 08:45:00 fw-edge-01 : %ASA-6-113039: Group <GP-NWT-VPN> User <a.gonzalez> IP <86.151.22.9> AnyConnect parent session started.
+Nov 18 2026 08:45:01 fw-edge-01 : %ASA-6-722022: Group <GP-NWT-VPN> User <a.gonzalez> IP <86.151.22.9> TCP SVC connection established without compression
+Nov 18 2026 08:45:01 fw-edge-01 : %ASA-6-722051: Group <GP-NWT-VPN> User <a.gonzalez> IP <86.151.22.9> IPv4 Address <10.255.8.21> IPv6 address <::> assigned to session
+Nov 18 2026 08:45:01 fw-edge-01 : %ASA-4-722041: TunnelGroup <NWT-VPN> GroupPolicy <GP-NWT-VPN> User <a.gonzalez> IP <86.151.22.9> No IPv6 address available for SVC connection
+Nov 18 2026 08:47:30 fw-edge-01 : %ASA-6-605005: Login permitted from 10.20.9.5/51822 to inside:10.20.0.1/ssh for user "netadmin"
+Nov 18 2026 08:48:12 fw-edge-01 : %ASA-5-111008: User 'netadmin' executed the 'show running-config tunnel-group' command.
+Nov 18 2026 08:48:12 fw-edge-01 : %ASA-5-111010: User 'netadmin', running 'CLI' from IP 10.20.9.5, executed 'show running-config tunnel-group'
+Nov 18 2026 08:50:00 fw-edge-01 : %ASA-6-305011: Built dynamic TCP translation from inside:10.20.64.115/52771 to outside:64.187.212.34/52771
+Nov 18 2026 08:51:00 fw-edge-01 : %ASA-3-710003: TCP access denied by ACL from 45.155.205.233/60012 to outside:64.187.212.34/443
+Nov 18 2026 08:52:00 fw-edge-01 : %ASA-4-733100: [ Scanning] drop rate-1 exceeded. Current burst rate is 12 per second, max configured rate is 10; Current average rate is 4 per second, max configured rate is 5; Cumulative total count is 2690
+Nov 18 2026 08:53:00 fw-edge-01 : %ASA-6-716038: Group <GP-NWT-VPN> User <jsmith> IP <73.221.48.190> Authentication: successful, Session Type: WebVPN.
+Nov 18 2026 08:53:01 fw-edge-01 : %ASA-6-716001: Group <GP-NWT-VPN> User <JSMITH> IP <73.221.48.190> WebVPN session started.
+Nov 18 2026 08:54:00 fw-edge-01 : %ASA-2-106001: Inbound TCP connection denied from 193.32.162.71/40188 to 64.187.212.36/3389 flags SYN  on interface outside
+Nov 18 2026 08:55:20 fw-edge-01 : %ASA-6-302013: Built inbound TCP connection 884213511 for outside:2a02:c7c:5a1e:900:8d1:2b3:4c5:6d7/50012 (2a02:c7c:5a1e:900:8d1:2b3:4c5:6d7/50012) to dmz:2620:1ec:4e57:50::20/443 (2620:1ec:4e57:50::20/443)
+Nov 18 2026 08:56:40 fw-edge-01 : %ASA-4-402119: IPSEC: Received an ESP packet (SPI= 0x8C1A3F02, sequence number= 0x1A2B) from 81.133.40.18 (user= 81.133.40.18) to 64.187.212.34 that failed anti-replay checking.
+Nov 18 2026 08:57:02 fw-edge-01 : %ASA-5-713041: Group = 81.133.40.18, IP = 81.133.40.18, IKE Initiator: New Phase 1, Intf inside, IKE Peer 81.133.40.18  local Proxy Address 10.20.0.0, remote Proxy Address 10.40.0.0,  Crypto map (outside_map)
+Nov 18 2026 08:58:30 fw-edge-01 : %ASA-6-722023: Group <GP-NWT-VPN> User <a.gonzalez> IP <86.151.22.9> UDP SVC connection terminated without compression
+Nov 18 2026 08:58:30 fw-edge-01 : %ASA-4-113019: Group = NWT-VPN, Username = a.gonzalez, IP = 86.151.22.9, Session disconnected. Session Type: AnyConnect-Parent, Duration: 0h:13m:30s, Bytes xmt: 1882231, Bytes rcv: 288122, Reason: User Requested

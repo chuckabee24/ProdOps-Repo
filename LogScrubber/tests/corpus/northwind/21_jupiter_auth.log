@@ -1,0 +1,31 @@
+Nov 18 08:30:11 jupiter sshd[48211]: Accepted publickey for jsmith from 10.20.64.115 port 52611 ssh2: ED25519 SHA256:q3Vb8nK2xT9mLp4Rz7Wc1Yf6Hd0Js5Ga2Ue8Xo3Ni4
+Nov 18 08:30:11 jupiter sshd[48211]: pam_unix(sshd:session): session opened for user jsmith(uid=10107) by (uid=0)
+Nov 18 08:30:12 jupiter systemd-logind[811]: New session 1842 of user jsmith.
+Nov 18 08:31:40 jupiter sudo:   jsmith : TTY=pts/2 ; PWD=/home/jsmith ; USER=root ; COMMAND=/usr/bin/systemctl restart fin-sync.service
+Nov 18 08:31:40 jupiter sudo: pam_unix(sudo:session): session opened for user root(uid=0) by jsmith(uid=10107)
+Nov 18 08:31:41 jupiter sudo: pam_unix(sudo:session): session closed for user root
+Nov 18 08:40:02 jupiter sshd[48390]: Invalid user oracle from 193.32.162.71 port 40122
+Nov 18 08:40:02 jupiter sshd[48390]: Received disconnect from 193.32.162.71 port 40122:11: Bye Bye [preauth]
+Nov 18 08:40:02 jupiter sshd[48390]: Disconnected from invalid user oracle 193.32.162.71 port 40122 [preauth]
+Nov 18 08:40:05 jupiter sshd[48392]: Failed password for invalid user admin from 193.32.162.71 port 40188 ssh2
+Nov 18 08:40:07 jupiter sshd[48392]: Connection closed by invalid user admin 193.32.162.71 port 40188 [preauth]
+Nov 18 08:41:17 jupiter sshd[48401]: pam_sss(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.20.64.88 user=pkumar
+Nov 18 08:41:17 jupiter sshd[48401]: pam_sss(sshd:auth): received for user pkumar: 7 (Authentication failure)
+Nov 18 08:41:19 jupiter sshd[48401]: Failed password for pkumar from 10.20.64.88 port 50112 ssh2
+Nov 18 08:41:22 jupiter sshd[48401]: Accepted gssapi-with-mic for pkumar@NWTRADERS.LOCAL from 10.20.64.88 port 50112 ssh2
+Nov 18 08:41:22 jupiter sshd[48401]: pam_unix(sshd:session): session opened for user pkumar@nwtraders.local(uid=1844201131) by (uid=0)
+Nov 18 08:52:09 jupiter sudo: nwtdeploy : TTY=pts/4 ; PWD=/opt/fin-sync ; USER=root ; COMMAND=/usr/bin/mysql -u root -pS3rv1ce#Db -h 10.20.9.40 findb_stage
+Nov 18 08:55:13 jupiter sudo:   jsmith : 3 incorrect password attempts ; TTY=pts/2 ; PWD=/home/jsmith/scripts ; USER=root ; COMMAND=/bin/cat /etc/shadow
+Nov 18 09:00:01 jupiter CRON[48812]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Nov 18 09:00:01 jupiter CRON[48812]: pam_unix(cron:session): session closed for user root
+Nov 18 09:02:44 jupiter sshd[48900]: Connection closed by authenticating user svc_backup 10.20.6.50 port 41922 [preauth]
+Nov 18 09:03:00 jupiter sshd[48911]: Accepted publickey for svc_backup from 10.20.6.50 port 41930 ssh2: RSA SHA256:8tNw2LxQ7pR4kZ1mV9cY6bH3fJ0sD5gA2eU8iO3nK7w
+Nov 18 09:10:15 jupiter sshd[49001]: Accepted keyboard-interactive/pam for a.gonzalez@emea.nwtraders.local from 10.40.64.23 port 50991 ssh2
+Nov 18 09:10:15 jupiter sshd[49001]: pam_unix(sshd:session): session opened for user a.gonzalez@emea.nwtraders.local(uid=2971401215) by (uid=0)
+Nov 18 09:11:02 jupiter sudo: a.gonzalez@emea.nwtraders.local : user NOT in sudoers ; TTY=pts/5 ; PWD=/home/a.gonzalez@emea.nwtraders.local ; USER=root ; COMMAND=/usr/bin/tail -f /var/log/fin-sync/sync.log
+Nov 18 09:12:00 jupiter sshd[49010]: error: kex_exchange_identification: Connection closed by remote host
+Nov 18 09:12:00 jupiter sshd[49010]: Connection closed by 10.20.0.1 port 33012
+Nov 18 09:14:31 jupiter sshd[49022]: Accepted publickey for nwtdeploy from 2620:1ec:4e57:20::42 port 51934 ssh2: ED25519 SHA256:Lk2Pq9Xv4Bn7Mc1Rz8Wt3Yh6Gd0Sf5Ja2Ue9Io4Np7
+Nov 18 09:20:00 jupiter useradd[49110]: new user: name=tnguyen, UID=10188, GID=10188, home=/home/tnguyen, shell=/bin/bash, from=/dev/pts/2
+Nov 18 09:20:05 jupiter passwd[49113]: pam_unix(passwd:chauthtok): password changed for tnguyen
+Nov 18 09:21:44 jupiter sshd[48211]: pam_unix(sshd:session): session closed for user jsmith

@@ -1,0 +1,30 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	conn
+#open	2026-11-18-09-00-00
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	service	duration	orig_bytes	resp_bytes	conn_state	local_orig	local_resp	missed_bytes	history	orig_pkts	orig_ip_bytes	resp_pkts	resp_ip_bytes	tunnel_parents	orig_l2_addr	resp_l2_addr
+#types	time	string	addr	port	addr	port	enum	string	interval	count	count	string	bool	bool	count	string	count	count	count	count	set[string]	string	string
+1794994282.114306	C4J4Th3PJpwUYZZ6gc	172.18.4.21	50122	172.16.10.11	389	tcp	ldap_tcp	0.012311	1204	3310	SF	T	T	0	ShADadFf	9	1576	8	3642	-	00:50:56:9a:3b:7f	dc:a6:32:7e:41:9b
+1794994283.002118	CtPZjS20MLrsMUOJi2	fd7a:3c41:9b2e:10::2a	50124	fd7a:3c41:9b2e:10::11	88	tcp	krb_tcp	0.004120	1622	1588	SF	T	T	0	ShADadFf	6	1942	5	1868	-	00:50:56:9a:3b:7f	dc:a6:32:7e:41:9b
+1794994290.551930	CUM0KZ3MLUfNB0cl11	192.168.41.77	52211	172.16.20.46	1433	tcp	-	3.001022	0	0	S0	T	T	0	S	3	156	0	0	-	b8:ca:3a:71:6e:04	dc:a6:32:7e:41:9b
+1794994301.009100	CmES5u32sYpV7JYN	185.220.101.47	44211	81.134.22.97	3389	tcp	-	-	-	-	REJ	F	T	0	Sr	1	60	1	40	-	dc:a6:32:7e:41:9b	00:50:56:9a:3b:7f
+1794994312.448712	CP7Yfv1yBgzQKQ4V7k	172.29.14.88	137	172.29.255.255	137	udp	dns	-	-	-	S0	T	F	0	D	1	78	0	0	-	3c:22:fb:4e:81:d0	ff:ff:ff:ff:ff:ff
+#close	2026-11-18-10-00-00
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	dns
+#open	2026-11-18-09-00-00
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	trans_id	rtt	query	qclass	qclass_name	qtype	qtype_name	rcode	rcode_name	AA	TC	RD	RA	Z	answers	TTLs	rejected
+#types	time	string	addr	port	addr	port	enum	count	interval	string	count	string	count	string	count	string	bool	bool	bool	bool	count	vector[string]	vector[interval]	bool
+1794994281.990210	CHhAvVGS1DHFjwGM9	172.18.4.21	60112	172.16.10.11	53	udp	41822	0.000611	_ldap._tcp.dc._msdcs.corp.tailspintoys.com	1	C_INTERNET	33	SRV	0	NOERROR	T	F	T	T	0	0 100 389 aus1dcs001.corp.tailspintoys.com,0 100 389 aus1dcs002.corp.tailspintoys.com	600.000000,600.000000	F
+1794994282.401100	ClEkJM2Vm5giqnMf4h	172.18.4.21	60113	172.16.10.11	53	udp	41823	0.000402	kronos-db.corp.tailspintoys.com	1	C_INTERNET	1	A	0	NOERROR	T	F	T	T	0	172.16.20.46	1200.000000	F
+1794994283.700021	C37jN32gN3y3AZzyf6	192.168.41.77	51000	172.16.10.11	53	udp	1022	0.000533	wpad.corp.tailspintoys.com	1	C_INTERNET	1	A	3	NXDOMAIN	T	F	T	T	0	-	-	F
+1794994284.212222	C0LAHyvtKSQHyJxIl	192.168.100.23	47721	8.8.8.8	53	udp	5531	0.012004	github.com	1	C_INTERNET	1	A	0	NOERROR	F	F	T	T	0	140.82.112.4	60.000000	F
+1794994285.003300	CjhGID4nQcgTWjvg4c	172.18.4.22	53311	172.16.10.11	53	udp	7120	0.000301	21.4.18.172.in-addr.arpa	1	C_INTERNET	12	PTR	0	NOERROR	T	F	T	T	0	hermes.corp.tailspintoys.com	3600.000000	F
+1794994312.448712	CP7Yfv1yBgzQKQ4V7k	172.29.14.88	137	172.29.255.255	137	udp	33410	-	TT-L-48213	1	C_INTERNET	32	NB	-	-	F	F	T	F	1	-	-	F
+1794994320.770001	Cx6CCh1dJ7nZ0r3W5	fd7a:3c41:9b2e:64::17	39001	2001:4860:4860::8888	53	udp	6610	0.010881	registry-1.docker.io	1	C_INTERNET	28	AAAA	0	NOERROR	F	F	T	T	0	2600:1f18:2148:bc02:445d:9ace:d20b:c303	60.000000	F
+#close	2026-11-18-10-00-00

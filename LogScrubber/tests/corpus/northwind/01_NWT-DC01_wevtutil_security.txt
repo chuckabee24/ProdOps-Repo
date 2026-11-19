@@ -1,0 +1,349 @@
+C:\Users\adm-pkumar.NWTRADERS>wevtutil qe Security /rd:true /c:5 /f:text /q:"*[System[(EventID=4624 or EventID=4625 or EventID=4740)]]"
+Event[0]:
+  Log Name: Security
+  Source: Microsoft-Windows-Security-Auditing
+  Date: 2026-11-18T08:21:44.6120000Z
+  Event ID: 4740
+  Task: User Account Management
+  Level: Information
+  Opcode: Info
+  Keyword: Audit Success
+  User: N/A
+  User Name: N/A
+  Computer: NWT-DC01.nwtraders.local
+  Description: 
+A user account was locked out.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		NWT-DC01$
+	Account Domain:		NWTRADERS
+	Logon ID:		0x3E7
+
+Account That Was Locked Out:
+	Security ID:		S-1-5-21-1844237615-3567125980-2410998437-1107
+	Account Name:		jsmith
+
+Additional Information:
+	Caller Computer Name:	LT-JSMITH-01
+
+Event[1]:
+  Log Name: Security
+  Source: Microsoft-Windows-Security-Auditing
+  Date: 2026-11-18T08:21:44.6050000Z
+  Event ID: 4625
+  Task: Logon
+  Level: Information
+  Opcode: Info
+  Keyword: Audit Failure
+  User: N/A
+  User Name: N/A
+  Computer: NWT-DC01.nwtraders.local
+  Description: 
+An account failed to log on.
+
+Subject:
+	Security ID:		S-1-0-0
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		S-1-0-0
+	Account Name:		jsmith
+	Account Domain:		NWTRADERS
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x0
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	LT-JSMITH-01
+	Source Network Address:	10.20.64.115
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted.
+
+Event[2]:
+  Log Name: Security
+  Source: Microsoft-Windows-Security-Auditing
+  Date: 2026-11-18T08:14:22.4810000Z
+  Event ID: 4625
+  Task: Logon
+  Level: Information
+  Opcode: Info
+  Keyword: Audit Failure
+  User: N/A
+  User Name: N/A
+  Computer: NWT-DC01.nwtraders.local
+  Description: 
+An account failed to log on.
+
+Subject:
+	Security ID:		S-1-0-0
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		S-1-0-0
+	Account Name:		JSMITH
+	Account Domain:		nwtraders
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC000006A
+
+Process Information:
+	Caller Process ID:	0x0
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	NWT-WEB01
+	Source Network Address:	10.20.10.31
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted.
+
+Event[3]:
+  Log Name: Security
+  Source: Microsoft-Windows-Security-Auditing
+  Date: 2026-11-18T08:10:03.1170000Z
+  Event ID: 4624
+  Task: Logon
+  Level: Information
+  Opcode: Info
+  Keyword: Audit Success
+  User: N/A
+  User Name: N/A
+  Computer: NWT-DC01.nwtraders.local
+  Description: 
+An account was successfully logged on.
+
+Subject:
+	Security ID:		S-1-0-0
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Logon Information:
+	Logon Type:		3
+	Restricted Admin Mode:	-
+	Virtual Account:		No
+	Elevated Token:		Yes
+
+Impersonation Level:		Delegation
+
+New Logon:
+	Security ID:		S-1-5-21-1844237615-3567125980-2410998437-1121
+	Account Name:		svc_backup
+	Account Domain:		NWTRADERS.LOCAL
+	Logon ID:		0x8A3F21C
+	Linked Logon ID:		0x0
+	Network Account Name:	-
+	Network Account Domain:	-
+	Logon GUID:		{e3a1b6c2-7d4f-9a08-1c2e-3f4a5b6c7d8e}
+
+Process Information:
+	Process ID:		0x0
+	Process Name:		-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	10.20.6.15
+	Source Port:		50644
+
+Detailed Authentication Information:
+	Logon Process:		Kerberos
+	Authentication Package:	Kerberos
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon session is created. It is generated on the computer that was accessed.
+
+Event[4]:
+  Log Name: Security
+  Source: Microsoft-Windows-Security-Auditing
+  Date: 2026-11-18T08:00:00.2290000Z
+  Event ID: 4624
+  Task: Logon
+  Level: Information
+  Opcode: Info
+  Keyword: Audit Success
+  User: N/A
+  User Name: N/A
+  Computer: NWT-DC01.nwtraders.local
+  Description: 
+An account was successfully logged on.
+
+Subject:
+	Security ID:		S-1-5-18
+	Account Name:		NWT-DC01$
+	Account Domain:		NWTRADERS
+	Logon ID:		0x3E7
+
+Logon Information:
+	Logon Type:		5
+	Restricted Admin Mode:	-
+	Virtual Account:		No
+	Elevated Token:		Yes
+
+Impersonation Level:		Impersonation
+
+New Logon:
+	Security ID:		S-1-5-18
+	Account Name:		SYSTEM
+	Account Domain:		NT AUTHORITY
+	Logon ID:		0x3E7
+	Linked Logon ID:		0x0
+	Network Account Name:	-
+	Network Account Domain:	-
+	Logon GUID:		{00000000-0000-0000-0000-000000000000}
+
+Process Information:
+	Process ID:		0x2a0
+	Process Name:		C:\Windows\System32\services.exe
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	-
+	Source Port:		-
+
+Detailed Authentication Information:
+	Logon Process:		Advapi  
+	Authentication Package:	Negotiate
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon session is created. It is generated on the computer that was accessed.
+
+
+C:\Users\adm-pkumar.NWTRADERS>wevtutil qe Security /r:NWT-WEB01 /rd:true /c:2 /f:text /q:"*[System[(EventID=4625)]]"
+Event[0]:
+  Log Name: Security
+  Source: Microsoft-Windows-Security-Auditing
+  Date: 2026-11-18T07:41:12.9030000Z
+  Event ID: 4625
+  Task: Logon
+  Level: Information
+  Opcode: Info
+  Keyword: Audit Failure
+  User: N/A
+  User Name: N/A
+  Computer: NWT-WEB01.nwtraders.local
+  Description: 
+An account failed to log on.
+
+Subject:
+	Security ID:		S-1-0-0
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		S-1-0-0
+	Account Name:		Administrator
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x0
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	45.155.205.233
+	Source Port:		61822
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted.
+
+Event[1]:
+  Log Name: Security
+  Source: Microsoft-Windows-Security-Auditing
+  Date: 2026-11-18T07:41:13.0020000Z
+  Event ID: 4625
+  Task: Logon
+  Level: Information
+  Opcode: Info
+  Keyword: Audit Failure
+  User: N/A
+  User Name: N/A
+  Computer: NWT-WEB01.nwtraders.local
+  Description: 
+An account failed to log on.
+
+Subject:
+	Security ID:		S-1-0-0
+	Account Name:		-
+	Account Domain:		-
+	Logon ID:		0x0
+
+Logon Type:			3
+
+Account For Which Logon Failed:
+	Security ID:		S-1-0-0
+	Account Name:		scanner
+	Account Domain:		
+
+Failure Information:
+	Failure Reason:		Unknown user name or bad password.
+	Status:			0xC000006D
+	Sub Status:		0xC0000064
+
+Process Information:
+	Caller Process ID:	0x0
+	Caller Process Name:	-
+
+Network Information:
+	Workstation Name:	-
+	Source Network Address:	193.32.162.71
+	Source Port:		0
+
+Detailed Authentication Information:
+	Logon Process:		NtLmSsp 
+	Authentication Package:	NTLM
+	Transited Services:	-
+	Package Name (NTLM only):	-
+	Key Length:		0
+
+This event is generated when a logon request fails. It is generated on the computer where access was attempted.
+

@@ -1,0 +1,77 @@
+Level,Date and Time,Source,Event ID,Task Category
+Information,11/18/2026 1:30:00 AM,Microsoft-Windows-TaskScheduler,100,Task Started,"Task Scheduler started ""{4b1e7d2a-9c63-4f05-8a1e-3d6b9c2f7e40}"" instance of the ""\TT-Ops\NightlySQLBackup"" task for user ""TAILSPIN\gmsa_backup$""."
+Information,11/18/2026 1:30:00 AM,Microsoft-Windows-TaskScheduler,200,Action started,"Task Scheduler launched action ""C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\SQLCMD.EXE"" in instance ""{4b1e7d2a-9c63-4f05-8a1e-3d6b9c2f7e40}"" of task ""\TT-Ops\NightlySQLBackup""."
+Warning,11/18/2026 1:41:27 AM,Microsoft-Windows-TaskScheduler,201,Action completed,"Task Scheduler successfully completed task ""\TT-Ops\NightlySQLBackup"" , instance ""{4b1e7d2a-9c63-4f05-8a1e-3d6b9c2f7e40}"" , action ""C:\Windows\System32\Robocopy.exe"" with return code 2147942401."
+Error,11/18/2026 2:00:00 AM,Microsoft-Windows-TaskScheduler,101,Task Start Failed,"Task Scheduler failed to start ""\TT-Ops\RotateLogs"" task for user ""TAILSPIN\svc-sqlagent"". Additional Data: Error Value: 2147943726."
+Information,11/18/2026 9:43:58 AM,Microsoft-Windows-TerminalServices-RemoteConnectionManager,1149,None,"Remote Desktop Services: User authentication succeeded:
+
+User: wrose
+Domain: TAILSPIN
+Source Network Address: 192.168.41.77"
+Information,11/18/2026 9:44:02 AM,Microsoft-Windows-TerminalServices-LocalSessionManager,21,None,"Remote Desktop Services: Session logon succeeded:
+
+User: TAILSPIN\wrose
+Session ID: 3
+Source Network Address: 192.168.41.77"
+Information,11/18/2026 10:12:40 AM,Microsoft-Windows-TerminalServices-LocalSessionManager,24,None,"Remote Desktop Services: Session has been disconnected:
+
+User: TAILSPIN\wrose
+Session ID: 3
+Source Network Address: 192.168.41.77"
+Information,11/18/2026 10:31:09 AM,Microsoft-Windows-TerminalServices-LocalSessionManager,25,None,"Remote Desktop Services: Session reconnection succeeded:
+
+User: TAILSPIN\wrose
+Session ID: 3
+Source Network Address: 172.29.20.6"
+Error,11/18/2026 6:02:11 AM,DFSR,4012,None,"The DFS Replication service stopped replication on the folder with the following local path: D:\DFSRoots\Finance. This server has been disconnected from other partners for 72 days, which is longer than the time allowed by the MaxOfflineTimeInDays parameter (60). DFS Replication considers the data in this folder to be stale, and this server will not replicate the folder until this error is corrected.
+
+Additional Information:
+Error: 9061 (The replication operation failed.)
+Additional Information:
+Folder: D:\DFSRoots\Finance
+Replicated Folder Name: Finance
+Replicated Folder ID: 8C2E4A1F-7B39-4D06-A5E8-1F3C9D7B2E64
+Replication Group Name: corp.tailspintoys.com\dfs\finance
+Replication Group ID: 0D9B7E3C-5A21-4F86-B4C1-6E8A2D0F9B37
+Member ID: 3E7A1C95-2D48-4B6F-80E3-9A5C1F7D2B04"
+Warning,11/18/2026 6:05:44 AM,DFSR,5002,None,"The DFS Replication service encountered an error communicating with partner LON1FS02 for replication group corp.tailspintoys.com\dfs\finance.
+
+Partner DNS address: lon1fs02.corp.tailspintoys.com
+
+Optional data if available:
+Partner WINS Address: LON1FS02
+Partner IP Address: 192.168.40.15
+
+The service will retry the connection periodically.
+
+Additional Information:
+Error: 1753 (There are no more endpoints available from the endpoint mapper.)
+Connection ID: 1F6B3D8E-4C27-4A95-9E01-7D3B5F9C2A86
+Replication Group ID: 0D9B7E3C-5A21-4F86-B4C1-6E8A2D0F9B37"
+Error,11/18/2026 7:14:31 AM,AD FS,411,None,"Token validation failed. See inner exception for more details.
+
+Additional Data
+
+Activity ID: 00000000-0000-0000-4d00-0080000000f2
+
+Token Type:
+http://schemas.microsoft.com/ws/2006/05/identitymodel/tokens/UserName
+
+Client IP:
+185.220.101.47,172.16.10.30
+
+Error message:
+grace.hunter@tailspintoys.com-The user name or password is incorrect
+
+Exception details:
+System.IdentityModel.Tokens.SecurityTokenValidationException: grace.hunter@tailspintoys.com
+   at Microsoft.IdentityServer.Service.Tokens.MSISWindowsUserNameSecurityTokenHandler.ValidateToken(SecurityToken token)"
+Information,11/18/2026 7:15:02 AM,AD FS,1200,None,"The Federation Service issued a valid token. See XML for details.
+
+Additional Data
+
+XML: <?xml version=""1.0"" encoding=""utf-16""?>
+<AuditBase xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xsi:type=""AppTokenAudit""><AuditType>AppToken</AuditType><AuditResult>Success</AuditResult><FailureType>None</FailureType><ErrorCode>N/A</ErrorCode><ContextComponents><Component xsi:type=""ResourceAuditComponent""><RelyingParty>urn:federation:MicrosoftOnline</RelyingParty><ClaimsProvider>AD AUTHORITY</ClaimsProvider><UserId>TAILSPIN\skholm</UserId></Component><Component xsi:type=""RequestAuditComponent""><Server>http://sts.tailspintoys.com/adfs/services/trust</Server><AuthProtocol>WSFederation</AuthProtocol><NetworkLocation>Intranet</NetworkLocation><IpAddress>101.188.67.134,172.16.10.30</IpAddress><ForwardedIpAddress>101.188.67.134</ForwardedIpAddress><UserAgentString>Mozilla/5.0 (Windows NT 10.0; Win64; x64)</UserAgentString></Component></ContextComponents></AuditBase>"
+Information,11/18/2026 8:02:19 AM,Microsoft-Windows-BitLocker-API,845,None,"BitLocker Drive Encryption recovery information for volume C: was backed up successfully to your Azure AD.
+
+Protector ID: {6E1F0A3D-8C25-4B97-A4E6-1D3F5B7C9E20}"

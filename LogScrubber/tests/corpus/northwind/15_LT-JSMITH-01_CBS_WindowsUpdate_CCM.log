@@ -1,0 +1,50 @@
+===== C:\Windows\Logs\CBS\CBS.log (excerpt) =====
+2026-11-18 08:02:11, Info                  CBS    TI: --- Initializing Trusted Installer ---
+2026-11-18 08:02:11, Info                  CBS    Starting TrustedInstaller initialization.
+2026-11-18 08:02:11, Info                  CBS    Lock: New lock added: CCbsPublicSessionClassFactory, level: 30, total lock:4
+2026-11-18 08:02:11, Info                  CBS    Loaded Servicing Stack v10.0.22621.4455 with Core: C:\WINDOWS\winsxs\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.22621.4455_none_8a2d1a5c8b3f6e21\cbscore.dll
+2026-11-18 08:02:12, Info                  CSI    00000001@2026/11/18:16:02:12.041 WcpInitialize: wcp.dll version 0.0.0.6 (bfe5e7f8a92c)
+2026-11-18 08:02:14, Info                  CBS    Session: 31141235_2148735401 initialized by client WindowsUpdateAgent, external staging directory: (null), external registry directory: (null)
+2026-11-18 08:04:51, Info                  CBS    Exec: Downloading source for package: Package_for_RollupFix~31bf3856ad364e35~amd64~~22621.4460.1.6, Update: 5046633, from: \\NWT-SCCM01\SMS_P01\Updates\windows11.0-kb5046633-x64.cab
+2026-11-18 08:04:51, Error                 CBS    Failed to download source for package. [HRESULT = 0x800f0954 - CBS_E_INVALID_WINDOWS_UPDATE_COUNT]
+2026-11-18 08:04:52, Info                  CBS    Reading local policy registry: HKLM\SOFTWARE\Policies\Microsoft\Windows\Servicing, LocalSourcePath: \\nas01.nwtraders.local\osmedia\Win11_23H2\sources\sxs
+2026-11-18 08:04:53, Info                  CBS    Failed to get WU source, falling back to Windows Update: http://download.windowsupdate.com [HRESULT = 0x800f0954 - CBS_E_INVALID_WINDOWS_UPDATE_COUNT]
+
+===== Get-WindowsUpdateLog -> C:\Users\jsmith.NWTRADERS\Desktop\WindowsUpdate.log (excerpt) =====
+2026/11/18 08:03:02.1234567 1288  4120  Agent           * START *   Finding updates CallerId = UpdateOrchestrator  Id = 1
+2026/11/18 08:03:02.4567890 1288  4120  Agent           Online = Yes; AllowCachedResults = No; Ignore download priority = No
+2026/11/18 08:03:02.4570012 1288  4120  Agent           Criteria = "IsInstalled=0 and DeploymentAction='Installation' or IsInstalled=0 and DeploymentAction='OptionalInstallation'"
+2026/11/18 08:03:03.0011223 1288  4120  ProtocolTalker  ServiceId = {3DA21691-E39D-4DA6-8A4B-B43877BCB1B7}, Server URL = http://NWT-SCCM01.nwtraders.local:8530/ClientWebService/client.asmx
+2026/11/18 08:03:03.0011901 1288  4120  Misc            Got WSUS Client/Server URL: http://NWT-SCCM01.nwtraders.local:8530/ClientWebService/client.asmx""
+2026/11/18 08:03:05.1112233 1288  4120  WebServices     Auto proxy settings for this web service call.
+2026/11/18 08:03:05.2223344 1288  4120  WebServices     WS error: There was an error communicating with the endpoint at 'http://NWT-SCCM01.nwtraders.local:8530/ClientWebService/client.asmx'.
+2026/11/18 08:03:05.2223901 1288  4120  WebServices     WS error: The server returned HTTP status code '503 (0x1F7)' with text 'Service Unavailable'.
+2026/11/18 08:03:05.2224455 1288  4120  ProtocolTalker  SyncUpdates failed, hr=0x8024401F
+2026/11/18 08:03:09.4410021 1288  4120  SLS             Get response for service 855E8A7C-ECB4-4CA3-B045-1DFA50104289 - forceExpire[False] asyncRefreshOnExpiry[True]
+2026/11/18 08:03:09.4410778 1288  4120  SLS             path used for cache lookup: /SLS/{855E8A7C-ECB4-4CA3-B045-1DFA50104289}/x64/10.0.22631.4460/0?CH=686&L=en-US&P=&PT=0x4&WUA=1306.2410.18012.0&MK=Dell+Inc.&MD=Latitude+7440
+2026/11/18 08:03:10.0021133 1288  4120  DownloadManager Downloading from http://download.windowsupdate.com/c/msdownload/update/software/secu/2026/11/windows11.0-kb5046633-x64_8f3c5e1d2a9b7c4f6e0d1a2b3c4d5e6f7a8b9c0d.msu to C:\WINDOWS\SoftwareDistribution\Download\8f3c5e1d2a9b7c4f6e0d1a2b3c4d5e6f\windows11.0-kb5046633-x64.msu (full file)
+2026/11/18 08:03:11.2201133 1288  4120  Misc            Reading HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate: WUServer = http://NWT-SCCM01.nwtraders.local:8530, WUStatusServer = http://NWT-SCCM01.nwtraders.local:8530, TargetGroup = NWT-Pilot-Ring1
+
+===== C:\Windows\CCM\Logs\LocationServices.log / CAS.log / DataTransferService.log (excerpt) =====
+<![LOG[Current AD site of machine is SEA-HQ]LOG]!><time="08:05:12.331+480" date="11-18-2026" component="LocationServices" context="" type="1" thread="5124" file="lsad.cpp:1137">
+<![LOG[Domain joined client is in Intranet]LOG]!><time="08:05:12.332+480" date="11-18-2026" component="LocationServices" context="" type="1" thread="5124" file="lsad.cpp:4878">
+<![LOG[Retrieved MP [NWT-SCCM01.nwtraders.local] from AD.]LOG]!><time="08:05:12.418+480" date="11-18-2026" component="LocationServices" context="" type="1" thread="5124" file="lsad.cpp:770">
+<![LOG[Calling back with the following distribution points]LOG]!><time="08:05:13.002+480" date="11-18-2026" component="ContentAccess" context="" type="1" thread="4416" file="ccmcontentaccess.cpp:1188">
+<![LOG[Distribution Point='http://NWT-SCCM01.nwtraders.local/SMS_DP_SMSPKG$/P0100041', Locality='LOCAL', DPType='SERVER', Version='9128', Capabilities='<Capabilities SchemaVersion="1.0"><Property Name="SSLState" Value="0"/></Capabilities>', Signature='http://NWT-SCCM01.nwtraders.local/SMS_DP_SMSSIG$/P0100041', ForestTrust='TRUE', ]LOG]!><time="08:05:13.002+480" date="11-18-2026" component="ContentAccess" context="" type="1" thread="4416" file="ccmcontentaccess.cpp:1274">
+<![LOG[Using user token for content download: NWTRADERS\jsmith]LOG]!><time="08:05:13.120+480" date="11-18-2026" component="DataTransferService" context="" type="1" thread="4416" file="dtsjob.cpp:1312">
+<![LOG[Successfully queued event on HTTP/HTTPS failure for server 'NWT-SCCM01.nwtraders.local'.]LOG]!><time="08:05:14.512+480" date="11-18-2026" component="CcmMessaging" context="" type="2" thread="5124" file="ccmhttpstatus.cpp:184">
+<![LOG[Raising event:
+instance of CCM_CcmHttp_Status
+{
+	ClientID = "GUID:7B3E2C1A-9D4F-4A6B-8E21-5C0F9A3D7B12";
+	DateTime = "20261118160514.512000+000";
+	HostName = "NWT-SCCM01.nwtraders.local";
+	HRESULT = "0x80072ee2";
+	ProcessID = 4416;
+	StatusCode = 0;
+	ThreadID = 5124;
+};
+]LOG]!><time="08:05:14.513+480" date="11-18-2026" component="CcmMessaging" context="" type="1" thread="5124" file="event.cpp:723">
+<![LOG[Download failed for \\NWT-SCCM01\SMS_DP$\Content_6f2b81a4-3c9d-4e7a-b1f0-28d4c6e9a3b7.1\, falling back to http. Error 0x80070035 (The network path was not found.)]LOG]!><time="08:05:15.004+480" date="11-18-2026" component="DataTransferService" context="" type="3" thread="4416" file="dtsjob.cpp:2210">
+<![LOG[Cache location C:\Windows\ccmcache\4f is used for content of FinPortal-Addin (C:\Users\jsmith\AppData\Local\Temp\FinPortalAddin_setup.log)]LOG]!><time="08:05:20.771+480" date="11-18-2026" component="CAS" context="" type="1" thread="4416" file="cachemanager.cpp:1902">
+<![LOG[Network Access Account svc_sccm_na used for \\nwt-sccm01.nwtraders.local\SMS_DP$ (NWTRADERS\svc_sccm_na)]LOG]!><time="08:05:21.002+480" date="11-18-2026" component="ContentAccess" context="" type="1" thread="4416" file="ccmcontentaccess.cpp:2201">

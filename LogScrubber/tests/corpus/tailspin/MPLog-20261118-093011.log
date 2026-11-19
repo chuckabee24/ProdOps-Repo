@@ -1,0 +1,16 @@
+2026-11-18T09:30:11.512 Service started - MsMpEng.exe (ProductVersion: 4.18.25090.1, EngineVersion: 1.1.25100.4, SigVersion: 1.421.380.0, PID: 4612, Computer: TT-L-48213)
+2026-11-18T09:30:11.518 Engine:Begin Update for Antivirus (1.421.380.0 -> 1.421.412.0)
+2026-11-18T09:30:12.004 Beginning MpSignatureUpdate (Source: MMPC, Server: https://definitionupdates.microsoft.com/download/DefinitionUpdates/)
+2026-11-18T09:30:14.881 Signature update failed: 0x80070005 (Access is denied.) Source: UNC, Path: \\lon1fs02\defupdates$\x64
+2026-11-18T09:30:15.002 Signature update succeeded via fallback order (MMPC)
+2026-11-18T09:31:02.337 [Mini-filter] Process: \Device\HarddiskVolume3\Users\u104233\AppData\Local\Microsoft\Teams\current\Teams.exe, Pid: 11804, ExpensiveFile: \Device\HarddiskVolume3\Users\u104233\AppData\Roaming\Microsoft\Teams\IndexedDB\https_teams.microsoft.com_0.indexeddb.leveldb\000412.log, Duration: 3412ms
+2026-11-18T09:31:40.118 DETECTION Trojan:JS/Nemucod!MSR file:C:\Users\u104233\Downloads\Invoice_u104233_Nov.zip->invoice.js
+2026-11-18T09:31:40.119 Threat Detected: ThreatName=Trojan:JS/Nemucod!MSR, ThreatID=2147735503, Severity=Severe, User=TAILSPIN\u104233, Path=file:_C:\Users\u104233\Downloads\Invoice_u104233_Nov.zip->invoice.js, DetectionSource=Real-Time Protection, Origin=Internet, ReferrerUrl=https://tailspintoys-my.sharepoint.com/personal/marie_dupont_tailspintoys_com/Documents/Shared, Action=Quarantine, ActionStatus=0x0
+2026-11-18T09:31:40.207 SDN:Issuing SDN query for \\?\C:\Users\u104233\AppData\Local\Temp\7zS0A12\invoice.js (\\?\C:\Users\u104233\AppData\Local\Temp\7zS0A12\invoice.js) (sha1=3f1c0e9a8b7d6c5e4f3a2b1c0d9e8f7a6b5c4d3e, sha2=9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a2f1e0d9c8b)
+2026-11-18T09:31:40.902 MAPS: Submitting report to https://wdcp.microsoft.com/wdcp.svc/bond/submitreport, Size: 4412, CorrelationId: {b2f6c1d8-0e3a-4f7b-9c52-8d1e6a3f0b47}
+2026-11-18T09:32:05.441 [RTP] [Mini-filter] Blocked file: \\lon1fs02.corp.tailspintoys.com\Users$\u104233\Scripts\Get-Creds.ps1 Process: \Device\HarddiskVolume3\Windows\System32\WindowsPowerShell\v1.0\powershell.exe, Status: 0x0, State: 1, ScanRequest #18442, FileId: 0x0003000000004f12, Reason: OnOpen, IoStatusBlockForNewFile: 0x2, DeviceCharacteristics: 0x100, FileAttributes: 0x20, FileName: Get-Creds.ps1
+2026-11-18T09:32:05.442 DETECTION HackTool:PowerShell/Mimikatz!MTB file:\\lon1fs02.corp.tailspintoys.com\Users$\u104233\Scripts\Get-Creds.ps1
+2026-11-18T09:33:17.010 Exclusion: Path \\LON1FS02\backup$\ excluded by policy (Source: Intune, PolicyId: {a1e4c7b2-5d93-4f08-b16e-3c2d9f7a8e15})
+2026-11-18T09:34:00.550 Network Protection: Blocked connection to http://185.220.101.47:8080/stage2.bin from \Device\HarddiskVolume3\Windows\System32\wscript.exe (User: TAILSPIN\u104233, LocalIp: 172.29.14.88, RemoteIp: 185.220.101.47)
+2026-11-18T09:35:22.871 Scan finished. ScanType: QuickScan, ScanId: {7c3d1f9a-2e5b-48c6-a0d4-9f1b6e2c8a73}, ScanSource: 3, Threats: 2, Duration: 0:01:04, User: NT AUTHORITY\SYSTEM
+2026-11-18T09:35:22.900 Tamper protection state: Enabled, Source: ATP, Error: 0x0

@@ -1,0 +1,56 @@
+[PS] C:\Windows\system32>Get-MessageTrackingLog -Server NWT-EXCH01 -MessageId "<a1b2c3d4e5f64a7b8c9d0e1f2a3b4c5d@NWT-EXCH01.nwtraders.local>" | ft Timestamp,EventId,Source,Sender,Recipients,MessageSubject -AutoSize
+
+Timestamp             EventId Source Sender                      Recipients                                                         MessageSubject
+---------             ------- ------ ------                      ----------                                                         --------------
+11/18/2026 8:55:58 AM RECEIVE SMTP   jsmith@northwindtraders.com {m.becker@fabrikam-logistics.de, orders@contoso-supplies.com}      Q3 Close - AP Aging (Northwind Traders)
+11/18/2026 8:55:59 AM SUBMIT  STOR...  jsmith@northwindtraders.com {m.becker@fabrikam-logistics.de, orders@contoso-supplies.com}      Q3 Close - AP Aging (Northwind Traders)
+11/18/2026 8:56:00 AM SEND    SMTP   jsmith@northwindtraders.com {m.becker@fabrikam-logistics.de, orders@contoso-supplies.com}      Q3 Close - AP Aging (Northwind Traders)
+
+
+----- E:\Exchange\TransportRoles\Logs\MessageTracking\MSGTRK2026111816-1.LOG -----
+#Software: Microsoft Exchange Server
+#Version: 15.02.1544.004
+#Log-type: Message Tracking Log
+#Date: 2026-11-18T16:00:00.015Z
+#Fields: date-time,client-ip,client-hostname,server-ip,server-hostname,source-context,connector-id,source,event-id,internal-message-id,message-id,network-message-id,recipient-address,recipient-status,total-bytes,recipient-count,related-recipient-address,reference,message-subject,sender-address,return-path,message-info,directionality,tenant-id,original-client-ip,original-server-ip,custom-data,transport-traffic-type,log-id,schema-version
+2026-11-18T16:55:58.812Z,10.20.64.115,LT-JSMITH-01.nwtraders.local,10.20.7.25,NWT-EXCH01,08DCF3A1B2C4D5E6;2026-11-18T16:55:58.700Z;0,NWT-EXCH01\Client Proxy NWT-EXCH01,SMTP,RECEIVE,40213,<a1b2c3d4e5f64a7b8c9d0e1f2a3b4c5d@NWT-EXCH01.nwtraders.local>,f3c1a7e9-2b4d-4f6a-8c0e-1d3f5b7a9c2e,m.becker@fabrikam-logistics.de;orders@contoso-supplies.com,,48211,2,,,Q3 Close - AP Aging (Northwind Traders),jsmith@northwindtraders.com,jsmith@northwindtraders.com,,Originating,,10.20.64.115,10.20.7.25,S:FirstForestHop=NWT-EXCH01.nwtraders.local;S:ProxiedClientIPAddress=10.20.64.115;S:ProxiedClientHostname=LT-JSMITH-01.nwtraders.local;S:DeliveryPriority=Normal,Email,6d2c8e0a-4f1b-4d3e-9a5c-7e9b1d3f5a7c,15.02.1544.004
+2026-11-18T16:56:00.441Z,10.20.7.25,NWT-EXCH01,10.20.7.30,mail-relay01.nwtraders.local,08DCF3A1B2C4D5E6;250 2.0.0 Ok: queued as 4Ch7Xq1Zr8z9vKt,Internet via Relay,SMTP,SEND,40213,<a1b2c3d4e5f64a7b8c9d0e1f2a3b4c5d@NWT-EXCH01.nwtraders.local>,f3c1a7e9-2b4d-4f6a-8c0e-1d3f5b7a9c2e,m.becker@fabrikam-logistics.de;orders@contoso-supplies.com,250 2.0.0 Ok: queued as 4Ch7Xq1Zr8z9vKt;250 2.0.0 Ok: queued as 4Ch7Xq1Zr8z9vKt,48803,2,,,Q3 Close - AP Aging (Northwind Traders),jsmith@northwindtraders.com,jsmith@northwindtraders.com,2026-11-18T16:55:58.812Z;SRV=NWT-EXCH01.nwtraders.local:TOTAL-SUB=0.120|SA=0.004|MTSS=0.110,Originating,,10.20.64.115,10.20.7.25,S:E2ELatency=1.629,Email,8a0c2e4f-6b8d-4f1a-a3c5-e7a9b1d3f5a8,15.02.1544.004
+
+----- Message headers (from Outlook > File > Properties, as received by m.becker@fabrikam-logistics.de) -----
+Received: from mx01.fabrikam-logistics.de (10.88.0.12) by exch.fabrikam-logistics.de (10.88.0.20) with Microsoft SMTP Server id 15.2.1544.4; Wed, 18 Nov 2026 17:56:04 +0100
+Received: from mail-relay01.nwtraders.local (mail.northwindtraders.com [64.187.212.34])
+	by mx01.fabrikam-logistics.de (Postfix) with ESMTPS id 7B2C41A0F3
+	for <m.becker@fabrikam-logistics.de>; Wed, 18 Nov 2026 17:56:03 +0100 (CET)
+Received: from NWT-EXCH01.nwtraders.local (10.20.7.25) by mail-relay01.nwtraders.local (Postfix) with ESMTPS id 4Ch7Xq1Zr8z9vKt; Wed, 18 Nov 2026 08:56:01 -0800 (PST)
+Received: from LT-JSMITH-01.nwtraders.local ([10.20.64.115]) by NWT-EXCH01.nwtraders.local ([fe80::d0f1:2a3b:9c4e:71a5%12]) with mapi id 15.02.1544.004; Wed, 18 Nov 2026 08:55:58 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=northwindtraders.com; s=sel2026; h=From:To:Subject:Date:Message-ID; bh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=; b=dGhpcyBpcyBub3QgYSByZWFsIHNpZ25hdHVyZSBqdXN0IHRlc3QgZGF0YQ==
+From: Jane Smith <jsmith@northwindtraders.com>
+To: "Becker, Markus" <m.becker@fabrikam-logistics.de>, "orders@contoso-supplies.com" <orders@contoso-supplies.com>
+CC: "Gonzalez, Ana" <a.gonzalez@northwindtraders.com>, =?utf-8?Q?Jos=C3=A9_M=C3=BCller?= <jose.mueller@northwindtraders.com>
+Subject: Q3 Close - AP Aging
+Thread-Topic: Q3 Close - AP Aging
+Thread-Index: AdsZ1k2PqR7vXwYb3Cg9nLmHtJ4Ffw==
+Date: Wed, 18 Nov 2026 16:55:58 +0000
+Message-ID: <a1b2c3d4e5f64a7b8c9d0e1f2a3b4c5d@NWT-EXCH01.nwtraders.local>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-AuthAs: Internal
+X-MS-Exchange-Organization-AuthMechanism: 04
+X-MS-Exchange-Organization-AuthSource: NWT-EXCH01.nwtraders.local
+x-originating-ip: [10.20.64.115]
+Authentication-Results: mx01.fabrikam-logistics.de; spf=pass (sender IP is 64.187.212.34) smtp.mailfrom=northwindtraders.com; dkim=pass header.d=northwindtraders.com; dmarc=pass action=none header.from=northwindtraders.com
+Content-Type: multipart/mixed;
+	boundary="_004_a1b2c3d4e5f64a7b8c9d0e1f2a3b4c5dNWTEXCH01nwtraderslocal_"
+MIME-Version: 1.0
+
+--_004_a1b2c3d4e5f64a7b8c9d0e1f2a3b4c5dNWTEXCH01nwtraderslocal_
+Content-Type: text/plain; charset="us-ascii"
+
+Hi Markus,
+
+Please find attached the Q3 AP aging. Call me at +1 (206) 555-0147 if anything is unclear.
+
+Jane Smith | Senior Financial Analyst | Northwind Traders
+1200 Westlake Ave N, Suite 300, Seattle, WA 98109

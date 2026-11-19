@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Events>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'>
+  <System>
+    <Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385f-c22a-43e0-bf4c-06f5698ffbd9}'/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime='2026-11-18T09:31:22.4571234Z'/>
+    <EventRecordID>884213</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID='3412' ThreadID='4980'/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>HERMES.corp.tailspintoys.com</Computer>
+    <Security UserID='S-1-5-18'/>
+  </System>
+  <EventData>
+    <Data Name='RuleName'>technique_id=T1021.002,technique_name=SMB/Windows Admin Shares</Data>
+    <Data Name='UtcTime'>2026-11-18 09:31:22.449</Data>
+    <Data Name='ProcessGuid'>{a3c1f0d2-4b9e-6738-2f04-000000001c00}</Data>
+    <Data Name='ProcessId'>7716</Data>
+    <Data Name='Image'>C:\Windows\System32\net.exe</Data>
+    <Data Name='FileVersion'>10.0.20348.1 (WinBuild.160101.0800)</Data>
+    <Data Name='Description'>Net Command</Data>
+    <Data Name='Product'>Microsoft® Windows® Operating System</Data>
+    <Data Name='Company'>Microsoft Corporation</Data>
+    <Data Name='OriginalFileName'>net.exe</Data>
+    <Data Name='CommandLine'>net  use Z: \\lon1fs02\finance$ /user:TAILSPIN\svc-sqlagent Passw0rd! /persistent:no</Data>
+    <Data Name='CurrentDirectory'>C:\Users\marie.dupont\Documents\</Data>
+    <Data Name='User'>TAILSPIN\marie.dupont</Data>
+    <Data Name='LogonGuid'>{a3c1f0d2-1188-6738-1ca9-e70300000000}</Data>
+    <Data Name='LogonId'>0x3e7a91c</Data>
+    <Data Name='TerminalSessionId'>2</Data>
+    <Data Name='IntegrityLevel'>Medium</Data>
+    <Data Name='Hashes'>SHA256=2A5D3F8E7C1B9A0D4E6F2C8B1A7D3E9F0C5B4A2D8E1F7C3B9A6D0E4F2C8B1A7D,IMPHASH=57F0C47AE2A1A2C06C8B987372AB0B07</Data>
+    <Data Name='ParentProcessGuid'>{a3c1f0d2-4b8a-6738-1e04-000000001c00}</Data>
+    <Data Name='ParentProcessId'>6020</Data>
+    <Data Name='ParentImage'>C:\Users\marie.dupont\AppData\Local\Programs\Microsoft VS Code\Code.exe</Data>
+    <Data Name='ParentCommandLine'>"C:\Users\marie.dupont\AppData\Local\Programs\Microsoft VS Code\Code.exe" --type=utility --utility-sub-type=node.mojom.NodeService</Data>
+    <Data Name='ParentUser'>TAILSPIN\marie.dupont</Data>
+  </EventData>
+</Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'>
+  <System>
+    <Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385f-c22a-43e0-bf4c-06f5698ffbd9}'/>
+    <EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime='2026-11-18T09:33:05.1182290Z'/>
+    <EventRecordID>884297</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID='3412' ThreadID='4980'/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>HERMES.corp.tailspintoys.com</Computer>
+    <Security UserID='S-1-5-18'/>
+  </System>
+  <EventData>
+    <Data Name='RuleName'>technique_id=T1059.001,technique_name=PowerShell</Data>
+    <Data Name='UtcTime'>2026-11-18 09:33:05.104</Data>
+    <Data Name='ProcessGuid'>{a3c1f0d2-4c21-6738-3104-000000001c00}</Data>
+    <Data Name='ProcessId'>9184</Data>
+    <Data Name='Image'>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</Data>
+    <Data Name='FileVersion'>10.0.20348.2849 (WinBuild.160101.0800)</Data>
+    <Data Name='Description'>Windows PowerShell</Data>
+    <Data Name='Product'>Microsoft® Windows® Operating System</Data>
+    <Data Name='Company'>Microsoft Corporation</Data>
+    <Data Name='OriginalFileName'>PowerShell.EXE</Data>
+    <Data Name='CommandLine'>powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -EncodedCommand bgBlAHQAIAB1AHMAZQAgAFwAXABsAG8AbgAxAGYAcwAwADIAXABmAGkAbgBhAG4AYwBlACQAIAAvAHUAcwBlAHIAOgBUAEEASQBMAFMAUABJAE4AXABzAHYAYwAtAHMAcQBsAGEAZwBlAG4AdAAgAFAAYQBzAHMAdwAwAHIAZAAhACAALwBwAGUAcgBzAGkAcwB0AGUAbgB0ADoAbgBvAA==</Data>
+    <Data Name='CurrentDirectory'>\\AUS1DBS004\c$\Ops\Scripts\</Data>
+    <Data Name='User'>TAILSPIN\marie.dupont-adm</Data>
+    <Data Name='LogonGuid'>{a3c1f0d2-4c02-6738-77b1-f10300000000}</Data>
+    <Data Name='LogonId'>0x3f1b177</Data>
+    <Data Name='TerminalSessionId'>2</Data>
+    <Data Name='IntegrityLevel'>High</Data>
+    <Data Name='Hashes'>SHA256=DE96A6E69944335375DC1AC238336066889D9FFC7D73628EF4FE1B1B160AB32C</Data>
+    <Data Name='ParentProcessGuid'>{a3c1f0d2-4c1f-6738-3004-000000001c00}</Data>
+    <Data Name='ParentProcessId'>8820</Data>
+    <Data Name='ParentImage'>C:\Windows\System32\cmd.exe</Data>
+    <Data Name='ParentCommandLine'>C:\Windows\system32\cmd.exe /c "\\AUS1DBS004.corp.tailspintoys.com\c$\Ops\Scripts\map-finance.cmd"</Data>
+    <Data Name='ParentUser'>TAILSPIN\marie.dupont-adm</Data>
+  </EventData>
+</Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'>
+  <System>
+    <Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385f-c22a-43e0-bf4c-06f5698ffbd9}'/>
+    <EventID>1</EventID><Version>5</Version><Level>4</Level><Task>1</Task><Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime='2026-11-18T01:30:00.9921874Z'/>
+    <EventRecordID>881004</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID='3412' ThreadID='4980'/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>HERMES.corp.tailspintoys.com</Computer>
+    <Security UserID='S-1-5-18'/>
+  </System>
+  <EventData>
+    <Data Name='RuleName'>-</Data>
+    <Data Name='UtcTime'>2026-11-18 01:30:00.977</Data>
+    <Data Name='ProcessGuid'>{a3c1f0d2-9a48-6737-a103-000000001c00}</Data>
+    <Data Name='ProcessId'>5532</Data>
+    <Data Name='Image'>C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\SQLCMD.EXE</Data>
+    <Data Name='FileVersion'>2019.170.3002.1 ((SQLServer2019_RTM_GDR).230131-1647)</Data>
+    <Data Name='Description'>T-SQL execution utility</Data>
+    <Data Name='Product'>Microsoft SQL Server</Data>
+    <Data Name='Company'>Microsoft Corporation</Data>
+    <Data Name='OriginalFileName'>sqlcmd.exe</Data>
+    <Data Name='CommandLine'>sqlcmd -S tcp:kronos-db,1433 -U sa -P Kr0n0s!SqlSa2026 -Q "BACKUP DATABASE [ToyInventory] TO DISK = N'\\lon1fs02\sqlbackup$\KRONOS-DB\ToyInventory_full.bak' WITH COMPRESSION"</Data>
+    <Data Name='CurrentDirectory'>C:\Windows\system32\</Data>
+    <Data Name='User'>NT AUTHORITY\SYSTEM</Data>
+    <Data Name='LogonGuid'>{a3c1f0d2-1a10-6737-e703-000000000000}</Data>
+    <Data Name='LogonId'>0x3e7</Data>
+    <Data Name='TerminalSessionId'>0</Data>
+    <Data Name='IntegrityLevel'>System</Data>
+    <Data Name='Hashes'>SHA256=7B1E3C9D5A2F8E4B6C0D1A3F5E7B9C2D4A6F8E0B1C3D5A7F9E2B4C6D8A0F1E3B</Data>
+    <Data Name='ParentProcessGuid'>{a3c1f0d2-1a12-6737-1000-000000001c00}</Data>
+    <Data Name='ParentProcessId'>1408</Data>
+    <Data Name='ParentImage'>C:\Windows\System32\svchost.exe</Data>
+    <Data Name='ParentCommandLine'>C:\Windows\system32\svchost.exe -k netsvcs -p -s Schedule</Data>
+    <Data Name='ParentUser'>NT AUTHORITY\SYSTEM</Data>
+  </EventData>
+</Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'>
+  <System>
+    <Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385f-c22a-43e0-bf4c-06f5698ffbd9}'/>
+    <EventID>3</EventID><Version>5</Version><Level>4</Level><Task>3</Task><Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime='2026-11-18T09:31:23.0011520Z'/>
+    <EventRecordID>884215</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID='3412' ThreadID='5120'/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>HERMES.corp.tailspintoys.com</Computer>
+    <Security UserID='S-1-5-18'/>
+  </System>
+  <EventData>
+    <Data Name='RuleName'>-</Data>
+    <Data Name='UtcTime'>2026-11-18 09:31:21.870</Data>
+    <Data Name='ProcessGuid'>{a3c1f0d2-1a0f-6737-0b00-000000001c00}</Data>
+    <Data Name='ProcessId'>1196</Data>
+    <Data Name='Image'>C:\Windows\System32\svchost.exe</Data>
+    <Data Name='User'>NT AUTHORITY\NETWORK SERVICE</Data>
+    <Data Name='Protocol'>tcp</Data>
+    <Data Name='Initiated'>true</Data>
+    <Data Name='SourceIsIpv6'>false</Data>
+    <Data Name='SourceIp'>172.18.4.21</Data>
+    <Data Name='SourceHostname'>HERMES.corp.tailspintoys.com</Data>
+    <Data Name='SourcePort'>50122</Data>
+    <Data Name='SourcePortName'>-</Data>
+    <Data Name='DestinationIsIpv6'>false</Data>
+    <Data Name='DestinationIp'>172.16.10.11</Data>
+    <Data Name='DestinationHostname'>AUS1DCS001.corp.tailspintoys.com</Data>
+    <Data Name='DestinationPort'>389</Data>
+    <Data Name='DestinationPortName'>ldap</Data>
+  </EventData>
+</Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'>
+  <System>
+    <Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385f-c22a-43e0-bf4c-06f5698ffbd9}'/>
+    <EventID>3</EventID><Version>5</Version><Level>4</Level><Task>3</Task><Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime='2026-11-18T09:31:23.0204417Z'/>
+    <EventRecordID>884216</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID='3412' ThreadID='5120'/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>HERMES.corp.tailspintoys.com</Computer>
+    <Security UserID='S-1-5-18'/>
+  </System>
+  <EventData>
+    <Data Name='RuleName'>-</Data>
+    <Data Name='UtcTime'>2026-11-18 09:31:21.902</Data>
+    <Data Name='ProcessGuid'>{a3c1f0d2-1a0d-6737-0700-000000001c00}</Data>
+    <Data Name='ProcessId'>724</Data>
+    <Data Name='Image'>C:\Windows\System32\lsass.exe</Data>
+    <Data Name='User'>NT AUTHORITY\SYSTEM</Data>
+    <Data Name='Protocol'>tcp</Data>
+    <Data Name='Initiated'>true</Data>
+    <Data Name='SourceIsIpv6'>true</Data>
+    <Data Name='SourceIp'>fd7a:3c41:9b2e:10::2a</Data>
+    <Data Name='SourceHostname'>HERMES</Data>
+    <Data Name='SourcePort'>50124</Data>
+    <Data Name='SourcePortName'>-</Data>
+    <Data Name='DestinationIsIpv6'>true</Data>
+    <Data Name='DestinationIp'>fd7a:3c41:9b2e:10::11</Data>
+    <Data Name='DestinationHostname'>aus1dcs001.corp.tailspintoys.com</Data>
+    <Data Name='DestinationPort'>88</Data>
+    <Data Name='DestinationPortName'>kerberos</Data>
+  </EventData>
+</Event>
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'>
+  <System>
+    <Provider Name='Microsoft-Windows-Sysmon' Guid='{5770385f-c22a-43e0-bf4c-06f5698ffbd9}'/>
+    <EventID>22</EventID><Version>5</Version><Level>4</Level><Task>22</Task><Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime='2026-11-18T09:31:24.7718002Z'/>
+    <EventRecordID>884219</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID='3412' ThreadID='5120'/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>HERMES.corp.tailspintoys.com</Computer>
+    <Security UserID='S-1-5-18'/>
+  </System>
+  <EventData>
+    <Data Name='RuleName'>-</Data>
+    <Data Name='UtcTime'>2026-11-18 09:31:23.655</Data>
+    <Data Name='ProcessGuid'>{a3c1f0d2-4b9e-6738-2f04-000000001c00}</Data>
+    <Data Name='ProcessId'>7716</Data>
+    <Data Name='QueryName'>kronos-db.corp.tailspintoys.com</Data>
+    <Data Name='QueryStatus'>0</Data>
+    <Data Name='QueryResults'>::ffff:172.16.20.46;</Data>
+    <Data Name='Image'>C:\Windows\System32\net.exe</Data>
+    <Data Name='User'>TAILSPIN\marie.dupont</Data>
+  </EventData>
+</Event>
+</Events>

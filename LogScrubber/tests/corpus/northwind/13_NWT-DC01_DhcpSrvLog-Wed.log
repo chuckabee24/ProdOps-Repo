@@ -1,0 +1,50 @@
+		Microsoft DHCP Service Activity Log
+
+
+Event ID  Meaning
+00	The log was started.
+01	The log was stopped.
+02	The log was temporarily paused due to low disk space.
+10	A new IP address was leased to a client.
+11	A lease was renewed by a client.
+12	A lease was released by a client.
+13	An IP address was found to be in use on the network.
+14	A lease request could not be satisfied because the scope's address pool was exhausted.
+15	A lease was denied.
+16	A lease was deleted.
+17	A lease was expired and DNS records for an expired leases have not been deleted.
+18	A lease was expired and DNS records were deleted.
+20	A BOOTP address was leased to a client.
+21	A dynamic BOOTP address was leased to a client.
+22	A BOOTP request could not be satisfied because the scope's address pool for BOOTP was exhausted.
+23	A BOOTP IP address was deleted after checking to see it was not in use.
+24	IP address cleanup operation has began.
+25	IP address cleanup statistics.
+30	DNS update request to the named DNS server.
+31	DNS update failed.
+32	DNS update successful.
+33	Packet dropped due to NAP policy.
+34	DNS update request failed.as the DNS update request queue limit exceeded.
+35	DNS update request failed.
+36	Packet dropped because the server is in failover standby role or the hash of the client ID does not match.
+50+	Codes above 50 are used for Rogue Server Detection information.
+
+QResult: 0: NoQuarantine, 1:Quarantine, 2:Drop Packet, 3:Probation,6:No Quarantine Information ProbationTime:Year-Month-Day Hour:Minute:Second:MilliSecond.
+
+ID,Date,Time,Description,IP Address,Host Name,MAC Address,User Name, TransactionID, QResult,Probationtime, CorrelationID,Dhcid,VendorClass(Hex),VendorClass(ASCII),UserClass(Hex),UserClass(ASCII),RelayAgentInformation,DnsRegError.
+00,11/18/26,00:00:03,Started,,,,,0,6,,,,,,,,,0
+55,11/18/26,00:00:03,Authorized(servicing),,nwtraders.local,,,0,6,,,,,,,,,0
+24,11/18/26,00:00:05,Database Cleanup Begin,,,,,0,6,,,,,,,,,0
+25,11/18/26,00:00:05,0 leases expired and 0 leases deleted,,,,,0,6,,,,,,,,,0
+11,11/18/26,07:41:55,Renew,10.20.64.88,WS-PKUMAR-07.nwtraders.local,D481D73E9011,,1844213377,0,,,,0x4D53465420352E30,MSFT 5.0,,,0x01060004004001180206000070db98a21c40,0
+10,11/18/26,07:52:10,Assign,10.20.64.115,LT-JSMITH-01.nwtraders.local,3CA9F41B7E22,,2318845729,0,,,,0x4D53465420352E30,MSFT 5.0,,,0x01060004004001180206000070db98a21c40,0
+30,11/18/26,07:52:10,DNS Update Request,10.20.64.115,LT-JSMITH-01.nwtraders.local,,,0,6,,,,,,,,,0
+32,11/18/26,07:52:10,DNS Update Successful,10.20.64.115,LT-JSMITH-01.nwtraders.local,,,0,6,,,,,,,,,0
+10,11/18/26,07:55:31,Assign,10.20.64.20,PRN-3F-01,001BA9447210,,733215090,0,,,,0x48502D4C61736572,HP-Laser,,,,0
+10,11/18/26,08:03:12,Assign,10.20.64.131,Janes-iPhone,6C4B90D25E01,,4011920037,0,,,,,,,,,0
+31,11/18/26,08:03:12,DNS Update Failed,10.20.64.131,Janes-iPhone,,,0,6,,,,,,,,,9004
+10,11/18/26,08:10:44,Assign,10.20.64.140,SEP2C3124A1B0C7.nwtraders.local,2C3124A1B0C7,,51128833,0,,,,0x436973636F2053797374656D732C20496E632E20495020506686F6E652043502D38383635,Cisco Systems, Inc. IP Phone CP-8865,,,,0
+13,11/18/26,08:22:01,Conflict,10.20.64.97,BAD_ADDRESS,,,0,6,,,,,,,,,0
+12,11/18/26,08:30:17,Release,10.20.64.88,WS-PKUMAR-07.nwtraders.local,D481D73E9011,,2102998811,0,,,,0x4D53465420352E30,MSFT 5.0,,,,0
+11,11/18/26,08:31:02,Renew,10.20.64.88,WS-PKUMAR-07.nwtraders.local,D481D73E9011,,2102998812,0,,,,0x4D53465420352E30,MSFT 5.0,,,,0
+15,11/18/26,08:44:19,NACK,10.30.2.77,,6C4B90D25E01,,0,6,,,,,,,,,0

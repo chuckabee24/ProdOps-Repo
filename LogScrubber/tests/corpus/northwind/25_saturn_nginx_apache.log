@@ -1,0 +1,29 @@
+==> /var/log/nginx/access.log <==
+10.20.64.115 - jsmith [18/Nov/2026:08:44:01 -0800] "GET /wiki/display/FIN/Q3+Close+Runbook HTTP/1.1" 200 48211 "https://wiki.northwindtraders.com/wiki/spaces/FIN" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.105 Safari/537.36"
+64.187.212.34 - - [18/Nov/2026:08:44:09 -0800] "POST /api/v1/auth/login HTTP/2.0" 401 61 "-" "python-requests/2.31.0"
+86.151.22.9 - a.gonzalez [18/Nov/2026:08:45:13 -0800] "GET /finportal/export?user=a.gonzalez%40northwindtraders.com&token=nwt_pat_7Hq2Lx9Vb4Nc8Zr1Tk6Wm3Ys HTTP/1.1" 200 1048576 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15"
+10.20.10.5 - - [18/Nov/2026:08:46:00 -0800] "GET /health HTTP/1.0" 200 2 "-" "-"
+2620:1ec:4e57:40:9d3c:1a7e:22b4:5f61 - jsmith [18/Nov/2026:08:46:31 -0800] "GET /wiki/ HTTP/2.0" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.105 Safari/537.36"
+185.220.101.47 - - [18/Nov/2026:08:47:55 -0800] "GET /.env HTTP/1.1" 404 153 "-" "Mozlila/5.0 (Linux; Android 7.0; SM-G892A Bulid/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Moblie Safari/537.36"
+10.20.9.5 - nwtdeploy [18/Nov/2026:08:48:20 -0800] "GET https://nwtdeploy:Gh7%21pQz9xL@nexus.nwtraders.local/repository/fin-releases/fin-sync-1.8.3.tgz HTTP/1.1" 200 8812331 "-" "curl/8.4.0"
+127.0.0.1 - - [18/Nov/2026:08:49:00 -0800] "GET /nginx_status HTTP/1.1" 200 97 "-" "Go-http-client/1.1"
+10.20.64.142 - mwilson [18/Nov/2026:08:49:31 -0800] "GET /wiki/people/Michael+Wilson?tab=reports HTTP/1.1" 200 9921 "https://wiki.northwindtraders.com/wiki/display/FIN" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.105 Safari/537.36"
+
+==> /var/log/nginx/error.log <==
+2026/11/18 08:44:30 [error] 1187#1187: *88213 connect() failed (111: Connection refused) while connecting to upstream, client: 10.20.64.115, server: wiki.northwindtraders.com, request: "GET /wiki/rest/api/content/48211 HTTP/1.1", upstream: "http://10.20.10.42:8090/wiki/rest/api/content/48211", host: "wiki.northwindtraders.com", referrer: "https://wiki.northwindtraders.com/wiki/display/FIN"
+2026/11/18 08:47:02 [error] 1187#1187: *88240 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 2620:1ec:4e57:40:9d3c:1a7e:22b4:5f61, server: wiki.northwindtraders.com, request: "GET /wiki/ HTTP/2.0", upstream: "http://[2620:1ec:4e57:20::42]:8090/wiki/", host: "wiki.northwindtraders.com"
+2026/11/18 08:50:12 [warn] 1186#1186: *88301 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/12/0000004123 while reading upstream, client: 86.151.22.9, server: finportal.northwindtraders.com, request: "GET /finportal/export HTTP/1.1", upstream: "https://10.20.10.31:443/finportal/export", host: "finportal.northwindtraders.com"
+2026/11/18 08:51:17 [crit] 1187#1187: *88340 SSL_do_handshake() failed (SSL: error:0A00010B:SSL routines::wrong version number) while SSL handshaking to upstream, client: 10.40.64.23, server: finportal.northwindtraders.com, request: "GET / HTTP/1.1", upstream: "https://10.20.10.31:443/", host: "finportal.northwindtraders.com"
+2026/11/18 08:52:40 [error] 1187#1187: *88351 open() "/usr/share/nginx/html/.env" failed (2: No such file or directory), client: 185.220.101.47, server: _, request: "GET /.env HTTP/1.1", host: "64.187.212.35"
+
+==> /var/log/apache2/error.log <==
+[Wed Nov 18 08:52:11.442301 2026] [auth_basic:error] [pid 2231:tid 140221] [client 10.20.64.88:50211] AH01617: user pkumar: authentication failure for "/svn/finance/": Password Mismatch
+[Wed Nov 18 08:52:14.001122 2026] [proxy:error] [pid 2231:tid 140222] (111)Connection refused: AH00957: http: attempt to connect to 10.20.10.42:8090 (nwt-app02.nwtraders.local:8090) failed
+[Wed Nov 18 08:52:14.001200 2026] [proxy_http:error] [pid 2231:tid 140222] [client 10.20.64.88:50213] AH01114: HTTP: failed to make connection to backend: nwt-app02.nwtraders.local, referer: https://wiki.northwindtraders.com/
+[Wed Nov 18 08:53:00.120004 2026] [ssl:warn] [pid 2101:tid 140199] AH01909: saturn.nwtraders.local:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Nov 18 08:53:00.120551 2026] [mpm_event:notice] [pid 2101:tid 140199] AH00489: Apache/2.4.52 (Ubuntu) OpenSSL/3.0.2 configured -- resuming normal operations
+
+==> /var/log/apache2/access.log <==
+10.20.64.88 - pkumar [18/Nov/2026:08:52:16 -0800] "GET /svn/finance/trunk/ HTTP/1.1" 200 2311 "-" "SVN/1.14.2 (x86_64-pc-linux-gnu) serf/1.3.9"
+10.20.64.88 - pkumar [18/Nov/2026:08:52:17 -0800] "PROPFIND /svn/finance/!svn/vcc/default HTTP/1.1" 207 412 "-" "SVN/1.14.2 (x86_64-pc-linux-gnu) serf/1.3.9"
+10.20.64.150 - r.oconnor [18/Nov/2026:08:55:02 -0800] "GET /svn/finance/trunk/Vendors/Fabrikam%20Logistics%20GmbH/contract_2026.pdf HTTP/1.1" 200 482113 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"

@@ -1,0 +1,38 @@
+PS C:\> Get-Content C:\Windows\System32\LogFiles\Firewall\pfirewall.log -Tail 14
+#Version: 1.5
+#Software: Microsoft Windows Firewall
+#Time Format: Local
+#Fields: date time action protocol src-ip dst-ip src-port dst-port size tcpflags tcpsyn tcpack tcpwin icmptype icmpcode info path pid
+
+2026-11-18 08:14:21 ALLOW UDP 10.20.64.115 10.20.1.10 61523 53 0 - - - - - - - RECEIVE 2104
+2026-11-18 08:14:55 ALLOW TCP 10.20.64.115 10.20.1.10 52139 88 0 - 0 0 0 - - - RECEIVE 788
+2026-11-18 08:15:03 ALLOW TCP 10.20.64.115 10.20.1.10 52144 88 0 - 0 0 0 - - - RECEIVE 788
+2026-11-18 08:16:44 ALLOW TCP 10.40.1.10 10.20.1.10 50112 53 0 - 0 0 0 - - - RECEIVE 2104
+2026-11-18 08:20:02 DROP TCP 10.40.64.23 10.20.1.10 50331 3389 52 S 1883022941 0 64240 - - - RECEIVE 0
+2026-11-18 08:20:05 DROP TCP 10.40.64.23 10.20.1.10 50331 3389 52 S 1883022941 0 64240 - - - RECEIVE 0
+2026-11-18 08:21:13 ALLOW UDP fe80::3ea9:f4ff:fe1b:7e22 ff02::1:2 546 547 0 - - - - - - - RECEIVE 1504
+2026-11-18 08:21:40 ALLOW TCP 2620:1ec:4e57:40:9d3c:1a7e:22b4:5f61 2620:1ec:4e57:20::10 52201 389 0 - 0 0 0 - - - RECEIVE 788
+2026-11-18 08:22:31 ALLOW TCP 127.0.0.1 127.0.0.1 52290 389 0 - 0 0 0 - - - SEND 788
+2026-11-18 08:22:40 DROP UDP 10.20.64.255 10.20.1.10 137 137 78 - - - - - - - RECEIVE 0
+2026-11-18 08:23:01 ALLOW ICMP 10.20.9.5 10.20.1.10 - - 60 - - - - 8 0 - RECEIVE 0
+2026-11-18 08:24:12 DROP TCP 172.16.50.20 10.20.1.10 41220 445 60 S 2211873001 0 29200 - - - RECEIVE 0
+
+PS C:\> Get-Content C:\Windows\debug\netlogon.log -Tail 18
+11/18 08:14:21 [LOGON] [788] NWTRADERS: SamLogon: Transitive Network logon of NWTRADERS\jsmith from LT-JSMITH-01 (via NWT-WEB01) Entered
+11/18 08:14:21 [LOGON] [788] NWTRADERS: SamLogon: Transitive Network logon of NWTRADERS\jsmith from LT-JSMITH-01 (via NWT-WEB01) Returns 0xC000006A
+11/18 08:21:44 [LOGON] [788] NWTRADERS: SamLogon: Transitive Network logon of NWTRADERS\jsmith from LT-JSMITH-01 (via NWT-WEB01) Entered
+11/18 08:21:44 [LOGON] [788] NWTRADERS: SamLogon: Transitive Network logon of NWTRADERS\jsmith from LT-JSMITH-01 (via NWT-WEB01) Returns 0xC0000234
+11/18 08:30:02 [LOGON] [4012] NWTRADERS: SamLogon: Network logon of NWTRADERS\svc_backup from NWT-FS01 Entered
+11/18 08:30:02 [LOGON] [4012] NWTRADERS: SamLogon: Network logon of NWTRADERS\svc_backup from NWT-FS01 Returns 0x0
+11/18 09:02:13 [CRITICAL] [2104] NO_CLIENT_SITE: LT-AGONZALEZ-02 10.40.64.23
+11/18 09:02:13 [CRITICAL] [2104] NO_CLIENT_SITE: LT-KFISCHER-01 10.40.64.31
+11/18 09:05:20 [SESSION] [4012] NWTRADERS: NetrServerAuthenticate3: NWT-APP02$ is authenticating (0x612fffff)
+11/18 09:05:20 [SESSION] [4012] NWTRADERS: NetrServerAuthenticate3 returns Success: NWT-APP02$ (0x612fffff)
+11/18 09:10:44 [MISC] [2104] NWTRADERS: DsGetDcName function called: client PID=1880, Dom:emea.nwtraders.local Acct:(null) Flags: DS GC
+11/18 09:10:44 [MISC] [2104] NWTRADERS: DsGetDcName function returns 0 (client PID=1880): Dom:emea.nwtraders.local Acct:(null) Flags: DS GC
+11/18 09:12:01 [LOGON] [788] NWTRADERS: SamLogon: Generic logon of nwtraders.local\(null) from (null) Package:Kerberos Returns 0x0
+11/18 09:15:03 [LOGON] [788] NWTRADERS: SamLogon: Transitive Network logon of NWTEMEA\a.gonzalez from LT-AGONZALEZ-02 (via NWT-SQL-P01) Entered
+11/18 09:15:03 [LOGON] [788] NWTRADERS: SamLogon: Transitive Network logon of NWTEMEA\a.gonzalez from LT-AGONZALEZ-02 (via NWT-SQL-P01) Returns 0xC000018B
+11/18 09:20:30 [SITE] [2104] NWTRADERS: DsrGetSiteName: Returning site name 'SEA-HQ' for 10.20.64.115.
+11/18 09:22:10 [MAILSLOT] [2104] NWTRADERS: Received 'Sam Logon Request' on NWT-DC01.nwtraders.local for  from \\WS-PKUMAR-07 (user adm-pkumar)
+11/18 09:22:10 [MAILSLOT] [2104] NWTRADERS: Returned 'Sam Logon Response' to \\WS-PKUMAR-07 (user adm-pkumar)

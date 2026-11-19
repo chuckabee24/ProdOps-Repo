@@ -1,0 +1,93 @@
+[rjohansson@lon1jmp01 ~]$ ssh rjohansson@aus1rtr01
+aus1rtr01#show ip bgp summary
+BGP router identifier 99.62.137.1, local AS number 64912
+BGP table version is 1882341, main routing table version 1882341
+945112 network entries using 234876776 bytes of memory
+1873321 path entries using 254771656 bytes of memory
+231445/151223 BGP path/bestpath attribute entries using 66655160 bytes of memory
+BGP using 556303592 total bytes of memory
+BGP activity 1112893/167781 prefixes, 4212870/2339549 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+4.68.72.13      4         3356 2349123   12345  1882341    0    0 6w2d       943210
+62.115.47.89    4         1299 2312334   12346  1882341    0    0 3w1d       940122
+172.16.0.2      4        64912  123456  123401  1882341    0    0 6w2d           12
+2a02:8010:6a41::2
+                4        64912   55331   55320  1882341    0    0 6w2d            8
+aus1rtr01#show ip bgp neighbors | include ^BGP neighbor|Description
+BGP neighbor is 4.68.72.13,  remote AS 3356, external link
+ Description: TRANSIT-LUMEN CID 441/IRXX/208815/LUMN - NOC +1 877 453 8353
+BGP neighbor is 62.115.47.89,  remote AS 1299, external link
+ Description: TRANSIT-ARELION CID TT-AUS1-ARL-0042
+BGP neighbor is 172.16.0.2,  remote AS 64912, internal link
+ Description: iBGP to aus1rtr02 (Lo0)
+aus1rtr01#show running-config | include snmp|username
+username netadmin privilege 15 secret 9 $9$hT6m3xQ1aZ.Lk2$Wm1vX8dN0pQe7rT3yU5iO9lK2jH4gF6dS8aZ0xC1vB2
+snmp-server community tT-r0-c0mmunity RO 99
+snmp-server location 4800 Riverside Dr, Suite 300, Austin TX 78741
+snmp-server contact noc@tailspintoys.com
+snmp-server host 172.16.10.12 version 2c tT-r0-c0mmunity
+aus1rtr01#show lldp neighbors detail
+------------------------------------------------
+Local Intf: Gi1/0/48
+Chassis id: 70b3.d5c1.22e0
+Port id: Gi0/1
+Port Description: Uplink to aus1rtr01
+System Name: aus1sw3a.corp.tailspintoys.com
+
+System Description:
+Cisco IOS Software [Cupertino], Catalyst L3 Switch Software (CAT9K_IOSXE), Version 17.9.4a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2023 by Cisco Systems, Inc.
+Compiled Fri 20-Oct-23 10:44 by mcpre
+
+Time remaining: 101 seconds
+System Capabilities: B,R
+Enabled Capabilities: B,R
+Management Addresses:
+    IP: 172.16.0.21
+Auto Negotiation - not supported
+Physical media capabilities - not advertised
+Media Attachment Unit type - not advertised
+Vlan ID: - not advertised
+
+------------------------------------------------
+Local Intf: Gi1/0/12
+Chassis id: 703a.0e5c.2f41
+Port id: 703a.0e5c.2f41
+Port Description: GigabitEthernet0
+System Name: aus1ap0307
+
+System Description:
+Cisco AP Software, C9120AXI-B Software (ap1g7), Version 17.9.4.27, RELEASE SOFTWARE
+
+Time remaining: 97 seconds
+System Capabilities: B,T
+Enabled Capabilities: B,T
+Management Addresses:
+    IP: 192.168.40.15
+Auto Negotiation - supported, enabled
+Physical media capabilities:
+    1000baseT(FD)
+    100base-TX(FD)
+Media Attachment Unit type: 30
+Vlan ID: 1
+
+Total entries displayed: 2
+
+aus1rtr01#exit
+Connection to aus1rtr01 closed.
+[rjohansson@lon1jmp01 ~]$ nfdump -R /var/cache/nfdump/aus1rtr01 -o "fmt:%ts %td %pr %sap -> %dap %pkt %byt %fl" 'host 172.16.20.46 or net 172.18.4.0/24'
+Date first seen          Duration Proto      Src IP Addr:Port          Dst IP Addr:Port   Packets    Bytes Flows
+2026-11-18 09:40:01.512     0.932 TCP        172.18.4.22:51244 ->     172.16.20.46:1433        14     2104     1
+2026-11-18 09:40:01.770     0.004 UDP         172.18.4.21:60113 ->      172.16.10.11:53            1       74     1
+2026-11-18 09:40:02.004     0.000 UDP        192.168.41.77:137   ->    192.168.41.255:137           1       78     1
+2026-11-18 09:40:02.118     3.001 TCP        192.168.41.77:52211 ->     172.16.20.46:1433         3      156     1
+2026-11-18 09:40:03.441     0.412 TCP  fd7a:3c41:9b2e:10::2a.49812 ->  fd7a:3c41:9b2e:10::11.88       6     1942     1
+2026-11-18 09:40:03.900     0.022 TCP        172.18.4.22:51250 ->     172.16.20.45:1433         10     1820     1
+2026-11-18 09:40:03.950     0.010 TCP        172.20.8.27:50001 ->     192.168.40.10:135          4      412     1
+2026-11-18 09:40:04.000     0.000 ICMP       172.18.4.30:0     ->        224.0.0.251:0.0         1       84     1
+Summary: total flows: 8, total bytes: 6670, total packets: 42, avg bps: 13107, avg pps: 10, avg bpp: 158
+Time window: 2026-11-18 09:00:00 - 2026-11-18 10:00:00
+Total flows processed: 128812, Blocks skipped: 0, Bytes read: 8241120
+Sys: 0.212s flows/second: 607606.5   Wall: 0.198s flows/second: 650565.6

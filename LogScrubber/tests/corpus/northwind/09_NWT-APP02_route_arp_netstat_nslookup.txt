@@ -1,0 +1,135 @@
+C:\Users\adm-pkumar.NWTRADERS>hostname
+NWT-APP02
+
+C:\Users\adm-pkumar.NWTRADERS>route print
+===========================================================================
+Interface List
+  6...00 50 56 a1 2b 77 ......vmxnet3 Ethernet Adapter
+  1...........................Software Loopback Interface 1
+  9...00 00 00 00 00 00 00 e0 Microsoft ISATAP Adapter #2
+===========================================================================
+
+IPv4 Route Table
+===========================================================================
+Active Routes:
+Network Destination        Netmask          Gateway       Interface  Metric
+          0.0.0.0          0.0.0.0       10.20.10.1      10.20.10.42    271
+       10.20.10.0    255.255.255.0         On-link       10.20.10.42    271
+      10.20.10.42  255.255.255.255         On-link       10.20.10.42    271
+     10.20.10.255  255.255.255.255         On-link       10.20.10.42    271
+        127.0.0.0        255.0.0.0         On-link         127.0.0.1    331
+        127.0.0.1  255.255.255.255         On-link         127.0.0.1    331
+  127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+        224.0.0.0        240.0.0.0         On-link         127.0.0.1    331
+        224.0.0.0        240.0.0.0         On-link       10.20.10.42    271
+  255.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+  255.255.255.255  255.255.255.255         On-link       10.20.10.42    271
+===========================================================================
+Persistent Routes:
+  Network Address          Netmask  Gateway Address  Metric
+        10.40.0.0      255.255.0.0       10.20.10.1       1
+       10.30.2.0    255.255.255.0       10.20.10.1       1
+===========================================================================
+
+IPv6 Route Table
+===========================================================================
+Active Routes:
+ If Metric Network Destination      Gateway
+  6    271 ::/0                     fe80::72db:98ff:fea2:1c40
+  1    331 ::1/128                  On-link
+  6    271 2620:1ec:4e57:20::/64    On-link
+  6    271 2620:1ec:4e57:20::42/128
+                                    On-link
+  6    271 fe80::/64                On-link
+  6    271 fe80::d0f1:2a3b:9c4e:71a5/128
+                                    On-link
+  1    331 ff00::/8                 On-link
+  6    271 ff00::/8                 On-link
+===========================================================================
+Persistent Routes:
+  None
+
+C:\Users\adm-pkumar.NWTRADERS>arp -a
+
+Interface: 10.20.10.42 --- 0x6
+  Internet Address      Physical Address      Type
+  10.20.10.1            00-00-0c-9f-f0-0a     dynamic
+  10.20.10.2            70-db-98-a2-1c-40     dynamic
+  10.20.10.5            00-23-e9-4f-1a-90     dynamic
+  10.20.10.31           00-50-56-a1-3c-19     dynamic
+  10.20.10.60           00-15-5d-0a-14-02     dynamic
+  10.20.10.255          ff-ff-ff-ff-ff-ff     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static
+
+C:\Users\adm-pkumar.NWTRADERS>netstat -ano
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State           PID
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       952
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:5985           0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:8443           0.0.0.0:0              LISTENING       3312
+  TCP    0.0.0.0:47001          0.0.0.0:0              LISTENING       4
+  TCP    10.20.10.42:139        0.0.0.0:0              LISTENING       4
+  TCP    10.20.10.42:8443       10.20.10.60:51122      ESTABLISHED     3312
+  TCP    10.20.10.42:8443       10.20.10.5:40112       TIME_WAIT       0
+  TCP    10.20.10.42:52011      10.20.5.21:1433        ESTABLISHED     3312
+  TCP    10.20.10.42:52014      10.20.5.22:1433        SYN_SENT        3312
+  TCP    10.20.10.42:52020      10.20.1.10:389         TIME_WAIT       0
+  TCP    10.20.10.42:52031      10.20.1.11:88          TIME_WAIT       0
+  TCP    10.20.10.42:52040      10.20.7.30:25          ESTABLISHED     3312
+  TCP    127.0.0.1:52101        127.0.0.1:52102        ESTABLISHED     3312
+  TCP    [::]:135               [::]:0                 LISTENING       952
+  TCP    [::]:445               [::]:0                 LISTENING       4
+  TCP    [::1]:8443             [::1]:52144            TIME_WAIT       0
+  TCP    [2620:1ec:4e57:20::42]:8443  [2620:1ec:4e57:20::60]:50214  ESTABLISHED     3312
+  UDP    0.0.0.0:123            *:*                                    1288
+  UDP    0.0.0.0:500            *:*                                    3016
+  UDP    10.20.10.42:137        *:*                                    4
+  UDP    127.0.0.1:61012        *:*                                    2240
+  UDP    [::]:123               *:*                                    1288
+  UDP    [fe80::d0f1:2a3b:9c4e:71a5%6]:546  *:*                                    1504
+
+C:\Users\adm-pkumar.NWTRADERS>nslookup nwt-sql-p02
+Server:  NWT-DC01.nwtraders.local
+Address:  10.20.1.10
+
+*** NWT-DC01.nwtraders.local can't find nwt-sql-p02: Non-existent domain
+
+C:\Users\adm-pkumar.NWTRADERS>nslookup nwt-sql-p01.nwtraders.local
+Server:  NWT-DC01.nwtraders.local
+Address:  10.20.1.10
+
+Name:    nwt-sql-p01.nwtraders.local
+Address:  10.20.5.21
+
+
+C:\Users\adm-pkumar.NWTRADERS>nslookup -type=SRV _ldap._tcp.dc._msdcs.nwtraders.local
+Server:  NWT-DC01.nwtraders.local
+Address:  10.20.1.10
+
+_ldap._tcp.dc._msdcs.nwtraders.local    SRV service location:
+          priority       = 0
+          weight         = 100
+          port           = 389
+          svr hostname   = nwt-dc01.nwtraders.local
+_ldap._tcp.dc._msdcs.nwtraders.local    SRV service location:
+          priority       = 0
+          weight         = 100
+          port           = 389
+          svr hostname   = nwt-dc02.nwtraders.local
+nwt-dc01.nwtraders.local        internet address = 10.20.1.10
+nwt-dc01.nwtraders.local        AAAA IPv6 address = 2620:1ec:4e57:20::10
+nwt-dc02.nwtraders.local        internet address = 10.20.1.11
+
+C:\Users\adm-pkumar.NWTRADERS>nslookup 10.20.5.22
+Server:  NWT-DC01.nwtraders.local
+Address:  10.20.1.10
+
+Name:    NWT-SQL-P02.nwtraders.local
+Address:  10.20.5.22
+

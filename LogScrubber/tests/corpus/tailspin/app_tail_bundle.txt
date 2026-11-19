@@ -1,0 +1,87 @@
+[svc-catalog@syd2app007 ~]$ sudo tail -n 40 /opt/tomcat/logs/catalina.out /var/log/nginx/error.log /home/svc-catalog/.pm2/logs/api-gateway-error.log /var/log/toyworker/worker.log
+==> /opt/tomcat/logs/catalina.out <==
+18-Nov-2026 09:44:01.221 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.34
+18-Nov-2026 09:44:01.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+18-Nov-2026 09:44:01.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/opt/tomcat/conf/logging.properties
+18-Nov-2026 09:44:01.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dspring.datasource.url=jdbc:sqlserver://AUS1DBS004.corp.tailspintoys.com:1433;databaseName=Orders;user=svc-orders;password=0rd3rs!Prod;encrypt=true;trustServerCertificate=true
+18-Nov-2026 09:44:01.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalog.ldap.url=ldaps://aus1dcs001.corp.tailspintoys.com:636
+18-Nov-2026 09:44:07.882 SEVERE [main] org.apache.catalina.core.StandardContext.startInternal One or more listeners failed to start. Full details will be found in the appropriate container log file
+18-Nov-2026 09:44:07.883 SEVERE [main] org.springframework.boot.SpringApplication.reportFailure Application run failed
+com.microsoft.sqlserver.jdbc.SQLServerException: Login failed for user 'svc-orders'. ClientConnectionId:4be1d2a9-7c3e-4f0b-9a12-6e8d5c3b2a10
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:270)
+	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:329)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+18-Nov-2026 09:44:08.004 WARNING [main] com.zaxxer.hikari.pool.HikariPool HikariPool-2 - Exception during pool initialization. url=jdbc:postgresql://kronos-db.corp.tailspintoys.com:5432/orders?user=svc-orders&password=0rd3rs%21Prod&ssl=true
+18-Nov-2026 09:44:09.117 SEVERE [catalog-sync-1] com.tailspin.catalog.LdapSync.bind Bind as CN=svc-catalog,OU=Service Accounts,OU=AUS1,DC=corp,DC=tailspintoys,DC=com failed
+javax.naming.AuthenticationException: [LDAP: error code 49 - 80090308: LdapErr: DSID-0C090447, comment: AcceptSecurityContext error, data 52e, v4563]
+18-Nov-2026 09:44:10.550 SEVERE [catalog-sync-1] com.tailspin.catalog.PartnerClient.call javax.net.ssl.SSLHandshakeException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target; subject="CN=partner-api.tailspintoys.com, OU=Platform, O=Tailspin Toys Inc., L=Sydney, ST=New South Wales, C=AU", sigAlg OID 1.2.840.113549.1.1.11
+
+==> /var/log/nginx/error.log <==
+2026/11/18 09:45:12 [error] 2211#2211: *88123 connect() failed (111: Connection refused) while connecting to upstream, client: 81.134.22.97, server: catalog.tailspintoys.com, request: "GET /api/v2/catalog?sku=AX-100 HTTP/2.0", upstream: "http://[fd7a:3c41:9b2e:10::2a]:8443/api/v2/catalog?sku=AX-100", host: "catalog.tailspintoys.com", referrer: "https://www.tailspintoys.com/"
+2026/11/18 09:45:13 [error] 2211#2211: *88124 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 172.29.14.88, server: catalog.tailspintoys.com, request: "POST /api/v2/orders HTTP/2.0", upstream: "http://172.18.4.22:8080/api/v2/orders", host: "catalog.tailspintoys.com"
+2026/11/18 09:45:20 [warn] 2211#2211: *88140 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/3/41/0000000413 while reading upstream, client: 101.188.67.134, server: catalog.tailspintoys.com, request: "GET /export?token=00Qx7Lm2Kp9Rt4Vb8Nc1Zd6Hf3Jg5Ws0Ye2Ua4Ti HTTP/2.0", upstream: "http://172.18.4.22:8080/export?token=00Qx7Lm2Kp9Rt4Vb8Nc1Zd6Hf3Jg5Ws0Ye2Ua4Ti", host: "catalog.tailspintoys.com"
+2026/11/18 09:45:31 [crit] 2211#2211: *88152 SSL_do_handshake() failed (SSL: error:0A00010B:SSL routines::wrong version number) while SSL handshaking to upstream, client: 172.18.4.21, server: catalog.tailspintoys.com
+2026/11/18 09:45:40 [error] 2211#2211: *88160 no live upstreams while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /healthz HTTP/1.1", upstream: "http://catalog_backend/healthz", host: "127.0.0.1"
+
+==> /home/svc-catalog/.pm2/logs/api-gateway-error.log <==
+0|api-gate | 2026-11-18T09:46:00.998Z: [boot] connecting to mongodb://svc-catalog:M0ng0Cat%40log2026@athena.corp.tailspintoys.com:27017,hermes.corp.tailspintoys.com:27017/catalog?replicaSet=rs0&authSource=admin
+0|api-gate | 2026-11-18T09:46:01.120Z: MongoServerSelectionError: getaddrinfo ENOTFOUND athena.corp.tailspintoys.com
+0|api-gate |     at Timeout._onTimeout (/srv/api-gateway/node_modules/mongodb/lib/sdam/topology.js:278:38)
+0|api-gate |     at listOnTimeout (node:internal/timers:594:17)
+0|api-gate | 2026-11-18T09:46:02.441Z: Error: connect ECONNREFUSED 172.18.4.30:6379 (redis://:R3d1s-Sess10n-Key@ganymede:6379/0)
+0|api-gate |     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1611:16) {
+0|api-gate |   errno: -111,
+0|api-gate |   code: 'ECONNREFUSED',
+0|api-gate |   syscall: 'connect',
+0|api-gate |   address: '172.18.4.30',
+0|api-gate |   port: 6379
+0|api-gate | }
+0|api-gate | 2026-11-18T09:46:05.002Z: [auth] rejected request x-auth-context=eyJzdWIiOiJwcml5YS5yYW1hbiIsIm5hbWUiOiJQcml5YSBSYW1hbiIsImVtYWlsIjoicHJpeWEucmFtYW5AdGFpbHNwaW50b3lzLmNvbSIsImdyb3VwcyI6WyJwbGF0Zm9ybS1hZG1pbnMiXSwic3JjIjoiMTcyLjI5LjE0LjkwIn0= reason=expired
+0|api-gate | 2026-11-18T09:46:05.010Z: [auth] Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ik1yNS1BVWliZkJpaTdOZDFqQmViYXhib1hXMCIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGk6Ly90b3ktY2F0YWxvZyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzdkM2M5YTQxLTViMmUtNGY4YS05YzYxLTBlNGI3YTJkOTNmNS8iLCJpYXQiOjE3OTQ5OTQwMDAsIm5iZiI6MTc5NDk5NDAwMCwiZXhwIjoxNzk0OTk3OTAwLCJuYW1lIjoiV2lsbCBSb3NlIiwib2lkIjoiYjZmMGUyYzQtMWQ5My00YTdlLThjNTUtMmU5MWYzZDA3YTY4IiwidXBuIjoid2lsbC5yb3NlQHRhaWxzcGludG95cy5jb20iLCJpcGFkZHIiOiI3Ny42OC4xNC4yMDMiLCJ0aWQiOiI3ZDNjOWE0MS01YjJlLTRmOGEtOWM2MS0wZTRiN2EyZDkzZjUiLCJ2ZXIiOiIxLjAifQ._b_zZ02y0bBELlmw0mu5lAbcVvOUqJD2d-gwtFkmOyMlaUW3ndWu4Yeja9Cdo3kA1PP19iXn4lyP092yK-RoREG8nTFgyE_AivnvsVSrqdv2BRrHeKk6ke4o53E2l7Y7hzkfvmXumINra4k-rqXifenre0mAOChLLGLfjplQn_-9xZRRHVPJUvsrvmAaqWUsoR7QvolVYRIrPRKddX6zYTwSAASwiqHuKg0V5YnXXAEIL2yfEOECJcf0uG6_S-n7FJCyYf67JeuNNyFbgbW_7JRYc6zloxItEpOmwla0FCELd09G4Qbb1T3L80fBHhB2hCtkChYvd3nm3GmIJWvxEw
+0|api-gate | 2026-11-18T09:46:06.330Z: [notify] Slack postMessage failed (token=slack-fake-2847562013-5918273645012-q8WnR4tYzXc2Vb6Lm0Pk9Js3): invalid_auth
+0|api-gate | 2026-11-18T09:46:07.771Z: [escalation] VIP ticket opened by customer-success for José María
+0|api-gate | Ortega (Sydney office) - order #448812 stuck in PENDING_PAYMENT
+0|api-gate | 2026-11-18T09:46:08.004Z: [payments] stripe.charges.create failed: StripeAuthenticationError: Invalid API Key provided: sk_fake_51Ptt7rKJx2b9QpLmW4vZcY8dRn3TfGhA6sE1uV0kBi5oPzN7yXwQaS3dF9gH2jK4lM6nB8vC0xZ00tTsp9Qw
+
+==> /var/log/toyworker/worker.log <==
+2026-11-18 09:47:03,512 INFO toyworker.sync: using proxy http://u104233:Ch1n4Town%232026@aus1sqd01.corp.tailspintoys.com:3128
+2026-11-18 09:47:03,512 ERROR toyworker.sync: Sync failed for tenant tailspintoys.onmicrosoft.com (7d3c9a41-5b2e-4f8a-9c61-0e4b7a2d93f5)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 491, in _make_request
+    raise new_e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f3a2c1e9d50>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='hermes.corp.tailspintoys.com', port=8443): Max retries exceeded with url: /api/inventory/sync?site=HERMES&apikey=sk_fake_51Ptt7rKJx2b9QpLmW4vZcY8dRn3TfGhA6sE1uV0kBi5oPzN7yXwQaS3dF9gH2jK4lM6nB8vC0xZ00tTsp9Qw (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f3a2c1e9d50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/toyworker/toyworker/sync.py", line 142, in push_inventory
+    r = session.post(f"https://{host}:8443/api/inventory/sync", params=params, timeout=10)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='hermes.corp.tailspintoys.com', port=8443): Max retries exceeded with url: /api/inventory/sync (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f3a2c1e9d50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2026-11-18 09:47:04,001 WARNING toyworker.sync: retrying against hermes:8443 in 30s (owner priya.raman@tailspintoys.com)

@@ -1,0 +1,113 @@
+C:\Windows\system32>nltest /dsgetdc:nwtraders.local
+           DC: \\NWT-DC01.nwtraders.local
+      Address: \\10.20.1.10
+     Dom Guid: 8d3f6a2e-1b4c-4e9a-9f07-5c2e8b1d3a64
+     Dom Name: nwtraders.local
+  Forest Name: nwtraders.local
+ Dc Site Name: SEA-HQ
+Our Site Name: SEA-HQ
+        Flags: PDC GC DS LDAP KDC TIMESERV GTIMESERV WRITABLE DNS_DC DNS_DOMAIN DNS_FOREST CLOSE_SITE FULL_SECRET WS DS_8 DS_9 DS_10
+The command completed successfully
+
+C:\Windows\system32>nltest /dsgetdc:emea.nwtraders.local /force
+           DC: \\EMEA-DC01.emea.nwtraders.local
+      Address: \\10.40.1.10
+     Dom Guid: 2b7e9c41-6d0a-4f3e-8c25-a19d7e3b5f06
+     Dom Name: emea.nwtraders.local
+  Forest Name: nwtraders.local
+ Dc Site Name: LON-OFFICE
+Our Site Name: SEA-HQ
+        Flags: GC DS LDAP KDC TIMESERV WRITABLE DNS_DC DNS_DOMAIN DNS_FOREST FULL_SECRET WS DS_8 DS_9 DS_10
+The command completed successfully
+
+C:\Windows\system32>nltest /sc_query:NWTRADERS
+Flags: 30 HAS_IP  HAS_TIMESERV
+Trusted DC Name \\NWT-DC02.nwtraders.local
+Trusted DC Connection Status Status = 0 0x0 NERR_Success
+The command completed successfully
+
+C:\Windows\system32>nltest /domain_trusts /all_trusts
+List of domain trusts:
+    0: NWTEMEA emea.nwtraders.local (NT 5) (Forest: 1) (Direct Outbound) (Direct Inbound) ( Attr: withinforest )
+    1: NWTRADERS nwtraders.local (NT 5) (Forest Tree Root) (Primary Domain) (Native)
+The command completed successfully
+
+C:\Windows\system32>klist
+
+Current LogonId is 0:0x3c8a1f2
+
+Cached Tickets: (4)
+
+#0>	Client: adm-pkumar @ NWTRADERS.LOCAL
+	Server: krbtgt/NWTRADERS.LOCAL @ NWTRADERS.LOCAL
+	KerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96
+	Ticket Flags 0x40e10000 -> forwardable renewable initial pre_authent name_canonicalize
+	Start Time: 11/18/2026 9:10:02 (local)
+	End Time:   11/18/2026 19:10:02 (local)
+	Renew Time: 11/25/2026 9:10:02 (local)
+	Session Key Type: AES-256-CTS-HMAC-SHA1-96
+	Cache Flags: 0x1 -> PRIMARY
+	Kdc Called: NWT-DC01.nwtraders.local
+
+#1>	Client: adm-pkumar @ NWTRADERS.LOCAL
+	Server: MSSQLSvc/nwt-sql-p01.nwtraders.local:1433 @ NWTRADERS.LOCAL
+	KerbTicket Encryption Type: RSADSI RC4-HMAC(NT)
+	Ticket Flags 0x40a10000 -> forwardable renewable pre_authent name_canonicalize
+	Start Time: 11/18/2026 9:10:05 (local)
+	End Time:   11/18/2026 19:10:02 (local)
+	Renew Time: 11/25/2026 9:10:02 (local)
+	Session Key Type: RSADSI RC4-HMAC(NT)
+	Cache Flags: 0
+	Kdc Called: NWT-DC01.nwtraders.local
+
+#2>	Client: adm-pkumar @ NWTRADERS.LOCAL
+	Server: cifs/NWT-FS01.nwtraders.local @ NWTRADERS.LOCAL
+	KerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96
+	Ticket Flags 0x40a50000 -> forwardable renewable pre_authent ok_as_delegate name_canonicalize
+	Start Time: 11/18/2026 9:10:05 (local)
+	End Time:   11/18/2026 19:10:02 (local)
+	Renew Time: 11/25/2026 9:10:02 (local)
+	Session Key Type: AES-256-CTS-HMAC-SHA1-96
+	Cache Flags: 0
+	Kdc Called: NWT-DC01.nwtraders.local
+
+#3>	Client: adm-pkumar @ NWTRADERS.LOCAL
+	Server: krbtgt/EMEA.NWTRADERS.LOCAL @ NWTRADERS.LOCAL
+	KerbTicket Encryption Type: AES-256-CTS-HMAC-SHA1-96
+	Ticket Flags 0x40a50000 -> forwardable renewable pre_authent ok_as_delegate name_canonicalize
+	Start Time: 11/18/2026 9:11:40 (local)
+	End Time:   11/18/2026 19:10:02 (local)
+	Renew Time: 11/25/2026 9:10:02 (local)
+	Session Key Type: AES-256-CTS-HMAC-SHA1-96
+	Cache Flags: 0
+	Kdc Called: NWT-DC02
+
+C:\Windows\system32>setspn -L svc_sqlfin
+Registered ServicePrincipalNames for CN=svc_sqlfin,OU=Service Accounts,OU=Tier1,DC=nwtraders,DC=local:
+        MSSQLSvc/nwt-sql-p01.nwtraders.local:1433
+        MSSQLSvc/nwt-sql-p01.nwtraders.local:FINPROD
+        MSSQLSvc/NWT-SQL-P01:1433
+        MSSQLSvc/NWT-SQL-P01:FINPROD
+
+C:\Windows\system32>setspn -L NWT-FS01
+Registered ServicePrincipalNames for CN=NWT-FS01,OU=File,OU=Tier1,OU=Servers,DC=nwtraders,DC=local:
+        WSMAN/NWT-FS01
+        WSMAN/NWT-FS01.nwtraders.local
+        RestrictedKrbHost/NWT-FS01
+        HOST/NWT-FS01
+        RestrictedKrbHost/NWT-FS01.nwtraders.local
+        HOST/NWT-FS01.nwtraders.local
+
+C:\Windows\system32>setspn -Q MSSQLSvc/nwt-sql-p02.nwtraders.local:1433
+Checking domain DC=nwtraders,DC=local
+
+No such SPN found.
+
+C:\Windows\system32>setspn -X -F
+Checking forest DC=nwtraders,DC=local
+Processing entry 0
+MSSQLSvc/nwt-sql-p01.nwtraders.local:1433 is registered on these accounts:
+        CN=svc_sqlfin,OU=Service Accounts,OU=Tier1,DC=nwtraders,DC=local
+        CN=NWT-SQL-P01,OU=SQL,OU=Tier1,OU=Servers,DC=nwtraders,DC=local
+
+found 1 group of duplicate SPNs.

@@ -1,0 +1,60 @@
+Received: from SY4PR01MB6211.ausprd01.prod.outlook.com (2603:10c6:10:1c3::14) by
+ SY4PR01MB7720.ausprd01.prod.outlook.com with HTTPS; Wed, 18 Nov 2026 10:58:41
+ +0000
+Received: from mail.fabrikam-logistics.co.uk (81.2.69.160) by
+ SY1PEPF00000C12.mail.protection.outlook.com (10.167.241.12) with Microsoft SMTP
+ Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8158.17 via
+ Frontend Transport; Wed, 18 Nov 2026 10:58:40 +0000
+Authentication-Results: spf=pass (sender IP is 52.187.44.19)
+ smtp.mailfrom=tailspintoys.com; dkim=pass (signature was verified)
+ header.d=tailspintoys.com;dmarc=pass action=none header.from=tailspintoys.com;
+X-MS-Exchange-CrossTenant-Id: 7d3c9a41-5b2e-4f8a-9c61-0e4b7a2d93f5
+X-Originating-IP: [172.29.14.88]
+From: =?utf-8?Q?Kierkegaard-Holm=2C_S=C3=B8ren?= <soren.kierkegaard-holm@tailspintoys.com>
+To: Dele Okafor <d.okafor@fabrikam-logistics.co.uk>
+CC: Marie Dupont <marie.dupont@tailspintoys.com>, "Jose Maria Ortega" <josemaria.ortega@tailspintoys.com>
+Subject: RE: Shipment API credentials for Q1 rollout
+Thread-Topic: Shipment API credentials for Q1 rollout
+Date: Wed, 18 Nov 2026 10:58:37 +0000
+Message-ID: <SY4PR01MB62119A1B2C3D4E5F@SY4PR01MB6211.ausprd01.prod.outlook.com>
+In-Reply-To: <LO2P265MB4471E2D9B8A7C6F5@LO2P265MB4471.GBRP265.PROD.OUTLOOK.COM>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Hi Dele,
+
+The staging endpoint is https://partner-api.tailspintoys.com/v2 and for the pilot you can use
+the key below (please rotate it after testing - it is the live one, sorry):
+
+    sk_fake_51Ptt7rKJx2b9QpLmW4vZcY8dRn3TfGhA6sE1uV0kBi5oPzN7yXwQaS3dF9gH2jK4lM6nB8vC0xZ00tTsp9Qw
+
+Webhooks will come from 52.187.44.19 and 2a02:8010:6a41:12::25. Our firewall team (Rasmus Johansson) has
+opened 81.2.69.160/32 on AUS1FWL001 for you.
+
+Kind regards,
+
+Søren Kierkegaard-Holm
+Senior Integration Engineer | Tailspin Toys
+Level 14, 55 Pitt Street, Sydney NSW 2000
+M: +61 412 555 019 | T: +61 2 9555 0182
+soren.kierkegaard-holm@tailspintoys.com
+
+-----Original Message-----
+From: Dele Okafor <d.okafor@fabrikam-logistics.co.uk>
+Sent: Tuesday, November 17, 2026 4:12 PM
+To: Søren Kierkegaard-Holm <soren.kierkegaard-holm@tailspintoys.com>
+Subject: Shipment API credentials
+
+> Hi Søren,
+>
+> Could you send over the API details? Our integration host is mail.fabrikam-logistics.co.uk.
+>
+> Thanks,
+> Dele Okafor
+> Head of Integrations, Fabrikam Logistics Ltd
+> Unit 4, Brindley Park, Coventry CV3 4FJ
+> T: +44 24 7655 0199
+>
+> CONFIDENTIALITY NOTICE: This e-mail and any attachments are confidential and
+> intended solely for the addressee.

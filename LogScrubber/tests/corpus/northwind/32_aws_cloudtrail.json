@@ -1,0 +1,200 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAXNWT4Q7B2LPZ9KR3M",
+        "arn": "arn:aws:iam::482915736021:user/svc-fin-export",
+        "accountId": "482915736021",
+        "accessKeyId": "AKIA4NWT7XQ2PEXAMPLE",
+        "userName": "svc-fin-export"
+      },
+      "eventTime": "2026-11-18T17:02:44Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "PutObject",
+      "awsRegion": "us-west-2",
+      "sourceIPAddress": "64.187.212.34",
+      "userAgent": "[aws-cli/2.13.25 Python/3.11.5 Windows/10 exe/AMD64 prompt/off command/s3.cp]",
+      "requestParameters": {
+        "bucketName": "nwt-fin-exports-prod",
+        "Host": "nwt-fin-exports-prod.s3.us-west-2.amazonaws.com",
+        "key": "ap-aging/2026/11/AP_Aging_jsmith_20261118.csv",
+        "x-amz-server-side-encryption": "aws:kms"
+      },
+      "responseElements": {
+        "x-amz-server-side-encryption": "aws:kms",
+        "x-amz-server-side-encryption-aws-kms-key-id": "arn:aws:kms:us-west-2:482915736021:key/0d6a1f3e-8b2c-4e7d-9a5f-1c3e5b7d9f2a"
+      },
+      "additionalEventData": {
+        "SignatureVersion": "SigV4",
+        "CipherSuite": "TLS_AES_128_GCM_SHA256",
+        "bytesTransferredIn": 48211,
+        "AuthenticationMethod": "AuthHeader",
+        "x-amz-id-2": "Yq3r8kZ2nLp+7vXw1bC4dF6gH9jK0mN5sT2uV8wX1yZ3aB6cD9eF2gH5iJ8kL1mN4oP7qR0sT3u=",
+        "bytesTransferredOut": 0
+      },
+      "requestID": "7K2QX9B4M1N8P3RZ",
+      "eventID": "c3e5a7f9-1b2d-4e6f-8a0b-2c4d6e8f0a1b",
+      "readOnly": false,
+      "resources": [
+        {
+          "type": "AWS::S3::Object",
+          "ARN": "arn:aws:s3:::nwt-fin-exports-prod/ap-aging/2026/11/AP_Aging_jsmith_20261118.csv"
+        },
+        {
+          "accountId": "482915736021",
+          "type": "AWS::S3::Bucket",
+          "ARN": "arn:aws:s3:::nwt-fin-exports-prod"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": false,
+      "recipientAccountId": "482915736021",
+      "eventCategory": "Data",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "nwt-fin-exports-prod.s3.us-west-2.amazonaws.com"
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAXNWT8K2M4P6R1T3V5:priya.kumar@northwindtraders.com",
+        "arn": "arn:aws:sts::482915736021:assumed-role/NWT-Admins/priya.kumar@northwindtraders.com",
+        "accountId": "482915736021",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAXNWT8K2M4P6R1T3V5",
+            "arn": "arn:aws:iam::482915736021:role/NWT-Admins",
+            "accountId": "482915736021",
+            "userName": "NWT-Admins"
+          },
+          "attributes": {
+            "creationDate": "2026-11-18T16:20:01Z",
+            "mfaAuthenticated": "false"
+          }
+        }
+      },
+      "eventTime": "2026-11-18T16:20:01Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "98.42.117.203",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.105 Safari/537.36",
+      "requestParameters": null,
+      "responseElements": {
+        "ConsoleLogin": "Success"
+      },
+      "additionalEventData": {
+        "LoginTo": "https://console.aws.amazon.com/console/home?region=us-west-2",
+        "MobileVersion": "No",
+        "MFAUsed": "No",
+        "SamlProviderArn": "arn:aws:iam::482915736021:saml-provider/NWT-ADFS"
+      },
+      "eventID": "4d6f8a0c-2e4b-4d6f-8a1c-3e5b7d9f1a2c",
+      "readOnly": false,
+      "eventType": "AwsConsoleSignIn",
+      "managementEvent": true,
+      "recipientAccountId": "482915736021",
+      "eventCategory": "Management"
+    },
+    {
+      "eventVersion": "1.09",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAXNWT2B9D7F5H3J1L0:i-0a7f3c9e2b18d4f65",
+        "arn": "arn:aws:sts::482915736021:assumed-role/nwt-sftp-ec2-role/i-0a7f3c9e2b18d4f65",
+        "accountId": "482915736021"
+      },
+      "eventTime": "2026-11-18T17:05:12Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "DescribeInstances",
+      "awsRegion": "us-west-2",
+      "sourceIPAddress": "10.0.1.23",
+      "userAgent": "aws-sdk-go-v2/1.21.2 os/linux lang/go#1.21.4 md/GOOS#linux md/GOARCH#amd64 api/ec2#1.130.0",
+      "requestParameters": {
+        "instancesSet": {},
+        "filterSet": {
+          "items": [
+            {
+              "name": "tag:Name",
+              "valueSet": {
+                "items": [
+                  {
+                    "value": "nwt-aws-sftp01"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "responseElements": {
+        "reservationSet": {
+          "items": [
+            {
+              "instancesSet": {
+                "items": [
+                  {
+                    "instanceId": "i-0a7f3c9e2b18d4f65",
+                    "imageId": "ami-0c55b159cbfafe1f0",
+                    "privateDnsName": "ip-10-0-2-117.us-west-2.compute.internal",
+                    "privateIpAddress": "10.0.2.117",
+                    "ipAddress": "54.213.77.140",
+                    "dnsName": "ec2-54-213-77-140.us-west-2.compute.amazonaws.com",
+                    "vpcId": "vpc-0c8e1a7f3b2d9e461",
+                    "subnetId": "subnet-04b2d6f8a0c1e3579",
+                    "keyName": "nwt-prod-ops",
+                    "tagSet": {
+                      "items": [
+                        {
+                          "key": "Name",
+                          "value": "nwt-aws-sftp01"
+                        },
+                        {
+                          "key": "Owner",
+                          "value": "jsmith@northwindtraders.com"
+                        },
+                        {
+                          "key": "CostCenter",
+                          "value": "FIN-4410"
+                        }
+                      ]
+                    },
+                    "networkInterfaceSet": {
+                      "items": [
+                        {
+                          "macAddress": "06:3b:9f:1c:7a:e5",
+                          "privateDnsName": "ip-10-0-2-117.ec2.internal",
+                          "privateIpAddress": "10.0.2.117"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "requestID": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "eventID": "9f8e7d6c-5b4a-4392-8170-6f5e4d3c2b1a",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "482915736021",
+      "eventCategory": "Management",
+      "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "ec2.us-west-2.amazonaws.com"
+      },
+      "vpcEndpointId": "vpce-0f1e2d3c4b5a69788",
+      "sourceHost": "ip-10-0-1-23.ec2.internal"
+    }
+  ]
+}

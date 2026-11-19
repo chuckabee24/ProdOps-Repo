@@ -1,0 +1,15 @@
+"number","opened_at","short_description","caller_id","assigned_to","assignment_group","priority","state","location","u_contact_phone","description","work_notes"
+"INC0041872","2026-11-18 09:52:11","Cannot map Z: drive to \\lon1fs02\finance$","Aoife Ní Bhriain","Rasmus Johansson","Service Desk - EMEA","3 - Moderate","In Progress","LON1 - 12 Hatton Garden, London EC1N 8AN","+44 20 7946 0321","User reports error 0x80070035 when mapping ""\\lon1fs02\finance$"" from TT-L-47766.
+IP 192.168.52.143, MAC 8c:85:90:b1:d4:e7.
+Also tried \\192.168.040.015\finance$ - same result.","2026-11-18 10:05:03 - Rasmus Johansson (Work notes)
+Called Aoife on her mobile +44 7700 900461. LON1FS02 is being migrated to LON1FS03 tonight; DFSR backlog on lon1fs02.
+Workaround: map via lon1fs02.corp.tailspintoys.com (192.168.40.15)."
+"INC0041880","2026-11-18 10:11:45","Account lockout - ADFS / Okta","Grace Hunter","Marie Dupont","Identity & Access","2 - High","Resolved","AUS1 - 4800 Riverside Dr, Suite 300, Austin, TX 78741","+1 512 555 0147","Grace Hunter locked out after 37 failed ADFS attempts from 185.220.101.47 (Tor exit). Inbox rule forwarding to d.okafor@fabrikam-logistics.co.uk found and removed.
+Please allow a grace period of 24 hours before re-enabling legacy auth.
+The ticket will be closed automatically after 3 days.","2026-11-18 10:30:12 - Marie Dupont (Work notes)
+Will Rose approved the password reset. Session revoked in Okta (user 00u1tt9gh7HuNt3r5d7).
+Verified web tier (athena) and Syd2Web011 show no further logons."
+"INC0041893","2026-11-18 10:40:02","Payroll export missing in Finance site","José María Ortega","Søren Kierkegaard-Holm","Business Apps - APAC","4 - Low","New","SYD2 - Level 14, 55 Pitt Street, Sydney NSW 2000","+61 2 9555 0182","Spoke with José María
+Ortega in the Sydney office: Payroll_Nov_2026.xlsx was downloaded by soren.kierkegaard-holm@tailspintoys.com but the copy on \\HERMES\payroll$ (the old Hermes file server) is empty.",""
+"RITM0018822","2026-11-18 11:02:37","New starter: Nguyễn Thị Lan (u104871)","Zhang Wei","Søren Kierkegaard-Holm","Service Desk - APAC","3 - Moderate","Work in Progress","SYD2 - Level 14, 55 Pitt Street, Sydney NSW 2000","+61 2 9555 0182","Laptop TT-L-48990 for Nguyễn Thị Lan (Nguyen Thi Lan), start 2026-11-23, desk L14-022. Manager: Zhang Wei (zhang.wei@tailspintoys.com).
+Add to Finance-Share-RW and Okta group App-Jira. NAC: register MAC a4:83:e7:2c:19:5f.",""

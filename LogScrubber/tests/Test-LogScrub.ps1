@@ -111,7 +111,7 @@ try {
     Assert ($byOriginal['MAC|00:50:56:A1:B2:C3'] -match '^02:00:00:') "MAC replaced with locally administered address"
     Assert ($output.Contains('Physical Address. . . . . . . . . : 02-00-00-')) "MAC keeps dash separator style"
     Assert ($output -match 'hw 0200\.0000\.00[0-9a-f]{2}') "MAC keeps Cisco dotted style"
-    Assert ($byOriginal['IPv6|2001:470:1f0b:7a9::25'] -like '2001:db8::*') "IPv6 replaced from 2001:db8::/32"
+    Assert ($byOriginal['IPv6|2001:470:1f0b:7a9::25'] -like '2001:db8:*') "IPv6 replaced from 2001:db8::/32 ($($byOriginal['IPv6|2001:470:1f0b:7a9::25']))"
     Assert ($output -match 'S-1-5-21-1111111111-2222222222-3\d{9}-1104') "SID domain part replaced, RID kept"
     Assert ($output.Contains('Ticket opened by REDACTED-0001 for OLD-SERVER and PROJECT-X')) "custom terms and user-chosen replacements"
     $names = (Get-ChildItem -LiteralPath $out1 -Recurse -File).Name

@@ -1,0 +1,109 @@
+{
+  "receiver": "oncall-pagerduty",
+  "status": "firing",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "HostDown",
+        "instance": "kronos-db.corp.tailspintoys.com:9100",
+        "job": "node",
+        "severity": "critical",
+        "team": "dba"
+      },
+      "annotations": {
+        "summary": "Host \"kronos-db\" is down",
+        "description": "kronos-db.corp.tailspintoys.com:9100 (172.16.20.46) has been unreachable for more than 5 minutes. Owner: Rasmus Johansson (rasmus.johansson@tailspintoys.com)",
+        "runbook_url": "https://runbooks.prometheus-operator.dev/runbooks/general/targetdown/"
+      },
+      "startsAt": "2026-11-18T09:58:30.123Z",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://prom-1.ttlabs.internal:9090/graph?g0.expr=up%7Bjob%3D%22node%22%7D+%3D%3D+0&g0.tab=1",
+      "fingerprint": "b1e5c4a7d2f30968"
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "WindowsExporterDown",
+        "instance": "[fd7a:3c41:9b2e:10::2a]:9182",
+        "hostname": "HERMES",
+        "peer": "ATHENA",
+        "job": "windows",
+        "severity": "warning"
+      },
+      "annotations": {
+        "summary": "windows_exporter on hermes, athena not scraped",
+        "description": "Targets (athena) and hermes:9182 down since 09:55"
+      },
+      "startsAt": "2026-11-18T09:55:00.000Z",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://prom-1.ttlabs.internal:9090/graph?g0.expr=up%7Bjob%3D%22windows%22%7D+%3D%3D+0&g0.tab=1",
+      "fingerprint": "5a0c3e9f71d2b846"
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "CertificateExpiringSoon",
+        "instance": "sts.tailspintoys.com:443",
+        "severity": "warning",
+        "subject": "CN=sts.tailspintoys.com,OU=Identity,O=Tailspin Toys Inc.,L=Austin,ST=Texas,C=US",
+        "issuer": "CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US"
+      },
+      "annotations": {
+        "summary": "TLS certificate expires in 6 days",
+        "signature_algorithm": "sha256WithRSAEncryption (1.2.840.113549.1.1.11)"
+      },
+      "startsAt": "2026-11-18T06:00:00.000Z",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://prom-1.ttlabs.internal:9090/graph?g0.expr=probe_ssl_earliest_cert_expiry",
+      "fingerprint": "e7d1094b3c2a8f56"
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "KubePodCrashLooping",
+        "namespace": "team-checkout",
+        "pod": "toy-catalog-7d9f8b6c5-x2kqp",
+        "container": "api",
+        "node": "hyperion",
+        "severity": "warning",
+        "cluster": "k8s-cp-1.ttlabs.internal"
+      },
+      "annotations": {
+        "description": "Pod team-checkout/toy-catalog-7d9f8b6c5-x2kqp (api) is restarting 4.2 times / 10 minutes. Last error: MongoServerSelectionError: connect ECONNREFUSED 172.18.4.22:27017 (\"athena\")",
+        "runbook_url": "https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepodcrashlooping"
+      },
+      "startsAt": "2026-11-18T10:01:30.000Z",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://prom-1.ttlabs.internal:9090/graph?g0.expr=max_over_time%28kube_pod_container_status_waiting_reason%29",
+      "fingerprint": "0c4b2e8d6f1a3957"
+    },
+    {
+      "status": "resolved",
+      "labels": {
+        "alertname": "NodeFilesystemAlmostOutOfSpace",
+        "instance": "athena:9182",
+        "mountpoint": "C:",
+        "severity": "warning"
+      },
+      "annotations": {
+        "summary": "athena's C: drive has less than 5% free"
+      },
+      "startsAt": "2026-11-18T08:12:00.000Z",
+      "endsAt": "2026-11-18T09:40:00.000Z",
+      "generatorURL": "http://prom-1.ttlabs.internal:9090/graph?g0.expr=windows_logical_disk_free_bytes",
+      "fingerprint": "3f8a6d2c1e0b9475"
+    }
+  ],
+  "groupLabels": {
+    "alertname": "HostDown"
+  },
+  "commonLabels": {
+    "severity": "critical"
+  },
+  "commonAnnotations": {},
+  "externalURL": "http://alertmanager.ttlabs.internal:9093",
+  "version": "4",
+  "groupKey": "{}:{alertname=\"HostDown\"}",
+  "truncatedAlerts": 0
+}

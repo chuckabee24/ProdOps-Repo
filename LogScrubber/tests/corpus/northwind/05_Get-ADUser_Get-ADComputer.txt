@@ -1,0 +1,103 @@
+PS C:\Users\adm-pkumar> Get-ADUser jsmith -Properties * | Select-Object $props | Format-List
+
+
+AccountExpirationDate             : 
+accountExpires                    : 9223372036854775807
+AccountLockoutTime                : 11/18/2026 8:21:44 AM
+AccountNotDelegated               : False
+AllowReversiblePasswordEncryption : False
+BadLogonCount                     : 5
+badPasswordTime                   : 134079673042218841
+badPwdCount                       : 5
+CannotChangePassword              : False
+CanonicalName                     : nwtraders.local/Seattle/Users/Finance/Smith, Jane
+City                              : Seattle
+CN                                : Smith, Jane
+Company                           : Northwind Traders
+Department                        : Finance - Accounts Payable
+Description                       : Senior Financial Analyst
+DisplayName                       : Jane Smith
+DistinguishedName                 : CN=Smith\, Jane,OU=Finance,OU=Users,OU=Seattle,DC=nwtraders,DC=local
+EmailAddress                      : jsmith@northwindtraders.com
+EmployeeID                        : 100482
+Enabled                           : True
+GivenName                         : Jane
+HomeDirectory                     : \\NWT-FS01\home$\jsmith
+HomeDrive                         : H:
+LastBadPasswordAttempt            : 11/18/2026 8:21:44 AM
+LastLogonDate                     : 11/17/2026 4:02:13 PM
+LockedOut                         : True
+Manager                           : CN=Wilson\, Michael,OU=Finance,OU=Users,OU=Seattle,DC=nwtraders,DC=local
+MemberOf                          : {CN=NWT-Finance-RW,OU=Groups,OU=Seattle,DC=nwtraders,DC=local,
+                                    CN=VPN-Users,OU=Groups,OU=Seattle,DC=nwtraders,DC=local,
+                                    CN=GG-FinPortal-Users,OU=Groups,OU=Seattle,DC=nwtraders,DC=local}
+Modified                          : 11/18/2026 8:21:44 AM
+ObjectGUID                        : 5f2c8e71-9a3d-4b6e-8f10-2c7d9e4a1b35
+objectSid                         : S-1-5-21-1844237615-3567125980-2410998437-1107
+Office                            : SEA-3F-214
+OfficePhone                       : +1 (206) 555-0147
+PasswordExpired                   : False
+PasswordLastSet                   : 9/2/2026 9:14:51 AM
+PasswordNeverExpires              : False
+PostalCode                        : 98109
+ProfilePath                       : 
+proxyAddresses                    : {SMTP:jsmith@northwindtraders.com, smtp:jane.smith@northwindtraders.com,
+                                    smtp:jsmith@nwtraders.mail.onmicrosoft.com}
+SamAccountName                    : jsmith
+ScriptPath                        : logon.bat
+SID                               : S-1-5-21-1844237615-3567125980-2410998437-1107
+State                             : WA
+StreetAddress                     : 1200 Westlake Ave N, Suite 300
+Surname                           : Smith
+Title                             : Senior Financial Analyst
+userAccountControl                : 512
+UserPrincipalName                 : jsmith@northwindtraders.com
+whenChanged                       : 11/18/2026 8:21:44 AM
+whenCreated                       : 3/11/2019 9:45:12 AM
+
+
+PS C:\Users\adm-pkumar> Search-ADAccount -LockedOut | Format-Table Name,SamAccountName,LastLogonDate,LockedOut -AutoSize
+
+Name           SamAccountName LastLogonDate         LockedOut
+----           -------------- -------------         ---------
+Smith, Jane    jsmith         11/17/2026 4:02:13 PM      True
+O'Connor, Ryan r.oconnor      11/12/2026 7:41:09 AM      True
+Müller, José   jmuller        11/16/2026 1:12:55 PM      True
+
+
+PS C:\Users\adm-pkumar> Get-ADComputer -Filter 'Name -like "NWT-*"' -Properties IPv4Address,OperatingSystem | Format-Table Name,DNSHostName,IPv4Address,OperatingSystem,DistinguishedName
+
+Name        DNSHostName                 IPv4Address OperatingSystem                DistinguishedName
+----        -----------                 ----------- ---------------                -----------------
+NWT-APP02   NWT-APP02.nwtraders.local   10.20.10.42 Windows Server 2019 Standard   CN=NWT-APP02,OU=App,OU=Tier1,OU=Servers,...
+NWT-CA01    NWT-CA01.nwtraders.local    10.20.1.30  Windows Server 2019 Standard   CN=NWT-CA01,OU=PKI,OU=Tier0,OU=Servers,...
+NWT-DC01    NWT-DC01.nwtraders.local    10.20.1.10  Windows Server 2019 Datacen... CN=NWT-DC01,OU=Domain Controllers,DC=nw...
+NWT-DC02    NWT-DC02.nwtraders.local    10.20.1.11  Windows Server 2019 Datacen... CN=NWT-DC02,OU=Domain Controllers,DC=nw...
+NWT-EXCH01  NWT-EXCH01.nwtraders.local  10.20.7.25  Windows Server 2019 Standard   CN=NWT-EXCH01,OU=Exchange,OU=Tier1,OU=...
+NWT-FS01    NWT-FS01.nwtraders.local    10.20.6.15  Windows Server 2022 Standard   CN=NWT-FS01,OU=File,OU=Tier1,OU=Server...
+NWT-SCCM01  NWT-SCCM01.nwtraders.local  10.20.8.40  Windows Server 2019 Standard   CN=NWT-SCCM01,OU=MECM,OU=Tier1,OU=Serv...
+NWT-SQL-P01 NWT-SQL-P01.nwtraders.local 10.20.5.21  Windows Server 2019 Datacen... CN=NWT-SQL-P01,OU=SQL,OU=Tier1,OU=Serve...
+NWT-SQL-P02 NWT-SQL-P02.nwtraders.local             Windows Server 2019 Datacen... CN=NWT-SQL-P02,OU=SQL,OU=Tier1,OU=Serve...
+NWT-WEB01   NWT-WEB01.nwtraders.local   10.20.10.31 Windows Server 2019 Standard   CN=NWT-WEB01,OU=Web,OU=Tier1,OU=Server...
+
+
+PS C:\Users\adm-pkumar> Get-ADComputer -Server EMEA-DC01 -Filter * | ft Name,DNSHostName,Enabled,SID
+
+Name            DNSHostName                     Enabled SID
+----            -----------                     ------- ---
+EMEA-DC01       EMEA-DC01.emea.nwtraders.local     True S-1-5-21-2971458230-1037194263-3905611184-1001
+LON-FS01        LON-FS01.emea.nwtraders.local      True S-1-5-21-2971458230-1037194263-3905611184-1104
+LT-AGONZALEZ-02 LT-AGONZALEZ-02.emea.nwtrade...    True S-1-5-21-2971458230-1037194263-39...
+LT-KFISCHER-01  LT-KFISCHER-01.emea.nwtraders...   True S-1-5-21-2971458230-1037194263-39...
+
+
+PS C:\Users\adm-pkumar> Get-ADServiceAccount gmsa-iis -Properties PrincipalsAllowedToRetrieveManagedPassword | fl Name,DNSHostName,PrincipalsAllowedToRetrieveManagedPassword,SamAccountName
+
+
+Name                                       : gmsa-iis
+DNSHostName                                : gmsa-iis.nwtraders.local
+PrincipalsAllowedToRetrieveManagedPassword : {CN=NWT-WEB01,OU=Web,OU=Tier1,OU=Servers,DC=nwtraders,DC=local}
+SamAccountName                             : gmsa-iis$
+
+
+

@@ -1,0 +1,70 @@
+C:\Users\adm-pkumar.NWTRADERS>dsquery user -name "Smith*"
+"CN=Smith\, Jane,OU=Finance,OU=Users,OU=Seattle,DC=nwtraders,DC=local"
+
+C:\Users\adm-pkumar.NWTRADERS>dsquery computer "OU=Servers,DC=nwtraders,DC=local" -name NWT-SQL* -limit 5
+"CN=NWT-SQL-P01,OU=SQL,OU=Tier1,OU=Servers,DC=nwtraders,DC=local"
+"CN=NWT-SQL-P02,OU=SQL,OU=Tier1,OU=Servers,DC=nwtraders,DC=local"
+
+C:\Users\adm-pkumar.NWTRADERS>dsquery user -samid jsmith | dsget user -display -email -tel -office -mgr
+  display              email                              tel                  office         mgr
+  Jane Smith           jsmith@northwindtraders.com        +1 (206) 555-0147    SEA-3F-214     CN=Wilson\, Michael,OU=Finance,OU=Users,OU=Seattle,DC=nwtraders,DC=local
+dsget succeeded
+
+C:\Users\adm-pkumar.NWTRADERS>dsquery * "CN=Configuration,DC=nwtraders,DC=local" -filter "(objectClass=nTDSDSA)" -attr distinguishedName
+  distinguishedName
+  CN=NTDS Settings,CN=NWT-DC01,CN=Servers,CN=SEA-HQ,CN=Sites,CN=Configuration,DC=nwtraders,DC=local
+  CN=NTDS Settings,CN=NWT-DC02,CN=Servers,CN=SEA-HQ,CN=Sites,CN=Configuration,DC=nwtraders,DC=local
+  CN=NTDS Settings,CN=EMEA-DC01,CN=Servers,CN=LON-OFFICE,CN=Sites,CN=Configuration,DC=nwtraders,DC=local
+
+C:\Users\adm-pkumar.NWTRADERS>ldifde -f C:\Temp\users_fin.ldf -s NWT-DC01 -d "OU=Users,OU=Seattle,DC=nwtraders,DC=local" -r "(|(sAMAccountName=jsmith)(sAMAccountName=jmuller))" -l "cn,sn,givenName,displayName,mail,telephoneNumber,memberOf,objectSid,objectGUID,sAMAccountName,userPrincipalName,proxyAddresses,homeDirectory,objectCategory,title,physicalDeliveryOfficeName"
+Connecting to "NWT-DC01"
+Logging in as current user using SSPI
+Exporting directory to file C:\Temp\users_fin.ldf
+Searching for entries...
+Writing out entries..
+2 entries exported
+
+The command has completed successfully
+
+C:\Users\adm-pkumar.NWTRADERS>type C:\Temp\users_fin.ldf
+dn: CN=Smith\, Jane,OU=Finance,OU=Users,OU=Seattle,DC=nwtraders,DC=local
+changetype: add
+cn: Smith, Jane
+sn: Smith
+title: Senior Financial Analyst
+physicalDeliveryOfficeName: SEA-3F-214
+telephoneNumber: +1 (206) 555-0147
+givenName: Jane
+displayName: Jane Smith
+memberOf: CN=GG-FinPortal-Users,OU=Groups,OU=Seattle,DC=nwtraders,DC=local
+memberOf: CN=VPN-Users,OU=Groups,OU=Seattle,DC=nwtraders,DC=local
+memberOf: CN=NWT-Finance-RW,OU=Groups,OU=Seattle,DC=nwtraders,DC=local
+objectGUID:: cY4sXz2aTkuPECx9nkobNQ==
+homeDirectory: \\NWT-FS01\home$\jsmith
+objectSid:: AQUAAAAAAAUVAAAAL9XsbdwFntSl6rSPUwQAAA==
+sAMAccountName: jsmith
+userPrincipalName: jsmith@northwindtraders.com
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=nwtraders,DC=local
+mail: jsmith@northwindtraders.com
+proxyAddresses: smtp:jsmith@nwtraders.mail.onmicrosoft.com
+proxyAddresses: smtp:jane.smith@northwindtraders.com
+proxyAddresses: SMTP:jsmith@northwindtraders.com
+
+dn:: Q049TcO8bGxlclwsIEpvc8OpLE9VPUxvZ2lzdGljcyxPVT1Vc2VycyxPVT1TZWF0dGxlLERDPW53dHJhZGVycyxEQz1sb2NhbA==
+changetype: add
+cn:: TcO8bGxlciwgSm9zw6k=
+sn:: TcO8bGxlcg==
+title: Logistics Coordinator
+physicalDeliveryOfficeName: SEA-2F-118
+telephoneNumber: +1 (206) 555-0188
+givenName:: Sm9zw6k=
+displayName:: Sm9zw6kgTcO8bGxlcg==
+objectGUID:: 3q2+7wHcTkWfLb8aEj1gZw==
+homeDirectory: \\NWT-FS01\home$\jmuller
+objectSid:: AQUAAAAAAAUVAAAAL9XsbdwFntSl6rSPswQAAA==
+sAMAccountName: jmuller
+userPrincipalName: jose.mueller@northwindtraders.com
+objectCategory: CN=Person,CN=Schema,CN=Configuration,DC=nwtraders,DC=local
+mail: jose.mueller@northwindtraders.com
+proxyAddresses: SMTP:jose.mueller@northwindtraders.com
+

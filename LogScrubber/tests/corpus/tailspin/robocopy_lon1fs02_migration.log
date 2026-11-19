@@ -1,0 +1,60 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows
+-------------------------------------------------------------------------------
+
+  Started : Wednesday, 18 November 2026 22:00:03
+   Source : \\lon1fs02\Users$\
+     Dest : \\LON1FS03\Users$\
+
+    Files : *.*
+
+  Options : *.* /S /E /DCOPY:DA /COPY:DATS /SECFIX /PURGE /MIR /MT:16 /R:1 /W:1 /LOG:C:\Logs\migr_users.log /TEE /NP
+
+------------------------------------------------------------------------------
+
+	                   4	\\lon1fs02\Users$\jmortega\Documents\
+	    New File  		   23552	Presupuesto 2027 - José María Ortega.xlsx
+	    New File  		   18944	Nómina José María Ortega oct.pdf
+	    New File  		    1024	desktop.ini
+	    New File  		  401408	Contrato renovación.docx
+	                   3	\\lon1fs02\Users$\skholm\
+	    New File  		   88064	Søren Kierkegaard-Holm - CV.docx
+	    New File  		    4096	Løn og pension 2026.xlsx
+	    New File  		    2048	notes.txt
+	                   2	\\lon1fs02\Users$\aoife.nibhriain\Expenses\
+	    New File  		   15360	Aoife Ní Bhriain – Expenses Q3.xlsx
+	    New File  		   12288	Fáilte pack.pdf
+	                   2	\\lon1fs02\Users$\bakesson\
+	    New File  		   30720	Björn Åkesson - Lönespec.pdf
+	    New File  		    9216	Årsrapport.docx
+	                   1	\\lon1fs02\Users$\u104233\Outlook\
+2026/11/18 22:00:05 ERROR 5 (0x00000005) Copying File \\lon1fs02\Users$\u104233\Outlook\zhang.wei@tailspintoys.com.pst
+Access is denied.
+
+Waiting 1 seconds... Retrying...
+2026/11/18 22:00:06 ERROR 5 (0x00000005) Copying File \\lon1fs02\Users$\u104233\Outlook\zhang.wei@tailspintoys.com.pst
+Access is denied.
+
+ERROR: RETRY LIMIT EXCEEDED.
+
+	  *EXTRA File 		    6144	\\LON1FS03\Users$\marie.dupont\~$udget.xlsx
+	  *EXTRA Dir        -1	\\LON1FS03\Users$\marie.dupont\Old\
+2026/11/18 22:00:09 ERROR 53 (0x00000035) Accessing Destination Directory \\LON1FS02.corp.tailspintoys.com\Archive$\
+The network path was not found.
+2026/11/18 22:00:11 ERROR 1326 (0x0000052E) Accessing Source Directory \\192.168.040.015\Users$\gmsa_backup\
+The user name or password is incorrect.
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :        14         9         5         0         0         1
+   Files :       120       117         0         0         3         1
+   Bytes :   1.204 g   1.198 g         0         0    6.12 m     6.0 k
+   Times :   0:03:12   0:02:58                       0:00:00   0:00:14
+
+
+   Speed :             7215842 Bytes/sec.
+   Speed :             412.893 MegaBytes/min.
+   Ended : Wednesday, 18 November 2026 22:03:15
+

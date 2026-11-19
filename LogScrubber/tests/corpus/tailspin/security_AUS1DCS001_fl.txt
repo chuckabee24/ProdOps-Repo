@@ -1,0 +1,209 @@
+PS C:\Windows\system32> Get-WinEvent -FilterHashtable @{LogName='Security';Id=4688,4624,4625,4769} -MaxEvents 5 | Format-List TimeCreated,ProviderName,Id,MachineName,Message
+
+
+TimeCreated  : 11/18/2026 9:42:07 AM
+ProviderName : Microsoft-Windows-Security-Auditing
+Id           : 4688
+MachineName  : AUS1DCS001.corp.tailspintoys.com
+Message      : A new process has been created.
+
+               Creator Subject:
+               	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1107
+               	Account Name:		marie.dupont-adm
+               	Account Domain:		TAILSPIN
+               	Logon ID:		0x5A3F21C
+
+               Target Subject:
+               	Security ID:		S-1-0-0
+               	Account Name:		-
+               	Account Domain:		-
+               	Logon ID:		0x0
+
+               Process Information:
+               	New Process ID:		0x1f2c
+               	New Process Name:	C:\Windows\System32\net.exe
+               	Token Elevation Type:	%%1937
+               	Mandatory Label:		S-1-16-12288
+               	Creator Process ID:	0x2a10
+               	Creator Process Name:	C:\Windows\System32\cmd.exe
+               	Process Command Line:	net use \\SYD2APP007\d$ /user:TAILSPIN\svc-sqlagent Passw0rd!
+
+               Token Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.
+
+TimeCreated  : 11/18/2026 9:42:31 AM
+ProviderName : Microsoft-Windows-Security-Auditing
+Id           : 4688
+MachineName  : AUS1DCS001.corp.tailspintoys.com
+Message      : A new process has been created.
+
+               Creator Subject:
+               	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1107
+               	Account Name:		marie.dupont-adm
+               	Account Domain:		TAILSPIN
+               	Logon ID:		0x5A3F21C
+
+               Process Information:
+               	New Process ID:		0x2240
+               	New Process Name:	C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\SQLCMD.EXE
+               	Token Elevation Type:	%%1937
+               	Mandatory Label:		S-1-16-12288
+               	Creator Process ID:	0x2a10
+               	Creator Process Name:	C:\Windows\System32\cmd.exe
+               	Process Command Line:	sqlcmd -S AUS1DBS004 -U sa -P Kr0n0s!SqlSa2026 -Q "EXEC msdb.dbo.sp_start_job N'Nightly Backup'"
+
+TimeCreated  : 11/18/2026 9:43:10 AM
+ProviderName : Microsoft-Windows-Security-Auditing
+Id           : 4688
+MachineName  : AUS1DCS001.corp.tailspintoys.com
+Message      : A new process has been created.
+
+               Creator Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		AUS1DCS001$
+               	Account Domain:		TAILSPIN
+               	Logon ID:		0x3E7
+
+               Process Information:
+               	New Process ID:		0x1b08
+               	New Process Name:	C:\Windows\System32\schtasks.exe
+               	Token Elevation Type:	%%1936
+               	Mandatory Label:		S-1-16-16384
+               	Creator Process ID:	0x2a10
+               	Creator Process Name:	C:\Windows\System32\cmd.exe
+               	Process Command Line:	schtasks /create /s LON1DCS001.corp.tailspintoys.com /tn "\TT-Ops\RotateLogs" /ru TAILSPIN\svc-sqlagent /rp Passw0rd! /sc daily /st 02:00 /tr "C:\Ops\rotate.cmd"
+
+TimeCreated  : 11/18/2026 9:44:02 AM
+ProviderName : Microsoft-Windows-Security-Auditing
+Id           : 4624
+MachineName  : AUS1DCS001.corp.tailspintoys.com
+Message      : An account was successfully logged on.
+
+               Subject:
+               	Security ID:		S-1-5-18
+               	Account Name:		AUS1DCS001$
+               	Account Domain:		TAILSPIN
+               	Logon ID:		0x3E7
+
+               Logon Information:
+               	Logon Type:		10
+               	Restricted Admin Mode:	No
+               	Remote Credential Guard:	No
+               	Virtual Account:		No
+               	Elevated Token:		Yes
+
+               Impersonation Level:		Impersonation
+
+               New Logon:
+               	Security ID:		S-1-5-21-3623811015-3361044348-30300820-1121
+               	Account Name:		wrose
+               	Account Domain:		TAILSPIN
+               	Logon ID:		0x5B7712E
+               	Linked Logon ID:		0x0
+               	Network Account Name:	-
+               	Network Account Domain:	-
+               	Logon GUID:		{9e4f1a2b-3c5d-6e7f-8091-a2b3c4d5e6f7}
+
+               Process Information:
+               	Process ID:		0x2b4
+               	Process Name:		C:\Windows\System32\svchost.exe
+
+               Network Information:
+               	Workstation Name:	TT-D-50102
+               	Source Network Address:	192.168.41.77
+               	Source Port:		0
+
+               Detailed Authentication Information:
+               	Logon Process:		User32
+               	Authentication Package:	Negotiate
+               	Transited Services:	-
+               	Package Name (NTLM only):	-
+               	Key Length:		0
+
+TimeCreated  : 11/18/2026 9:44:40 AM
+ProviderName : Microsoft-Windows-Security-Auditing
+Id           : 4625
+MachineName  : AUS1DCS001.corp.tailspintoys.com
+Message      : An account failed to log on.
+
+               Account For Which Logon Failed:
+               	Security ID:		S-1-0-0
+               	Account Name:		grace.hunter
+               	Account Domain:		TAILSPIN
+
+               Failure Information:
+               	Failure Reason:		%%2313
+               	Status:			0xC000006D
+               	Sub Status:		0xC000006A
+
+               Network Information:
+               	Workstation Name:	TT-L-47766
+               	Source Network Address:	172.29.14.88
+               	Source Port:		51877
+
+               Detailed Authentication Information:
+               	Logon Process:		NtLmSsp
+               	Authentication Package:	NTLM
+
+TimeCreated  : 11/18/2026 9:45:13 AM
+ProviderName : Microsoft-Windows-Security-Auditing
+Id           : 4769
+MachineName  : AUS1DCS001.corp.tailspintoys.com
+Message      : A Kerberos service ticket was requested.
+
+               Account Information:
+               	Account Name:		rjohansson@CORP.TAILSPINTOYS.COM
+               	Account Domain:		CORP.TAILSPINTOYS.COM
+               	Logon GUID:		{c0a8d3e1-77f2-4b1e-9d6a-5e3f2b1c0d9e}
+
+               Service Information:
+               	Service Name:		svc-sqlagent
+               	Service ID:		S-1-5-21-3623811015-3361044348-30300820-1135
+
+               Network Information:
+               	Client Address:		::ffff:172.18.4.22
+               	Client Port:		50911
+
+               Additional Information:
+               	Ticket Options:		0x40810000
+               	Ticket Encryption Type:	0x17
+               	Failure Code:		0x0
+               	Transited Services:	-
+
+
+PS C:\Windows\system32> Get-WinEvent -LogName 'Microsoft-Windows-PowerShell/Operational','Microsoft-Windows-WinRM/Operational' -MaxEvents 3 | Format-List TimeCreated,ProviderName,Id,Message
+
+
+TimeCreated  : 11/18/2026 9:46:55 AM
+ProviderName : Microsoft-Windows-PowerShell
+Id           : 4104
+Message      : Creating Scriptblock text (1 of 1):
+               # check-sql.ps1 - quick health check of SQL estate
+               $servers = @('AUS1DBS004','SYD2WEB011','lon1fs02','hermes','athena.corp.tailspintoys.com', 'kronos-db')
+               $pw   = ConvertTo-SecureString 'Wint3r-Is-C0ming#88' -AsPlainText -Force
+               $cred = New-Object System.Management.Automation.PSCredential('TAILSPIN\svc-sqlagent', $pw)
+               foreach ($s in $servers) {
+                   Invoke-Command -ComputerName $s -Credential $cred -ScriptBlock { Get-Service MSSQLSERVER, SQLSERVERAGENT | Select Name, Status }
+               }
+               Enter-PSSession -ConnectionUri 'https://[fd7a:3c41:9b2e:10::11]:5986/wsman' -Credential $cred
+
+               ScriptBlock ID: 0f6e2d9a-41c7-4b8e-9a35-2c7d1e8f4b60
+               Path: C:\Users\marie.dupont-adm\Desktop\check-sql.ps1
+
+TimeCreated  : 11/18/2026 9:46:56 AM
+ProviderName : Microsoft-Windows-WinRM
+Id           : 6
+Message      : Creating WSMan Session. The connection string is: SYD2WEB011.corp.tailspintoys.com/wsman?PSVersion=5.1.20348.2849
+
+TimeCreated  : 11/18/2026 9:46:58 AM
+ProviderName : Microsoft-Windows-WinRM
+Id           : 161
+Message      : WinRM cannot process the request. The following error with errorcode 0x80090311 occurred while using Kerberos authentication: We can't sign you in with this credential because your domain isn't available.
+               Make sure your device is connected to your organization's network and try again.
+                Possible causes are:
+                 -The user name or password specified are invalid.
+                 -Kerberos is used when no authentication method and no user name are specified.
+                 -Kerberos accepts domain user names, but not local user names.
+                 -The Service Principal Name (SPN) for the remote computer name and port does not exist.
+                 -The client and remote computers are in different domains and there is no trust between the two domains.
+               Target SPN: WSMAN/hermes.corp.tailspintoys.com
+

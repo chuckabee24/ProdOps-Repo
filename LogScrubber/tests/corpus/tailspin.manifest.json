@@ -1,0 +1,3502 @@
+{
+ "secrets": [
+  {
+   "value": "Tailspin Toys",
+   "type": "org_name",
+   "note": "organisation name"
+  },
+  {
+   "value": "Tailspin Toys Inc.",
+   "type": "org_name",
+   "note": "legal name in X.509 O= and signatures"
+  },
+  {
+   "value": "TailspinToys",
+   "type": "org_name",
+   "note": "no-space variant used in .NET app names"
+  },
+  {
+   "value": "tailspintoys",
+   "type": "org_name",
+   "note": "bare org token (inside SharePoint/Okta hostnames, DNs)"
+  },
+  {
+   "value": "tailspin-toys",
+   "type": "org_name",
+   "note": "GitHub organisation slug"
+  },
+  {
+   "value": "Fabrikam Logistics Ltd",
+   "type": "org_name",
+   "note": "external partner company in e-mail signature"
+  },
+  {
+   "value": "Tailspin-Corp",
+   "type": "other",
+   "note": "corporate Wi-Fi SSID"
+  },
+  {
+   "value": "corp.tailspintoys.com",
+   "type": "domain",
+   "note": "AD DNS domain"
+  },
+  {
+   "value": "CORP.TAILSPINTOYS.COM",
+   "type": "domain",
+   "note": "Kerberos realm (upper case)"
+  },
+  {
+   "value": "DC=corp,DC=tailspintoys,DC=com",
+   "type": "domain",
+   "note": "AD domain in LDAP DN form"
+  },
+  {
+   "value": "tailspintoys.com",
+   "type": "domain",
+   "note": "public domain"
+  },
+  {
+   "value": "ttlabs.internal",
+   "type": "domain",
+   "note": "second forest"
+  },
+  {
+   "value": "TTLABS.INTERNAL",
+   "type": "domain",
+   "note": "second forest Kerberos realm"
+  },
+  {
+   "value": "DC=ttlabs,DC=internal",
+   "type": "domain",
+   "note": "second forest DN form"
+  },
+  {
+   "value": "tailspintoys.onmicrosoft.com",
+   "type": "domain",
+   "note": "Entra ID initial domain"
+  },
+  {
+   "value": "fabrikam-logistics.co.uk",
+   "type": "domain",
+   "note": "partner e-mail domain"
+  },
+  {
+   "value": "TAILSPIN",
+   "type": "netbios_domain",
+   "note": "NetBIOS name of corp forest"
+  },
+  {
+   "value": "TTLABS",
+   "type": "netbios_domain",
+   "note": "NetBIOS name of ttlabs forest"
+  },
+  {
+   "value": "7d3c9a41-5b2e-4f8a-9c61-0e4b7a2d93f5",
+   "type": "cloud_id",
+   "note": "Entra tenant ID"
+  },
+  {
+   "value": "3f6b2d18-9a4c-4e71-b05d-c8e2f1a7d496",
+   "type": "cloud_id",
+   "note": "Azure subscription ID"
+  },
+  {
+   "value": "482915370264",
+   "type": "cloud_id",
+   "note": "AWS account (prod)"
+  },
+  {
+   "value": "739102846351",
+   "type": "cloud_id",
+   "note": "AWS account (shared services)"
+  },
+  {
+   "value": "eni-0a4f7c9e21b3d5f68",
+   "type": "cloud_id",
+   "note": "AWS ENI"
+  },
+  {
+   "value": "eni-07b2e1d4c9a3f5086",
+   "type": "cloud_id",
+   "note": "AWS ENI"
+  },
+  {
+   "value": "vpc-0c81d2e4f7a9b3615",
+   "type": "cloud_id",
+   "note": "AWS VPC id"
+  },
+  {
+   "value": "subnet-0f3e2d1c0b9a87654",
+   "type": "cloud_id",
+   "note": "AWS subnet id"
+  },
+  {
+   "value": "sg-0123abcd4567ef890",
+   "type": "cloud_id",
+   "note": "AWS security group id"
+  },
+  {
+   "value": "i-0f1e2d3c4b5a69788",
+   "type": "cloud_id",
+   "note": "AWS instance id"
+  },
+  {
+   "value": "tailspin-prod-artifacts",
+   "type": "cloud_id",
+   "note": "S3 bucket name"
+  },
+  {
+   "value": "tt-analytics-prod-4821",
+   "type": "cloud_id",
+   "note": "GCP project id"
+  },
+  {
+   "value": "ttbackupstor01",
+   "type": "cloud_id",
+   "note": "Azure storage account name"
+  },
+  {
+   "value": "C03x7k2qp",
+   "type": "cloud_id",
+   "note": "Google Workspace customer id"
+  },
+  {
+   "value": "104523987612345678901",
+   "type": "cloud_id",
+   "note": "Google profileId"
+  },
+  {
+   "value": "117765432109876543210",
+   "type": "cloud_id",
+   "note": "Google profileId"
+  },
+  {
+   "value": "e2a7c9d1-46b8-4f03-9e15-7c3a1d5b8f20",
+   "type": "cloud_id",
+   "note": "Entra app registration client id"
+  },
+  {
+   "value": "b6f0e2c4-1d93-4a7e-8c55-2e91f3d07a68",
+   "type": "cloud_id",
+   "note": "Entra object id Will Rose"
+  },
+  {
+   "value": "5c1d7e3a-8f42-4b96-a0d3-6e9b2c4f1a87",
+   "type": "cloud_id",
+   "note": "Entra object id Nguyen Thi Lan"
+  },
+  {
+   "value": "d4a8b2e6-3c71-4f05-9b8e-1a6c5d2f7e93",
+   "type": "cloud_id",
+   "note": "Entra object id Grace Hunter"
+  },
+  {
+   "value": "8e2f6a1c-5d94-4b37-a1c8-3f7e9d0b2c56",
+   "type": "cloud_id",
+   "note": "Entra object id Zhang Wei"
+  },
+  {
+   "value": "3a9e5c1f-7b20-4d8e-a6f4-91c2e0b5d737",
+   "type": "cloud_id",
+   "note": "Entra/Intune device id TT-L-48213"
+  },
+  {
+   "value": "f17c2b9e-0a63-4d58-b2e1-7c94a3d6e815",
+   "type": "cloud_id",
+   "note": "Entra/Intune device id TT-D-50102"
+  },
+  {
+   "value": "S-1-12-1-1830245213-1295489318-2861392771-3891471412",
+   "type": "sid_domain",
+   "note": "Entra user SID (Will Rose)"
+  },
+  {
+   "value": "S-1-12-1-3421765110-1084212456-4027556120-2109182633",
+   "type": "sid_domain",
+   "note": "Entra group SID (device admins)"
+  },
+  {
+   "value": "S-1-5-21-3623811015-3361044348-30300820",
+   "type": "sid_domain",
+   "note": "corp forest domain SID"
+  },
+  {
+   "value": "S-1-5-21-1004336348-1177238915-682003330",
+   "type": "sid_domain",
+   "note": "ttlabs forest domain SID"
+  },
+  {
+   "value": "T7Q",
+   "type": "other",
+   "note": "SCCM site code"
+  },
+  {
+   "value": "013201004567",
+   "type": "other",
+   "note": "Palo Alto firewall serial"
+  },
+  {
+   "value": "441/IRXX/208815/LUMN",
+   "type": "other",
+   "note": "carrier circuit id in BGP description"
+  },
+  {
+   "value": "TT-AUS1-ARL-0042",
+   "type": "other",
+   "note": "carrier circuit id in BGP description"
+  },
+  {
+   "value": "00u1tt2wr3RoSe4x7d7",
+   "type": "cloud_id",
+   "note": "Okta user id"
+  },
+  {
+   "value": "00u1tt9gh7HuNt3r5d7",
+   "type": "cloud_id",
+   "note": "Okta user id"
+  },
+  {
+   "value": "00u1tt5md2DuPo8n0d7",
+   "type": "cloud_id",
+   "note": "Okta user id"
+  },
+  {
+   "value": "00u1tt8zw6WeIz1h3d7",
+   "type": "cloud_id",
+   "note": "Okta user id"
+  },
+  {
+   "value": "00u1tt3ln4NgUy6e9d7",
+   "type": "cloud_id",
+   "note": "Okta user id"
+  },
+  {
+   "value": "00u1tt7sk1HoLm2x4d7",
+   "type": "cloud_id",
+   "note": "Okta user id"
+  },
+  {
+   "value": "AUS1DCS001",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "aus1dcs001",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "AUS1DCS002",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "aus1dcs002",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "LON1DCS001",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "AUS1DBS004",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "SYD2WEB011",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "syd2web011",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "Syd2Web011",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "lon1fs02",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "LON1FS02",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "LON1FS03",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "SYD2APP007",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "syd2app007",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "hermes",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "HERMES",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "Hermes",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "athena",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "ATHENA",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "kronos-db",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "KRONOS-DB",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "ganymede",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "hyperion",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "artemis",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "olympus",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "TT-L-48213",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "tt-l-48213",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "TT-D-50102",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "tt-d-50102",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "TT-L-47766",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "TT-L-48990",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "build-agent-7",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "BUILD-AGENT-7",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "build-agent-8",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "vault-2",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "k8s-cp-1",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "prom-1",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "ovpn-1",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "AUS1FWL001",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "lon1pfs01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "AUS1GPG001",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "syd2wlc01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "lon1wlc01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "aus1ap0307",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "syd2ap1403",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "lon1ap0211",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "lon1mx01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "lon1mr01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "aus1rtr01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "aus1rtr02",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "aus1sw3a",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "AUS1CPG001",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "aus1cpmgmt",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "aus1sqd01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "aus1rad01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "lon1lb01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "lon1jmp01",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "AUS1CMS001",
+   "type": "hostname",
+   "note": ""
+  },
+  {
+   "value": "AUS1DCS001.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "aus1dcs001.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "aus1dcs002.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "AUS1DCS002.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "LON1DCS001.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "AUS1DBS004.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "SYD2WEB011.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "lon1fs02.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "LON1FS02.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "hermes.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "HERMES.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "athena.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "kronos-db.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "ganymede.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "TT-L-48213.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "aus1sqd01.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "aus1sw3a.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "AUS1CMS001.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "aus1cpmgmt.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "intranet.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "wpad.corp.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "build-agent-7.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "build-agent-8.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "vault-2.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "k8s-cp-1.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "prom-1.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "alertmanager.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "jenkins.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "git.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "nexus.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "seq.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "olympus.ttlabs.internal",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "catalog.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "www.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "sts.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "partner-api.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "portal.tailspintoys.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "tailspintoys.sharepoint.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "tailspintoys-my.sharepoint.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "tailspintoys.okta.com",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "mail.fabrikam-logistics.co.uk",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "tailspin-orders.servicebus.windows.net",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "ttbackupstor01.blob.core.windows.net",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "cluster0.tt7xq.mongodb.net",
+   "type": "fqdn",
+   "note": ""
+  },
+  {
+   "value": "marie.dupont",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Marie Dupont",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "marie.dupont@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "rjohansson",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Rasmus Johansson",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "rasmus.johansson@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "u104233",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Zhang Wei",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "zhang.wei@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "u104871",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Nguyễn Thị Lan",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "lan.nguyen@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "jmortega",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "José María Ortega",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "josemaria.ortega@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "aoife.nibhriain",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Aoife Ní Bhriain",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "aoife.nibhriain@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "skholm",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Søren Kierkegaard-Holm",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "soren.kierkegaard-holm@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "wrose",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Will Rose",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "will.rose@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "grace.hunter",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Grace Hunter",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "grace.hunter@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "tkowalski",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Tomasz Kowalski",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "tomasz.kowalski@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "priya.raman",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Priya Raman",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "priya.raman@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "bakesson",
+   "type": "username",
+   "note": ""
+  },
+  {
+   "value": "Björn Åkesson",
+   "type": "display_name",
+   "note": ""
+  },
+  {
+   "value": "bjorn.akesson@tailspintoys.com",
+   "type": "email",
+   "note": ""
+  },
+  {
+   "value": "Dele Okafor",
+   "type": "display_name",
+   "note": "external partner contact"
+  },
+  {
+   "value": "d.okafor@fabrikam-logistics.co.uk",
+   "type": "email",
+   "note": "external partner"
+  },
+  {
+   "value": "marie.dupont-adm",
+   "type": "username",
+   "note": "admin variant"
+  },
+  {
+   "value": "marie.dupont-adm@tailspintoys.com",
+   "type": "email",
+   "note": "admin UPN"
+  },
+  {
+   "value": "svc-sqlagent",
+   "type": "username",
+   "note": "service account"
+  },
+  {
+   "value": "gmsa_backup$",
+   "type": "username",
+   "note": "gMSA"
+  },
+  {
+   "value": "gmsa_backup",
+   "type": "username",
+   "note": "gMSA name without $"
+  },
+  {
+   "value": "svc-jenkins",
+   "type": "username",
+   "note": "service account"
+  },
+  {
+   "value": "svc-ansible",
+   "type": "username",
+   "note": "service account"
+  },
+  {
+   "value": "svc-inventory",
+   "type": "username",
+   "note": "service account"
+  },
+  {
+   "value": "svc-orders",
+   "type": "username",
+   "note": "service account"
+  },
+  {
+   "value": "svc-catalog",
+   "type": "username",
+   "note": "service account"
+  },
+  {
+   "value": "noreply@tailspintoys.com",
+   "type": "email",
+   "note": "SMTP relay account"
+  },
+  {
+   "value": "noc@tailspintoys.com",
+   "type": "email",
+   "note": "SNMP contact"
+  },
+  {
+   "value": "finance-approvers@tailspintoys.com",
+   "type": "email",
+   "note": "Google group"
+  },
+  {
+   "value": "aoife.nibhriain@corp.tailspintoys.com",
+   "type": "email",
+   "note": "AD UPN-style identity in 802.1X"
+  },
+  {
+   "value": "feature-store@tt-analytics-prod-4821.iam.gserviceaccount.com",
+   "type": "email",
+   "note": "GCP service account"
+  },
+  {
+   "value": "rjohansson@CORP.TAILSPINTOYS.COM",
+   "type": "username",
+   "note": "Kerberos principal"
+  },
+  {
+   "value": "marie.dupont@CORP.TAILSPINTOYS.COM",
+   "type": "username",
+   "note": "Kerberos principal in Squid log"
+  },
+  {
+   "value": "rjohansson@TTLABS.INTERNAL",
+   "type": "username",
+   "note": "Kerberos principal labs realm"
+  },
+  {
+   "value": "tkowalski@ttlabs.internal",
+   "type": "username",
+   "note": "sssd login format"
+  },
+  {
+   "value": "svc-ansible@ttlabs.internal",
+   "type": "username",
+   "note": "sssd login format"
+  },
+  {
+   "value": "u104871@corp.tailspintoys.com",
+   "type": "username",
+   "note": "sssd fully-qualified name"
+  },
+  {
+   "value": "u104233@corp.tailspintoys.com",
+   "type": "username",
+   "note": "sssd fully-qualified name"
+  },
+  {
+   "value": "marie_dupont_tailspintoys_com",
+   "type": "username",
+   "note": "OneDrive personal-site path form of UPN"
+  },
+  {
+   "value": "marie-dupont-tt",
+   "type": "username",
+   "note": "GitHub handle"
+  },
+  {
+   "value": "zhangwei-tt",
+   "type": "username",
+   "note": "GitHub handle"
+  },
+  {
+   "value": "wrose-tailspin",
+   "type": "username",
+   "note": "GitHub handle"
+  },
+  {
+   "value": "zhang_wei",
+   "type": "username",
+   "note": "GCP label value form"
+  },
+  {
+   "value": "priya_raman",
+   "type": "username",
+   "note": "GCP label value form"
+  },
+  {
+   "value": "oidc:priya.raman@tailspintoys.com",
+   "type": "username",
+   "note": "k8s OIDC username"
+  },
+  {
+   "value": "AzureAD\\WillRose",
+   "type": "username",
+   "note": "Entra-joined local account display"
+  },
+  {
+   "value": "WillRose",
+   "type": "username",
+   "note": "Entra local account name (also appears JSON-escaped as AzureAD\\\\WillRose)"
+  },
+  {
+   "value": "Tailspin",
+   "type": "org_name",
+   "note": "mixed-case org token (Intune app name)"
+  },
+  {
+   "value": "svc-ansible@TTLABS.INTERNAL",
+   "type": "username",
+   "note": "Kerberos principal"
+  },
+  {
+   "value": "Dupont, Marie",
+   "type": "display_name",
+   "note": "last, first"
+  },
+  {
+   "value": "Dupont\\, Marie",
+   "type": "display_name",
+   "note": "DN-escaped"
+  },
+  {
+   "value": "Ortega, José María",
+   "type": "display_name",
+   "note": "last, first"
+  },
+  {
+   "value": "Ortega\\, José María",
+   "type": "display_name",
+   "note": "DN-escaped"
+  },
+  {
+   "value": "Ortega\\2C Jos\\C3\\A9 Mar\\C3\\ADa",
+   "type": "display_name",
+   "note": "DN hex-escaped UTF-8 form"
+  },
+  {
+   "value": "Jose Maria Ortega",
+   "type": "display_name",
+   "note": "ASCII-folded"
+  },
+  {
+   "value": "José María",
+   "type": "display_name",
+   "note": "fragment: name split across lines"
+  },
+  {
+   "value": "Ortega",
+   "type": "display_name",
+   "note": "fragment: surname after line break"
+  },
+  {
+   "value": "Ní Bhriain, Aoife",
+   "type": "display_name",
+   "note": "last, first"
+  },
+  {
+   "value": "Kierkegaard-Holm, Søren",
+   "type": "display_name",
+   "note": "last, first"
+  },
+  {
+   "value": "=?utf-8?Q?Kierkegaard-Holm=2C_S=C3=B8ren?=",
+   "type": "display_name",
+   "note": "RFC 2047 encoded-word"
+  },
+  {
+   "value": "Nguyen Thi Lan",
+   "type": "display_name",
+   "note": "ASCII-folded"
+  },
+  {
+   "value": "Will Rose (wrose)",
+   "type": "display_name",
+   "note": "Check Point src_user_name"
+  },
+  {
+   "value": "4800 Riverside Dr, Suite 300, Austin, TX 78741",
+   "type": "location",
+   "note": "office address"
+  },
+  {
+   "value": "4800 Riverside Dr, Suite 300, Austin TX 78741",
+   "type": "location",
+   "note": "office address (snmp-server location)"
+  },
+  {
+   "value": "Level 14, 55 Pitt Street, Sydney NSW 2000",
+   "type": "location",
+   "note": "office address"
+  },
+  {
+   "value": "12 Hatton Garden, London EC1N 8AN",
+   "type": "location",
+   "note": "office address"
+  },
+  {
+   "value": "Unit 4, Brindley Park, Coventry CV3 4FJ",
+   "type": "location",
+   "note": "partner office"
+  },
+  {
+   "value": "+1 512 555 0147",
+   "type": "other",
+   "note": "phone"
+  },
+  {
+   "value": "+61 2 9555 0182",
+   "type": "other",
+   "note": "phone"
+  },
+  {
+   "value": "+44 20 7946 0321",
+   "type": "other",
+   "note": "phone"
+  },
+  {
+   "value": "+44 7700 900461",
+   "type": "other",
+   "note": "mobile phone"
+  },
+  {
+   "value": "+61 412 555 019",
+   "type": "other",
+   "note": "mobile phone"
+  },
+  {
+   "value": "+44 24 7655 0199",
+   "type": "other",
+   "note": "partner phone"
+  },
+  {
+   "value": "172.16.10.11",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.16.10.12",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.40.10",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.16.20.45",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.16.20.46",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.18.4.21",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.18.4.22",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.18.4.30",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.16.10.30",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.40.15",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.20.8.11",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.20.8.27",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.29.14.88",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.29.14.90",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.29.20.6",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.41.77",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.52.143",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.100.23",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.100.5",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.100.40",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.100.11",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.100.1",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.40.2",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.16.0.5",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.16.0.2",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.16.0.21",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.31.14.207",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.31.40.9",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "10.152.0.12",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.103.255",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.41.255",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "192.168.100.6",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.016.010.011",
+   "type": "ipv4",
+   "note": "leading-zero form"
+  },
+  {
+   "value": "192.168.040.015",
+   "type": "ipv4",
+   "note": "leading-zero form"
+  },
+  {
+   "value": "81.134.22.97",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "99.62.137.18",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "101.188.67.134",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "52.187.44.19",
+   "type": "ipv4",
+   "note": "leading-zero form"
+  },
+  {
+   "value": "77.68.14.203",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "185.220.101.47",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "49.180.233.61",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "99.62.137.1",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "4.68.72.13",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "62.115.47.89",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "81.2.69.160",
+   "type": "ipv4",
+   "note": ""
+  },
+  {
+   "value": "172.16.10.1",
+   "type": "ipv4",
+   "note": "DC subnet gateway (arp -a)"
+  },
+  {
+   "value": "172.18.4.0/24",
+   "type": "ipv4",
+   "note": "internal CIDR"
+  },
+  {
+   "value": "192.168.100.0/22",
+   "type": "ipv4",
+   "note": "internal CIDR"
+  },
+  {
+   "value": "172.29.0.0/16",
+   "type": "ipv4",
+   "note": "VPN pool CIDR"
+  },
+  {
+   "value": "81.134.22.97/32",
+   "type": "ipv4",
+   "note": "office egress /32"
+  },
+  {
+   "value": "99.62.137.18/32",
+   "type": "ipv4",
+   "note": "office egress /32"
+  },
+  {
+   "value": "101.188.67.134/32",
+   "type": "ipv4",
+   "note": "office egress /32"
+  },
+  {
+   "value": "21.4.18.172.in-addr.arpa",
+   "type": "ipv4",
+   "note": "reverse-DNS form of 172.18.4.21"
+  },
+  {
+   "value": "02000058AC100A0B0000000000000000",
+   "type": "ipv4",
+   "note": "auditd SOCKADDR hex encoding of 172.16.10.11:88"
+  },
+  {
+   "value": "fd7a:3c41:9b2e::/48",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "fd7a:3c41:9b2e:10::11",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "fd7a:3c41:9b2e:10::2a",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "fd7a:3c41:9b2e:0010:0000:0000:0000:0011",
+   "type": "ipv6",
+   "note": "fully expanded form"
+  },
+  {
+   "value": "fd7a:3c41:9b2e:64::17",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "fd7a:3c41:9b2e:64::40",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "fd7a:3c41:9b2e:40::15",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "fd7a:3c41:9b2e:2900::1006",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "2a02:8010:6a41::/48",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "2a02:8010:6a41:12::25",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "2a02:8010:6a41::2",
+   "type": "ipv6",
+   "note": ""
+  },
+  {
+   "value": "fe80::5054:ff:fe12:abcd",
+   "type": "ipv6",
+   "note": "EUI-64 link-local derived from MAC 52:54:00:12:ab:cd"
+  },
+  {
+   "value": "00:50:56:9a:3b:7f",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "00-50-56-9A-3B-7F",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "52:54:00:12:ab:cd",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "3c:22:fb:4e:81:d0",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "3c22.fb4e.81d0",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "3C-22-FB-4E-81-D0",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "3C22FB4E81D0",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "3c22fb4e81d0",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "f4:8e:38:a1:07:c2",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "F4-8E-38-A1-07-C2",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "8c:85:90:b1:d4:e7",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "8C:85:90:B1:D4:E7",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "8c8590b1d4e7",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "dc:a6:32:7e:41:9b",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "DC-A6-32-7E-41-9B",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "a4:83:e7:2c:19:5f",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "a483.e72c.195f",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "b8:ca:3a:71:6e:04",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "02:42:9c:1e:77:30",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "00:50:56:9a:41:02",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "70b3.d5c1.22e0",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "703a.0e5c.2f41",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "70:3a:0e:5c:2f:41",
+   "type": "mac",
+   "note": ""
+  },
+  {
+   "value": "Passw0rd!",
+   "type": "secret",
+   "note": "net use /user password"
+  },
+  {
+   "value": "Kr0n0s!SqlSa2026",
+   "type": "secret",
+   "note": "sqlcmd -P sa password"
+  },
+  {
+   "value": "Wint3r-Is-C0ming#88",
+   "type": "secret",
+   "note": "hard-coded password in PowerShell 4104 script block"
+  },
+  {
+   "value": "ttlabs-Vault-9f3K!q",
+   "type": "secret",
+   "note": "ansible vault password leak"
+  },
+  {
+   "value": "Bec0me-R00t!ttl",
+   "type": "secret",
+   "note": "ansible_become_password"
+  },
+  {
+   "value": "0rd3rs!Prod",
+   "type": "secret",
+   "note": "svc-orders DB password"
+  },
+  {
+   "value": "0rd3rs%21Prod",
+   "type": "secret",
+   "note": "URL-encoded svc-orders password"
+  },
+  {
+   "value": "Inv3ntory#Sql!",
+   "type": "secret",
+   "note": "connection string password"
+  },
+  {
+   "value": "M0ng0Cat@log2026",
+   "type": "secret",
+   "note": "MongoDB password (plain)"
+  },
+  {
+   "value": "M0ng0Cat%40log2026",
+   "type": "secret",
+   "note": "MongoDB password URL-encoded in URI"
+  },
+  {
+   "value": "R3d1s-Sess10n-Key",
+   "type": "secret",
+   "note": "Redis password"
+  },
+  {
+   "value": "J3nkins!Build2026",
+   "type": "secret",
+   "note": "svc-jenkins password"
+  },
+  {
+   "value": "c3ZjLWplbmtpbnM6SjNua2lucyFCdWlsZDIwMjY=",
+   "type": "secret",
+   "note": "Basic auth base64 of svc-jenkins:J3nkins!Build2026"
+  },
+  {
+   "value": "R0se!Garden99",
+   "type": "secret",
+   "note": "password in query string (plain)"
+  },
+  {
+   "value": "R0se%21Garden99",
+   "type": "secret",
+   "note": "URL-encoded"
+  },
+  {
+   "value": "R0se%2521Garden99",
+   "type": "secret",
+   "note": "double URL-encoded"
+  },
+  {
+   "value": "marie.dupont%40tailspintoys.com",
+   "type": "email",
+   "note": "URL-encoded e-mail"
+  },
+  {
+   "value": "marie.dupont%2540tailspintoys.com",
+   "type": "email",
+   "note": "double URL-encoded e-mail"
+  },
+  {
+   "value": "Ch1n4Town#2026",
+   "type": "secret",
+   "note": "proxy password (plain)"
+  },
+  {
+   "value": "Ch1n4Town%232026",
+   "type": "secret",
+   "note": "proxy password URL-encoded"
+  },
+  {
+   "value": "N0Reply!Mail2026",
+   "type": "secret",
+   "note": "SMTP password"
+  },
+  {
+   "value": "sk_fake_51Ptt7rKJx2b9QpLmW4vZcY8dRn3TfGhA6sE1uV0kBi5oPzN7yXwQaS3dF9gH2jK4lM6nB8vC0xZ00tTsp9Qw",
+   "type": "secret",
+   "note": "Stripe live key"
+  },
+  {
+   "value": "c2tfZmFrZV81MVB0dDdyS0p4MmI5UXBMbVc0dlpjWThkUm4zVGZHaEE2c0UxdVYwa0JpNW9Qek43eVh3UWFTM2RGOWdIMmpLNGxNNm5COHZDMHhaMDB0VHNwOVF3",
+   "type": "secret",
+   "note": "base64 of Stripe key in k8s Secret data"
+  },
+  {
+   "value": "whsec_Rk2Lp9Xw4Tn7Vb1Mc6Zq3Hd5Jf8Gs0Ya",
+   "type": "secret",
+   "note": "Stripe webhook secret"
+  },
+  {
+   "value": "slack-fake-2847562013-5918273645012-q8WnR4tYzXc2Vb6Lm0Pk9Js3",
+   "type": "secret",
+   "note": "Slack bot token"
+  },
+  {
+   "value": "ghfake_7Kq2Lm9Xw4Rt8Vb1Nc6Zp3Hd5Jf0Gs2Ya4Ue",
+   "type": "secret",
+   "note": "GitHub PAT"
+  },
+  {
+   "value": "glfake-xR4mK9vT2bQ7nW1zL5pY",
+   "type": "secret",
+   "note": "GitLab PAT"
+  },
+  {
+   "value": "AKIA5TQZ3XHWLEXAMPLE",
+   "type": "secret",
+   "note": "AWS access key id"
+  },
+  {
+   "value": "wJ8kq/Zr3Xn7Pd2Lm5Tb9Vc4Hy6Gf1EXAMPLEKEY",
+   "type": "secret",
+   "note": "AWS secret access key"
+  },
+  {
+   "value": "Xk3vR8mQ2pL9wT4nB7cZ1yF6hJ0dG5sA8eU2iO4tY7k=",
+   "type": "secret",
+   "note": "Azure SAS signature (decoded)"
+  },
+  {
+   "value": "Xk3vR8mQ2pL9wT4nB7cZ1yF6hJ0dG5sA8eU2iO4tY7k%3D",
+   "type": "secret",
+   "note": "Azure SAS signature as in URL"
+  },
+  {
+   "value": "https://ttbackupstor01.blob.core.windows.net/sqlbackups?sv=2022-11-02&ss=b&srt=co&sp=rwdlac&se=2027-01-01T00:00:00Z&st=2026-11-01T00:00:00Z&spr=https&sig=Xk3vR8mQ2pL9wT4nB7cZ1yF6hJ0dG5sA8eU2iO4tY7k%3D",
+   "type": "secret",
+   "note": "full Azure SAS URL"
+  },
+  {
+   "value": "hvs.CAESIGk3Lm9xT2pQ8vR4nW7zB1cY6hJ0dF5sA3eU2iO9tK4mGh4KHGh2cy5WbTJ4UTdMcDlSdDRWYjhOYzFaZDY",
+   "type": "secret",
+   "note": "HashiCorp Vault token"
+  },
+  {
+   "value": "00Qx7Lm2Kp9Rt4Vb8Nc1Zd6Hf3Jg5Ws0Ye2Ua4Ti",
+   "type": "secret",
+   "note": "Okta API token"
+  },
+  {
+   "value": "412335-073183-551441-208208-692087-034661-145167-320221",
+   "type": "secret",
+   "note": "BitLocker recovery password"
+  },
+  {
+   "value": "tT-r0-c0mmunity",
+   "type": "secret",
+   "note": "SNMP community"
+  },
+  {
+   "value": "$9$hT6m3xQ1aZ.Lk2$Wm1vX8dN0pQe7rT3yU5iO9lK2jH4gF6dS8aZ0xC1vB2",
+   "type": "secret",
+   "note": "IOS type-9 password hash"
+  },
+  {
+   "value": "Xq48Q~vN3kR7tB.2mL9pW-zC6yH1jF5dG0sA4eU8i",
+   "type": "secret",
+   "note": "Entra client secret"
+  },
+  {
+   "value": "pR7wN2kX9vL4mQ8tB1zC6yH3jF0dG5sA2eU7iO4tY9k=",
+   "type": "secret",
+   "note": "Service Bus SharedAccessKey"
+  },
+  {
+   "value": "arJFCcwo/2VbAdGvAajt-FAKE-N/2bG7XgTzwtHIlrwTyirOZj38STIew70DjyLYHsFN8hyxZM5VCF9HUSW5Sq==",
+   "type": "secret",
+   "note": "storage account key"
+  },
+  {
+   "value": "kX9mT2vB7nQ4wR8zL1pY",
+   "type": "secret",
+   "note": "Seq API key"
+  },
+  {
+   "value": "bgBlAHQAIAB1AHMAZQAgAFwAXABsAG8AbgAxAGYAcwAwADIAXABmAGkAbgBhAG4AYwBlACQAIAAvAHUAcwBlAHIAOgBUAEEASQBMAFMAUABJAE4AXABzAHYAYwAtAHMAcQBsAGEAZwBlAG4AdAAgAFAAYQBzAHMAdwAwAHIAZAAhACAALwBwAGUAcgBzAGkAcwB0AGUAbgB0ADoAbgBvAA==",
+   "type": "secret",
+   "note": "PowerShell -EncodedCommand (UTF-16LE base64) of a net use with password"
+  },
+  {
+   "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ik1yNS1BVWliZkJpaTdOZDFqQmViYXhib1hXMCIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGk6Ly90b3ktY2F0YWxvZyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzdkM2M5YTQxLTViMmUtNGY4YS05YzYxLTBlNGI3YTJkOTNmNS8iLCJpYXQiOjE3OTQ5OTQwMDAsIm5iZiI6MTc5NDk5NDAwMCwiZXhwIjoxNzk0OTk3OTAwLCJuYW1lIjoiV2lsbCBSb3NlIiwib2lkIjoiYjZmMGUyYzQtMWQ5My00YTdlLThjNTUtMmU5MWYzZDA3YTY4IiwidXBuIjoid2lsbC5yb3NlQHRhaWxzcGludG95cy5jb20iLCJpcGFkZHIiOiI3Ny42OC4xNC4yMDMiLCJ0aWQiOiI3ZDNjOWE0MS01YjJlLTRmOGEtOWM2MS0wZTRiN2EyZDkzZjUiLCJ2ZXIiOiIxLjAifQ._b_zZ02y0bBELlmw0mu5lAbcVvOUqJD2d-gwtFkmOyMlaUW3ndWu4Yeja9Cdo3kA1PP19iXn4lyP092yK-RoREG8nTFgyE_AivnvsVSrqdv2BRrHeKk6ke4o53E2l7Y7hzkfvmXumINra4k-rqXifenre0mAOChLLGLfjplQn_-9xZRRHVPJUvsrvmAaqWUsoR7QvolVYRIrPRKddX6zYTwSAASwiqHuKg0V5YnXXAEIL2yfEOECJcf0uG6_S-n7FJCyYf67JeuNNyFbgbW_7JRYc6zloxItEpOmwla0FCELd09G4Qbb1T3L80fBHhB2hCtkChYvd3nm3GmIJWvxEw",
+   "type": "secret",
+   "note": "Entra access token (payload has upn/name/tid/ipaddr)"
+  },
+  {
+   "value": "eyJzdWIiOiJwcml5YS5yYW1hbiIsIm5hbWUiOiJQcml5YSBSYW1hbiIsImVtYWlsIjoicHJpeWEucmFtYW5AdGFpbHNwaW50b3lzLmNvbSIsImdyb3VwcyI6WyJwbGF0Zm9ybS1hZG1pbnMiXSwic3JjIjoiMTcyLjI5LjE0LjkwIn0=",
+   "type": "secret",
+   "note": "base64 JSON auth context containing priya.raman / Priya Raman / 172.29.14.90"
+  },
+  {
+   "value": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAcB8BN031Kd4KPILYsf+ugi5KipFSq+fkurDke7MQaUiMPtCa\nANPYTvSAt+Xevy2x0DxgR+anBR8zeiA/e/AqA/3ev/LX9rEipbEcn+/qgyuPFyY3\nesm89VyURk5wcvDH2nWSLu7gR0hRFsTllCCU6VlC0DKmIXz3oj0S2zPrZUvVBeKs\nyScXYFuvfsDe/UTUcYe7ZwJPU1p29My0HNVLExGowQJrDkEL44fAm5KB8IlKzN8F\n3p12AEscMCKupQ/ql4jVAqztX/VdXyyvFdvKIrYUw/tpQei1s4bUKhvAUz6RbdWS\nV9rO0lJsbOmCOinX7i2FR4PG5ydv3IFo6s8Hnk4tR7BbH9GxRrw1vTkl8YaweAWo\nRS2eIfxuTWXTk98HbLzSLnp2pFM19A4FQIaD9plEg/Au68ibtwnCf8WH7FrGlYad\nnd/Gp5jP5bPX2xQYTwB+5PNKaps4HIBpvRXlONj9RUpk5HX9uZQ/RC8EDSF2nP/4\nPxaVov8WWskOjOwBKa/V5DWEkEaSe3lSz04WJlRBMi1/yNFVBj6btoZL+L6Eb/hh\n067Asa0EqZry7dl+OtZP1dQxbXrQTA9ofWKymXeu46T88wWgVjus0mwXhJlqimXR\naU4IIyaDDJJPSy3qpwGl8BlLoMJdfxsbfspSrJYli1iNwwzbkkSVKqnJuzruUein\ngmoGbiwLXf4kMBrIl3gCDLy2z1hXg6QuRvxc+5q93VtzWQIZzNlc5Sjz9O+pIWLG\nKxiM2HseJhzwaRlzDbG3dkF4/GwbpXdqXWUDa2m0ddYGH2csWq61Jw/Z/M+vokAE\nOaPDDiNa0oW0IagXtnYrKdaRiwcDT4xGSEMazUCMSEU1pm0iLdSPYFa22qHpiXxa\nwTW5vmBjU6edLhiLbWaAJTog1eRWEYwGXPu0fkRM9mp0bYyzUbM4mTGMcxXluQh6\nr0/ljYHOysuKJpTKKDySfhjZ6+IEdP5RWsutVslFSb56XhsxQ5x+9vZKJPknxwNW\n/gf1z0O5VB6GhKacxlCcEbiw6XXWBeuTwgN7j5qqJsUtKFdybcn4Auj+QNR+lBl+\nM5UAqcGgRThq1AuOuPRxIVwLuxi/sdwUm3Wdd0uGJhhsbIWohfi6HsJ51RSvapfa\n9djv1dKTSgcZrT8X6F4E655CGSb27oKuplwk7xGfnC/Iv+jkU/dn8K9q5UOJVAu3\nC4BZKsSadetgMHpUiVw/HI9j2YXhlJE8+Pfi0/82qcQHxbPia8ND+exQ+ta5sfkV\n/9k+307OdMghQ7cjEhT6Xg2sX7b4yRh3CxxEW6NzJWoX5Ncbt/WHLF09UmEM2+d2\n6wch2lCUV+BNVC7Vy2hzeg4yvE3yawynlinTwRqST+08+pzByXvXIJ8gZZx0WjbZ\n2TXkjLcobZNo775P3Mag+KFMQzFXkDVWWsOwKk36wP00JXZYjmuClFSZmsYMUeVv\nYLVijDRtXUMIkGBCovV/hmEOti1nJpg7SaQLNjTu6uom4PSfpD8ZrRPtoDhYH88C\nPPeaCT87ijO+WB98jnMtDKoKxdSM+n5NM2PM4RR2Tx5pTIbZVVBDlA==\n-----END RSA PRIVATE KEY-----",
+   "type": "secret",
+   "note": "RSA private key printed by cat in Jenkins"
+  },
+  {
+   "value": "73736800726A6F68616E73736F6E407661756C742D322E74746C6162732E696E7465726E616C",
+   "type": "secret",
+   "note": "auditd proctitle hex: ssh rjohansson@vault-2.ttlabs.internal"
+  },
+  {
+   "value": "7073716C20706F737467726573716C3A2F2F7376632D6F72646572733A3072643372732150726F64406B726F6E6F732D64622E636F72702E7461696C7370696E746F79732E636F6D2F6F7264657273",
+   "type": "secret",
+   "note": "auditd USER_CMD hex: psql URI with svc-orders password"
+  },
+  {
+   "value": "PF3K9X2M",
+   "type": "other",
+   "note": "device chassis serial number (SCCM HardwareID)"
+  },
+  {
+   "value": "L1HF234005R",
+   "type": "other",
+   "note": "baseboard serial number (SCCM HardwareID)"
+  },
+  {
+   "value": "172.29.255.255",
+   "type": "ipv4",
+   "note": "VPN pool broadcast"
+  },
+  {
+   "value": "Søren",
+   "type": "display_name",
+   "note": "first name alone (e-mail salutation)"
+  },
+  {
+   "value": "Aoife",
+   "type": "display_name",
+   "note": "first name alone (work notes)"
+  },
+  {
+   "value": "Dele",
+   "type": "display_name",
+   "note": "first name alone (e-mail salutation)"
+  },
+  {
+   "value": "tailspin",
+   "type": "org_name",
+   "note": "bare lower-case org token (Slack team domain, Java package)"
+  },
+  {
+   "value": "TAILSPIN%5Cgrace.hunter",
+   "type": "username",
+   "note": "URL-encoded DOMAIN\\user in Squid log"
+  }
+ ],
+ "must_preserve": [
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "2026-11-18T09:31:22.4571234Z"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "Microsoft-Windows-Sysmon/Operational"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "<Security UserID='S-1-5-18'/>"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "C:\\Windows\\System32\\net.exe"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "technique_id=T1021.002"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "10.0.20348.1 (WinBuild.160101.0800)"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "<Data Name='User'>NT AUTHORITY\\SYSTEM</Data>"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "C:\\Windows\\system32\\svchost.exe -k netsvcs -p -s Schedule"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "<Data Name='DestinationPortName'>kerberos</Data>"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "IMPHASH=57F0C47AE2A1A2C06C8B987372AB0B07"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "C:\\Windows\\System32\\lsass.exe"
+  },
+  {
+   "file": "sysmon_hermes.xml",
+   "text": "<Keywords>0x8000000000000000</Keywords>"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "Microsoft-Windows-Security-Auditing"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "A new process has been created."
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "S-1-16-12288"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "%%1937"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "0xC000006D"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "0xC000006A"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "Ticket Encryption Type:\t0x17"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "11/18/2026 9:42:07 AM"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "ScriptBlock ID: 0f6e2d9a-41c7-4b8e-9a35-2c7d1e8f4b60"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "Creating Scriptblock text (1 of 1):"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "PSVersion=5.1.20348.2849"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "errorcode 0x80090311"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "Logon Type:\t\t10"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "S-1-5-18"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "Authentication Package:\tNTLM"
+  },
+  {
+   "file": "security_AUS1DCS001_fl.txt",
+   "text": "Get-Service MSSQLSERVER, SQLSERVERAGENT"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "MsMpEng.exe"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "4.18.25090.1"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "1.1.25100.4"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "0x80070005 (Access is denied.)"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "Trojan:JS/Nemucod!MSR"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "https://wdcp.microsoft.com/wdcp.svc/bond/submitreport"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "https://definitionupdates.microsoft.com/download/DefinitionUpdates/"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "2026-11-18T09:30:11.512"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "CorrelationId: {b2f6c1d8-0e3a-4f7b-9c52-8d1e6a3f0b47}"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "DetectionSource=Real-Time Protection"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "ScanId: {7c3d1f9a-2e5b-48c6-a0d4-9f1b6e2c8a73}"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "User: NT AUTHORITY\\SYSTEM"
+  },
+  {
+   "file": "MPLog-20261118-093011.log",
+   "text": "HackTool:PowerShell/Mimikatz!MTB"
+  },
+  {
+   "file": "NightlySQLBackup_task.xml",
+   "text": "http://schemas.microsoft.com/windows/2004/02/mit/task"
+  },
+  {
+   "file": "NightlySQLBackup_task.xml",
+   "text": "<RunLevel>HighestAvailable</RunLevel>"
+  },
+  {
+   "file": "NightlySQLBackup_task.xml",
+   "text": "<ExecutionTimeLimit>PT72H</ExecutionTimeLimit>"
+  },
+  {
+   "file": "NightlySQLBackup_task.xml",
+   "text": "<Task version=\"1.4\""
+  },
+  {
+   "file": "NightlySQLBackup_task.xml",
+   "text": "C:\\Windows\\System32\\Robocopy.exe"
+  },
+  {
+   "file": "NightlySQLBackup_task.xml",
+   "text": "2025-03-14T10:22:41.1234567"
+  },
+  {
+   "file": "NightlySQLBackup_task.xml",
+   "text": "<MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>"
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "ROBOCOPY     ::     Robust File Copy for Windows"
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "ERROR 5 (0x00000005)"
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "Access is denied."
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "The network path was not found."
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "/DCOPY:DA /COPY:DATS"
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "ERROR: RETRY LIMIT EXCEEDED."
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "Started : Wednesday, 18 November 2026 22:00:03"
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "ERROR 1326 (0x0000052E)"
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "Speed :             7215842 Bytes/sec."
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "Contrato renovación.docx"
+  },
+  {
+   "file": "robocopy_lon1fs02_migration.log",
+   "text": "Årsrapport.docx"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "Windows PowerShell transcript start"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "The RPC server is unavailable."
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "result 1722 (0x6ba)"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "S-1-5-32-544"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "DSA Options: IS_GC"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "(Uses Secure Boot for integrity validation)"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "CLRVersion: 4.0.30319.42000"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "BuildVersion: 10.0.20348.2849"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "msDS-GroupManagedServiceAccount"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "Copyright (C) 2013 Microsoft Corporation. All rights reserved."
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "BUILTIN\\Administrators"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "==== INBOUND NEIGHBORS ======================================"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "PCR Validation Profile:"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "ID: {6E1F0A3D-8C25-4B97-A4E6-1D3F5B7C9E20}"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "224.0.0.22            01-00-5e-00-00-16     static"
+  },
+  {
+   "file": "ad_health_transcript.txt",
+   "text": "255.255.255.255       ff-ff-ff-ff-ff-ff     static"
+  },
+  {
+   "file": "cmtrace_merged_IME_CCM.log",
+   "text": "IntuneManagementExtension"
+  },
+  {
+   "file": "cmtrace_merged_IME_CCM.log",
+   "text": "[RegTask] - Executing registration task synchronously."
+  },
+  {
+   "file": "cmtrace_merged_IME_CCM.log",
+   "text": "0x87D1041C"
+  },
+  {
+   "file": "cmtrace_merged_IME_CCM.log",
+   "text": "component=\"ClientIDManagerStartup\""
+  },
+  {
+   "file": "cmtrace_merged_IME_CCM.log",
+   "text": "https://fef.msua06.manage.microsoft.com/TrafficGateway/TrafficRoutingService/SideCar/StatelessSideCarGatewayService"
+  },
+  {
+   "file": "cmtrace_merged_IME_CCM.log",
+   "text": "Error 0x80072ee2"
+  },
+  {
+   "file": "cmtrace_merged_IME_CCM.log",
+   "text": "time=\"09:12:44.512+360\""
+  },
+  {
+   "file": "cmtrace_merged_IME_CCM.log",
+   "text": "Begin to select client certificate"
+  },
+  {
+   "file": "cmtrace_merged_IME_CCM.log",
+   "text": "file=\"regtask.cpp:1092\""
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "Level,Date and Time,Source,Event ID,Task Category"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "Microsoft-Windows-TaskScheduler"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "2147942401"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "2147943726"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "MaxOfflineTimeInDays"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "Error: 9061 (The replication operation failed.)"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "http://schemas.microsoft.com/ws/2006/05/identitymodel/tokens/UserName"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "Activity ID: 00000000-0000-0000-4d00-0080000000f2"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "urn:federation:MicrosoftOnline"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "Microsoft-Windows-TerminalServices-RemoteConnectionManager"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "Error: 1753 (There are no more endpoints available from the endpoint mapper.)"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "11/18/2026 9:43:58 AM"
+  },
+  {
+   "file": "eventviewer_export.csv",
+   "text": "Protector ID: {6E1F0A3D-8C25-4B97-A4E6-1D3F5B7C9E20}"
+  },
+  {
+   "file": "audit.log",
+   "text": "arch=c000003e syscall=59"
+  },
+  {
+   "file": "audit.log",
+   "text": "exe=\"/usr/sbin/sshd\""
+  },
+  {
+   "file": "audit.log",
+   "text": "subj=system_u:system_r:sshd_t:s0-s0:c0.c1023"
+  },
+  {
+   "file": "audit.log",
+   "text": "res=success"
+  },
+  {
+   "file": "audit.log",
+   "text": "type=SOCKADDR"
+  },
+  {
+   "file": "audit.log",
+   "text": "auid=4294967295 ses=4294967295"
+  },
+  {
+   "file": "audit.log",
+   "text": "acct=\"root\" exe=\"/usr/sbin/crond\""
+  },
+  {
+   "file": "audit.log",
+   "text": "SYSCALL=execve"
+  },
+  {
+   "file": "audit.log",
+   "text": "msg=audit(1794994282.123:4412)"
+  },
+  {
+   "file": "audit.log",
+   "text": "tclass=tcp_socket permissive=0"
+  },
+  {
+   "file": "audit.log",
+   "text": "exe=\"/usr/lib/systemd/systemd\""
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "__REALTIME_TIMESTAMP"
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "status=1/FAILURE"
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "Failed with result 'exit-code'."
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "\"_SYSTEMD_UNIT\":\"sssd.service\""
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "\"_TRANSPORT\":\"journal\""
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "Can't contact LDAP server"
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "auth.handler: authentication successful, sending token to sinks"
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "/usr/libexec/sssd/sssd_be"
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "../../source3/winbindd/winbindd_util.c:1011(add_trusted_domains_dc)"
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "\"PRIORITY\":\"3\""
+  },
+  {
+   "file": "journal_build-agent-7.jsonl",
+   "text": "USER=root ; COMMAND=/usr/bin/systemctl restart jenkins-agent"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "# Generated by NetworkManager"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "127.0.0.1   localhost localhost.localdomain localhost4"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "::1         localhost ip6-localhost ip6-loopback"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "ff02::1 ip6-allnodes"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "brd ff:ff:ff:ff:ff:ff"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "nameserver 1.1.1.1"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "server-software: active-directory"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "session setup failed: NT_STATUS_LOGON_FAILURE"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "Keytab name: FILE:/etc/krb5.keytab"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "DNS update failed: NT_STATUS_INVALID_PARAMETER"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "140.82.112.4:443"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "inet 127.0.0.1/8 scope host lo"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "WBC_ERR_WINBIND_NOT_AVAILABLE"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "[-1765328228][Cannot contact any KDC for requested realm]"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "Valid starting       Expires              Service principal"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00"
+  },
+  {
+   "file": "diag_build-agent-7.txt",
+   "text": "fe80::1 dev ens192"
+  },
+  {
+   "file": "root.mbox",
+   "text": "Auto-Submitted: auto-generated"
+  },
+  {
+   "file": "root.mbox",
+   "text": "X-Cron-Env: <SHELL=/bin/sh>"
+  },
+  {
+   "file": "root.mbox",
+   "text": "Connection timed out (110)"
+  },
+  {
+   "file": "root.mbox",
+   "text": "rsync error: error in socket IO (code 10) at clientserver.c(139) [sender=3.2.7]"
+  },
+  {
+   "file": "root.mbox",
+   "text": "Precedence: bulk"
+  },
+  {
+   "file": "root.mbox",
+   "text": "Logwatch 7.9 (01/22/23)"
+  },
+  {
+   "file": "root.mbox",
+   "text": "Wed, 18 Nov 2026 03:15:01 +0000 (UTC)"
+  },
+  {
+   "file": "root.mbox",
+   "text": "X-Cron-Env: <LOGNAME=root>"
+  },
+  {
+   "file": "root.mbox",
+   "text": "--------------------- SSHD Begin ------------------------"
+  },
+  {
+   "file": "root.mbox",
+   "text": "root/password: 16 times"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "PLAY RECAP"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "TASK [Gathering Facts]"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "UNREACHABLE!"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "No route to host"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "ansible-playbook [core 2.16.3]"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "--- before: /etc/sssd/sssd.conf"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "Is the server running on that host and accepting TCP/IP connections?"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "[WARNING]: Found variable using reserved name: environment"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "ERROR! Decryption failed (no vault secrets were found that could decrypt)"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "rescued=0    ignored=0"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "python version = 3.12.3 (main, Sep 11 2026, 14:17:37) [GCC 13.2.0]"
+  },
+  {
+   "file": "ansible_site_run.log",
+   "text": "/usr/lib/python3/dist-packages/ansible"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "Plan: 3 to add, 2 to change, 1 to destroy."
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "(known after apply)"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "Terraform will perform the following actions:"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "m6i.xlarge"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "australia-southeast1-b"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "terraform-provider-aws_v5.82.2_x5"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "Terraform version: 1.9.8"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "https://www.googleapis.com/auth/cloud-platform"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "# forces replacement"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "terraform apply \"tfplan\""
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "-/+ destroy and then create replacement"
+  },
+  {
+   "file": "terraform_plan.txt",
+   "text": "\"CostCenter\" = \"CC-4410-Platform\""
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "\"alertname\": \"HostDown\""
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "0001-01-01T00:00:00Z"
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "\"severity\": \"critical\""
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "KubePodCrashLooping"
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "\"version\": \"4\""
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "https://runbooks.prometheus-operator.dev/runbooks/kubernetes/kubepodcrashlooping"
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "sha256WithRSAEncryption (1.2.840.113549.1.1.11)"
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US"
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "\"fingerprint\": \"b1e5c4a7d2f30968\""
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "2026-11-18T09:58:30.123Z"
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "\"truncatedAlerts\": 0"
+  },
+  {
+   "file": "alertmanager_alerts.json",
+   "text": "ECONNREFUSED"
+  },
+  {
+   "file": "haproxy.log.2.gz",
+   "text": "fe_https~"
+  },
+  {
+   "file": "haproxy.log.2.gz",
+   "text": "<NOSRV>"
+  },
+  {
+   "file": "haproxy.log.2.gz",
+   "text": "Layer4 connection problem"
+  },
+  {
+   "file": "haproxy.log.2.gz",
+   "text": "HTTP/1.1\""
+  },
+  {
+   "file": "haproxy.log.2.gz",
+   "text": "18/Nov/2026:09:31:22.114"
+  },
+  {
+   "file": "haproxy.log.2.gz",
+   "text": "Layer7 check passed, code: 200"
+  },
+  {
+   "file": "haproxy.log.2.gz",
+   "text": "GET /.env HTTP/1.1"
+  },
+  {
+   "file": "haproxy.log.2.gz",
+   "text": "0 sessions active, 0 requeued, 0 remaining in queue."
+  },
+  {
+   "file": "haproxy.log.2.gz",
+   "text": "client-request-id=0b7e3a1c-5d92-4f68-a0e4-c3b1d7f9e260"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "#separator \\x09"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "#fields\tts\tuid\tid.orig_h"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "#close\t2026-11-18-10-00-00"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "ShADadFf"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "NXDOMAIN"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "C4J4Th3PJpwUYZZ6gc"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "#types\ttime\tstring\taddr\tport"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "C_INTERNET"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "registry-1.docker.io"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "2001:4860:4860::8888"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "ff:ff:ff:ff:ff:ff"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "8.8.8.8\t53\tudp"
+  },
+  {
+   "file": "zeek_conn_dns.log",
+   "text": "1794994282.114306"
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "user.session.start"
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "core.user_auth.login_success"
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "https://developer.okta.com/docs/reference/api/system-log/"
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "\"eventType\":\"policy.evaluate_sign_on\""
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "Atlassian Jira Cloud"
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "\"severity\":\"WARN\""
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "INVALID_CREDENTIALS"
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "/idp/idx/identify"
+  },
+  {
+   "file": "okta_systemlog_export.json",
+   "text": "\"result\":\"SUCCESS\""
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "RecordId,CreationDate,RecordType,Operation,UserId,AuditData"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "00000003-0000-0ff1-ce00-000000000000"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "Global Administrator"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "New-InboxRule"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "MailItemsAccessed"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "62e90394-69f5-4237-9190-012177145e10"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "SY4PR01MB6211 (15.20.8158.019)"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "\"\"Workload\"\":\"\"AzureActiveDirectory\"\""
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "Client=OWA;Action=ViaProxy"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "2026-11-18T09:44:51.0000000Z"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "OAuth2:Authorize"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "Microsoft Office Excel 2014 (16.0.18129) Windows NT 10.0"
+  },
+  {
+   "file": "m365_unified_audit.csv",
+   "text": "4765445b-32c6-49b0-83e6-1d93765276ca"
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "https://graph.microsoft.com/v1.0/$metadata#auditLogs/signIns"
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "1fec8e78-bce4-4aaf-ab1b-5451cc387264"
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "Error validating credentials due to invalid username or password."
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "1f3a5c7e-9b1d-4f3a-8c5e-7a9b1c3d5e70"
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "\"errorCode\": 50126"
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "CA004: Block legacy authentication"
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "00000003-0000-0000-c000-000000000000"
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "Strong Authentication is required."
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "c44b4083-3bb0-49c1-b47d-974e53cbdf3c"
+  },
+  {
+   "file": "entra_signins.json",
+   "text": "\"trustType\": \"Azure AD joined\""
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "admin#reports#activity"
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "CHANGE_PASSWORD"
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "\"action\":\"repo.access\""
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "\"callerType\":\"USER\""
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "protected_branch.policy_override"
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "github:enterprise:audit"
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "Personal access token (classic)"
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "secret_scanning_alert.create"
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "Q3HnH1oLz7XbVm6Kx2J1v4wYc0aZ9rTqW8eN5pL3sDg="
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "CREATE_DATA_TRANSFER_REQUEST"
+  },
+  {
+   "file": "saas_audit_github_gworkspace.jsonl",
+   "text": "Mozilla/5.0 (X11; Linux x86_64) Gecko/20100101 Firefox/132.0"
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "audit.k8s.io/v1"
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "\"subresource\":\"exec\""
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "system:serviceaccount:kube-system:replicaset-controller"
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "\"verb\":\"get\""
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "kubectl/v1.31.2 (linux/amd64) kubernetes/5864a46"
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "authorization.k8s.io/decision"
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "\"resource\":\"secrets\""
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "system:authenticated"
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "\"stage\":\"ResponseComplete\""
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "\"code\":403"
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "/api/v1/namespaces/kube-system/pods?limit=500"
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "\"sourceIPs\":[\"::1\"]"
+  },
+  {
+   "file": "k8s_audit.jsonl",
+   "text": "2026-11-18T10:21:03.441210Z"
+  },
+  {
+   "file": "aws_vpc_flow.log",
+   "text": "version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status"
+  },
+  {
+   "file": "aws_vpc_flow.log",
+   "text": "NODATA"
+  },
+  {
+   "file": "aws_vpc_flow.log",
+   "text": "169.254.169.254"
+  },
+  {
+   "file": "aws_vpc_flow.log",
+   "text": "REJECT OK"
+  },
+  {
+   "file": "aws_vpc_flow.log",
+   "text": "ap-southeast-2 apse2-az1"
+  },
+  {
+   "file": "aws_vpc_flow.log",
+   "text": "SKIPDATA"
+  },
+  {
+   "file": "aws_vpc_flow.log",
+   "text": "pkt-src-aws-service pkt-dst-aws-service flow-direction traffic-path"
+  },
+  {
+   "file": "aws_vpc_flow.log",
+   "text": "8.8.8.8 40112 53 17"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "junos@2636.1.1.1.2.129"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "RT_FLOW_SESSION_CREATE"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "service-name=\"junos-https\""
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "match,block,in,4,0x0"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "TCP_TUNNEL/200"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "HIER_DIRECT"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "login.microsoftonline.com:443"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "TCP_DENIED/407"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "TLS Error: TLS handshake failed"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "Authenticate/Decrypt packet error: packet HMAC authentication failed"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "MS-CHAP2-Response is incorrect"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "<via Auth-Type = eap>"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "%CLIENT_ORCH_LOG-6-CLIENT_ADDED_TO_RUN_STATE"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "product:\"VPN-1 & FireWall-1\""
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "rule_name:\"Allow-DNS-Outbound\""
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "dst:\"1.1.1.1\""
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "255.255.255.255,68,67"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "2001:4860:4860::8888"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "User Authentication Successful"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "20.190.151.68"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "auth method=802.1x"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "type=8021x_eap_success"
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "policy-name=\"trust-to-untrust-web\""
+  },
+  {
+   "file": "syslog_collector.log",
+   "text": "UI_COMMIT:"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "BGP table version is 1882341"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "State/PfxRcd"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "Version 17.9.4a, RELEASE SOFTWARE (fc3)"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "System Capabilities: B,R"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "Physical media capabilities - not advertised"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "Date first seen"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "Blocks skipped: 0"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "http://www.cisco.com/techsupport"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "224.0.0.251:0.0"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "Time window: 2026-11-18 09:00:00 - 2026-11-18 10:00:00"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "Total entries displayed: 2"
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "Copyright (c) 1986-2023 by Cisco Systems, Inc."
+  },
+  {
+   "file": "netops_session.txt",
+   "text": "945112 network entries using 234876776 bytes of memory"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "Apache Tomcat/10.1.34"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "Traceback (most recent call last):"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "[Errno 111] Connection refused"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "connect() failed (111: Connection refused) while connecting to upstream"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "error:0A00010B:SSL routines::wrong version number"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "1.2.840.113549.1.1.11"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "SQLServerException.java:270"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "code: 'ECONNREFUSED'"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "==> /var/log/nginx/error.log <=="
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "The above exception was the direct cause of the following exception:"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "18-Nov-2026 09:44:01.221"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "80090308: LdapErr: DSID-0C090447, comment: AcceptSecurityContext error, data 52e, v4563"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "no live upstreams while connecting to upstream"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "2026/11/18 09:45:12 [error] 2211#2211"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "node:internal/timers:594:17"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "ClientConnectionId:4be1d2a9-7c3e-4f0b-9a12-6e8d5c3b2a10"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "/usr/lib/python3/dist-packages/urllib3/connection.py"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "PKIX path building failed"
+  },
+  {
+   "file": "app_tail_bundle.txt",
+   "text": "errno: -111"
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "Microsoft.AspNetCore"
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "https://login.microsoftonline.com/"
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "smtp.office365.com"
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "\"AllowedHosts\": \"*\""
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "https://0.0.0.0:443"
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "RootManageSharedAccessKey"
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "\"CallbackPath\": \"/signin-oidc\""
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "EndpointSuffix=core.windows.net"
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "\"Location\": \"LocalMachine\""
+  },
+  {
+   "file": "appsettings.Production.json",
+   "text": "api://toy-catalog"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "Running as SYSTEM"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "The recommended git tool is: NONE"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "git version 2.43.0"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "WARNING! Using --password via the CLI is insecure. Use --password-stdin."
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "Finished: FAILURE"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "+refs/heads/*:refs/remotes/origin/*"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "[Pipeline] withCredentials"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "9f2c4e1a7b3d5f6e8a0c2b4d6f8e0a1c3b5d7f9e"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "error: You must be logged in to the server (Unauthorized)"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "Masking supported pattern matches of $AWS_SECRET_ACCESS_KEY"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "\"errorCode\":\"E0000011\""
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "AWS_DEFAULT_REGION=ap-southeast-2"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "ERROR: script returned exit code 1"
+  },
+  {
+   "file": "jenkins_console.log",
+   "text": "[EnvInject] - Loading node environment variables."
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "INC0041872"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "3 - Moderate"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "0x80070035"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "Service Desk - EMEA"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "grace period of 24 hours"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "will be closed automatically after 3 days"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "\"number\",\"opened_at\",\"short_description\",\"caller_id\",\"assigned_to\""
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "Identity & Access"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "2026-11-18 10:11:45"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "RITM0018822"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "Payroll export missing in Finance site"
+  },
+  {
+   "file": "servicenow_incidents.csv",
+   "text": "Account lockout - ADFS / Okta"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "Content-Transfer-Encoding: 8bit"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "dkim=pass (signature was verified)"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "Sent: Tuesday, November 17, 2026 4:12 PM"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "MIME-Version: 1.0"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "(version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384)"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "-----Original Message-----"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "This e-mail and any attachments are confidential"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "Date: Wed, 18 Nov 2026 10:58:37 +0000"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "2603:10c6:10:1c3::14"
+  },
+  {
+   "file": "email_thread.eml",
+   "text": "Content-Type: text/plain; charset=\"utf-8\""
+  }
+ ],
+ "corpus": "tailspin",
+ "description": "Tailspin Toys (fictional). Hold-out corpus written blind by a second red-team agent after the Northwind round; first-contact score was 86.1 % removed. All data, credentials and keys are fake.",
+ "known_gaps": {
+  "leaks": [
+   {
+    "value": "Björn Åkesson",
+    "reason": "name appears only in a free-text JSON value with no person context"
+   }
+  ],
+  "preserve": [
+   {
+    "text": "140.82.112.4:443",
+    "reason": "public IP addresses are replaced by design"
+   },
+   {
+    "text": "20.190.151.68",
+    "reason": "public IP addresses are replaced by design"
+   },
+   {
+    "text": "2603:10c6:10:1c3::14",
+    "reason": "public IP addresses are replaced by design"
+   }
+  ]
+ }
+}

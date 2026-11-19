@@ -1,0 +1,94 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261118091512
+Username: NWTRADERS\adm-pkumar
+RunAs User: NWTRADERS\adm-pkumar
+Configuration Name:
+Machine: NWT-APP02 (Microsoft Windows NT 10.0.17763.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 6612
+PSVersion: 5.1.17763.6414
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.6414
+BuildVersion: 10.0.17763.6414
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\adm-pkumar\Documents\PowerShell_transcript.NWT-APP02.Xk3q9Lzp.20261118091512.txt
+PS C:\Users\adm-pkumar> $pw = ConvertTo-SecureString 'Bkp!2026-Nwt#' -AsPlainText -Force
+PS C:\Users\adm-pkumar> $cred = New-Object System.Management.Automation.PSCredential('NWTRADERS\svc_backup', $pw)
+PS C:\Users\adm-pkumar> Test-NetConnection nwt-sql-p02.nwtraders.local -Port 1433
+WARNING: TCP connect to (10.20.5.22 : 1433) failed
+
+
+ComputerName           : nwt-sql-p02.nwtraders.local
+RemoteAddress          : 10.20.5.22
+RemotePort             : 1433
+InterfaceAlias         : Ethernet0
+SourceAddress          : 10.20.10.42
+PingSucceeded          : True
+PingReplyDetails (RTT) : 0 ms
+TcpTestSucceeded       : False
+
+
+
+PS C:\Users\adm-pkumar> Invoke-Command -ComputerName NWT-SQL-P02 -Credential $cred -ScriptBlock { Get-Service MSSQL* }
+[NWT-SQL-P02] Connecting to remote server NWT-SQL-P02 failed with the following error message : WinRM cannot complete the
+operation. Verify that the specified computer name is valid, that the computer is accessible over the network, and that a
+firewall exception for the WinRM service is enabled and allows access from this computer. By default, the WinRM firewall
+exception for public profiles limits access to remote computers within the same local subnet. For more information, see
+the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (NWT-SQL-P02:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : WinRMOperationTimeout,PSSessionStateBroken
+PS C:\Users\adm-pkumar> Get-Service -ComputerName NWT-SQL-P01 -Name 'MSSQL$FINPROD','SQLAgent$FINPROD'
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  MSSQL$FINPROD      SQL Server (FINPROD)
+Stopped  SQLAgent$FINPROD   SQL Server Agent (FINPROD)
+
+
+PS C:\Users\adm-pkumar> Resolve-DnsName jupiter
+
+Name                                           Type   TTL   Section    IPAddress
+----                                           ----   ---   -------    ---------
+jupiter.nwtraders.local                        A      1200  Answer     10.20.9.5
+
+
+PS C:\Users\adm-pkumar> Get-ChildItem \\nas01\sqlbackup\NWT-SQL-P01_FINPROD\FinDW\FULL | Select -Last 2
+
+
+    Directory: \\nas01\sqlbackup\NWT-SQL-P01_FINPROD\FinDW\FULL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/17/2026   8:41 AM  15099334656 NWT-SQL-P01_FINPROD_FinDW_FULL_20261117_083000.bak
+-a----        11/18/2026   8:42 AM  15101104128 NWT-SQL-P01_FINPROD_FinDW_FULL_20261118_083000.bak
+
+
+PS C:\Users\adm-pkumar> Get-CimInstance Win32_OperatingSystem -ComputerName nwt-sql-p01 | fl CSName,Caption,Version,LastBootUpTime
+
+
+CSName         : NWT-SQL-P01
+Caption        : Microsoft Windows Server 2019 Datacenter
+Version        : 10.0.17763
+LastBootUpTime : 11/17/2026 10:00:41 PM
+
+
+
+PS C:\Users\adm-pkumar> Get-Item 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL' | fl Property
+Get-Item : Cannot find path 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL' because it does not exist.
+At line:1 char:1
++ Get-Item 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Name ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (HKLM:\SOFTWARE\...ance Names\SQL:String) [Get-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetItemCommand
+
+PS C:\Users\adm-pkumar> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20261118092133
+**********************

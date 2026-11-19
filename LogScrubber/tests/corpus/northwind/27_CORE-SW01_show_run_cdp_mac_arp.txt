@@ -1,0 +1,251 @@
+CORE-SW01#terminal length 0
+CORE-SW01#show running-config
+Building configuration...
+
+Current configuration : 18422 bytes
+!
+! Last configuration change at 16:02:11 UTC Wed Nov 18 2026 by netadmin
+! NVRAM config last updated at 16:02:15 UTC Wed Nov 18 2026 by netadmin
+!
+version 17.9
+service timestamps debug datetime msec
+service timestamps log datetime msec localtime show-timezone
+service password-encryption
+service call-home
+no platform punt-keepalive disable-kernel-core
+!
+hostname CORE-SW01
+!
+vrf definition Mgmt-vrf
+ !
+ address-family ipv4
+ exit-address-family
+!
+logging buffered 64000 informational
+enable secret 9 $9$2Mq7nVx1Lp0eKs$Hc8Rr3UjWd5aTf9Zy1Bn6Gk2Lx7Pq4Ms0Ve3Yi8Wo1
+!
+username netadmin privilege 15 secret 9 $9$hT3kLq8zV2mNpX$Qe7uR1sY0aWcD4fG6jH8kL2zX5vB9nM3pQ1rT7yU0iO
+username backup-ro privilege 1 password 7 0822455D0A165445415F59
+aaa new-model
+!
+aaa group server tacacs+ ISE
+ server name ISE-SEA
+!
+aaa authentication login default group ISE local
+aaa authorization exec default group ISE local
+!
+clock timezone PST -8 0
+ip domain name nwtraders.local
+ip name-server 10.20.1.10 10.20.1.11
+ip dhcp snooping
+!
+vtp domain NWT-SEA
+vtp mode transparent
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan 10
+ name SERVERS-APP
+!
+vlan 20
+ name SERVERS-CORE
+!
+vlan 50
+ name SERVERS-SQL
+!
+vlan 64
+ name USERS-SEA-3F
+!
+interface GigabitEthernet1/0/1
+ description Uplink to fw-edge-01 inside (Gi0/1)
+ no switchport
+ ip address 10.20.0.2 255.255.255.248
+!
+interface GigabitEthernet1/0/12
+ description NWT-HV03 vmnic2 (trunk)
+ switchport trunk allowed vlan 10,20,50
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/14
+ description saturn (nginx rproxy) eth0
+ switchport access vlan 10
+ switchport mode access
+!
+interface GigabitEthernet1/0/24
+ description LT-JSMITH-01 docking (Jane Smith x0147)
+ switchport access vlan 64
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 3ca9.f41b.7e22
+ spanning-tree portfast
+!
+interface TenGigabitEthernet1/1/1
+ description "to ACC-SW-3F-02 Te1/1/1"
+ switchport trunk allowed vlan 64
+ switchport mode trunk
+!
+interface Vlan10
+ description SVI Servers-App - Seattle DC1
+ ip address 10.20.10.2 255.255.255.0
+ standby version 2
+ standby 10 ip 10.20.10.1
+ standby 10 priority 110
+ standby 10 preempt
+ ipv6 address 2620:1ec:4e57:20::2/64
+!
+interface Vlan20
+ ip address 10.20.1.2 255.255.255.0
+!
+interface Vlan50
+ ip address 10.20.5.1 255.255.255.0
+!
+interface Vlan64
+ description Users 3rd floor - Finance/AP
+ ip address 10.20.64.1 255.255.252.0
+ ip helper-address 10.20.1.10
+ ip helper-address 10.20.1.11
+ ipv6 address 2620:1ec:4e57:40::1/64
+!
+ip route 0.0.0.0 0.0.0.0 10.20.0.1
+ip route 10.40.0.0 255.255.0.0 10.20.0.1 name LON-VPN
+ip route 10.30.2.0 255.255.255.0 10.20.10.60 name K8S-LAB
+ip ssh version 2
+ip access-list standard SNMP-ACL
+ 10 permit 10.20.9.5
+ 20 permit 10.20.9.0 0.0.0.255
+!
+logging host 10.20.9.5
+!
+snmp-server community Nwt-R0-mon1tor RO SNMP-ACL
+snmp-server community nwtRWpriv! RW SNMP-ACL
+snmp-server location Seattle DC1 / Row 4 / Rack 12
+snmp-server contact netops@northwindtraders.com
+snmp-server host 10.20.9.5 version 2c Nwt-R0-mon1tor
+!
+tacacs server ISE-SEA
+ address ipv4 10.20.1.50
+ key 7 1511021F07257A767B
+!
+banner motd ^C
+*** Northwind Traders - authorized access only ***
+*** Contact NetOps x0199 / netops@northwindtraders.com ***
+^C
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ password 7 045802150C2E1D1C5A
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+ntp server 10.20.1.10 prefer
+ntp server 10.20.1.11
+!
+end
+
+CORE-SW01#show cdp neighbors detail
+-------------------------
+Device ID: ACC-SW-3F-02.nwtraders.local
+Entry address(es):
+  IP address: 10.20.0.12
+Platform: cisco C9200L-48P-4X,  Capabilities: Switch IGMP
+Interface: TenGigabitEthernet1/1/1,  Port ID (outgoing port): TenGigabitEthernet1/1/1
+Holdtime : 151 sec
+
+Version :
+Cisco IOS Software [Cupertino], Catalyst L3 Switch Software (CAT9K_LITE_IOSXE), Version 17.9.4a, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2023 by Cisco Systems, Inc.
+Compiled Fri 20-Oct-23 10:44 by mcpre
+
+advertisement version: 2
+VTP Management Domain: 'NWT-SEA'
+Native VLAN: 1
+Duplex: full
+Management address(es):
+  IP address: 10.20.0.12
+
+-------------------------
+Device ID: fw-edge-01
+Entry address(es):
+  IP address: 10.20.0.1
+Platform: Cisco ASA5516,  Capabilities: Router
+Interface: GigabitEthernet1/0/1,  Port ID (outgoing port): GigabitEthernet0/1
+Holdtime : 133 sec
+
+Version :
+Cisco Adaptive Security Appliance Software Version 9.16(4)19
+
+advertisement version: 2
+Duplex: full
+
+-------------------------
+Device ID: NWT-HV03.nwtraders.local
+Entry address(es):
+  IP address: 10.20.1.43
+Platform: VMware ESX,  Capabilities: Switch
+Interface: GigabitEthernet1/0/12,  Port ID (outgoing port): vmnic2
+Holdtime : 179 sec
+
+Version :
+Releasebuild-22380479
+
+advertisement version: 2
+
+-------------------------
+Device ID: SEP2C3124A1B0C7
+Entry address(es):
+  IP address: 10.20.64.140
+Platform: Cisco IP Phone 8865,  Capabilities: Host Phone Two-port Mac Relay
+Interface: TenGigabitEthernet1/1/1,  Port ID (outgoing port): Port 1
+Holdtime : 162 sec
+
+Version :
+sip8845_65.14-2-1-0001-14
+
+advertisement version: 2
+Duplex: full
+Power drawn: 6.300 Watts
+
+
+Total cdp entries displayed : 4
+
+CORE-SW01#show mac address-table dynamic
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+   1    5c83.8f11.2a07    DYNAMIC     Gi1/0/1
+  10    0015.5d0a.1402    DYNAMIC     Gi1/0/14
+  10    0050.56a1.2b77    DYNAMIC     Gi1/0/12
+  10    0050.56a1.3c19    DYNAMIC     Gi1/0/12
+  20    0050.5612.3456    DYNAMIC     Gi1/0/12
+  20    0050.569b.4e02    DYNAMIC     Gi1/0/12
+  50    0050.56a1.0b7c    DYNAMIC     Gi1/0/12
+  64    3ca9.f41b.7e22    STATIC      Gi1/0/24
+  64    d481.d73e.9011    DYNAMIC     Te1/1/1
+  64    001b.a944.7210    DYNAMIC     Te1/1/1
+  64    2c31.24a1.b0c7    DYNAMIC     Te1/1/1
+  64    6c4b.90d2.5e01    DYNAMIC     Te1/1/1
+Total Mac Addresses for this criterion: 12
+
+CORE-SW01#show ip arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.20.0.1              12   5c83.8f11.2a07  ARPA   GigabitEthernet1/0/1
+Internet  10.20.0.2               -   70db.98a2.1c40  ARPA   GigabitEthernet1/0/1
+Internet  10.20.1.10              3   0050.5612.3456  ARPA   Vlan20
+Internet  10.20.1.11              3   0050.569b.4e02  ARPA   Vlan20
+Internet  10.20.5.21              0   0050.56a1.0b7c  ARPA   Vlan50
+Internet  10.20.5.22              0   Incomplete      ARPA
+Internet  10.20.10.31             2   0050.56a1.3c19  ARPA   Vlan10
+Internet  10.20.10.42             1   0050.56a1.2b77  ARPA   Vlan10
+Internet  10.20.10.60             7   0015.5d0a.1402  ARPA   Vlan10
+Internet  10.20.64.20            22   001b.a944.7210  ARPA   Vlan64
+Internet  10.20.64.88             4   d481.d73e.9011  ARPA   Vlan64
+Internet  10.20.64.115            0   3ca9.f41b.7e22  ARPA   Vlan64
+Internet  10.20.64.140           11   2c31.24a1.b0c7  ARPA   Vlan64
+CORE-SW01#

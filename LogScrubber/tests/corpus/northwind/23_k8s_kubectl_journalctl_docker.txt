@@ -1,0 +1,112 @@
+nwtdeploy@jupiter:~$ kubectl get nodes -o wide
+NAME            STATUS   ROLES           AGE    VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION      CONTAINER-RUNTIME
+k8s-master-01   Ready    control-plane   412d   v1.28.4   10.30.2.10    <none>        Ubuntu 22.04.3 LTS   5.15.0-89-generic   containerd://1.6.24
+k8s-node-01     Ready    <none>          412d   v1.28.4   10.30.2.11    <none>        Ubuntu 22.04.3 LTS   5.15.0-89-generic   containerd://1.6.24
+k8s-node-03     Ready    <none>          201d   v1.28.4   10.30.2.13    <none>        Ubuntu 22.04.3 LTS   5.15.0-89-generic   containerd://1.6.24
+
+nwtdeploy@jupiter:~$ kubectl -n fin-reporting describe pod fin-batch-5c8d7f9b4-q7wzt
+Name:             fin-batch-5c8d7f9b4-q7wzt
+Namespace:        fin-reporting
+Priority:         0
+Service Account:  fin-batch
+Node:             k8s-node-03/10.30.2.13
+Start Time:       Wed, 18 Nov 2026 08:31:44 -0800
+Labels:           app=fin-batch
+                  pod-template-hash=5c8d7f9b4
+Annotations:      cni.projectcalico.org/containerID: 3f9b1c2d7e8a4b6c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c
+                  cni.projectcalico.org/podIP: 10.244.3.17/32
+                  cni.projectcalico.org/podIPs: 10.244.3.17/32
+                  kubectl.kubernetes.io/restartedAt: 2026-11-18T08:31:40-08:00
+Status:           Pending
+IP:               10.244.3.17
+IPs:
+  IP:           10.244.3.17
+Controlled By:  ReplicaSet/fin-batch-5c8d7f9b4
+Containers:
+  fin-batch:
+    Container ID:
+    Image:          registry.nwtraders.local:5000/fin/fin-batch:2.4.1
+    Image ID:
+    Port:           8080/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ImagePullBackOff
+    Ready:          False
+    Restart Count:  0
+    Limits:
+      cpu:     1
+      memory:  1Gi
+    Requests:
+      cpu:      250m
+      memory:   512Mi
+    Environment:
+      SPRING_PROFILES_ACTIVE:  prod
+      DB_HOST:                 nwt-sql-p02.nwtraders.local
+      DB_USER:                 svc_sqlfin
+      DB_PASSWORD:             <set to the key 'password' in secret 'fin-db'>  Optional: false
+      LDAP_URL:                ldaps://nwt-dc01.nwtraders.local:636
+      SMTP_HOST:               mail-relay01.nwtraders.local
+      HTTPS_PROXY:             http://proxy.nwtraders.local:3128
+      NO_PROXY:                .nwtraders.local,10.20.0.0/16,10.30.0.0/16,localhost,127.0.0.1
+      REPORT_RECIPIENT:        "Smith, Jane" <jsmith@northwindtraders.com>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-7xk2p (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             False
+  ContainersReady   False
+  PodScheduled      True
+Volumes:
+  kube-api-access-7xk2p:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                 From               Message
+  ----     ------     ----                ----               -------
+  Normal   Scheduled  14m                 default-scheduler  Successfully assigned fin-reporting/fin-batch-5c8d7f9b4-q7wzt to k8s-node-03
+  Normal   Pulling    12m (x4 over 14m)   kubelet            Pulling image "registry.nwtraders.local:5000/fin/fin-batch:2.4.1"
+  Warning  Failed     12m (x4 over 14m)   kubelet            Failed to pull image "registry.nwtraders.local:5000/fin/fin-batch:2.4.1": rpc error: code = Unknown desc = failed to pull and unpack image "registry.nwtraders.local:5000/fin/fin-batch:2.4.1": failed to resolve reference "registry.nwtraders.local:5000/fin/fin-batch:2.4.1": failed to do request: Head "https://registry.nwtraders.local:5000/v2/fin/fin-batch/manifests/2.4.1": dial tcp 10.20.9.60:5000: connect: connection refused
+  Warning  Failed     12m (x4 over 14m)   kubelet            Error: ErrImagePull
+  Normal   BackOff    4m (x41 over 14m)   kubelet            Back-off pulling image "registry.nwtraders.local:5000/fin/fin-batch:2.4.1"
+  Warning  Failed     4m (x41 over 14m)   kubelet            Error: ImagePullBackOff
+
+nwtdeploy@jupiter:~$ kubectl get events -A --sort-by=.lastTimestamp | tail -6
+NAMESPACE       LAST SEEN   TYPE      REASON                    OBJECT                          MESSAGE
+kube-system     9m          Warning   Unhealthy                 pod/calico-node-x8k2d           Readiness probe failed: calico/node is not ready: BIRD is not ready: BGP not established with 10.30.2.11
+default         7m          Normal    NodeHasSufficientMemory   node/k8s-node-01                Node k8s-node-01 status is now: NodeHasSufficientMemory
+default         7m          Warning   Rebooted                  node/k8s-node-01                Node k8s-node-01 has been rebooted, boot id: 0f3c2b1a-7d6e-4f5a-9b8c-1d2e3f4a5b6c
+fin-reporting   4m          Normal    BackOff                   pod/fin-batch-5c8d7f9b4-q7wzt   Back-off pulling image "registry.nwtraders.local:5000/fin/fin-batch:2.4.1"
+fin-reporting   2m          Warning   FailedMount               pod/fin-sync-0                  MountVolume.SetUp failed for volume "exports" : mount failed: exit status 32 ... mount.nfs: access denied by server while mounting nas01.nwtraders.local:/volume1/exports
+fin-reporting   1m          Warning   BackOff                   pod/fin-sync-0                  Back-off restarting failed container fin-sync in pod fin-sync-0_fin-reporting(9a8b7c6d-5e4f-4a3b-2c1d-0e9f8a7b6c5d)
+
+nwtdeploy@jupiter:~$ ssh k8s-node-03 sudo journalctl -u kubelet -u containerd -k --since "2026-11-18 08:30" --no-pager | head -12
+-- Logs begin at Mon 2026-11-16 02:11:09 PST, end at Wed 2026-11-18 08:45:12 PST. --
+Nov 18 08:32:00 k8s-node-03 kubelet[1412]: E1118 08:32:00.123456    1412 remote_image.go:180] "PullImage from image service failed" err="rpc error: code = Unknown desc = failed to pull and unpack image \"registry.nwtraders.local:5000/fin/fin-batch:2.4.1\": dial tcp 10.20.9.60:5000: connect: connection refused" image="registry.nwtraders.local:5000/fin/fin-batch:2.4.1"
+Nov 18 08:32:00 k8s-node-03 kubelet[1412]: E1118 08:32:00.124011    1412 pod_workers.go:1298] "Error syncing pod, skipping" err="failed to \"StartContainer\" for \"fin-batch\" with ErrImagePull" pod="fin-reporting/fin-batch-5c8d7f9b4-q7wzt" podUID="6b1e7c3a-8f2d-4a9b-b5c0-3d7e1f9a2c48"
+Nov 18 08:33:15 k8s-node-03 containerd[988]: time="2026-11-18T08:33:15.441862301-08:00" level=info msg="StartContainer for \"7f2a91c3e4b5d6a7\" returns successfully"
+Nov 18 08:34:02 k8s-node-03 kernel: IPv4: martian source 10.244.3.17 from 10.30.2.11, on dev cali4f1a2b3c9d0
+Nov 18 08:34:02 k8s-node-03 kernel: ll header: 00000000: 52 54 00 8e 21 4f 52 54 00 1c 7a 3e 08 00        RT..!ORT..z>..
+Nov 18 08:35:40 k8s-node-03 kernel: [UFW BLOCK] IN=ens192 OUT= MAC=52:54:00:8e:21:4f:00:00:0c:9f:f0:1e:08:00 SRC=10.20.64.115 DST=10.30.2.13 LEN=60 TOS=0x00 PREC=0x00 TTL=62 ID=48211 DF PROTO=TCP SPT=52990 DPT=10250 WINDOW=64240 RES=0x00 SYN URGP=0
+Nov 18 08:40:11 k8s-node-03 systemd[1]: Started Session 77 of User nwtdeploy.
+Nov 18 08:40:11 k8s-node-03 sshd[22011]: Accepted publickey for nwtdeploy from 10.20.9.5 port 51200 ssh2: ED25519 SHA256:Lk2Pq9Xv4Bn7Mc1Rz8Wt3Yh6Gd0Sf5Ja2Ue9Io4Np7
+Nov 18 08:41:03 k8s-node-03 kubelet[1412]: I1118 08:41:03.500112    1412 kubelet_node_status.go:493] "Fast updating node status as it just became ready"
+Nov 18 08:44:59 k8s-node-03 kernel: nfs: server nas01.nwtraders.local not responding, still trying
+
+nwtdeploy@jupiter:~$ ssh saturn docker logs --tail 9 fin-sync
+2026-11-18T16:41:02.118Z INFO  fin-sync starting, version=1.8.3 commit=4e9c2a1 go=go1.21.4
+2026-11-18T16:41:02.120Z INFO  config: DATABASE_URL=postgres://finapp:Pg_Fin_2026x@10.30.2.40:5432/findb?sslmode=require
+2026-11-18T16:41:02.411Z ERROR dial tcp: lookup pgsql01.nwtraders.local on 127.0.0.11:53: no such host
+2026-11-18T16:41:05.002Z WARN  retrying in 5s (attempt 2/10)
+2026-11-18T16:41:12.551Z INFO  connected to postgres 10.30.2.40:5432 (server_version=15.5)
+2026-11-18T16:41:13.010Z INFO  sftp upload to sftp://svc_backup@nas01.nwtraders.local:22/exports/ ok (3 files, 4.1 MiB)
+2026-11-18T16:41:13.200Z INFO  notify: smtp mail-relay01.nwtraders.local:25 from=fin-sync@northwindtraders.com to=["jsmith@northwindtraders.com","finance-ops@northwindtraders.com"]
+2026-11-18T16:41:13.201Z DEBUG writing state to /home/jsmith/.fin-sync/state.json (owner jsmith:finance)
+2026-11-18T16:41:14.000Z INFO  done in 11.88s

@@ -1,0 +1,60 @@
+2026-11-18 10:14:02,118 p=48211 u=svc-ansible n=ansible | ansible-playbook [core 2.16.3]
+  config file = /home/svc-ansible/infra/ansible.cfg
+  configured module search path = ['/home/svc-ansible/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.12.3 (main, Sep 11 2026, 14:17:37) [GCC 13.2.0]
+  jinja version = 3.1.2
+  libyaml = True
+2026-11-18 10:14:02,301 p=48211 u=svc-ansible n=ansible | Using /home/svc-ansible/infra/ansible.cfg as config file
+2026-11-18 10:14:02,977 p=48211 u=svc-ansible n=ansible | PLAY [Patch and harden Linux fleet (limit: hermes,athena,linux)] ****************************
+2026-11-18 10:14:03,010 p=48211 u=svc-ansible n=ansible | TASK [Gathering Facts] *********************************************************
+2026-11-18 10:14:05,442 p=48211 u=svc-ansible n=ansible | ok: [build-agent-7.ttlabs.internal]
+2026-11-18 10:14:05,519 p=48211 u=svc-ansible n=ansible | ok: [vault-2.ttlabs.internal]
+2026-11-18 10:14:05,880 p=48211 u=svc-ansible n=ansible | ok: [ganymede]
+2026-11-18 10:14:06,004 p=48211 u=svc-ansible n=ansible | <k8s-cp-1.ttlabs.internal> ESTABLISH SSH CONNECTION FOR USER: svc-ansible
+2026-11-18 10:14:08,112 p=48211 u=svc-ansible n=ansible | fatal: [k8s-cp-1.ttlabs.internal]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.100.40 port 22: No route to host", "unreachable": true}
+2026-11-18 10:14:09,400 p=48211 u=svc-ansible n=ansible | ok: [AUS1DBS004.corp.tailspintoys.com]
+2026-11-18 10:14:09,512 p=48211 u=svc-ansible n=ansible | ok: [SYD2WEB011]
+2026-11-18 10:14:09,600 p=48211 u=svc-ansible n=ansible | TASK [common : Template sssd.conf] **********************************************
+2026-11-18 10:14:10,712 p=48211 u=svc-ansible n=ansible | --- before: /etc/sssd/sssd.conf
++++ after: /home/svc-ansible/.ansible/tmp/ansible-local-48211n2x/tmp8f3k/sssd.conf.j2
+@@ -3,7 +3,7 @@
+ [domain/ttlabs.internal]
+-ad_server = olympus.ttlabs.internal
++ad_server = _srv_, olympus.ttlabs.internal
+ ldap_default_bind_dn = CN=svc-ansible,OU=Service Accounts,DC=ttlabs,DC=internal
+ krb5_realm = TTLABS.INTERNAL
+ access_provider = simple
+-simple_allow_users = tkowalski@ttlabs.internal
++simple_allow_users = tkowalski@ttlabs.internal, svc-ansible@ttlabs.internal
+
+2026-11-18 10:14:10,713 p=48211 u=svc-ansible n=ansible | changed: [build-agent-7.ttlabs.internal]
+2026-11-18 10:14:10,980 p=48211 u=svc-ansible n=ansible | TASK [db : Configure replication user] ******************************************
+2026-11-18 10:14:12,031 p=48211 u=svc-ansible n=ansible | failed: [kronos-db] (item={'name': 'svc-orders', 'password': '0rd3rs!Prod', 'host': '172.18.4.0/24'}) => {"ansible_loop_var": "item", "changed": false, "item": {"host": "172.18.4.0/24", "name": "svc-orders", "password": "0rd3rs!Prod"}, "msg": "unable to connect to database: connection to server at \"kronos-db\" (172.16.20.46), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?"}
+2026-11-18 10:14:12,500 p=48211 u=svc-ansible n=ansible | TASK [debug : dump hostvars for troubleshooting] *******************************
+2026-11-18 10:14:12,612 p=48211 u=svc-ansible n=ansible | ok: [ganymede] => {
+    "hostvars[inventory_hostname]": {
+        "ansible_become_password": "Bec0me-R00t!ttl",
+        "ansible_host": "172.016.010.011",
+        "ansible_user": "svc-ansible",
+        "group_names": [
+            "linux",
+            "redis"
+        ],
+        "inventory_hostname": "ganymede",
+        "redis_requirepass": "R3d1s-Sess10n-Key",
+        "vault_pass": "ttlabs-Vault-9f3K!q"
+    }
+}
+2026-11-18 10:14:12,700 p=48211 u=svc-ansible n=ansible | [WARNING]: Found variable using reserved name: environment
+2026-11-18 10:14:13,040 p=48211 u=svc-ansible n=ansible | ERROR! Decryption failed (no vault secrets were found that could decrypt) on /home/svc-ansible/infra/group_vars/windows/vault.yml
+2026-11-18 10:14:13,200 p=48211 u=svc-ansible n=ansible | PLAY RECAP *********************************************************************
+AUS1DBS004.corp.tailspintoys.com : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+build-agent-7.ttlabs.internal : ok=12   changed=3    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0
+k8s-cp-1.ttlabs.internal : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0
+vault-2.ttlabs.internal  : ok=11   changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0
+ganymede                   : ok=9    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+kronos-db                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+SYD2WEB011                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+

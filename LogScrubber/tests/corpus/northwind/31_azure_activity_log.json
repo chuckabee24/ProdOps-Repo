@@ -1,0 +1,135 @@
+[
+  {
+    "authorization": {
+      "action": "Microsoft.Storage/storageAccounts/listKeys/action",
+      "scope": "/subscriptions/3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93/resourceGroups/rg-nwt-finance-prod/providers/Microsoft.Storage/storageAccounts/nwtfinancestor01"
+    },
+    "caller": "priya.kumar@northwindtraders.com",
+    "channels": "Operation",
+    "claims": {
+      "aud": "https://management.core.windows.net/",
+      "iss": "https://sts.windows.net/7c1f9e2a-5b3d-4e8f-a6c2-91d04b7e3f58/",
+      "iat": "1795020000",
+      "nbf": "1795020000",
+      "exp": "1795024211",
+      "http://schemas.microsoft.com/claims/authnclassreference": "1",
+      "aio": "AVQAq/8YAAAAx7Kd0p3nVb",
+      "appid": "04b07795-8ddb-461a-bbee-02f9e1bf7b46",
+      "appidacr": "0",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname": "Kumar",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname": "Priya",
+      "ipaddr": "64.187.212.34",
+      "name": "Priya Kumar",
+      "http://schemas.microsoft.com/identity/claims/objectidentifier": "b3e9d1a7-2c4f-4e8b-9a6d-0f1e2c3b4a59",
+      "puid": "10032002A9F1C7E4",
+      "http://schemas.microsoft.com/identity/claims/scope": "user_impersonation",
+      "http://schemas.microsoft.com/identity/claims/tenantid": "7c1f9e2a-5b3d-4e8f-a6c2-91d04b7e3f58",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "priya.kumar@northwindtraders.com",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "priya.kumar@northwindtraders.com",
+      "ver": "1.0"
+    },
+    "correlationId": "9d4e2f1a-6b3c-4a7d-8e0f-1c2b3a4d5e6f",
+    "description": "",
+    "eventDataId": "e7f1c3a5-9b2d-4f6e-8a0c-2d4f6b8e0a1c",
+    "eventName": {
+      "value": "EndRequest",
+      "localizedValue": "End request"
+    },
+    "category": {
+      "value": "Administrative",
+      "localizedValue": "Administrative"
+    },
+    "eventTimestamp": "2026-11-18T16:58:12.4471234Z",
+    "id": "/subscriptions/3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93/resourceGroups/rg-nwt-finance-prod/providers/Microsoft.Storage/storageAccounts/nwtfinancestor01/events/e7f1c3a5-9b2d-4f6e-8a0c-2d4f6b8e0a1c/ticks/639000586924471234",
+    "level": "Informational",
+    "operationId": "9d4e2f1a-6b3c-4a7d-8e0f-1c2b3a4d5e6f",
+    "operationName": {
+      "value": "Microsoft.Storage/storageAccounts/listKeys/action",
+      "localizedValue": "List Storage Account Keys"
+    },
+    "resourceGroupName": "rg-nwt-finance-prod",
+    "resourceProviderName": {
+      "value": "Microsoft.Storage",
+      "localizedValue": "Microsoft.Storage"
+    },
+    "resourceType": {
+      "value": "Microsoft.Storage/storageAccounts",
+      "localizedValue": "Microsoft.Storage/storageAccounts"
+    },
+    "resourceId": "/subscriptions/3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93/resourceGroups/rg-nwt-finance-prod/providers/Microsoft.Storage/storageAccounts/nwtfinancestor01",
+    "status": {
+      "value": "Succeeded",
+      "localizedValue": "Succeeded"
+    },
+    "subStatus": {
+      "value": "OK",
+      "localizedValue": "OK (HTTP Status Code: 200)"
+    },
+    "submissionTimestamp": "2026-11-18T17:00:04.1120000Z",
+    "subscriptionId": "3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93",
+    "tenantId": "7c1f9e2a-5b3d-4e8f-a6c2-91d04b7e3f58",
+    "properties": {
+      "statusCode": "OK",
+      "serviceRequestId": null,
+      "eventCategory": "Administrative",
+      "entity": "/subscriptions/3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93/resourceGroups/rg-nwt-finance-prod/providers/Microsoft.Storage/storageAccounts/nwtfinancestor01",
+      "message": "Microsoft.Storage/storageAccounts/listKeys/action",
+      "hierarchy": "7c1f9e2a-5b3d-4e8f-a6c2-91d04b7e3f58/mg-nwt-root/3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93"
+    },
+    "relatedEvents": []
+  },
+  {
+    "caller": "adm-pkumar@nwtraders.onmicrosoft.com",
+    "channels": "Operation",
+    "claims": {
+      "ipaddr": "64.187.212.34",
+      "name": "Kumar, Priya (Admin)",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "adm-pkumar@nwtraders.onmicrosoft.com"
+    },
+    "correlationId": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+    "eventTimestamp": "2026-11-18T17:02:40.0012231Z",
+    "level": "Error",
+    "operationName": {
+      "value": "Microsoft.Compute/virtualMachines/write",
+      "localizedValue": "Create or Update Virtual Machine"
+    },
+    "resourceGroupName": "rg-nwt-finance-prod",
+    "resourceId": "/subscriptions/3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93/resourceGroups/rg-nwt-finance-prod/providers/Microsoft.Compute/virtualMachines/nwt-az-app01",
+    "status": {
+      "value": "Failed",
+      "localizedValue": "Failed"
+    },
+    "subscriptionId": "3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93",
+    "tenantId": "7c1f9e2a-5b3d-4e8f-a6c2-91d04b7e3f58",
+    "properties": {
+      "statusCode": "Conflict",
+      "statusMessage": "{\"error\": {\"code\": \"OperationNotAllowed\", \"message\": \"Operation could not be completed. The storage account 'nwtfinancestor01' referenced by VM 'nwt-az-app01' (OS disk https://nwtfinancestor01.blob.core.windows.net/vhds/nwt-az-app01-osdisk.vhd) is behind a firewall that denies 64.187.212.34. Contact owner jsmith@northwindtraders.com.\"}}",
+      "requestbody": "{\"properties\": {\"osProfile\": {\"computerName\": \"nwt-az-app01\", \"adminUsername\": \"nwtazadmin\", \"adminPassword\": \"Az!Fin-Vm#2026\"}}}"
+    }
+  },
+  {
+    "caller": "Jos\u00e9 M\u00fcller",
+    "channels": "Operation",
+    "claims": {
+      "name": "Jos\u00e9 M\u00fcller",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "jose.mueller@northwindtraders.com",
+      "ipaddr": "73.221.48.190"
+    },
+    "correlationId": "5f6e7d8c-9b0a-4c1d-ae2f-3b4c5d6e7f80",
+    "eventTimestamp": "2026-11-18T17:10:05.5550001Z",
+    "level": "Informational",
+    "operationName": {
+      "value": "Microsoft.Insights/diagnosticSettings/write",
+      "localizedValue": "Create or update resource diagnostic setting"
+    },
+    "resourceId": "/subscriptions/3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93/resourceGroups/rg-nwt-finance-prod/providers/Microsoft.Storage/storageAccounts/nwtfinancestor01/providers/microsoft.insights/diagnosticSettings/export-to-siem",
+    "status": {
+      "value": "Succeeded"
+    },
+    "subscriptionId": "3e8a6b14-92cd-4f07-b1e5-6d2c8f0a7b93",
+    "tenantId": "7c1f9e2a-5b3d-4e8f-a6c2-91d04b7e3f58",
+    "properties": {
+      "exportUrl": "https://nwtfinancestor01.blob.core.windows.net/insights-logs?sv=2022-11-02&ss=b&srt=sco&sp=rwdlacx&se=2027-01-01T00:00:00Z&st=2026-11-18T00:00:00Z&spr=https&sig=Xk3%2Bq9Lzp7Rv2NcW8tYb5Hj1Mf4Dg6Sa0Ue3Io7Pk2Q%3D"
+    }
+  }
+]

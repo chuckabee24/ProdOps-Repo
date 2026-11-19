@@ -1,0 +1,53 @@
+DNS Server log file creation at 11/18/2026 7:00:01 AM
+Log file wrap at 11/18/2026 7:00:01 AM
+
+Message logging key (for packets - other items use a subset of these fields):
+	Field #  Information         Values
+	-------  -----------         ------
+	   1     Date
+	   2     Time
+	   3     Thread ID
+	   4     Context
+	   5     Internal packet identifier
+	   6     UDP/TCP indicator
+	   7     Send/Receive indicator
+	   8     Remote IP
+	   9     Xid (hex)
+	  10     Query/Response      R = Response
+	                             blank = Query
+	  11     Opcode              Q = Standard Query
+	                             N = Notify
+	                             U = Update
+	                             ? = Unknown
+	  12     [ Flags (hex)
+	  13     Flags (char codes)  A = Authoritative Answer
+	                             T = Truncated Response
+	                             D = Recursion Desired
+	                             R = Recursion Available
+	  14     ResponseCode ]
+	  15     Question Type
+	  16     Question Name
+
+11/18/2026 8:14:21 AM 0A4C PACKET  000001D2E5F4A0B0 UDP Rcv 10.20.64.115    c2a1   Q [0001   D    NOERROR] A     (11)nwt-sql-p01(9)nwtraders(5)local(0)
+11/18/2026 8:14:21 AM 0A4C PACKET  000001D2E5F4A0B0 UDP Snd 10.20.64.115    c2a1 R Q [8485 A DR   NOERROR] A     (11)nwt-sql-p01(9)nwtraders(5)local(0)
+11/18/2026 8:14:21 AM 0A4C PACKET  000001D2E5F4B210 UDP Rcv 10.20.64.115    4f0e   Q [0001   D    NOERROR] PTR   (3)115(2)64(2)20(2)10(7)in-addr(4)arpa(0)
+11/18/2026 8:14:21 AM 0A4C PACKET  000001D2E5F4B210 UDP Snd 10.20.64.115    4f0e R Q [8485 A DR   NOERROR] PTR   (3)115(2)64(2)20(2)10(7)in-addr(4)arpa(0)
+11/18/2026 8:14:22 AM 0B10 PACKET  000001D2E5F4C8A0 UDP Rcv 10.20.10.42     91d3   Q [0100   D    NOERROR] SRV   (5)_ldap(4)_tcp(2)dc(6)_msdcs(9)nwtraders(5)local(0)
+11/18/2026 8:14:22 AM 0B10 PACKET  000001D2E5F4C8A0 UDP Snd 10.20.10.42     91d3 R Q [8580 A DR   NOERROR] SRV   (5)_ldap(4)_tcp(2)dc(6)_msdcs(9)nwtraders(5)local(0)
+11/18/2026 8:14:23 AM 0B10 PACKET  000001D2E5F4D110 UDP Rcv 10.20.10.42     a7c2   Q [0100   D    NOERROR] A     (11)nwt-sql-p02(9)nwtraders(5)local(0)
+11/18/2026 8:14:23 AM 0B10 PACKET  000001D2E5F4D110 UDP Snd 10.20.10.42     a7c2 R Q [8583 A DR   NXDOMAIN] A     (11)nwt-sql-p02(9)nwtraders(5)local(0)
+11/18/2026 8:14:30 AM 0A4C PACKET  000001D2E5F4E020 UDP Rcv 2620:1ec:4e57:40:9d3c:1a7e:22b4:5f61 1b77   Q [0001   D    NOERROR] AAAA  (4)wpad(9)nwtraders(5)local(0)
+11/18/2026 8:14:30 AM 0A4C PACKET  000001D2E5F4E020 UDP Snd 2620:1ec:4e57:40:9d3c:1a7e:22b4:5f61 1b77 R Q [8583 A DR   NXDOMAIN] AAAA  (4)wpad(9)nwtraders(5)local(0)
+11/18/2026 8:14:31 AM 0A4C PACKET  000001D2E5F4F7C0 UDP Rcv 10.20.64.115    e0a4   Q [0001   D    NOERROR] A     (3)www(9)microsoft(3)com(0)
+11/18/2026 8:14:31 AM 0A4C PACKET  000001D2E5F50A10 UDP Snd 10.20.9.53      3d1f   Q [0001   D    NOERROR] A     (3)www(9)microsoft(3)com(0)
+11/18/2026 8:14:31 AM 0A4C PACKET  000001D2E5F50A10 UDP Rcv 10.20.9.53      3d1f R Q [8180   DR   NOERROR] A     (3)www(9)microsoft(3)com(0)
+11/18/2026 8:14:31 AM 0A4C PACKET  000001D2E5F4F7C0 UDP Snd 10.20.64.115    e0a4 R Q [8180   DR   NOERROR] A     (3)www(9)microsoft(3)com(0)
+11/18/2026 8:15:02 AM 0C2C PACKET  000001D2E5F51B30 UDP Rcv 10.20.64.115    77ee   Q [0001   D    NOERROR] A     (16)nwtfinancestor01(4)blob(4)core(7)windows(3)net(0)
+11/18/2026 8:16:44 AM 0C2C PACKET  000001D2E5F52C40 TCP Rcv 10.40.1.10      0000   Q [0000        NOERROR] AXFR  (4)emea(9)nwtraders(5)local(0)
+11/18/2026 8:17:09 AM 0A4C PACKET  000001D2E5F53D50 UDP Rcv 10.40.64.23     5d12   U [2800        NOERROR] SOA   (4)emea(9)nwtraders(5)local(0)
+11/18/2026 8:17:09 AM 0A4C PACKET  000001D2E5F53D50 UDP Snd 10.40.64.23     5d12 R U [a805 A      REFUSED] SOA   (4)emea(9)nwtraders(5)local(0)
+11/18/2026 8:18:20 AM 0B10 PACKET  000001D2E5F54E60 UDP Rcv 10.20.9.5       0c3a   Q [0100   D    NOERROR] A     (7)JUPITER(9)nwtraders(5)local(0)
+11/18/2026 8:18:20 AM 0B10 PACKET  000001D2E5F54E60 UDP Snd 10.20.9.5       0c3a R Q [8580 A DR   NOERROR] A     (7)JUPITER(9)nwtraders(5)local(0)
+11/18/2026 8:19:01 AM 0A4C PACKET  000001D2E5F55F70 UDP Rcv 10.20.64.88     21b9   Q [0001   D    NOERROR] A     (5)ctldl(13)windowsupdate(3)com(0)
+11/18/2026 8:19:44 AM 0B10 PACKET  000001D2E5F56A80 UDP Rcv 10.20.64.115    6a1d   Q [0001   D    NOERROR] A     (12)LT-JSMITH-01(9)nwtraders(5)local(0)
+11/18/2026 8:20:00 AM 0E44 EVENT   The DNS server has finished the background loading of zones. All zones are now available for DNS updates and zone transfers, as allowed by their individual zone configuration.

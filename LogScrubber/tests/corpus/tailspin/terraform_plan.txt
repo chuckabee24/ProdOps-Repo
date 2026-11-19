@@ -1,0 +1,117 @@
+2026-11-18T10:44:11.902Z [INFO]  Terraform version: 1.9.8
+2026-11-18T10:44:12.512Z [DEBUG] provider.terraform-provider-aws_v5.82.2_x5: HTTP Request Sent: http.method=POST http.url=https://sts.ap-southeast-2.amazonaws.com/ tf_aws.sdk=aws-sdk-go-v2 tf_aws.signing_region=ap-southeast-2 http.request.header.authorization="AWS4-HMAC-SHA256 Credential=AKIA5TQZ3XHWLEXAMPLE/20261118/ap-southeast-2/sts/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date, Signature=*****"
+2026-11-18T10:44:13.020Z [DEBUG] provider.terraform-provider-aws_v5.82.2_x5: Retrieved caller identity: account_id=482915370264 arn=arn:aws:sts::482915370264:assumed-role/tt-terraform-deployer/tomasz.kowalski@tailspintoys.com
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+  # aws_instance.build_agent["build-agent-8"] will be created
+  + resource "aws_instance" "build_agent" {
+      + ami                                  = "ami-0a1b2c3d4e5f67890"
+      + arn                                  = (known after apply)
+      + availability_zone                    = "ap-southeast-2a"
+      + iam_instance_profile                 = "arn:aws:iam::482915370264:instance-profile/tt-build-agent"
+      + instance_type                        = "m6i.xlarge"
+      + private_ip                           = "172.31.14.207"
+      + subnet_id                            = "subnet-0f3e2d1c0b9a87654"
+      + tags                                 = {
+          + "CostCenter" = "CC-4410-Platform"
+          + "Name"       = "build-agent-8.ttlabs.internal"
+          + "Owner"      = "tomasz.kowalski@tailspintoys.com"
+        }
+      + vpc_security_group_ids               = [
+          + "sg-0123abcd4567ef890",
+        ]
+    }
+
+  # aws_security_group_rule.allow_office_ssh will be updated in-place
+  ~ resource "aws_security_group_rule" "allow_office_ssh" {
+      ~ ipv6_cidr_blocks         = [
+          + "fd7a:3c41:9b2e::/48",
+          + "2a02:8010:6a41::/48",
+        ]
+      ~ cidr_blocks              = [
+          + "192.168.100.0/22",
+          + "172.29.0.0/16",
+          - "81.134.22.97/32",
+          + "99.62.137.18/32",
+          + "101.188.67.134/32",
+        ]
+        id                       = "sgrule-2918374650"
+        # (6 unchanged attributes hidden)
+    }
+
+  # aws_flow_log.vpc will be created
+  + resource "aws_flow_log" "vpc" {
+      + log_destination      = "arn:aws:s3:::tailspin-prod-artifacts/vpc-flow/"
+      + traffic_type         = "ALL"
+      + vpc_id               = "vpc-0c81d2e4f7a9b3615"
+    }
+
+  # google_compute_instance.feature_store will be updated in-place
+  ~ resource "google_compute_instance" "feature_store" {
+        id     = "projects/tt-analytics-prod-4821/zones/australia-southeast1-b/instances/hyperion"
+      ~ labels = {
+          ~ "owner" = "zhang_wei" -> "priya_raman"
+            # (2 unchanged elements hidden)
+        }
+        name   = "hyperion"
+        # (21 unchanged attributes hidden)
+
+        network_interface {
+            network_ip = "10.152.0.12"
+            # (5 unchanged attributes hidden)
+        }
+
+        service_account {
+            email  = "feature-store@tt-analytics-prod-4821.iam.gserviceaccount.com"
+            scopes = [
+                "https://www.googleapis.com/auth/cloud-platform",
+            ]
+        }
+    }
+
+  # azurerm_storage_account.backups must be replaced
+-/+ resource "azurerm_storage_account" "backups" {
+      ~ id                       = "/subscriptions/3f6b2d18-9a4c-4e71-b05d-c8e2f1a7d496/resourceGroups/rg-tt-backup-aue/providers/Microsoft.Storage/storageAccounts/ttbackupstor01" -> (known after apply)
+        name                     = "ttbackupstor01"
+      ~ primary_access_key       = (sensitive value)
+      ~ primary_blob_endpoint    = "https://ttbackupstor01.blob.core.windows.net/" -> (known after apply)
+      ~ account_replication_type = "LRS" -> "GRS" # forces replacement
+
+      ~ network_rules {
+          ~ ip_rules       = [
+              + "52.187.44.19",
+            ]
+            # (2 unchanged attributes hidden)
+        }
+    }
+
+Plan: 3 to add, 2 to change, 1 to destroy.
+
+Changes to Outputs:
+  ~ build_agent_ips = [
+      + "172.31.14.207",
+    ]
+
+╷
+│ Warning: Argument is deprecated
+│
+│   with aws_flow_log.vpc,
+│   on network.tf line 88, in resource "aws_flow_log" "vpc":
+│   88:   log_destination_type = "s3"
+│
+│ Use log_destination with an s3 ARN instead.
+╵
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: tfplan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan"

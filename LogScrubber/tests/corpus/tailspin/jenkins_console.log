@@ -1,0 +1,94 @@
+Started by user Tomasz Kowalski
+Running as SYSTEM
+[EnvInject] - Loading node environment variables.
+Building remotely on build-agent-7 (linux docker) in workspace /home/jenkins/workspace/toy-catalog_main
+The recommended git tool is: NONE
+using credential svc-jenkins-github
+Cloning the remote Git repository
+Cloning repository https://github.com/tailspin-toys/toy-catalog.git
+ > git init /home/jenkins/workspace/toy-catalog_main # timeout=10
+Fetching upstream changes from https://github.com/tailspin-toys/toy-catalog.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+using GIT_ASKPASS to set credentials svc-jenkins GitHub PAT
+ > git fetch --tags --force --progress -- https://svc-jenkins:ghfake_7Kq2Lm9Xw4Rt8Vb1Nc6Zp3Hd5Jf0Gs2Ya4Ue@github.com/tailspin-toys/toy-catalog.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision 9f2c4e1a7b3d5f6e8a0c2b4d6f8e0a1c3b5d7f9e (refs/remotes/origin/main)
+Commit message: "CAT-4412: point catalog at athena's new replica set (kronos-db retired)"
+[Pipeline] Start of Pipeline
+[Pipeline] node
+[Pipeline] stage
+[Pipeline] { (Prepare)
+[Pipeline] sh
++ env
++ sort
+AWS_ACCESS_KEY_ID=AKIA5TQZ3XHWLEXAMPLE
+AWS_DEFAULT_REGION=ap-southeast-2
+BUILD_USER_EMAIL=tomasz.kowalski@tailspintoys.com
+JENKINS_URL=https://jenkins.ttlabs.internal/
+NODE_NAME=build-agent-7
+VAULT_ADDR=https://vault-2.ttlabs.internal:8200
+[Pipeline] withCredentials
+Masking supported pattern matches of $AWS_SECRET_ACCESS_KEY
+[Pipeline] {
+[Pipeline] sh
++ aws configure set aws_secret_access_key ****
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] sh
++ set -x
++ aws configure set aws_secret_access_key wJ8kq/Zr3Xn7Pd2Lm5Tb9Vc4Hy6Gf1EXAMPLEKEY --profile legacy
++ docker login nexus.ttlabs.internal:8443 -u svc-jenkins -p J3nkins!Build2026
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded
++ git clone https://oauth2:glfake-xR4mK9vT2bQ7nW1zL5pY@git.ttlabs.internal/platform/helm-charts.git
+Cloning into 'helm-charts'...
++ curl -s -H 'Authorization: Basic c3ZjLWplbmtpbnM6SjNua2lucyFCdWlsZDIwMjY=' https://nexus.ttlabs.internal:8443/service/rest/v1/status
+{"status":"UP","node":"nexus.ttlabs.internal"}
++ cat deploy/keys/catalog-signing.pem
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAcB8BN031Kd4KPILYsf+ugi5KipFSq+fkurDke7MQaUiMPtCa
+ANPYTvSAt+Xevy2x0DxgR+anBR8zeiA/e/AqA/3ev/LX9rEipbEcn+/qgyuPFyY3
+esm89VyURk5wcvDH2nWSLu7gR0hRFsTllCCU6VlC0DKmIXz3oj0S2zPrZUvVBeKs
+yScXYFuvfsDe/UTUcYe7ZwJPU1p29My0HNVLExGowQJrDkEL44fAm5KB8IlKzN8F
+3p12AEscMCKupQ/ql4jVAqztX/VdXyyvFdvKIrYUw/tpQei1s4bUKhvAUz6RbdWS
+V9rO0lJsbOmCOinX7i2FR4PG5ydv3IFo6s8Hnk4tR7BbH9GxRrw1vTkl8YaweAWo
+RS2eIfxuTWXTk98HbLzSLnp2pFM19A4FQIaD9plEg/Au68ibtwnCf8WH7FrGlYad
+nd/Gp5jP5bPX2xQYTwB+5PNKaps4HIBpvRXlONj9RUpk5HX9uZQ/RC8EDSF2nP/4
+PxaVov8WWskOjOwBKa/V5DWEkEaSe3lSz04WJlRBMi1/yNFVBj6btoZL+L6Eb/hh
+067Asa0EqZry7dl+OtZP1dQxbXrQTA9ofWKymXeu46T88wWgVjus0mwXhJlqimXR
+aU4IIyaDDJJPSy3qpwGl8BlLoMJdfxsbfspSrJYli1iNwwzbkkSVKqnJuzruUein
+gmoGbiwLXf4kMBrIl3gCDLy2z1hXg6QuRvxc+5q93VtzWQIZzNlc5Sjz9O+pIWLG
+KxiM2HseJhzwaRlzDbG3dkF4/GwbpXdqXWUDa2m0ddYGH2csWq61Jw/Z/M+vokAE
+OaPDDiNa0oW0IagXtnYrKdaRiwcDT4xGSEMazUCMSEU1pm0iLdSPYFa22qHpiXxa
+wTW5vmBjU6edLhiLbWaAJTog1eRWEYwGXPu0fkRM9mp0bYyzUbM4mTGMcxXluQh6
+r0/ljYHOysuKJpTKKDySfhjZ6+IEdP5RWsutVslFSb56XhsxQ5x+9vZKJPknxwNW
+/gf1z0O5VB6GhKacxlCcEbiw6XXWBeuTwgN7j5qqJsUtKFdybcn4Auj+QNR+lBl+
+M5UAqcGgRThq1AuOuPRxIVwLuxi/sdwUm3Wdd0uGJhhsbIWohfi6HsJ51RSvapfa
+9djv1dKTSgcZrT8X6F4E655CGSb27oKuplwk7xGfnC/Iv+jkU/dn8K9q5UOJVAu3
+C4BZKsSadetgMHpUiVw/HI9j2YXhlJE8+Pfi0/82qcQHxbPia8ND+exQ+ta5sfkV
+/9k+307OdMghQ7cjEhT6Xg2sX7b4yRh3CxxEW6NzJWoX5Ncbt/WHLF09UmEM2+d2
+6wch2lCUV+BNVC7Vy2hzeg4yvE3yawynlinTwRqST+08+pzByXvXIJ8gZZx0WjbZ
+2TXkjLcobZNo775P3Mag+KFMQzFXkDVWWsOwKk36wP00JXZYjmuClFSZmsYMUeVv
+YLVijDRtXUMIkGBCovV/hmEOti1nJpg7SaQLNjTu6uom4PSfpD8ZrRPtoDhYH88C
+PPeaCT87ijO+WB98jnMtDKoKxdSM+n5NM2PM4RR2Tx5pTIbZVVBDlA==
+-----END RSA PRIVATE KEY-----
++ az storage blob upload --file build/catalog.tgz --blob-url 'https://ttbackupstor01.blob.core.windows.net/sqlbackups?sv=2022-11-02&ss=b&srt=co&sp=rwdlac&se=2027-01-01T00:00:00Z&st=2026-11-01T00:00:00Z&spr=https&sig=Xk3vR8mQ2pL9wT4nB7cZ1yF6hJ0dG5sA8eU2iO4tY7k%3D'
+Finished[#############################################################]  100.0000%
++ curl -s -X POST -H 'Authorization: SSWS 00Qx7Lm2Kp9Rt4Vb8Nc1Zd6Hf3Jg5Ws0Ye2Ua4Ti' 'https://tailspintoys.okta.com/api/v1/users?activate=false'
+{"errorCode":"E0000011","errorSummary":"Invalid token provided","errorLink":"E0000011","errorId":"oaeK3XxPq9TQ2y0Rk6vB1cN4w","errorCauses":[]}
++ kubectl --server https://[fd7a:3c41:9b2e:64::40]:6443 --token eyJhbGciOiJSUzI1NiIsImtpZCI6Ik1yNS1BVWliZkJpaTdOZDFqQmViYXhib1hXMCIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhcGk6Ly90b3ktY2F0YWxvZyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzdkM2M5YTQxLTViMmUtNGY4YS05YzYxLTBlNGI3YTJkOTNmNS8iLCJpYXQiOjE3OTQ5OTQwMDAsIm5iZiI6MTc5NDk5NDAwMCwiZXhwIjoxNzk0OTk3OTAwLCJuYW1lIjoiV2lsbCBSb3NlIiwib2lkIjoiYjZmMGUyYzQtMWQ5My00YTdlLThjNTUtMmU5MWYzZDA3YTY4IiwidXBuIjoid2lsbC5yb3NlQHRhaWxzcGludG95cy5jb20iLCJpcGFkZHIiOiI3Ny42OC4xNC4yMDMiLCJ0aWQiOiI3ZDNjOWE0MS01YjJlLTRmOGEtOWM2MS0wZTRiN2EyZDkzZjUiLCJ2ZXIiOiIxLjAifQ._b_zZ02y0bBELlmw0mu5lAbcVvOUqJD2d-gwtFkmOyMlaUW3ndWu4Yeja9Cdo3kA1PP19iXn4lyP092yK-RoREG8nTFgyE_AivnvsVSrqdv2BRrHeKk6ke4o53E2l7Y7hzkfvmXumINra4k-rqXifenre0mAOChLLGLfjplQn_-9xZRRHVPJUvsrvmAaqWUsoR7QvolVYRIrPRKddX6zYTwSAASwiqHuKg0V5YnXXAEIL2yfEOECJcf0uG6_S-n7FJCyYf67JeuNNyFbgbW_7JRYc6zloxItEpOmwla0FCELd09G4Qbb1T3L80fBHhB2hCtkChYvd3nm3GmIJWvxEw -n team-checkout rollout restart deploy/toy-catalog
+error: You must be logged in to the server (Unauthorized)
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Notify)
+[Pipeline] slackSend
+Slack Send Pipeline step running, values are - baseUrl: <empty>, teamDomain: tailspin, channel: #ops-alerts, color: danger, botUser: true, tokenCredentialId: slack-bot, notifyCommitters: false, iconEmoji: <empty>, username: <empty>, timestamp: <empty>
+ERROR: Slack notification failed. See Jenkins logs for details.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
