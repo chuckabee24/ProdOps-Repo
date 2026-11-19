@@ -1,0 +1,19 @@
+<Events>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}" />
+    <EventID>4740</EventID>
+    <TimeCreated SystemTime="2026-11-18T15:20:44.1234567Z" />
+    <Computer>DC01.corp.contoso.com</Computer>
+  </System>
+  <EventData>
+    <Data Name="TargetUserName">bwayne</Data>
+    <Data Name="TargetDomainName">FIN-LT-0042</Data>
+    <Data Name="TargetSid">S-1-5-21-3623811015-3361044348-30300820-1188</Data>
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">DC01$</Data>
+    <Data Name="SubjectDomainName">CORP</Data>
+    <Data Name="IpAddress">::ffff:10.20.30.91</Data>
+  </EventData>
+</Event>
+</Events>

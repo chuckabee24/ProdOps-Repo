@@ -1,0 +1,6 @@
+Nov 18 14:10:01 edge-fw01 dhcpd[2211]: DHCPDISCOVER from 3c:52:82:1a:2b:3c via eth1
+Nov 18 14:10:01 edge-fw01 dhcpd[2211]: DHCPOFFER on 10.20.30.45 to 3c:52:82:1a:2b:3c (FIN-LT-0042) via eth1
+Nov 18 14:10:02 edge-fw01 dhcpd[2211]: DHCPACK on 10.20.30.46 to a4:bb:6d:10:20:30 (APP02) via eth1
+Nov 18 14:11:15 edge-fw01 sshd[3302]: Accepted publickey for netadmin from 198.51.100.23 port 52200 ssh2
+Nov 18 14:12:00 edge-fw01 ntpd[880]: synchronized to time.windows.com (40.119.6.228)
+Nov 18 14:12:30 edge-fw01 kernel: link up on port fa0/1 hw 0050.56a1.b2c3

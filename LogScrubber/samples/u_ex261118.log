@@ -1,0 +1,8 @@
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2026-11-18 14:00:01
+#Fields: date time s-sitename s-computername s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs-version cs(User-Agent) cs-host sc-status time-taken
+2026-11-18 14:00:01 W3SVC1 WEB01 10.20.30.10 GET /portal/default.aspx - 443 CORP\jdoe 10.20.30.45 HTTP/1.1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64) portal.contoso.com 200 31
+2026-11-18 14:00:02 W3SVC1 WEB01 10.20.30.10 POST /api/orders id=77 443 - 203.0.113.99 HTTP/1.1 curl/8.4.0 portal.contoso.com 401 4
+2026-11-18 14:00:05 W3SVC1 WEB01 10.20.30.10 GET /health - 80 - 127.0.0.1 HTTP/1.1 - localhost 200 0
+2026-11-18 14:00:09 W3SVC1 WEB01 fe80::1c2b:3aff:fe4d:5e6f%12 GET /portal/reports - 443 CORP\amartinez 10.20.31.200 HTTP/1.1 Mozilla/5.0 portal.contoso.com 200 88

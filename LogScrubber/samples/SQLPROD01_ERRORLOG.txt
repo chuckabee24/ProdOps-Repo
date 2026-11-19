@@ -1,0 +1,12 @@
+2026-11-18 03:00:00.41 Server      Microsoft SQL Server 2019 (RTM-CU22) (KB5027702) - 15.0.4322.2 (X64)
+2026-11-18 03:00:00.42 Server      Server process ID is 4120.
+2026-11-18 03:00:00.43 Server      Authentication mode is MIXED.
+2026-11-18 03:00:00.44 Server      Logging SQL Server messages in file 'D:\MSSQL15.MSSQLSERVER\MSSQL\Log\ERRORLOG'.
+2026-11-18 03:00:01.10 Server      The service account is 'CORP\svc_sql'. This is an informational message; no user action is required.
+2026-11-18 03:00:05.88 spid21s     Server is listening on [ 10.20.40.15 <ipv4> 1433].
+2026-11-18 09:31:17.02 Logon       Error: 18456, Severity: 14, State: 8.
+2026-11-18 09:31:17.02 Logon       Login failed for user 'CORP\amartinez'. Reason: Password did not match that for the login provided. [CLIENT: 10.20.31.200]
+2026-11-18 09:32:40.55 spid63      Connection string: Data Source=SQLPROD01;Initial Catalog=Orders;User ID=app_orders;Encrypt=True
+2026-11-18 09:33:00.00 spid63      Loaded System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+2026-11-18 09:33:01.00 spid63      Registry HKLM\SOFTWARE\Microsoft\MSSQLServer read from C:\Windows\System32\config
+2026-11-18 09:33:02.00 spid63      [Math]::Round result 12:30:45 ok; mask 255.255.255.0; build 2019.1201.0001

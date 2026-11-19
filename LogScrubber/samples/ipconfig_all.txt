@@ -1,0 +1,23 @@
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : SQLPROD01
+   Primary Dns Suffix  . . . . . . . : corp.contoso.com
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : corp.contoso.com
+                                       contoso.com
+
+Ethernet adapter Ethernet0:
+
+   Connection-specific DNS Suffix  . : corp.contoso.com
+   Description . . . . . . . . . . . : vmxnet3 Ethernet Adapter
+   Physical Address. . . . . . . . . : 00-50-56-A1-B2-C3
+   DHCP Enabled. . . . . . . . . . . : No
+   Link-local IPv6 Address . . . . . : fe80::1c2b:3aff:fe4d:5e6f%12(Preferred)
+   IPv6 Address. . . . . . . . . . . : 2001:470:1f0b:7a9::25(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.20.40.15(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 10.20.40.1
+   DNS Servers . . . . . . . . . . . : 10.20.0.10
+                                       10.20.0.11
+   NetBIOS over Tcpip. . . . . . . . : Enabled
